@@ -1,3 +1,15 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./features/header/Header";
+import CategoriesNav from "./features/header/CategoriesNav";
+
 export default function App() {
-  return <div className="text-3xl font-semibold text-red-600">Hello Vite!</div>;
+  return (
+    <BrowserRouter>
+      <Header />
+      <CategoriesNav />
+      <Routes>
+        <Route index />
+      </Routes>
+    </BrowserRouter>
+  );
 }
