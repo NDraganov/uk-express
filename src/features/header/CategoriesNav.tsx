@@ -1,16 +1,19 @@
 import { Outlet } from "react-router-dom";
 import NavigationLink from "../../ui/NavigationLink";
+import { useAppDispatch } from "../../store/hooks";
+import { fetchAllProducts } from "../all-products/allProductsSlice";
 
 export default function CategoriesNav() {
+  const dispatch = useAppDispatch();
   return (
     <>
       <header>
         <nav className="h-12 bg-slate-700">
           <ul className="flex items-center justify-center gap-4 py-1 text-lg text-slate-200">
             <NavigationLink
-              to="products"
+              to="all-products"
               title="All products"
-              onClick={() => console.log("a")}
+              onClick={() => dispatch(fetchAllProducts())}
             />
             <NavigationLink
               to="electronics"
