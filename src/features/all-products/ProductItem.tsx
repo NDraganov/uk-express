@@ -1,3 +1,6 @@
+import { useAppDispatch } from "../../store/hooks";
+import { addToCart } from "../cart/cartSlice";
+
 export interface ProductItemProps {
   id: number;
   title: string;
@@ -10,11 +13,18 @@ export interface ProductItemProps {
 }
 
 export default function ProductItem({
+  id,
   title,
   price,
   image,
   rating: { rate, count },
 }: ProductItemProps) {
+  const dispatch = useAppDispatch();
+
+  function HandleAddToCart() {
+    dispatch(addToCart({ id, title, price }));
+  }
+
   return (
     <div className=" flex h-full flex-col items-center justify-between border-b-2 border-slate-200">
       <img className="mb-4 mt-4 w-32" src={image} alt={title} />
@@ -29,7 +39,10 @@ export default function ProductItem({
         <p>
           availability: <span className="font-semibold">{count}</span>
         </p>
-        <button className="m-2 rounded-full border border-orange-400 px-4 py-1">
+        <button
+          className="m-2 rounded-full border border-orange-400 px-4 py-1"
+          onClick={HandleAddToCart}
+        >
           Add to Cart
         </button>
       </div>

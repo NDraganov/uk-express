@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-interface CartItem {
+export interface CartItem {
   id: number;
   title: string;
   price: number;
@@ -25,7 +25,6 @@ const cartSlice = createSlice({
         id: number;
         title: string;
         price: number;
-        quantity: number;
       }>,
     ) {
       const itemIndex = state.items.findIndex(

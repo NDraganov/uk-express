@@ -5,6 +5,7 @@ import { fetchAllProducts } from "../all-products/allProductsSlice";
 
 export default function CategoriesNav() {
   const dispatch = useAppDispatch();
+
   return (
     <>
       <header>
