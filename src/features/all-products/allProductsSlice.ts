@@ -8,12 +8,12 @@ export const fetchAllProducts = createAsyncThunk(
     return data;
   },
 );
-
-type InitialStateProps = {
+interface InitialStateProps {
   isLoading: boolean;
   data: [];
   isError: boolean;
-};
+}
+
 const initialState: InitialStateProps = {
   isLoading: false,
   data: [],
