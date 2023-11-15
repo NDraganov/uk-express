@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../store/hooks";
 import CartItem from "./CartItem";
+import Button from "../../ui/Button";
 
 interface CartProps {
   onClose: () => void;
@@ -12,6 +13,7 @@ export default function Cart({ onClose }: CartProps) {
     (value, item) => value + item.price * item.quantity,
     0,
   );
+
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
@@ -33,16 +35,12 @@ export default function Cart({ onClose }: CartProps) {
           </ul>
         )}
       </div>
+
       <div className="mt-4 flex items-center justify-between">
         <p>
           Total: <strong>£ {formattedTotalPrice}</strong>
         </p>
-        <button
-          onClick={onClose}
-          className="rounded-full border border-orange-400 px-5 py-1"
-        >
-          Close
-        </button>
+        <Button title="Close" onClick={onClose} />
       </div>
     </div>
   );

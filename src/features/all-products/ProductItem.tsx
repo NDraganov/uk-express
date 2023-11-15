@@ -1,5 +1,6 @@
 import { useAppDispatch } from "../../store/hooks";
 import { addToCart } from "../cart/cartSlice";
+import Button from "../../ui/Button";
 
 export interface ProductItemProps {
   id: number;
@@ -21,7 +22,7 @@ export default function ProductItem({
 }: ProductItemProps) {
   const dispatch = useAppDispatch();
 
-  function HandleAddToCart() {
+  function handleAddToCart() {
     dispatch(addToCart({ id, title, price }));
   }
 
@@ -39,12 +40,7 @@ export default function ProductItem({
         <p>
           availability: <span className="font-semibold">{count}</span>
         </p>
-        <button
-          className="m-2 rounded-full border border-orange-400 px-4 py-1"
-          onClick={HandleAddToCart}
-        >
-          Add to Cart
-        </button>
+        <Button title="Add to Cart" onClick={handleAddToCart} />
       </div>
     </div>
   );
