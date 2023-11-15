@@ -8,6 +8,12 @@ interface CartProps {
 export default function Cart({ onClose }: CartProps) {
   const cartItems = useAppSelector((state) => state.cart.items);
 
+  const totalPrice = cartItems.reduce(
+    (value, item) => value + item.price * item.quantity,
+    0,
+  );
+  const formattedTotalPrice = totalPrice.toFixed(2);
+
   return (
     <div className=" absolute right-1/4 top-1/2 w-2/4 rounded-md border border-orange-400 bg-slate-100 p-4 text-black">
       <div>
@@ -26,17 +32,18 @@ export default function Cart({ onClose }: CartProps) {
             })}
           </ul>
         )}
-
-        <p>
-          Cart Total: <strong>$</strong>
-        </p>
       </div>
-      <button
-        onClick={onClose}
-        className="mt-2 rounded-full border border-orange-400 px-5 py-1"
-      >
-        Close
-      </button>
+      <div className="mt-4 flex items-center justify-between">
+        <p>
+          Total: <strong>£ {formattedTotalPrice}</strong>
+        </p>
+        <button
+          onClick={onClose}
+          className="rounded-full border border-orange-400 px-5 py-1"
+        >
+          Close
+        </button>
+      </div>
     </div>
   );
 }
