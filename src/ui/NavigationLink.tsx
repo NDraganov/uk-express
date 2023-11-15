@@ -10,7 +10,7 @@ export default function NavigationLink({ to, title, onClick }: NavLinkProps) {
     return (
       <li>
         <button
-          className="rounded-md px-5 py-1 hover:border-2 hover:border-slate-200"
+          className="rounded-md px-5 py-1 border border-black hover:border-slate-200 font-medium"
           onClick={onClick}
         >
           <NavLink to={to}>{title}</NavLink>

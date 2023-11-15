@@ -9,8 +9,8 @@ export default function CategoriesNav() {
   return (
     <>
       <header>
-        <nav className="h-12 bg-slate-700">
-          <ul className="flex items-center justify-center gap-4 py-1 text-lg text-slate-200">
+        <nav className="h-12 bg-black">
+          <ul className="flex items-center justify-center gap-4 py-1 text-sm text-slate-200">
             <NavigationLink
               to="all-products"
               title="All products"
