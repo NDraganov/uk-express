@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useAppSelector } from "../../store/hooks";
 import { NavLink } from "react-router-dom";
-import NavigationLink from "../../ui/NavigationLink";
+import Input from "../../ui/Input";
 import Cart from "../cart/Cart";
+import { IconContext } from "react-icons";
+import { IoIosSearch } from "react-icons/io";
 
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -23,12 +25,14 @@ export default function Header() {
         <NavLink to="/">UkExpress</NavLink>
         <p className="text-base font-normal">.co.uk</p>
       </h2>
-
-      <nav>
-        <ul>
-          <NavigationLink to="products" title="Products" />
-        </ul>
-      </nav>
+      <IconContext.Provider value={{ className: "text-[1.5rem]" }}>
+        <div className="flex items-center">
+          <Input />
+          <div className="rounded-r-md bg-orange-600 p-1">
+            <IoIosSearch />
+          </div>
+        </div>
+      </IconContext.Provider>
 
       <button onClick={handleOpenCart}>Cart ({cartQuantity})</button>
 
