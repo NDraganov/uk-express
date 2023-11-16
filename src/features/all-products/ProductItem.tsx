@@ -35,7 +35,7 @@ export default function ProductItem({
           rate: <span>{rate}</span>
         </p>
         <p>
-          £<span className="text-lg font-bold">{price}</span>
+          £<span className="text-lg font-bold"> {price}</span>
         </p>
         <p>
           availability: <span className="font-semibold">{count}</span>

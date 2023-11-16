@@ -2,6 +2,10 @@ import { Outlet } from "react-router-dom";
 import NavigationLink from "../../ui/NavigationLink";
 import { useAppDispatch } from "../../store/hooks";
 import { fetchAllProducts } from "../all-products/allProductsSlice";
+import { fetchElectronics } from "../categories/electronics/electronicsSlice";
+import { fetchJewelery } from "../categories/jewelery/jewelerySlice";
+import { fetchMens } from "../categories/men-clothing/menSlice";
+import { fetchWomen } from "../categories/women-clothing/womenSlice";
 
 export default function CategoriesNav() {
   const dispatch = useAppDispatch();
@@ -19,22 +23,22 @@ export default function CategoriesNav() {
             <NavigationLink
               to="electronics"
               title="Electronics"
-              onClick={() => console.log("a")}
+              onClick={() => dispatch(fetchElectronics())}
             />
             <NavigationLink
               to="jewelery"
               title="Jewelery"
-              onClick={() => console.log("a")}
+              onClick={() => dispatch(fetchJewelery())}
             />
             <NavigationLink
-              to="men's-clothing"
+              to="men-clothing"
               title="Men's clothing"
-              onClick={() => console.log("a")}
+              onClick={() => dispatch(fetchMens())}
             />
             <NavigationLink
-              to="women's-clothing"
+              to="women-clothing"
               title="Women's clothing"
-              onClick={() => console.log("a")}
+              onClick={() => dispatch(fetchWomen())}
             />
           </ul>
         </nav>
