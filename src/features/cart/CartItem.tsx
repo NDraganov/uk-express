@@ -1,5 +1,8 @@
+import { IconContext } from "react-icons";
 import { useAppDispatch } from "../../store/hooks";
 import { addToCart, removeFromCart, type CartItem } from "./cartSlice";
+import { CiCircleMinus } from "react-icons/ci";
+import { CiCirclePlus } from "react-icons/ci";
 
 export default function CartItem(item: CartItem) {
   const dispatch = useAppDispatch();
@@ -19,23 +22,27 @@ export default function CartItem(item: CartItem) {
     <div className="mb-2 flex w-full items-center justify-between">
       <div>
         <span>{item.title}</span>
-        <span className="font-semibold"> (£ {formattedSumPrice})</span>
+        <span className="font-semibold text-orange-500">
+          {" "}
+          (£ {formattedSumPrice})
+        </span>
       </div>
       <div className="flex gap-3">
-        <button
-          className="rounded-full border border-orange-400 px-2"
-          onClick={() => handleRemoveFromCart(item.id)}
+        <IconContext.Provider
+          value={{ className: "text-2xl hover:fill-orange-500" }}
         >
-          -
-        </button>
-        <span>{item.quantity}</span>
-        <button
-          className="rounded-full border border-orange-400 px-2"
-          p-2
-          onClick={() => handleAddToCart(item)}
+          <button onClick={() => handleRemoveFromCart(item.id)}>
+            <CiCircleMinus />
+          </button>
+        </IconContext.Provider>
+        <span className="text-orange-500">{item.quantity}</span>
+        <IconContext.Provider
+          value={{ className: "text-2xl hover:fill-orange-500" }}
         >
-          +
-        </button>
+          <button p-2 onClick={() => handleAddToCart(item)}>
+            <CiCirclePlus />
+          </button>
+        </IconContext.Provider>
       </div>
     </div>
   );

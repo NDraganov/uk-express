@@ -15,7 +15,7 @@ export default function CartBadge({ onOpen }: CartBadgeProps) {
     <IconContext.Provider value={{ className: "text-[1.5rem] mt-2" }}>
       <button className="flex items-center h-full" onClick={onOpen}>
         <BsCart4 />{" "}
-        <span className="absolute top-1 right-4 text-orange-400 rounded-full">
+        <span className="absolute top-1 right-4 text-orange-500 rounded-full">
           {cartQuantity}
         </span>
       </button>
