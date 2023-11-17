@@ -1,16 +1,13 @@
 import { useState } from "react";
-import { useAppSelector } from "../../store/hooks";
 import { NavLink } from "react-router-dom";
 import Input from "../../ui/Input";
 import Cart from "../cart/Cart";
+import CartBadge from "../../ui/CartBadge";
 import { IconContext } from "react-icons";
 import { IoIosSearch } from "react-icons/io";
 
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const cartQuantity = useAppSelector((state) =>
-    state.cart.items.reduce((val, item) => val + item.quantity, 0),
-  );
 
   function handleOpenCart() {
     setIsCartVisible(true);
@@ -34,7 +31,7 @@ export default function Header() {
         </div>
       </IconContext.Provider>
 
-      <button onClick={handleOpenCart}>Cart ({cartQuantity})</button>
+      <CartBadge onOpen={handleOpenCart} />
 
       {isCartVisible && <Cart onClose={handleCloseCart} />}
     </header>
