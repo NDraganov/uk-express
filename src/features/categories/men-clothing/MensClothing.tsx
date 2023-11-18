@@ -7,7 +7,7 @@ export default function MenClothing() {
   const menClothing = useAppSelector((state) => state.menClothing);
 
   return (
-    <>
+    <main>
       {menClothing?.isLoading && <p>Loading........</p>}
       <ul className="grid gap-4 p-10 md:grid-cols-3">
         {menClothing?.data?.map((product: ProductItemProps) => (
@@ -16,6 +16,6 @@ export default function MenClothing() {
           </li>
         ))}
       </ul>
-    </>
+    </main>
   );
 }

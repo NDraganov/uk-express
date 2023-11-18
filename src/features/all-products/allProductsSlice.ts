@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { ProductItemProps } from "./ProductItem";
 
 export const fetchAllProducts = createAsyncThunk(
   "fetchAllProducts",
@@ -8,9 +9,10 @@ export const fetchAllProducts = createAsyncThunk(
     return data;
   },
 );
+
 interface InitialStateProps {
   isLoading: boolean;
-  data: [];
+  data: ProductItemProps[];
   isError: boolean;
 }
 
@@ -24,6 +26,7 @@ const allProductsSlice = createSlice({
   name: "allProducts",
   initialState,
   reducers: {},
+
   extraReducers: (builder) => {
     builder.addCase(fetchAllProducts.pending, (state) => {
       state.isLoading = true;

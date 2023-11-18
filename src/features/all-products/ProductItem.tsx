@@ -1,10 +1,12 @@
 import { useAppDispatch } from "../../store/hooks";
+import { useNavigate } from "react-router-dom";
 import { addToCart } from "../cart/cartSlice";
 import Button from "../../ui/Button";
 
 export interface ProductItemProps {
   id: number;
   title: string;
+  description?: string;
   price: number;
   image: string;
   rating: {
@@ -21,9 +23,14 @@ export default function ProductItem({
   rating: { rate, count },
 }: ProductItemProps) {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   function handleAddToCart() {
     dispatch(addToCart({ id, title, price }));
+  }
+
+  function handleReviewProduct() {
+    navigate(`product/${id}`);
   }
 
   return (
@@ -41,6 +48,7 @@ export default function ProductItem({
           availability: <span className="font-semibold">{count}</span>
         </p>
         <Button title="Add to Cart" onClick={handleAddToCart} />
+        <Button title="Review" onClick={handleReviewProduct} />
       </div>
     </div>
   );

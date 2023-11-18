@@ -7,7 +7,7 @@ export default function Electronics() {
   const electronics = useAppSelector((state) => state.electronics);
 
   return (
-    <>
+    <main>
       {electronics?.isLoading && <p>Loading........</p>}
       <ul className="grid gap-4 p-10 md:grid-cols-3">
         {electronics?.data?.map((product: ProductItemProps) => (
@@ -16,6 +16,6 @@ export default function Electronics() {
           </li>
         ))}
       </ul>
-    </>
+    </main>
   );
 }

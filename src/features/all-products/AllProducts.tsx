@@ -5,7 +5,7 @@ export default function AllProducts() {
   const allProducts = useAppSelector((state) => state.allProducts);
 
   return (
-    <div>
+    <main>
       {allProducts?.isLoading && <p>Loading...</p>}
       <ul className="m-6 grid gap-8 md:grid-cols-4">
         {allProducts?.data?.map((product: ProductItemProps) => (
@@ -14,6 +14,6 @@ export default function AllProducts() {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }

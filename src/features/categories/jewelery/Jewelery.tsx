@@ -7,7 +7,7 @@ export default function Jewelery() {
   const jewelery = useAppSelector((state) => state.jewelery);
 
   return (
-    <>
+    <main>
       {jewelery?.isLoading && <p>Loading........</p>}
       <ul className="grid gap-4 p-10 md:grid-cols-3">
         {jewelery?.data?.map((product: ProductItemProps) => (
@@ -16,6 +16,6 @@ export default function Jewelery() {
           </li>
         ))}
       </ul>
-    </>
+    </main>
   );
 }
