@@ -7,6 +7,7 @@ import Jewelery from "./features/categories/jewelery/Jewelery";
 import WomenClothing from "./features/categories/women-clothing/WomenClothing";
 import MenClothing from "./features/categories/men-clothing/MensClothing";
 import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/jewelery" element={<Jewelery />} />
         <Route path="/men-clothing" element={<MenClothing />} />
         <Route path="/women-clothing" element={<WomenClothing />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </BrowserRouter>
   );

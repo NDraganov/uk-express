@@ -27,7 +27,7 @@ export default function Cart({ onClose }: CartProps) {
           <ul className="mb-2 mt-2">
             {cartItems.map((item) => {
               return (
-                <li className="justify-betwee flex items-center" key={item.id}>
+                <li className="justify-between flex items-center" key={item.id}>
                   <CartItem {...item} />
                 </li>
               );

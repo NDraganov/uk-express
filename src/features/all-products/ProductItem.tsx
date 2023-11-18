@@ -47,8 +47,10 @@ export default function ProductItem({
         <p>
           availability: <span className="font-semibold">{count}</span>
         </p>
-        <Button title="Add to Cart" onClick={handleAddToCart} />
-        <Button title="Review" onClick={handleReviewProduct} />
+        <div className="flex justify-between gap-4">
+          <Button title="Review" onClick={handleReviewProduct} />
+          <Button title="Add to Cart" onClick={handleAddToCart} />
+        </div>
       </div>
     </div>
   );

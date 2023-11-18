@@ -1,10 +1,9 @@
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
-import { IconContext } from "react-icons";
-import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
 export default function ProductPage() {
   const { id } = useParams();
+
   const product = useAppSelector((state) =>
     state.allProducts.data.find((product) => product.id === Number(id)),
   );
@@ -31,26 +30,12 @@ export default function ProductPage() {
             <span className="font-semibold"> {product?.rating.count}</span>
           </p>
         </div>
-        <div className="flex items-center justify-between w-full gap-4 mt-3">
-          <div className="flex gap-3">
-            <IconContext.Provider
-              value={{ className: "text-2xl hover:fill-orange-500" }}
-            >
-              <button>
-                <CiCircleMinus />
-              </button>
-            </IconContext.Provider>
-            <span className="text-orange-500">1</span>
-            <IconContext.Provider
-              value={{ className: "text-2xl hover:fill-orange-500" }}
-            >
-              <button>
-                <CiCirclePlus />
-              </button>
-            </IconContext.Provider>
-          </div>
-          <button className="rounded-full mt-2 w-full border border-orange-500 px-5 py-1 mb-2 hover:bg-orange-500 hover:text-black">
+        <div className="flex items-center justify-end gap-4 w-full">
+          <button className="rounded-full mt-2 border border-orange-500 px-5 py-1 mb-2 hover:bg-orange-500 hover:text-black">
             Add to cart
+          </button>
+          <button className="rounded-full mt-2  border border-orange-500 px-5 py-1 mb-2 hover:bg-orange-500 hover:text-black">
+            <NavLink to="/cart">Go to Cart</NavLink>
           </button>
         </div>
       </div>
