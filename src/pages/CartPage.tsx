@@ -11,6 +11,7 @@ export default function CartPage() {
   );
 
   const formattedTotalPrice = totalPrice.toFixed(2);
+
   return (
     <main>
       <div className="flex flex-col mx-96 mt-10">
