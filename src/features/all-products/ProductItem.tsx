@@ -26,7 +26,7 @@ export default function ProductItem({
   const navigate = useNavigate();
 
   function handleAddToCart() {
-    dispatch(addToCart({ id, title, price }));
+    dispatch(addToCart({ id, title, price, image }));
   }
 
   function handleReviewProduct() {

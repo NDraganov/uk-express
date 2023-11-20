@@ -4,11 +4,11 @@ import Shipping from "./Shipping";
 
 export default function Payment() {
   return (
-    <div>
+    <aside className="w-1/2">
       <PaymentButton>Pay</PaymentButton>
       <Shipping />
       <PaymentDetails />
       <PaymentButton>Pay £130</PaymentButton>
-    </div>
+    </aside>
   );
 }

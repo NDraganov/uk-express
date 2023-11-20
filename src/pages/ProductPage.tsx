@@ -35,7 +35,7 @@ export default function ProductPage() {
             Add to cart
           </button>
           <button className="rounded-full mt-2  border border-orange-500 px-5 py-1 mb-2 hover:bg-orange-500 hover:text-black">
-            <NavLink to="/cart">Go to Cart</NavLink>
+            <NavLink to="/checkout">Checkout</NavLink>
           </button>
         </div>
       </div>
