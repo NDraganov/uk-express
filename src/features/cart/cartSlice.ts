@@ -10,10 +10,12 @@ export interface CartItem {
 
 interface CartState {
   items: CartItem[];
+  shipping: number;
 }
 
 const initialState: CartState = {
   items: [],
+  shipping: 0,
 };
 
 const cartSlice = createSlice({
@@ -50,8 +52,11 @@ const cartSlice = createSlice({
         state.items[itemIndex].quantity--;
       }
     },
+    addShipping(state, action: PayloadAction<number>) {
+      state.shipping = action.payload;
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, addShipping } = cartSlice.actions;
 export default cartSlice.reducer;
