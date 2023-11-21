@@ -18,7 +18,7 @@ export default function CartModal({ onClose }: CartProps) {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="right-6 top-28 absolute w-2/4 rounded-md border bg-gray-50 border-slate-700 p-4 text-slate-600">
+    <div className="right-6 top-28 absolute w-2/4 rounded-md border bg-neutral-50 border-slate-400 p-4 text-slate-600">
       <div>
         <h3 className="text-xl font-medium">Your cart</h3>
 
@@ -40,7 +40,7 @@ export default function CartModal({ onClose }: CartProps) {
       <div className="mt-4 flex items-center justify-between">
         <p>
           Total due:{" "}
-          <strong className="text-orange-500">£ {formattedTotalPrice}</strong>
+          <strong className="text-orange-500">£{formattedTotalPrice}</strong>
         </p>
         <div className="flex items-center gap-4">
           <Button title="Close" onClick={onClose} />
