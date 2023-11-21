@@ -16,6 +16,7 @@ export default function Header() {
   function handleCloseCart() {
     setIsCartVisible(false);
   }
+
   return (
     <header className="flex h-14 items-center justify-between bg-black px-3 py-2 text-slate-200">
       <h2 className="flex items-baseline text-2xl font-bold">

@@ -2,12 +2,16 @@ import { useParams } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
+import Button from "../ui/Button";
 
 export default function ProductPage() {
-  const { id } = useParams();
+  const { productId } = useParams();
 
-  const product = useAppSelector((state) =>
-    state.allProducts.data.find((product) => product.id === Number(id)),
+  const product = useAppSelector(
+    (state) =>
+      state.allProducts?.data?.find(
+        (product) => product.id === Number(productId),
+      ),
   );
 
   return (
@@ -39,9 +43,6 @@ export default function ProductPage() {
             </p>
           </div>
           <div className="flex items-center justify-end gap-4 w-full">
-            <button className="rounded-full mt-2 border border-orange-500 px-5 py-1 mb-2 hover:bg-orange-500 hover:text-black">
-              Add to cart
-            </button>
             <CheckoutButton />
           </div>
         </section>

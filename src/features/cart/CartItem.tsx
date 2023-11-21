@@ -1,8 +1,6 @@
-import { IconContext } from "react-icons";
 import { useAppDispatch } from "../../store/hooks";
 import { addToCart, removeFromCart, type CartItem } from "./cartSlice";
-import { CiCircleMinus } from "react-icons/ci";
-import { CiCirclePlus } from "react-icons/ci";
+import QuantityButtons from "../../ui/QuantityButtons";
 
 export default function CartItem(item: CartItem) {
   const dispatch = useAppDispatch();
@@ -28,27 +26,11 @@ export default function CartItem(item: CartItem) {
             £{formattedSumPrice}
           </span>
         </div>
-        <div className="flex gap-3">
-          <IconContext.Provider
-            value={{
-              className: "text-2xl fill-slate-500 hover:fill-slate-700",
-            }}
-          >
-            <button onClick={() => handleRemoveFromCart(item.id)}>
-              <CiCircleMinus />
-            </button>
-          </IconContext.Provider>
-          <span className="text-slate-700">{item.quantity}</span>
-          <IconContext.Provider
-            value={{
-              className: "text-2xl fill-slate-500 hover:fill-slate-700",
-            }}
-          >
-            <button p-2 onClick={() => handleAddToCart(item)}>
-              <CiCirclePlus />
-            </button>
-          </IconContext.Provider>
-        </div>
+        <QuantityButtons
+          item={item}
+          onRemove={() => handleRemoveFromCart(item.id)}
+          onAdd={() => handleAddToCart(item)}
+        />
       </div>
     </div>
   );
