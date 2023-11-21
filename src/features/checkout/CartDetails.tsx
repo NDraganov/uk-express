@@ -10,10 +10,9 @@ export default function CartDetails() {
     (value, item) => value + item.price * item.quantity,
     0,
   );
-
-  const totalPriceItemsWithShipping = totalPriceItems + shipping;
-
-  const formattedTotalPrice = totalPriceItemsWithShipping.toFixed(2);
+  const formattedTotalPriceItems = totalPriceItems.toFixed(2);
+  const totalPriceWithShipping = totalPriceItems + shipping;
+  const formattedTotalPriceWithShipping = totalPriceWithShipping.toFixed(2);
 
   return (
     <aside className="flex flex-col w-1/2">
@@ -21,7 +20,7 @@ export default function CartDetails() {
         <div className="mt-5">
           <h3 className="text-lg font-medium text-slate-400">Pay UkExpress</h3>
           <span className="text-3xl font-normal text-slate-800">
-            £{formattedTotalPrice}
+            £{formattedTotalPriceWithShipping}
           </span>
         </div>
 
@@ -46,14 +45,19 @@ export default function CartDetails() {
         <DeliveryMethod type="express" />
       </div>
       <div>
+        <p className="text-slate-600 font-medium flex items-center justify-between">
+          Subtotal:{" "}
+          <span className="text-slate-800">£{formattedTotalPriceItems}</span>
+        </p>
+        <hr className="border w-full my-4" />
         <p className="text-slate-400 flex items-center justify-between">
           Shipping: <span>£{shipping}</span>
         </p>
         <hr className="border w-full my-4" />
-        <p className="text-slate-600 font-medium flex items-center justify-between">
+        <p className="text-slate-600 text-lg font-medium flex items-center justify-between">
           Total due:{" "}
           <strong className="text-slate-800 text-xl font-medium">
-            £ {formattedTotalPrice}
+            £ {formattedTotalPriceWithShipping}
           </strong>
         </p>
       </div>
