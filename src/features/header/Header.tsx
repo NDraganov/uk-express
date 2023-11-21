@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Input from "../../ui/Input";
-import Cart from "../cart/Cart";
+import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import { IconContext } from "react-icons";
 import { IoIosSearch } from "react-icons/io";
@@ -33,7 +33,7 @@ export default function Header() {
 
       <CartBadge onOpen={handleOpenCart} />
 
-      {isCartVisible && <Cart onClose={handleCloseCart} />}
+      {isCartVisible && <CartModal onClose={handleCloseCart} />}
     </header>
   );
 }

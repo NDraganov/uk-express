@@ -7,12 +7,14 @@ export default function CartDetails() {
   const cartItems = useAppSelector((state) => state.cart.items);
   const shipping = useAppSelector((state) => state.cart.shipping);
 
-  const totalPrice = cartItems.reduce(
+  const totalPriceItems = cartItems.reduce(
     (value, item) => value + item.price * item.quantity,
     0,
   );
 
-  const formattedTotalPrice = totalPrice.toFixed(2);
+  const totalPriceItemsWithShipping = totalPriceItems + shipping;
+
+  const formattedTotalPrice = totalPriceItemsWithShipping.toFixed(2);
 
   return (
     <aside className="flex flex-col w-1/2">

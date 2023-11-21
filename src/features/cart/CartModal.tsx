@@ -1,12 +1,13 @@
 import { useAppSelector } from "../../store/hooks";
 import CartItem from "./CartItem";
 import Button from "../../ui/Button";
+import CheckoutButton from "../../ui/CheckoutButton";
 
 interface CartProps {
   onClose: () => void;
 }
 
-export default function Cart({ onClose }: CartProps) {
+export default function CartModal({ onClose }: CartProps) {
   const cartItems = useAppSelector((state) => state.cart.items);
 
   const totalPrice = cartItems.reduce(
@@ -17,9 +18,9 @@ export default function Cart({ onClose }: CartProps) {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="right-6 top-28 absolute w-2/4 rounded-md border border-orange-400 bg-black p-4 text-slate-200">
+    <div className="right-6 top-28 absolute w-2/4 rounded-md border bg-gray-50 border-slate-700 p-4 text-slate-600">
       <div>
-        <h3 className="text-xl font-semibold">Your cart</h3>
+        <h3 className="text-xl font-medium">Your cart</h3>
 
         {cartItems.length === 0 && <p>No items in cart!</p>}
 
@@ -38,10 +39,13 @@ export default function Cart({ onClose }: CartProps) {
 
       <div className="mt-4 flex items-center justify-between">
         <p>
-          Total:{" "}
+          Total due:{" "}
           <strong className="text-orange-500">£ {formattedTotalPrice}</strong>
         </p>
-        <Button title="Close" onClick={onClose} />
+        <div className="flex items-center gap-4">
+          <Button title="Close" onClick={onClose} />
+          <CheckoutButton />
+        </div>
       </div>
     </div>
   );
