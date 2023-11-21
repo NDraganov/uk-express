@@ -19,9 +19,9 @@ export default function NavigationLink({ to, title, onClick }: NavLinkProps) {
     );
   } else {
     return (
-      <li>
+      <a className="text-sm text-blue-900 underline">
         <NavLink to={to}>{title}</NavLink>
-      </li>
+      </a>
     );
   }
 }

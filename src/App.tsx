@@ -8,6 +8,7 @@ import WomenClothing from "./features/categories/women-clothing/WomenClothing";
 import MenClothing from "./features/categories/men-clothing/MensClothing";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/men-clothing" element={<MenClothing />} />
         <Route path="/women-clothing" element={<WomenClothing />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
       </Routes>
     </BrowserRouter>
   );

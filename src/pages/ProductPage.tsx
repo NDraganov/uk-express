@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
-import Button from "../ui/Button";
 
 export default function ProductPage() {
   const { productId } = useParams();
