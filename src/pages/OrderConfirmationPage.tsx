@@ -1,6 +1,8 @@
+import { IconContext } from "react-icons";
 import DeliveryDetails from "../features/confirmation/DeliveryDetails";
 import NeedHelp from "../features/confirmation/NeedHelp";
 import OrderSummary from "../features/confirmation/OrderSummary";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function OrderConfirmationPage() {
   return (
@@ -10,9 +12,14 @@ export default function OrderConfirmationPage() {
           <h2 className="text-lg text-slate-700 font-medium">
             Hi (NAME), thank you for shopping with UkExpress!
           </h2>
-          <h1 className="text-2xl font-semibold text-slate-900 my-2">
-            YOUR ORDER WAS PLACED SUCCESSFULLY
-          </h1>
+          <div className="border-2 border-green-500 rounded-md py-1 px-2 w-2/3 my-2 flex items-center justify-between">
+            <h1 className="text-2xl font-semibold text-slate-900">
+              YOUR ORDER WAS PLACED SUCCESSFULLY
+            </h1>
+            <IconContext.Provider value={{ className: "fill-green-500" }}>
+              <FaCheckCircle />
+            </IconContext.Provider>
+          </div>
           <p className="text-sm text-slate-600">Order number: (NUMBER)</p>
           <p className="text-base text-slate-600 my-2">
             We will send confirmation email to shortly
