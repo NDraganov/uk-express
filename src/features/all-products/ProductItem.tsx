@@ -49,7 +49,7 @@ export default function ProductItem({
         </p>
         <div className="flex justify-between gap-4">
           <Button title="Review" onClick={handleReviewProduct} />
-          <Button title="Add to Cart" onClick={handleAddToCart} />
+          <Button title="Add to cart" onClick={handleAddToCart} />
         </div>
       </div>
     </div>
