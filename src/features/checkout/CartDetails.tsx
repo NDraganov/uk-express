@@ -1,5 +1,4 @@
 import { useAppSelector } from "../../store/hooks";
-import BackButton from "../../ui/BackButton";
 import DeliveryMethod from "../../ui/DeliveryMethod";
 import CartItem from "../cart/CartItem";
 
@@ -19,7 +18,6 @@ export default function CartDetails() {
   return (
     <aside className="flex flex-col w-1/2">
       <div>
-        <BackButton />
         <div className="mt-5">
           <h3 className="text-lg font-medium text-slate-400">Pay UkExpress</h3>
           <span className="text-3xl font-normal text-slate-800">

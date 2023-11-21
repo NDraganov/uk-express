@@ -30,7 +30,7 @@ export default function ProductItem({
   }
 
   function handleReviewProduct() {
-    navigate(`product/${id}`);
+    navigate(`/all-products/product/${id}`);
   }
 
   return (

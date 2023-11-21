@@ -13,7 +13,6 @@ export const store = configureStore({
     jewelery: jeweleryReducer,
     menClothing: mensReducer,
     womanClothing: womanReducer,
-
     cart: cartReducer,
   },
 });
