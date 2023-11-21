@@ -2,6 +2,7 @@ import { IconContext } from "react-icons";
 import DeliveryDetails from "../features/confirmation/DeliveryDetails";
 import NeedHelp from "../features/confirmation/NeedHelp";
 import OrderSummary from "../features/confirmation/OrderSummary";
+import Club from "../ui/club";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function OrderConfirmationPage() {
@@ -24,6 +25,7 @@ export default function OrderConfirmationPage() {
           <p className="text-base text-slate-600 my-2">
             We will send confirmation email to shortly
           </p>
+          <Club />
           <DeliveryDetails />
         </div>
         <div className="w-1/3">

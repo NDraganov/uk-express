@@ -5,7 +5,7 @@ export default function DeliveryDetails() {
 
   return (
     <section className="my-6">
-      <div className="w-2/3 border border-slate-300 p-4 text-slate-700 rounded-md">
+      <div className="w-2/3 border border-slate-300 p-4 text-slate-700 rounded-md shadow-md">
         <h3 className="font-semibold">DELIVERY DETAILS</h3>
         <ul className="grid md:grid-cols-5 my-2 gap-2">
           {cartItems.map((item) => (
