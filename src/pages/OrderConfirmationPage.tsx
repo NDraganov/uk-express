@@ -2,7 +2,7 @@ import { IconContext } from "react-icons";
 import DeliveryDetails from "../features/confirmation/DeliveryDetails";
 import NeedHelp from "../features/confirmation/NeedHelp";
 import OrderSummary from "../features/confirmation/OrderSummary";
-import Club from "../ui/club";
+import Club from "../ui/Club";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function OrderConfirmationPage() {

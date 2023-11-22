@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./features/header/Header";
 import CategoriesNav from "./features/header/CategoriesNav";
+import HomePage from "./pages/HomePage";
 import AllProducts from "./features/all-products/AllProducts";
 import Electronics from "./features/categories/electronics/Electronics";
 import Jewelery from "./features/categories/jewelery/Jewelery";
@@ -16,7 +17,7 @@ export default function App() {
       <Header />
       <CategoriesNav />
       <Routes>
-        <Route index />
+        <Route index element={<HomePage />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route
           path="/all-products/product/:productId"
