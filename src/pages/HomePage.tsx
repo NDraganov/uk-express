@@ -1,9 +1,9 @@
-import Carousel from "../features/home/Carousel";
+import HomeCarousel from "../features/home/Carousel";
 
 export default function HomePage() {
   return (
     <main>
-      <Carousel />
+      <HomeCarousel />
     </main>
   );
 }
