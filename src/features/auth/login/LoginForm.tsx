@@ -7,14 +7,33 @@ export default function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input type="email" name="username" id="username" />
+    <form
+      className="flex items-center justify-center flex-col w-1/5"
+      onSubmit={handleSubmit}
+    >
+      <div className="flex items-start justify-center flex-col w-full">
+        <label className="text-lg text-slate-700 font-light" htmlFor="username">
+          Username
+        </label>
+        <input
+          className="rounded-md my-1 w-full border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400"
+          type="email"
+          name="username"
+          id="username"
+          placeholder="Email"
+        />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
+      <div className="flex items-start justify-center flex-col w-full mt-4">
+        <label className="text-lg text-slate-700 font-light" htmlFor="password">
+          Password
+        </label>
+        <input
+          className="rounded-md my-1 w-full border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
       </div>
       <SubmitButton
         title="Login"
