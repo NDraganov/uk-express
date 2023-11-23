@@ -5,6 +5,7 @@ import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import { IconContext } from "react-icons";
 import { IoIosSearch } from "react-icons/io";
+import AuthHeaderButton from "../../ui/AuthHeaderButton";
 
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -31,8 +32,14 @@ export default function Header() {
           </div>
         </div>
       </IconContext.Provider>
-
-      <CartBadge onOpen={handleOpenCart} />
+      <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-2">
+          <AuthHeaderButton to="/login" title="Login" />
+          /
+          <AuthHeaderButton to="/register" title="Register" />
+        </div>
+        <CartBadge onOpen={handleOpenCart} />
+      </div>
 
       {isCartVisible && <CartModal onClose={handleCloseCart} />}
     </header>
