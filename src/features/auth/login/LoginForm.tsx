@@ -8,7 +8,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="flex items-center justify-center flex-col w-1/5"
+      className="flex items-center justify-center flex-col gap-4 w-1/5"
       onSubmit={handleSubmit}
     >
       <div className="flex items-start justify-center flex-col w-full">
@@ -23,7 +23,7 @@ export default function LoginForm() {
           placeholder="Email"
         />
       </div>
-      <div className="flex items-start justify-center flex-col w-full mt-4">
+      <div className="flex items-start justify-center flex-col w-full">
         <label className="text-lg text-slate-700 font-light" htmlFor="password">
           Password
         </label>
