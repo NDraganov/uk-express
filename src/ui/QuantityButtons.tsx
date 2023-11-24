@@ -1,5 +1,5 @@
 import { type CartItem } from "../features/cart/cartSlice";
-import { IconContext } from "react-icons";
+import Icon from "./Icon";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
 interface QuantityButtonsProps {
@@ -15,7 +15,7 @@ export default function QuantityButtons({
 }: QuantityButtonsProps) {
   return (
     <div className="flex gap-3">
-      <IconContext.Provider
+      <Icon
         value={{
           className: "text-2xl fill-slate-500 hover:fill-slate-700",
         }}
@@ -23,9 +23,11 @@ export default function QuantityButtons({
         <button onClick={onRemove}>
           <CiCircleMinus />
         </button>
-      </IconContext.Provider>
+      </Icon>
+
       <span className="text-slate-700">{item.quantity}</span>
-      <IconContext.Provider
+
+      <Icon
         value={{
           className: "text-2xl fill-slate-500 hover:fill-slate-700",
         }}
@@ -33,7 +35,7 @@ export default function QuantityButtons({
         <button onClick={onAdd}>
           <CiCirclePlus />
         </button>
-      </IconContext.Provider>
+      </Icon>
     </div>
   );
 }

@@ -1,8 +1,8 @@
-import { IconContext } from "react-icons";
 import DeliveryDetails from "../features/confirmation/DeliveryDetails";
 import NeedHelp from "../features/confirmation/NeedHelp";
 import OrderSummary from "../features/confirmation/OrderSummary";
 import Club from "../ui/Club";
+import Icon from "../ui/Icon";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function OrderConfirmationPage() {
@@ -17,9 +17,9 @@ export default function OrderConfirmationPage() {
             <h1 className="text-2xl font-semibold text-slate-900">
               YOUR ORDER WAS PLACED SUCCESSFULLY
             </h1>
-            <IconContext.Provider value={{ className: "fill-green-500" }}>
+            <Icon value={{ className: "fill-green-500" }}>
               <FaCheckCircle />
-            </IconContext.Provider>
+            </Icon>
           </div>
           <p className="text-sm text-slate-600">Order number: (NUMBER)</p>
           <p className="text-base text-slate-600 my-2">
