@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const fetchJewelery = createAsyncThunk("fetchJewelery", async () => {
+export const fetchJewelry = createAsyncThunk("fetchJewelry", async () => {
   const res = await fetch(
     "https://fakestoreapi.com/products/category/jewelery",
   );
@@ -25,14 +25,14 @@ export const jewelerySlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchJewelery.pending, (state) => {
+    builder.addCase(fetchJewelry.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(fetchJewelery.fulfilled, (state, action) => {
+    builder.addCase(fetchJewelry.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
     });
-    builder.addCase(fetchJewelery.rejected, (state) => {
+    builder.addCase(fetchJewelry.rejected, (state) => {
       state.isError = true;
     });
   },

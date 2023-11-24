@@ -1,7 +1,7 @@
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch } from "../../../store/hooks";
 import { useNavigate } from "react-router-dom";
-import { addToCart } from "../cart/cartSlice";
-import Button from "../../ui/Button";
+import { addToCart } from "../../cart/cartSlice";
+import Button from "../../../ui/Button";
 export interface ProductItemProps {
   id: number;
   title: string;

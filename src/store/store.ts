@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import allProductsReducer from "../features/all-products/allProductsSlice";
+import allProductsReducer from "../features/categories/all-products/allProductsSlice";
 import cartReducer from "../features/cart/cartSlice";
 import electronicsReducer from "../features/categories/electronics/electronicsSlice";
-import jeweleryReducer from "../features/categories/jewelery/jewelerySlice";
+import jewelryReducer from "../features/categories/jewelry/jewelerySlice";
 import mensReducer from "../features/categories/men-clothing/menSlice";
 import womanReducer from "../features/categories/women-clothing/womenSlice";
 
@@ -10,7 +10,7 @@ export const store = configureStore({
   reducer: {
     allProducts: allProductsReducer,
     electronics: electronicsReducer,
-    jewelery: jeweleryReducer,
+    jewelery: jewelryReducer,
     menClothing: mensReducer,
     womanClothing: womanReducer,
     cart: cartReducer,
