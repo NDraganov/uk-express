@@ -1,15 +1,22 @@
-import { type FormEvent } from "react";
+import { useAppDispatch } from "../../../store/hooks";
+import { useForm } from "react-hook-form";
+import { loginUser, type LoginUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
 export default function LoginForm() {
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-  }
+  const { register, handleSubmit, setValue } = useForm<LoginUser>();
+  const dispatch = useAppDispatch();
+
+  const onSubmit = handleSubmit((data) => {
+    dispatch(loginUser(data));
+    setValue("email", "");
+    setValue("password", "");
+  });
 
   return (
     <form
       className="flex items-center justify-center flex-col gap-4 w-1/5"
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
     >
       <div className="flex items-start justify-center flex-col w-full">
         <label className="text-lg text-slate-700 font-light" htmlFor="username">
@@ -18,9 +25,10 @@ export default function LoginForm() {
         <input
           className="rounded-md my-1 w-full border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400"
           type="email"
-          name="username"
           id="username"
           placeholder="Email"
+          {...register("email")}
+          required
         />
       </div>
       <div className="flex items-start justify-center flex-col w-full">
@@ -30,16 +38,13 @@ export default function LoginForm() {
         <input
           className="rounded-md my-1 w-full border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400"
           type="password"
-          name="password"
           id="password"
           placeholder="Password"
+          {...register("password")}
+          required
         />
       </div>
-      <SubmitButton
-        title="Login"
-        disabled={false}
-        onSubmit={() => handleSubmit}
-      />
+      <SubmitButton title="Login" disabled={false} />
     </form>
   );
 }

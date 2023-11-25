@@ -1,10 +1,9 @@
-import { type FormEvent } from "react";
+import { useForm } from "react-hook-form";
 import SubmitButton from "../../../ui/SubmitButton";
 
 export default function RegisterForm() {
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-  }
+  const { register, handleSubmit } = useForm();
+
   return (
     <form
       className="flex items-center justify-center flex-col gap-4 w-1/5"
@@ -17,9 +16,9 @@ export default function RegisterForm() {
         <input
           className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
           type="email"
-          name="email"
-          id="email"
           placeholder="Email"
+          {...register("email")}
+          required
         />
       </div>
       <div className="flex items-start justify-center flex-col w-full">
@@ -29,9 +28,9 @@ export default function RegisterForm() {
         <input
           className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
           type="password"
-          name="password"
-          id="password"
           placeholder="Password"
+          {...register("password")}
+          required
         />
       </div>
       <div className="flex items-start justify-center flex-col w-full">
@@ -44,16 +43,12 @@ export default function RegisterForm() {
         <input
           className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
           type="password"
-          name="confirmPassword"
-          id="confirmPassword"
           placeholder="Confirm password"
+          {...register("confirmPassword")}
+          required
         />
       </div>
-      <SubmitButton
-        title="Register"
-        disabled={false}
-        onSubmit={() => handleSubmit}
-      />
+      <SubmitButton title="Register" disabled={false} />
     </form>
   );
 }

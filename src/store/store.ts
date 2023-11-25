@@ -5,9 +5,11 @@ import electronicsReducer from "../features/categories/electronics/electronicsSl
 import jewelryReducer from "../features/categories/jewelry/jewelerySlice";
 import mensReducer from "../features/categories/men-clothing/menSlice";
 import womanReducer from "../features/categories/women-clothing/womenSlice";
+import authReducer from "../features/auth/authSlice";
 
 export const store = configureStore({
   reducer: {
+    auth: authReducer,
     allProducts: allProductsReducer,
     electronics: electronicsReducer,
     jewelery: jewelryReducer,

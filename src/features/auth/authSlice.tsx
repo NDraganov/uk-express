@@ -1,31 +1,24 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-
-interface RegisterUserProps {
+import supabase from "../../services/superbase";
+export interface LoginUser {
   email: string;
-  password: number;
+  password: string;
 }
 
-const registerUser = createAsyncThunk(
-  "auth/register",
-  async ({ email, password }: RegisterUserProps, { rejectWithValue }) => {
-    try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-
-      axios.post("https://fakestoreapi.com/users", { email, password }, config);
-    } catch (error) {
-      let message;
-      if (error instanceof Error) message = error.message;
-      if (message) {
-        return rejectWithValue(message);
-      }
-    }
+export const loginUser = createAsyncThunk(
+  "auth/login",
+  async ({ email, password }: LoginUser) => {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (error) throw new Error(error.message);
+    console.log(data);
+    return data;
   },
 );
+
+export const registerUser = createAsyncThunk("auth/register", async () => {});
 
 interface InitialStateProps {
   isLoading: boolean;
@@ -44,6 +37,19 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    // Login Users
+    builder.addCase(loginUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(loginUser.fulfilled, (state) => {
+      state.isLoading = false;
+      state.success = true;
+    });
+    builder.addCase(loginUser.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+    // Register Users
     builder.addCase(registerUser.pending, (state) => {
       state.isLoading = true;
     });
