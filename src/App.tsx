@@ -12,8 +12,9 @@ import CheckoutPage from "./pages/CheckoutPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import PageNotFound from "./pages/PageNotFound";
+import ProtectedRoute from "./ui/ProtectedRoute";
 import Footer from "./features/footer/Footer";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
   return (
@@ -31,8 +32,14 @@ export default function App() {
         <Route path="/jewelry" element={<Jewelry />} />
         <Route path="/men-clothing" element={<MenClothing />} />
         <Route path="/women-clothing" element={<WomenClothing />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route
+            path="/order-confirmation"
+            element={<OrderConfirmationPage />}
+          />
+        </Route>
+
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<PageNotFound />} />
