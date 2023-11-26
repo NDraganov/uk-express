@@ -1,16 +1,21 @@
-import { useAppDispatch } from "../../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { loginUser, type LoginUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
 export default function LoginForm() {
   const { register, handleSubmit, setValue } = useForm<LoginUser>();
+  const { isLoading, isError, success } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
     dispatch(loginUser(data));
     setValue("email", "");
     setValue("password", "");
+    if (isError) console.log("Wrong credentials");
+    if (success) navigate("/");
   });
 
   return (
@@ -29,6 +34,7 @@ export default function LoginForm() {
           placeholder="Email"
           {...register("email")}
           required
+          disabled={isLoading}
         />
       </div>
       <div className="flex items-start justify-center flex-col w-full">
@@ -42,9 +48,10 @@ export default function LoginForm() {
           placeholder="Password"
           {...register("password")}
           required
+          disabled={isLoading}
         />
       </div>
-      <SubmitButton title="Login" disabled={false} />
+      <SubmitButton title="Login" disabled={isLoading} />
     </form>
   );
 }
