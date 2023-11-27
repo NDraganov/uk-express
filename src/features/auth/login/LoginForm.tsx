@@ -12,9 +12,9 @@ export default function LoginForm() {
 
   const onSubmit = handleSubmit((data) => {
     dispatch(loginUser(data));
+    if (isError) console.log("Wrong credentials");
     setValue("email", "");
     setValue("password", "");
-    if (isError) console.log("Wrong credentials");
     if (success) navigate("/");
   });
 

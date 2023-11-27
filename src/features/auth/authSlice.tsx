@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { type User } from "@supabase/supabase-js";
 import supabase from "../../services/superbase";
 
 export const registerUser = createAsyncThunk("auth/register", async () => {});
@@ -24,6 +25,7 @@ interface InitialStateProps {
   isError: boolean;
   success: boolean;
   isAuthenticated: string | undefined;
+  user: User | null;
 }
 
 const initialState: InitialStateProps = {
@@ -31,6 +33,7 @@ const initialState: InitialStateProps = {
   isError: false,
   success: false,
   isAuthenticated: "",
+  user: null,
 };
 
 const authSlice = createSlice({
@@ -57,6 +60,7 @@ const authSlice = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.isLoading = false;
       state.success = true;
+      state.user = action.payload.user;
       state.isAuthenticated = action.payload.user?.role;
     });
     builder.addCase(loginUser.rejected, (state) => {
