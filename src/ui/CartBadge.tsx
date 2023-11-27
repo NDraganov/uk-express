@@ -1,5 +1,5 @@
 import { useAppSelector } from "../store/hooks";
-import { IconContext } from "react-icons";
+import Icon from "./Icon";
 import { BsCart4 } from "react-icons/bs";
 
 interface CartBadgeProps {
@@ -13,13 +13,13 @@ export default function CartBadge({ onOpen }: CartBadgeProps) {
   );
 
   return (
-    <IconContext.Provider value={{ className: "text-[1.5rem] mt-2" }}>
-      <button className="flex items-center h-full" onClick={onOpen}>
-        <BsCart4 />{" "}
-        <span className="absolute top-1 right-4 text-orange-500 rounded-full">
-          {cartItems.length > 0 && cartQuantity}
-        </span>
-      </button>
-    </IconContext.Provider>
+    <button className="flex h-full items-center" onClick={onOpen}>
+      <span className="relative left-5 top-[-15px] font-semibold text-orange-400">
+        {cartItems.length > 0 && cartQuantity}
+      </span>
+      <Icon value={{ className: "text-[1.5rem]" }}>
+        <BsCart4 />
+      </Icon>
+    </button>
   );
 }

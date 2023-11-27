@@ -40,7 +40,7 @@ export default function Header() {
           </Icon>
         </div>
       </div>
-      <div className="flex items-center gap-4 ">
+      <div className="flex items-baseline gap-4 ">
         {isAuthenticated === "authenticated" ? (
           <div className="flex items-center gap-4">
             <UserBadge />
@@ -53,7 +53,6 @@ export default function Header() {
             <AuthHeaderButton to="/register" title="Register" />
           </div>
         )}
-
         <CartBadge onOpen={handleOpenCart} />
       </div>
 
