@@ -1,34 +1,57 @@
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
+import { signupUser, type SignupUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
 export default function SignupForm() {
-  const { register, getValues, handleSubmit } = useForm();
+  const {
+    register,
+    getValues,
+    setValue,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<SignupUser>();
+  const { success, isLoading } = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    dispatch(signupUser(data));
+    console.log(data);
+    if (success) {
+      setValue("fullName", "");
+      setValue("email", "");
+      setValue("password", "");
+      setValue("confirmPassword", "");
+    }
+    // Navigate to the Home page is set on Supabase
+  });
 
   return (
     <form
-      className="flex items-center justify-center flex-col gap-4 w-1/5"
+      className="flex w-1/5 flex-col items-center justify-center gap-4"
       onSubmit={onSubmit}
     >
-      <div className="flex items-start justify-center flex-col w-full">
-        <label className="text-lg text-slate-700 font-light" htmlFor="fullName">
+      <div className="flex w-full flex-col items-start justify-center">
+        <label className="text-lg font-light text-slate-700" htmlFor="fullName">
           Full name
         </label>
         <input
-          className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
+          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="text"
           placeholder="Full name"
           {...register("fullName", { required: "This field is required!" })}
-          required
+          disabled={isLoading}
         />
+        {errors?.fullName && (
+          <p className="text-red-600">{errors.fullName.message}</p>
+        )}
       </div>
-      <div className="flex items-start justify-center flex-col w-full">
-        <label className="text-lg text-slate-700 font-light" htmlFor="email">
-          Email
+      <div className="flex w-full flex-col items-start justify-center">
+        <label className="text-lg font-light text-slate-700" htmlFor="email">
+          Email address
         </label>
         <input
-          className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
+          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -38,15 +61,18 @@ export default function SignupForm() {
               message: "Please provide a valid email address!",
             },
           })}
-          required
+          disabled={isLoading}
         />
+        {errors?.email && (
+          <p className="text-red-600">{errors.email.message}</p>
+        )}
       </div>
-      <div className="flex items-start justify-center flex-col w-full">
-        <label className="text-lg text-slate-700 font-light" htmlFor="password">
-          Password
+      <div className="flex w-full flex-col items-start justify-center">
+        <label className="text-lg font-light text-slate-700" htmlFor="password">
+          Password (min of 8 characters)
         </label>
         <input
-          className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
+          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           placeholder="Password"
           {...register("password", {
@@ -56,18 +82,21 @@ export default function SignupForm() {
               message: "Password needs a minimum of 8 characters!",
             },
           })}
-          required
+          disabled={isLoading}
         />
+        {errors?.password && (
+          <p className="text-red-600">{errors.password.message}</p>
+        )}
       </div>
-      <div className="flex items-start justify-center flex-col w-full">
+      <div className="flex w-full flex-col items-start justify-center">
         <label
-          className="text-lg text-slate-700 font-light"
+          className="text-lg font-light text-slate-700"
           htmlFor="confirmPassword"
         >
-          Confirm password
+          Repeat password
         </label>
         <input
-          className="w-full border border-slate-300 rounded-md focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400 my-1"
+          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           placeholder="Confirm password"
           {...register("confirmPassword", {
@@ -75,10 +104,13 @@ export default function SignupForm() {
             validate: (value) =>
               value === getValues().password || "Passwords need to match!",
           })}
-          required
+          disabled={isLoading}
         />
+        {errors?.confirmPassword && (
+          <p className="text-red-600">{errors.confirmPassword.message}</p>
+        )}
       </div>
-      <SubmitButton title="Register" disabled={false} />
+      <SubmitButton title="Register" disabled={isLoading} />
     </form>
   );
 }

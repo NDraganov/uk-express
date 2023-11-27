@@ -2,11 +2,28 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { type User } from "@supabase/supabase-js";
 import supabase from "../../services/superbase";
 
-export const registerUser = createAsyncThunk("auth/register", async () => {});
+export interface SignupUser {
+  fullName: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
+}
 export interface LoginUser {
   email: string;
   password: string;
 }
+export const signupUser = createAsyncThunk(
+  "auth/signup",
+  async ({ fullName, email, password }: SignupUser) => {
+    const { data } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { fullName } },
+    });
+
+    return data;
+  },
+);
 
 export const loginUser = createAsyncThunk(
   "auth/login",
@@ -46,14 +63,14 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     // Register user
-    builder.addCase(registerUser.pending, (state) => {
+    builder.addCase(signupUser.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(registerUser.fulfilled, (state) => {
+    builder.addCase(signupUser.fulfilled, (state) => {
       state.isLoading = false;
       state.success = true;
     });
-    builder.addCase(registerUser.rejected, (state) => {
+    builder.addCase(signupUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });
