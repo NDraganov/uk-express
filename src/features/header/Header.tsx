@@ -9,6 +9,7 @@ import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import LogoutButton from "../../ui/LogoutButton";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
+import UserBadge from "../../ui/UserBadge";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -41,7 +42,10 @@ export default function Header() {
       </div>
       <div className="flex items-center gap-4 ">
         {isAuthenticated === "authenticated" ? (
-          <LogoutButton onLogout={handleLogout} />
+          <div className="flex items-center gap-4">
+            <UserBadge />
+            <LogoutButton onLogout={handleLogout} />
+          </div>
         ) : (
           <div className="flex items-center gap-2">
             <AuthHeaderButton to="/login" title="Login" />

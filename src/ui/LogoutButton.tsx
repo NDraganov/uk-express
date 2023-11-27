@@ -12,7 +12,7 @@ export default function LogoutButton({ onLogout }: LogoutButtonProps) {
   return (
     <button title="Logout" onClick={onLogout} disabled={isLoading}>
       <Icon
-        value={{ className: "fill-slate-200 hover:fill-orange-500 text-3xl" }}
+        value={{ className: "fill-slate-200 hover:fill-orange-400 text-3xl" }}
       >
         {isLoading ? <Spinner /> : <CiLogout />}
       </Icon>

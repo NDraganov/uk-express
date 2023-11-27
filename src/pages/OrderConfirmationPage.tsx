@@ -7,16 +7,19 @@ import Icon from "../ui/Icon";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function OrderConfirmationPage() {
-  const userName = useAppSelector((state) => state.auth.user?.email);
+  const userName = useAppSelector(
+    (state) => state.auth.user?.user_metadata?.fullName,
+  );
 
   return (
     <main>
-      <div className="flex items-baseline justify-between my-16 mx-28">
+      <div className="mx-28 my-16 flex items-baseline justify-between">
         <div className="w-2/3">
-          <h2 className="text-lg text-slate-700 font-medium">
-            Hi ({userName}), thank you for shopping with UkExpress!
+          <h2 className="text-lg font-medium text-slate-700">
+            Hi <span className="font-semibold">{userName}</span>, thank you for
+            shopping with UkExpress!
           </h2>
-          <div className="border-2 border-green-500 rounded-md py-1 px-2 w-2/3 my-2 flex items-center justify-between">
+          <div className="my-2 flex w-2/3 items-center justify-between rounded-md border-2 border-green-500 px-2 py-1">
             <h1 className="text-2xl font-semibold text-slate-900">
               YOUR ORDER WAS PLACED SUCCESSFULLY
             </h1>
@@ -25,7 +28,7 @@ export default function OrderConfirmationPage() {
             </Icon>
           </div>
           <p className="text-sm text-slate-600">Order number: (NUMBER)</p>
-          <p className="text-base text-slate-600 my-2">
+          <p className="my-2 text-base text-slate-600">
             We will send confirmation email to shortly
           </p>
           <Club />
