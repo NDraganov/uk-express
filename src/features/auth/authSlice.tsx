@@ -20,6 +20,10 @@ export const loginUser = createAsyncThunk(
   },
 );
 
+export const logoutUser = createAsyncThunk("auth/logout", async () => {
+  await supabase.auth.signOut();
+});
+
 interface InitialStateProps {
   isLoading: boolean;
   isError: boolean;
@@ -41,7 +45,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Register users
+    // Register user
     builder.addCase(registerUser.pending, (state) => {
       state.isLoading = true;
     });
@@ -53,7 +57,8 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.isError = true;
     });
-    // Login users
+
+    // Login user
     builder.addCase(loginUser.pending, (state) => {
       state.isLoading = true;
     });
@@ -64,6 +69,20 @@ const authSlice = createSlice({
       state.isAuthenticated = action.payload.user?.role;
     });
     builder.addCase(loginUser.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+
+    // Logout user
+    builder.addCase(logoutUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(logoutUser.fulfilled, (state) => {
+      state.isLoading = false;
+      state.success = true;
+      state.isAuthenticated = "";
+    });
+    builder.addCase(logoutUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });

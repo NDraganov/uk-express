@@ -6,7 +6,7 @@ export default function AllProducts() {
   const allProducts = useAppSelector((state) => state.allProducts);
 
   return (
-    <main>
+    <main className="h-screen">
       <div className="absolute top-1/2 left-1/2">
         {allProducts?.isLoading && <Spinner color="info" size="xl" />}
       </div>
