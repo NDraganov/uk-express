@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { NavLink } from "react-router-dom";
+import { openCart } from "../cart/cartSlice";
 import Input from "../../ui/Input";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
@@ -8,14 +9,11 @@ import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
 
 export default function Header() {
-  const [isCartVisible, setIsCartVisible] = useState(false);
+  const cart = useAppSelector((state) => state.cart.isVisible);
+  const dispatch = useAppDispatch();
 
   function handleOpenCart() {
-    setIsCartVisible(true);
-  }
-
-  function handleCloseCart() {
-    setIsCartVisible(false);
+    dispatch(openCart());
   }
 
   return (
@@ -41,7 +39,7 @@ export default function Header() {
         <CartBadge onOpen={handleOpenCart} />
       </div>
 
-      {isCartVisible && <CartModal onClose={handleCloseCart} />}
+      {cart === true && <CartModal />}
     </header>
   );
 }

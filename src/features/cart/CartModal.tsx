@@ -1,14 +1,12 @@
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { closeCart } from "./cartSlice";
 import CartItem from "./CartItem";
 import Button from "../../ui/Button";
 import CheckoutButton from "../../ui/CheckoutButton";
 
-interface CartProps {
-  onClose: () => void;
-}
-
-export default function CartModal({ onClose }: CartProps) {
+export default function CartModal() {
   const cartItems = useAppSelector((state) => state.cart.items);
+  const dispatch = useAppDispatch();
 
   const totalPrice = cartItems.reduce(
     (value, item) => value + item.price * item.quantity,
@@ -16,6 +14,10 @@ export default function CartModal({ onClose }: CartProps) {
   );
 
   const formattedTotalPrice = totalPrice.toFixed(2);
+
+  function handleCloseCart() {
+    dispatch(closeCart());
+  }
 
   return (
     <div className="right-6 top-28 z-10 absolute w-2/4 rounded-md border bg-neutral-50 border-slate-300 shadow-md p-4 text-slate-600">
@@ -43,8 +45,8 @@ export default function CartModal({ onClose }: CartProps) {
           <strong className="text-orange-500">£{formattedTotalPrice}</strong>
         </p>
         <div className="flex items-center gap-4">
-          <Button title="Close" onClick={onClose} />
-          <CheckoutButton />
+          <Button title="Close" onClick={handleCloseCart} />
+          <CheckoutButton onClose={handleCloseCart} />
         </div>
       </div>
     </div>

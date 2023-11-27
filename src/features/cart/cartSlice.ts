@@ -11,11 +11,13 @@ export interface CartItem {
 interface CartState {
   items: CartItem[];
   shipping: number;
+  isVisible: boolean;
 }
 
 const initialState: CartState = {
   items: [],
   shipping: 0,
+  isVisible: false,
 };
 
 const cartSlice = createSlice({
@@ -55,8 +57,15 @@ const cartSlice = createSlice({
     addShipping(state, action: PayloadAction<number>) {
       state.shipping = action.payload;
     },
+    openCart(state) {
+      state.isVisible = true;
+    },
+    closeCart(state) {
+      state.isVisible = false;
+    },
   },
 });
 
-export const { addToCart, removeFromCart, addShipping } = cartSlice.actions;
+export const { addToCart, removeFromCart, addShipping, openCart, closeCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;
