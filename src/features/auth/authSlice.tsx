@@ -3,7 +3,8 @@ import { type User } from "@supabase/supabase-js";
 import supabase from "../../services/superbase";
 
 export interface SignUpUser {
-  fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   confirmPassword?: string;
@@ -14,11 +15,11 @@ export interface SignInUser {
 }
 export const signUpUser = createAsyncThunk(
   "auth/signUp",
-  async ({ fullName, email, password }: SignUpUser) => {
+  async ({ firstName, lastName, email, password }: SignUpUser) => {
     const { data } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { fullName } },
+      options: { data: { firstName, lastName } },
     });
 
     return data;
