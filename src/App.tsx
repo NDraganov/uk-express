@@ -1,21 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./features/header/Header";
 import CategoriesNav from "./features/header/CategoriesNav";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home/HomePage";
 import AllProducts from "./features/categories/all-products/AllProducts";
 import Electronics from "./features/categories/electronics/Electronics";
 import Jewelry from "./features/categories/jewelry/Jewelry";
 import WomenClothing from "./features/categories/women-clothing/WomenClothing";
 import MenClothing from "./features/categories/men-clothing/MensClothing";
 import ProductPage from "./pages/ProductPage";
-import CheckoutPage from "./pages/CheckoutPage";
+import CheckoutPage from "./pages/checkout/CheckoutPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Footer from "./features/footer/Footer";
 import PageNotFound from "./pages/PageNotFound";
-import UserAccountPage from "./pages/UserAccountPage";
+import UserAccountPage from "./pages/user-account/UserAccountPage";
 
 export default function App() {
   return (

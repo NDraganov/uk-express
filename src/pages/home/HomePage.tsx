@@ -1,4 +1,4 @@
-import HomeCarousel from "../features/home/HomeCarousel";
+import HomeCarousel from "./HomeCarousel";
 
 export default function HomePage() {
   return (

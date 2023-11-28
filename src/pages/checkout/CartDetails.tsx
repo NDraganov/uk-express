@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../store/hooks";
 import DeliveryMethod from "../../ui/DeliveryMethod";
-import CartItem from "../cart/CartItem";
+import CartItem from "../../features/cart/CartItem";
 
 export default function CartDetails() {
   const cartItems = useAppSelector((state) => state.cart.items);
@@ -15,7 +15,7 @@ export default function CartDetails() {
   const formattedTotalPriceWithShipping = totalPriceWithShipping.toFixed(2);
 
   return (
-    <aside className="flex flex-col w-1/2">
+    <aside className="flex w-1/2 flex-col">
       <div>
         <div className="mt-5">
           <h3 className="text-lg font-medium text-slate-400">Pay UkExpress</h3>
@@ -32,7 +32,7 @@ export default function CartDetails() {
           <ul className="mb-2 mt-2">
             {cartItems.map((item) => {
               return (
-                <li className="justify-between flex items-center" key={item.id}>
+                <li className="flex items-center justify-between" key={item.id}>
                   <CartItem {...item} />
                 </li>
               );
@@ -40,23 +40,23 @@ export default function CartDetails() {
           </ul>
         )}
       </div>
-      <div className="flex items-center justify-center gap-4 my-6">
+      <div className="my-6 flex items-center justify-center gap-4">
         <DeliveryMethod type="standard" />
         <DeliveryMethod type="express" />
       </div>
       <div>
-        <p className="text-slate-600 font-medium flex items-center justify-between">
+        <p className="flex items-center justify-between font-medium text-slate-600">
           Subtotal:{" "}
           <span className="text-slate-800">£{formattedTotalPriceItems}</span>
         </p>
-        <hr className="border w-full my-4" />
-        <p className="text-slate-400 flex items-center justify-between">
+        <hr className="my-4 w-full border" />
+        <p className="flex items-center justify-between text-slate-400">
           Shipping: <span>£{shipping}</span>
         </p>
-        <hr className="border w-full my-4" />
-        <p className="text-slate-600 text-lg font-medium flex items-center justify-between">
+        <hr className="my-4 w-full border" />
+        <p className="flex items-center justify-between text-lg font-medium text-slate-600">
           Total due:{" "}
-          <strong className="text-slate-800 text-xl font-medium">
+          <strong className="text-xl font-medium text-slate-800">
             £ {formattedTotalPriceWithShipping}
           </strong>
         </p>
