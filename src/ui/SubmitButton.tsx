@@ -11,7 +11,7 @@ export default function SubmitButton({ title, disabled }: SubmitButtonProps) {
   return (
     <button
       className={`bg-${
-        isError ? "red-600" : "orange-400"
+        isError ? "red-600" : "orange-600"
       } my-4 rounded-md px-10 py-2 font-medium text-slate-100 hover:bg-orange-500`}
       type="submit"
       disabled={disabled}

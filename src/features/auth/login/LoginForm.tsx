@@ -7,6 +7,7 @@ import SubmitButton from "../../../ui/SubmitButton";
 export default function LoginForm() {
   const { register, handleSubmit, setValue } = useForm<LoginUser>();
   const { isLoading, isError, success } = useAppSelector((state) => state.auth);
+  const userId = useAppSelector((state) => state.auth.user?.id);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -16,21 +17,21 @@ export default function LoginForm() {
     if (success) {
       setValue("email", "");
       setValue("password", "");
-      navigate("/");
+      navigate(`/users/${userId}`);
     }
   });
 
   return (
     <form
-      className="flex items-center justify-center flex-col gap-4 w-1/5"
+      className="flex w-1/5 flex-col items-center justify-center gap-4"
       onSubmit={onSubmit}
     >
-      <div className="flex items-start justify-center flex-col w-full">
-        <label className="text-lg text-slate-700 font-light" htmlFor="username">
+      <div className="flex w-full flex-col items-start justify-center">
+        <label className="text-lg font-light text-slate-700" htmlFor="username">
           Username
         </label>
         <input
-          className="rounded-md my-1 w-full border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400"
+          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="email"
           id="username"
           placeholder="Email"
@@ -39,12 +40,12 @@ export default function LoginForm() {
           disabled={isLoading}
         />
       </div>
-      <div className="flex items-start justify-center flex-col w-full">
-        <label className="text-lg text-slate-700 font-light" htmlFor="password">
+      <div className="flex w-full flex-col items-start justify-center">
+        <label className="text-lg font-light text-slate-700" htmlFor="password">
           Password
         </label>
         <input
-          className="rounded-md my-1 w-full border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-orange-500 placeholder-slate-400"
+          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           id="password"
           placeholder="Password"
