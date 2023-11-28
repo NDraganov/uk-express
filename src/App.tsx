@@ -1,24 +1,24 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./features/header/Header";
 import CategoriesNav from "./features/header/CategoriesNav";
-import HomePage from "./pages/home/HomePage";
+import HomePage from "./pages/HomePage";
 import AllProducts from "./features/categories/all-products/AllProducts";
 import Electronics from "./features/categories/electronics/Electronics";
 import Jewelry from "./features/categories/jewelry/Jewelry";
 import WomenClothing from "./features/categories/women-clothing/WomenClothing";
 import MenClothing from "./features/categories/men-clothing/MensClothing";
 import ProductPage from "./pages/ProductPage";
-import CheckoutPage from "./pages/checkout/CheckoutPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Footer from "./features/footer/Footer";
 import PageNotFound from "./pages/PageNotFound";
-import UserAccountPage from "./pages/user-account/UserAccountPage";
-import AccountInformation from "./pages/user-account/sidebar-links/AccountInformation";
-import MyCard from "./pages/user-account/sidebar-links/MyCard";
-import ChangePassword from "./pages/user-account/sidebar-links/ChangePassword";
+import UserAccountPage from "./pages/UserAccountPage";
+import AccountInformation from "./features/user-account/sidebar-links/account-info/AccountInformation";
+import MyCart from "./features/user-account/sidebar-links/my-cart/MyCart";
+import ChangePassword from "./features/user-account/sidebar-links/ChangePassword";
 
 export default function App() {
   return (
@@ -42,7 +42,7 @@ export default function App() {
               path="/users/:userId/account-information"
               element={<AccountInformation />}
             />
-            <Route path="/users/:userId/my-card" element={<MyCard />} />
+            <Route path="/users/:userId/my-card" element={<MyCart />} />
             <Route
               path="/users/:userId/change-password"
               element={<ChangePassword />}

@@ -1,6 +1,6 @@
-import CartDetails from "./CartDetails";
-import Payment from "./Payment";
-import BackButton from "../../ui/BackButton";
+import CartDetails from "../features/checkout/CartDetails";
+import Payment from "../features/checkout/Payment";
+import BackButton from "../ui/BackButton";
 
 export default function CheckoutPage() {
   return (

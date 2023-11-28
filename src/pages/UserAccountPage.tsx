@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import UserHeader from "./UserHeader";
-import Sidebar from "./Sidebar";
+import UserHeader from "../features/user-account/UserHeader";
+import Sidebar from "../features/user-account/Sidebar";
 
 export default function UserAccountPage() {
   return (
