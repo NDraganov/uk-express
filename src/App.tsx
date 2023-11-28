@@ -16,6 +16,7 @@ import ProtectedRoute from "./ui/ProtectedRoute";
 import Footer from "./features/footer/Footer";
 import PageNotFound from "./pages/PageNotFound";
 import UserAccountPage from "./pages/user-account/UserAccountPage";
+import AccountInformation from "./pages/user-account/sidebar-links/AccountInformation";
 
 export default function App() {
   return (
@@ -24,7 +25,7 @@ export default function App() {
       <CategoriesNav />
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/users/:userId" element={<UserAccountPage />} />
+
         <Route path="/all-products" element={<AllProducts />} />
         <Route
           path="/all-products/product/:productId"
@@ -35,6 +36,12 @@ export default function App() {
         <Route path="/men-clothing" element={<MenClothing />} />
         <Route path="/women-clothing" element={<WomenClothing />} />
         <Route element={<ProtectedRoute />}>
+          <Route path="/users/:userId" element={<UserAccountPage />}>
+            <Route
+              path="/users/:userId/account-information"
+              element={<AccountInformation />}
+            />
+          </Route>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route
             path="/order-confirmation"
