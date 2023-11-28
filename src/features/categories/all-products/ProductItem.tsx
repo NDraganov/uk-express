@@ -2,6 +2,7 @@ import { useAppDispatch } from "../../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../cart/cartSlice";
 import Button from "../../../ui/Button";
+
 export interface ProductItemProps {
   id: number;
   title: string;
@@ -33,7 +34,7 @@ export default function ProductItem({
   }
 
   return (
-    <div className=" flex h-full flex-col items-center justify-between text-slate-700 border-b-2 border-slate-200">
+    <div className=" flex h-full flex-col items-center justify-between border-b-2 border-slate-200 text-slate-700">
       <img className="mb-4 mt-4 w-32" src={image} alt={title} />
       <div className=" w-full">
         <h3>{title}</h3>
