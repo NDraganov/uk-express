@@ -17,6 +17,8 @@ import Footer from "./features/footer/Footer";
 import PageNotFound from "./pages/PageNotFound";
 import UserAccountPage from "./pages/user-account/UserAccountPage";
 import AccountInformation from "./pages/user-account/sidebar-links/AccountInformation";
+import MyCard from "./pages/user-account/sidebar-links/MyCard";
+import ChangePassword from "./pages/user-account/sidebar-links/ChangePassword";
 
 export default function App() {
   return (
@@ -25,7 +27,6 @@ export default function App() {
       <CategoriesNav />
       <Routes>
         <Route index element={<HomePage />} />
-
         <Route path="/all-products" element={<AllProducts />} />
         <Route
           path="/all-products/product/:productId"
@@ -41,6 +42,11 @@ export default function App() {
               path="/users/:userId/account-information"
               element={<AccountInformation />}
             />
+            <Route path="/users/:userId/my-card" element={<MyCard />} />
+            <Route
+              path="/users/:userId/change-password"
+              element={<ChangePassword />}
+            />
           </Route>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route
@@ -48,7 +54,6 @@ export default function App() {
             element={<OrderConfirmationPage />}
           />
         </Route>
-
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<PageNotFound />} />
