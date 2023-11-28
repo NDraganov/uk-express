@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { signUpUser, type SignUpUser } from "../authSlice";
-import SubmitButton from "../../../ui/SubmitButton";
+import FormButton from "../../../ui/FormButton";
 
 export default function SignUpForm() {
   const {
@@ -16,9 +16,9 @@ export default function SignUpForm() {
 
   const onSubmit = handleSubmit((data) => {
     dispatch(signUpUser(data));
-    console.log(data);
     if (success) {
-      setValue("fullName", "");
+      setValue("firstName", "");
+      setValue("lastName", "");
       setValue("email", "");
       setValue("password", "");
       setValue("confirmPassword", "");
@@ -28,30 +28,45 @@ export default function SignUpForm() {
 
   return (
     <form
-      className="flex w-1/5 flex-col items-center justify-center gap-4"
+      className="flex w-3/5 flex-col items-start justify-center gap-4"
       onSubmit={onSubmit}
     >
-      <div className="flex w-full flex-col items-start justify-center">
+      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
         <label className="text-lg font-light text-slate-700" htmlFor="fullName">
-          Full name
+          FIRST NAME
         </label>
         <input
-          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="text"
           placeholder="Full name"
-          {...register("fullName", { required: "This field is required!" })}
+          {...register("firstName", { required: "This field is required!" })}
           disabled={isLoading}
         />
-        {errors?.fullName && (
-          <p className="text-red-600">{errors.fullName.message}</p>
+        {errors?.firstName && (
+          <p className="text-red-600">{errors.firstName.message}</p>
         )}
       </div>
-      <div className="flex w-full flex-col items-start justify-center">
-        <label className="text-lg font-light text-slate-700" htmlFor="email">
-          Email address
+      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
+        <label className="text-lg font-light text-slate-700" htmlFor="lastName">
+          LAST NAME
         </label>
         <input
-          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          type="text"
+          placeholder="Last name"
+          {...register("lastName", { required: "This field is required!" })}
+          disabled={isLoading}
+        />
+        {errors?.lastName && (
+          <p className="text-red-600">{errors.lastName.message}</p>
+        )}
+      </div>
+      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
+        <label className="text-lg font-light text-slate-700" htmlFor="email">
+          EMAIL ADDRESS
+        </label>
+        <input
+          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -67,12 +82,12 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.email.message}</p>
         )}
       </div>
-      <div className="flex w-full flex-col items-start justify-center">
+      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
         <label className="text-lg font-light text-slate-700" htmlFor="password">
-          Password (min of 8 characters)
+          PASSWORD (min of 8 characters)
         </label>
         <input
-          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           placeholder="Password"
           {...register("password", {
@@ -88,15 +103,15 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.password.message}</p>
         )}
       </div>
-      <div className="flex w-full flex-col items-start justify-center">
+      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
         <label
           className="text-lg font-light text-slate-700"
           htmlFor="confirmPassword"
         >
-          Repeat password
+          REPEAT PASSWORD
         </label>
         <input
-          className="my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           placeholder="Confirm password"
           {...register("confirmPassword", {
@@ -110,7 +125,9 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.confirmPassword.message}</p>
         )}
       </div>
-      <SubmitButton title="Register" disabled={isLoading} />
+      <div className="mt-10">
+        <FormButton type="submit" title="SIGN UP" />
+      </div>
     </form>
   );
 }

@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { signInUser, type SignInUser } from "../authSlice";
-import SubmitButton from "../../../ui/SubmitButton";
+import FormButton from "../../../ui/FormButton";
 
 export default function SignInForm() {
   const { register, handleSubmit, setValue } = useForm<SignInUser>();
@@ -54,7 +54,7 @@ export default function SignInForm() {
           disabled={isLoading}
         />
       </div>
-      <SubmitButton title="Login" disabled={isLoading} />
+      <FormButton type="submit" title="SIGN IN" />
     </form>
   );
 }
