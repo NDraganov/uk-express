@@ -2,19 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { type User } from "@supabase/supabase-js";
 import supabase from "../../services/superbase";
 
-export interface SignupUser {
+export interface SignUpUser {
   fullName: string;
   email: string;
   password: string;
   confirmPassword?: string;
 }
-export interface LoginUser {
+export interface SignInUser {
   email: string;
   password: string;
 }
-export const signupUser = createAsyncThunk(
-  "auth/signup",
-  async ({ fullName, email, password }: SignupUser) => {
+export const signUpUser = createAsyncThunk(
+  "auth/signUp",
+  async ({ fullName, email, password }: SignUpUser) => {
     const { data } = await supabase.auth.signUp({
       email,
       password,
@@ -25,9 +25,9 @@ export const signupUser = createAsyncThunk(
   },
 );
 
-export const loginUser = createAsyncThunk(
-  "auth/login",
-  async ({ email, password }: LoginUser) => {
+export const signInUser = createAsyncThunk(
+  "auth/singIn",
+  async ({ email, password }: SignInUser) => {
     const { data } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -37,7 +37,7 @@ export const loginUser = createAsyncThunk(
   },
 );
 
-export const logoutUser = createAsyncThunk("auth/logout", async () => {
+export const signOutUser = createAsyncThunk("auth/signOut", async () => {
   await supabase.auth.signOut();
 });
 
@@ -62,44 +62,44 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Register user
-    builder.addCase(signupUser.pending, (state) => {
+    // Sign Up user
+    builder.addCase(signUpUser.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(signupUser.fulfilled, (state) => {
+    builder.addCase(signUpUser.fulfilled, (state) => {
       state.isLoading = false;
       state.success = true;
     });
-    builder.addCase(signupUser.rejected, (state) => {
+    builder.addCase(signUpUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });
 
-    // Login user
-    builder.addCase(loginUser.pending, (state) => {
+    // Sign In user
+    builder.addCase(signInUser.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(loginUser.fulfilled, (state, action) => {
+    builder.addCase(signInUser.fulfilled, (state, action) => {
       state.isLoading = false;
       state.success = true;
       state.user = action.payload.user;
       state.isAuthenticated = action.payload.user?.role;
     });
-    builder.addCase(loginUser.rejected, (state) => {
+    builder.addCase(signInUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });
 
     // Logout user
-    builder.addCase(logoutUser.pending, (state) => {
+    builder.addCase(signOutUser.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(logoutUser.fulfilled, (state) => {
+    builder.addCase(signOutUser.fulfilled, (state) => {
       state.isLoading = false;
       state.success = true;
       state.isAuthenticated = "";
     });
-    builder.addCase(logoutUser.rejected, (state) => {
+    builder.addCase(signOutUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });

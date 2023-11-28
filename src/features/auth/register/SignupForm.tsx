@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
-import { signupUser, type SignupUser } from "../authSlice";
+import { signUpUser, type SignUpUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
 export default function SignupForm() {
@@ -10,12 +10,12 @@ export default function SignupForm() {
     setValue,
     formState: { errors },
     handleSubmit,
-  } = useForm<SignupUser>();
+  } = useForm<SignUpUser>();
   const { success, isLoading } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
   const onSubmit = handleSubmit((data) => {
-    dispatch(signupUser(data));
+    dispatch(signUpUser(data));
     console.log(data);
     if (success) {
       setValue("fullName", "");

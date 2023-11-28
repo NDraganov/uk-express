@@ -1,15 +1,15 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { NavLink, useNavigate } from "react-router-dom";
 import { openCart } from "../cart/cartSlice";
-import { logoutUser } from "../auth/authSlice";
+import { signOutUser } from "../auth/authSlice";
 import Input from "../../ui/Input";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import LogoutButton from "../../ui/LogoutButton";
+import UserBadge from "../../ui/UserBadge";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
-import UserBadge from "../../ui/UserBadge";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -22,7 +22,7 @@ export default function Header() {
   }
 
   function handleLogout() {
-    dispatch(logoutUser());
+    dispatch(signOutUser());
     navigate("/login", { replace: true });
   }
 

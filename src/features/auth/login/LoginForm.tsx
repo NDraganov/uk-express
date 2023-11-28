@@ -1,18 +1,18 @@
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { loginUser, type LoginUser } from "../authSlice";
+import { signInUser, type SignInUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
 export default function LoginForm() {
-  const { register, handleSubmit, setValue } = useForm<LoginUser>();
+  const { register, handleSubmit, setValue } = useForm<SignInUser>();
   const { isLoading, isError, success } = useAppSelector((state) => state.auth);
   const userId = useAppSelector((state) => state.auth.user?.id);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
-    dispatch(loginUser(data));
+    dispatch(signInUser(data));
     if (isError) console.log("Wrong credentials");
     if (success) {
       setValue("email", "");
