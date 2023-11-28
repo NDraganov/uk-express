@@ -17,7 +17,7 @@ export default function AccountInformation() {
             type="text"
             id="firstName"
             title="First name"
-            placeholder={user?.user_metadata.fullName}
+            placeholder={user?.user_metadata.firstName}
             disabled={true}
           />
         </div>
@@ -28,7 +28,7 @@ export default function AccountInformation() {
             type="text"
             id="lastName"
             title="Last name"
-            placeholder={user?.user_metadata.fullName}
+            placeholder={user?.user_metadata.lastName}
             disabled={true}
           />
         </div>

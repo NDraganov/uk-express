@@ -7,9 +7,9 @@ import Icon from "../ui/Icon";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function OrderConfirmationPage() {
-  const userName = useAppSelector(
-    (state) => state.auth.user?.user_metadata?.fullName,
-  );
+  const user = useAppSelector((state) => state.auth.user);
+
+  const userName = user?.user_metadata.firstName.toUpperCase();
 
   return (
     <main>
