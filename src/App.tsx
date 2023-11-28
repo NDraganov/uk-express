@@ -18,7 +18,7 @@ import PageNotFound from "./pages/PageNotFound";
 import UserAccountPage from "./pages/UserAccountPage";
 import AccountInformation from "./features/user-account/sidebar-links/account-info/AccountInformation";
 import MyCart from "./features/user-account/sidebar-links/my-cart/MyCart";
-import ChangePassword from "./features/user-account/sidebar-links/ChangePassword";
+import ChangePassword from "./features/user-account/sidebar-links/change-password/ChangePassword";
 
 export default function App() {
   return (

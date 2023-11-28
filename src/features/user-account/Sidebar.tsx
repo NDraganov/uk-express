@@ -2,7 +2,7 @@ import SidebarLink from "../../ui/SidebarLink";
 
 export default function Sidebar() {
   return (
-    <aside className="h-screen w-1/4 border-r-2 border-gray-200">
+    <aside className="h-screen w-2/6 border-r-2 border-gray-200">
       <nav>
         <ul className="grid min-h-screen grid-flow-row">
           <SidebarLink to="account-information" title="ACCOUNT INFORMATION" />
