@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { signUpUser, type SignUpUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
-export default function SignupForm() {
+export default function SignUpForm() {
   const {
     register,
     getValues,

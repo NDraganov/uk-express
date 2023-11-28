@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signInUser, type SignInUser } from "../authSlice";
 import SubmitButton from "../../../ui/SubmitButton";
 
-export default function LoginForm() {
+export default function SignInForm() {
   const { register, handleSubmit, setValue } = useForm<SignInUser>();
   const { isLoading, isError, success } = useAppSelector((state) => state.auth);
   const userId = useAppSelector((state) => state.auth.user?.id);

@@ -10,8 +10,8 @@ import MenClothing from "./features/categories/men-clothing/MensClothing";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import SignInPage from "./pages/SignInPage";
+import RegisterPage from "./pages/SignUpPage";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Footer from "./features/footer/Footer";
 import PageNotFound from "./pages/PageNotFound";
@@ -54,7 +54,7 @@ export default function App() {
             element={<OrderConfirmationPage />}
           />
         </Route>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<SignInPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
