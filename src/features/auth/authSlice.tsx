@@ -13,6 +13,13 @@ export interface SignInUser {
   email: string;
   password: string;
 }
+
+export interface UpdateUser {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
 export const signUpUser = createAsyncThunk(
   "auth/signUp",
   async ({ firstName, lastName, email, password }: SignUpUser) => {
@@ -32,6 +39,18 @@ export const signInUser = createAsyncThunk(
     const { data } = await supabase.auth.signInWithPassword({
       email,
       password,
+    });
+
+    return data;
+  },
+);
+
+export const updateUser = createAsyncThunk(
+  "auth/updateUser",
+  async ({ firstName, lastName, email }: UpdateUser) => {
+    const { data } = await supabase.auth.updateUser({
+      email: email,
+      data: { firstName: firstName, lastName: lastName },
     });
 
     return data;
@@ -87,6 +106,19 @@ const authSlice = createSlice({
       state.isAuthenticated = action.payload.user?.role;
     });
     builder.addCase(signInUser.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+
+    // Update user
+    builder.addCase(updateUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(updateUser.fulfilled, (state) => {
+      state.isLoading = false;
+      state.success = true;
+    });
+    builder.addCase(updateUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });
