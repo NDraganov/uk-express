@@ -48,9 +48,9 @@ export default function Header() {
           </div>
         ) : (
           <div className="flex items-center gap-2">
-            <AuthHeaderButton to="/login" title="Login" />
+            <AuthHeaderButton to="/sign-in" title="Login" />
             /
-            <AuthHeaderButton to="/register" title="Register" />
+            <AuthHeaderButton to="/sign-up" title="Register" />
           </div>
         )}
         <CartBadge onOpen={handleOpenCart} />
