@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { signUpUser, type SignUpUser } from "../authSlice";
@@ -13,6 +14,7 @@ export default function SignUpForm() {
   } = useForm<SignUpUser>();
   const { success, isLoading } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
     dispatch(signUpUser(data));
@@ -22,6 +24,7 @@ export default function SignUpForm() {
       setValue("email", "");
       setValue("password", "");
       setValue("confirmPassword", "");
+      navigate("/sign-in");
     }
     // Navigate to the Home page is set on Supabase
   });

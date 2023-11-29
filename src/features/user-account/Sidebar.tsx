@@ -8,7 +8,7 @@ export default function Sidebar() {
           <SidebarLink to="account-information" title="ACCOUNT INFORMATION" />
           <SidebarLink to="my-card" title="MY CART" />
           <SidebarLink to="change-password" title="CHANGE PASSWORD" />
-          <SidebarLink to="/" title="LOG OUT" />
+          <SidebarLink to="/" title="SIGN OUT" />
         </ul>
       </nav>
     </aside>

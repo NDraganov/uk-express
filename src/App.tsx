@@ -54,8 +54,8 @@ export default function App() {
             element={<OrderConfirmationPage />}
           />
         </Route>
-        <Route path="/login" element={<SignInPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<RegisterPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

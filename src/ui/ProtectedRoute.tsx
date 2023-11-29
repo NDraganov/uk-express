@@ -1,11 +1,7 @@
-import { Outlet, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
-import { Spinner } from "flowbite-react";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
-// interface ProtectedRouteProps {
-//   children: ReactNode;
-// }
+import { Spinner } from "flowbite-react";
 
 export default function ProtectedRoute() {
   const { isLoading, isAuthenticated } = useAppSelector((state) => state.auth);
@@ -13,7 +9,7 @@ export default function ProtectedRoute() {
 
   useEffect(
     function () {
-      if (!isAuthenticated && !isLoading) navigate("/login");
+      if (!isAuthenticated && !isLoading) navigate("/sign-in");
     },
     [navigate, isAuthenticated, isLoading],
   );
@@ -23,7 +19,7 @@ export default function ProtectedRoute() {
   if (isLoading)
     return (
       <main>
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex h-screen items-center justify-center">
           <Spinner />
         </div>
       </main>

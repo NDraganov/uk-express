@@ -5,12 +5,13 @@ interface NavLinkProps {
   title: string;
   onClick?: () => void;
 }
+
 export default function NavigationLink({ to, title, onClick }: NavLinkProps) {
   if (onClick) {
     return (
       <li>
         <button
-          className="rounded-md px-5 py-1 ring-1 ring-slate-300 hover:ring-offset-1 font-medium"
+          className="rounded-md px-5 py-1 font-medium ring-1 ring-slate-300 hover:ring-offset-1"
           onClick={onClick}
         >
           <NavLink to={to}>{title}</NavLink>
