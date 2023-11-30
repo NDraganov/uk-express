@@ -29,19 +29,17 @@ export default function ChangePassword() {
       dispatch(signOutUser());
     }
   });
+
   return (
-    <div>
-      <h1>CHANGE PASSWORD</h1>
-      <form onSubmit={onSubmit}>
-        <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
-          <label
-            className="text-lg font-light text-slate-700"
-            htmlFor="password"
-          >
-            NEW PASSWORD (min of 8 characters)
-          </label>
+    <div className="h-screen">
+      <form className="mx-10 grid h-2/4" onSubmit={onSubmit}>
+        <h1 className="flex items-center justify-start border-b-2 border-gray-200 font-bold text-black">
+          CHANGE PASSWORD
+        </h1>
+        <div className="flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
+          <label htmlFor="password">NEW PASSWORD (min of 8 characters)</label>
           <input
-            className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+            className="col-span-2 my-1 w-2/4 rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
             type="password"
             placeholder="Password"
             {...register("password", {
@@ -57,15 +55,10 @@ export default function ChangePassword() {
             <p className="text-red-600">{errors.password.message}</p>
           )}
         </div>
-        <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
-          <label
-            className="text-lg font-light text-slate-700"
-            htmlFor="confirmNewPassword"
-          >
-            REPEAT PASSWORD
-          </label>
+        <div className="flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
+          <label htmlFor="confirmNewPassword">REPEAT PASSWORD</label>
           <input
-            className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+            className="col-span-2 my-1 w-2/4 rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
             type="password"
             placeholder="Confirm password"
             {...register("confirmNewPassword", {
@@ -79,7 +72,9 @@ export default function ChangePassword() {
             <p className="text-red-600">{errors.confirmNewPassword.message}</p>
           )}
         </div>
-        <FormButton title="Update" type="submit" />
+        <div className="flex items-center justify-end">
+          <FormButton title="Update" type="submit" />
+        </div>
       </form>
     </div>
   );
