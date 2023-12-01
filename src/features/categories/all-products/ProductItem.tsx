@@ -2,31 +2,22 @@ import { useAppDispatch } from "../../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../cart/cartSlice";
 import Button from "../../../ui/Button";
-
-export interface ProductItemProps {
-  id: number;
-  title: string;
-  description?: string;
-  price: number;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
+import { Product } from "../../../api/apiSlice";
 
 export default function ProductItem({
   id,
+  brand,
   title,
   price,
-  image,
-  rating: { rate, count },
-}: ProductItemProps) {
+  images,
+  rating,
+  stock,
+}: Product) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   function handleAddToCart() {
-    dispatch(addToCart({ id, title, price, image }));
+    dispatch(addToCart({ id, title, price, images }));
   }
 
   function handleReviewProduct() {
@@ -35,17 +26,18 @@ export default function ProductItem({
 
   return (
     <div className=" flex h-full flex-col items-center justify-between border-b-2 border-slate-200 text-slate-700">
-      <img className="mb-4 mt-4 w-32" src={image} alt={title} />
+      <img className="mb-4 mt-4 w-32" src={images[1]} alt={title} />
       <div className=" w-full">
         <h3>{title}</h3>
+        <h4>{brand}</h4>
         <p>
-          ⭐️⭐️⭐️⭐️⭐️ <span>{rate}</span>
+          ⭐️⭐️⭐️⭐️⭐️ <span>{rating}</span>
         </p>
         <p>
           £<span className="text-lg font-bold">{price}</span>
         </p>
         <p>
-          availability: <span className="font-normal">{count}</span>
+          availability: <span className="font-normal">{stock}</span>
         </p>
         <div className="flex justify-between gap-4">
           <Button title="Review" onClick={handleReviewProduct} />

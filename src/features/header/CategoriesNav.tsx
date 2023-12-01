@@ -1,15 +1,19 @@
 import { Outlet } from "react-router-dom";
 import NavigationLink from "../../ui/NavigationLink";
 import { useAppDispatch } from "../../store/hooks";
-import { fetchAllProducts } from "../categories/all-products/allProductsSlice";
 import { fetchElectronics } from "../categories/electronics/electronicsSlice";
 import { fetchJewelry } from "../categories/jewelry/jewelerySlice";
 import { fetchMens } from "../categories/men-clothing/menSlice";
 import { fetchWomen } from "../categories/women-clothing/womenSlice";
+import { useGetAllProductsQuery } from "../../api/apiSlice";
 
 export default function CategoriesNav() {
   const dispatch = useAppDispatch();
+  const { data } = useGetAllProductsQuery(undefined);
 
+  function fetchProducts() {
+    return data?.products;
+  }
   return (
     <>
       <header>
@@ -18,7 +22,7 @@ export default function CategoriesNav() {
             <NavigationLink
               to="all-products"
               title="All products"
-              onClick={() => dispatch(fetchAllProducts())}
+              onClick={() => fetchProducts()}
             />
             <NavigationLink
               to="electronics"
