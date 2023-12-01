@@ -8,7 +8,7 @@ export default function UserAccountPage() {
       <UserHeader />
       <div className="flex">
         <Sidebar />
-        <main className="h-screen w-full">
+        <main className="min-h-screen w-full">
           <Outlet />
         </main>
       </div>

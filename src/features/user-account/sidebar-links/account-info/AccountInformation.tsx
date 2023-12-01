@@ -39,7 +39,7 @@ export default function AccountInformation() {
 
   return (
     <div className="h-screen">
-      <form className="mx-10 grid h-5/6" onSubmit={onSubmit}>
+      <form className="mx-10 grid h-4/6" onSubmit={onSubmit}>
         <h1 className="flex items-center justify-start border-b-2 border-gray-200 font-bold text-black">
           ACCOUNT INFORMATION
         </h1>
