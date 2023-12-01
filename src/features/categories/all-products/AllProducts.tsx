@@ -4,7 +4,7 @@ import { Spinner } from "flowbite-react";
 
 export default function AllProducts() {
   const { data: products, isLoading } = useGetAllProductsQuery(undefined);
-
+  console.log(products);
   return (
     <main className="min-h-screen">
       <div className="absolute left-1/2 top-1/2">

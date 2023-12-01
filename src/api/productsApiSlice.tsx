@@ -17,6 +17,10 @@ interface Products {
   products: Product[];
 }
 
+interface Smartphones {
+  products: Product[];
+}
+
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
@@ -26,7 +30,10 @@ export const productsApi = createApi({
       query: () => "products",
       providesTags: ["Products"],
     }),
+    getSmartphones: builder.query<Smartphones, undefined>({
+      query: () => "products/category/smartphones",
+    }),
   }),
 });
 
-export const { useGetAllProductsQuery } = productsApi;
+export const { useGetAllProductsQuery, useGetSmartphonesQuery } = productsApi;

@@ -19,6 +19,7 @@ import UserAccountPage from "./pages/UserAccountPage";
 import AccountInformation from "./features/user-account/sidebar-links/account-info/AccountInformation";
 import MyCart from "./features/user-account/sidebar-links/my-cart/MyCart";
 import ChangePassword from "./features/user-account/sidebar-links/change-password/ChangePassword";
+import Smartphones from "./features/categories/smartphones/Smartphones";
 
 export default function App() {
   return (
@@ -28,6 +29,10 @@ export default function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/all-products" element={<AllProducts />} />
+        <Route
+          path="/products/category/smartphones"
+          element={<Smartphones />}
+        />
         <Route
           path="/all-products/product/:productId"
           element={<ProductPage />}
