@@ -6,6 +6,7 @@ import jewelryReducer from "../features/categories/jewelry/jewelerySlice";
 import mensReducer from "../features/categories/men-clothing/menSlice";
 import womanReducer from "../features/categories/women-clothing/womenSlice";
 import authReducer from "../features/auth/authSlice";
+import { productsApi } from "../api/apiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,7 +17,10 @@ export const store = configureStore({
     menClothing: mensReducer,
     womanClothing: womanReducer,
     cart: cartReducer,
+    [productsApi.reducerPath]: productsApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(productsApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
