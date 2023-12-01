@@ -17,9 +17,9 @@ export default function CartItem(item: CartItem) {
   }
 
   return (
-    <div className="flex items-center w-full mt-6 gap-4">
-      <img className="w-10" src={item.image} alt={item.title} />
-      <div className="flex flex-col w-full">
+    <div className="mt-6 flex w-full items-center gap-4">
+      <img className="w-10" src={item.images[1]} alt={item.title} />
+      <div className="flex w-full flex-col">
         <div className="flex items-center justify-between">
           <span className="font-medium text-slate-700">{item.title}</span>
           <span className="font-medium text-slate-700">
