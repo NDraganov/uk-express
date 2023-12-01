@@ -1,4 +1,4 @@
-import { useGetAllProductsQuery } from "../../../api/apiSlice";
+import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
 import ProductItem from "./ProductItem";
 import { Spinner } from "flowbite-react";
 

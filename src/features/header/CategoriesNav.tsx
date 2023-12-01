@@ -5,7 +5,7 @@ import { fetchElectronics } from "../categories/electronics/electronicsSlice";
 import { fetchJewelry } from "../categories/jewelry/jewelerySlice";
 import { fetchMens } from "../categories/men-clothing/menSlice";
 import { fetchWomen } from "../categories/women-clothing/womenSlice";
-import { useGetAllProductsQuery } from "../../api/apiSlice";
+import { useGetAllProductsQuery } from "../../api/productsApiSlice";
 
 export default function CategoriesNav() {
   const dispatch = useAppDispatch();

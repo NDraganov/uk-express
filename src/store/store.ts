@@ -5,7 +5,7 @@ import jewelryReducer from "../features/categories/jewelry/jewelerySlice";
 import mensReducer from "../features/categories/men-clothing/menSlice";
 import womanReducer from "../features/categories/women-clothing/womenSlice";
 import authReducer from "../features/auth/authSlice";
-import { productsApi } from "../api/apiSlice";
+import { productsApi } from "../api/productsApiSlice";
 
 export const store = configureStore({
   reducer: {

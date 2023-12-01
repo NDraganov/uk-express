@@ -1,4 +1,4 @@
-import { useGetAllProductsQuery } from "../api/apiSlice";
+import { useGetAllProductsQuery } from "../api/productsApiSlice";
 
 export default function DummyProducts() {
   const { data: products } = useGetAllProductsQuery(undefined);
