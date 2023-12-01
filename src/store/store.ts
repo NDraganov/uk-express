@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import allProductsReducer from "../features/categories/all-products/allProductsSlice";
 import cartReducer from "../features/cart/cartSlice";
 import electronicsReducer from "../features/categories/electronics/electronicsSlice";
 import jewelryReducer from "../features/categories/jewelry/jewelerySlice";
@@ -11,7 +10,6 @@ import { productsApi } from "../api/apiSlice";
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    allProducts: allProductsReducer,
     electronics: electronicsReducer,
     jewelery: jewelryReducer,
     menClothing: mensReducer,
