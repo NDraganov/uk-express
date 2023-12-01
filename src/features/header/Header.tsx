@@ -23,7 +23,7 @@ export default function Header() {
 
   function handleLogout() {
     dispatch(signOutUser());
-    navigate("/login", { replace: true });
+    navigate("/sign-in", { replace: true });
   }
 
   return (

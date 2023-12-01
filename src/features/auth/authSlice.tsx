@@ -18,6 +18,8 @@ export interface UpdateUser {
   firstName: string;
   lastName: string;
   email: string;
+  password: string;
+  confirmNewPassword: string;
 }
 
 export const signUpUser = createAsyncThunk(
@@ -47,9 +49,10 @@ export const signInUser = createAsyncThunk(
 
 export const updateUser = createAsyncThunk(
   "auth/updateUser",
-  async ({ firstName, lastName, email }: UpdateUser) => {
+  async ({ firstName, lastName, email, password }: UpdateUser) => {
     const { data } = await supabase.auth.updateUser({
       email: email,
+      password: password,
       data: { firstName: firstName, lastName: lastName },
     });
 
