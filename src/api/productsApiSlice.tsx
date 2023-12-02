@@ -1,25 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-export interface Product {
-  id: number;
-  brand: string;
-  category: string;
-  title: string;
-  description?: string;
-  images: string[];
-  price: number;
-  rating: number;
-  stock: number;
-  thumbnail: string;
-}
-
-interface Products {
-  products: Product[];
-}
-
-interface Smartphones {
-  products: Product[];
-}
+import {
+  type Laptops,
+  type Products,
+  type Smartphones,
+} from "./products-types/productsTypes";
 
 export const productsApi = createApi({
   reducerPath: "productsApi",
@@ -33,7 +17,14 @@ export const productsApi = createApi({
     getSmartphones: builder.query<Smartphones, undefined>({
       query: () => "products/category/smartphones",
     }),
+    getLaptops: builder.query<Laptops, undefined>({
+      query: () => "products/category/laptops",
+    }),
   }),
 });
 
-export const { useGetAllProductsQuery, useGetSmartphonesQuery } = productsApi;
+export const {
+  useGetAllProductsQuery,
+  useGetSmartphonesQuery,
+  useGetLaptopsQuery,
+} = productsApi;

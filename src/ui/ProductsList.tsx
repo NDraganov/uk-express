@@ -1,6 +1,6 @@
 import ProductItem from "./ProductItem";
 import { Spinner } from "flowbite-react";
-import { type Product } from "../api/productsApiSlice";
+import { type Product } from "../api/products-types/productsTypes";
 
 interface ProductListProps {
   data: Product[] | undefined;

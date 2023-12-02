@@ -2,7 +2,7 @@ import { useAppDispatch } from "../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../features/cart/cartSlice";
 import Button from "./Button";
-import { type Product } from "../api/productsApiSlice";
+import { type Product } from "../api/products-types/productsTypes";
 
 export default function ProductItem({
   id,
