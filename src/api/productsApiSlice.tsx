@@ -11,7 +11,7 @@ export const productsApi = createApi({
   tagTypes: ["Products"],
   endpoints: (builder) => ({
     getAllProducts: builder.query<Products, undefined>({
-      query: () => "products",
+      query: () => "products?limit=0",
       providesTags: ["Products"],
     }),
     getSmartphones: builder.query<Smartphones, undefined>({

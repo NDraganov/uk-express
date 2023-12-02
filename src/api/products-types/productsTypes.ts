@@ -20,5 +20,5 @@ export interface Smartphones {
 }
 
 export interface Laptops {
-  laptops: Product[];
+  products: Product[];
 }
