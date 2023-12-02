@@ -1,7 +1,5 @@
 import { useAppSelector } from "../../../store/hooks";
-import ProductItem, {
-  type ProductItemProps,
-} from "../all-products/ProductItem";
+import ProductItem, { type ProductItemProps } from "../../../ui/ProductItem";
 import { Spinner } from "flowbite-react";
 
 export default function WomenClothing() {
@@ -9,7 +7,7 @@ export default function WomenClothing() {
 
   return (
     <main>
-      <div className="absolute top-1/2 left-1/2">
+      <div className="absolute left-1/2 top-1/2">
         {womenClothing?.isLoading && <Spinner color="info" size="xl" />}
       </div>
       <ul className="grid gap-4 p-10 md:grid-cols-3">
