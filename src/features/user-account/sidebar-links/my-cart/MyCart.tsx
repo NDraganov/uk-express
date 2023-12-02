@@ -10,8 +10,9 @@ export default function MyCart() {
   const navigate = useNavigate();
 
   function handleShopping() {
-    navigate("/all-products");
+    navigate("/products");
   }
+
   return (
     <div className="min-h-screen">
       {cartItems.length === 0 ? (

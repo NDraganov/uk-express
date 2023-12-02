@@ -10,6 +10,9 @@ export const productsApi = createApi({
       query: () => "products?limit=0",
       providesTags: ["Products"],
     }),
+    getSingleProduct: builder.query<Products, string>({
+      query: (product) => `products/search?q=${product}`,
+    }),
     getSmartphones: builder.query<Products, undefined>({
       query: () => "products/category/smartphones",
     }),
@@ -75,6 +78,7 @@ export const productsApi = createApi({
 
 export const {
   useGetAllProductsQuery,
+  useGetSingleProductQuery,
   useGetSmartphonesQuery,
   useGetLaptopsQuery,
   useGetFragrancesQuery,
