@@ -14,11 +14,3 @@ export interface Product {
 export interface Products {
   products: Product[];
 }
-
-export interface Smartphones {
-  products: Product[];
-}
-
-export interface Laptops {
-  products: Product[];
-}
