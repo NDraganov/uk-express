@@ -1,12 +1,10 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { openCart } from "../cart/cartSlice";
-import { signOutUser } from "../auth/authSlice";
 import Input from "../../ui/Input";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
-import LogoutButton from "../../ui/LogoutButton";
 import UserBadge from "../../ui/UserBadge";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
@@ -15,15 +13,9 @@ export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
   const { isAuthenticated } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   function handleOpenCart() {
     dispatch(openCart());
-  }
-
-  function handleLogout() {
-    dispatch(signOutUser());
-    navigate("/sign-in", { replace: true });
   }
 
   return (
@@ -42,10 +34,7 @@ export default function Header() {
       </div>
       <div className="flex items-baseline gap-4 ">
         {isAuthenticated === "authenticated" ? (
-          <div className="flex items-center gap-4">
-            <UserBadge />
-            <LogoutButton onLogout={handleLogout} />
-          </div>
+          <UserBadge />
         ) : (
           <div className="flex items-center gap-2">
             <AuthHeaderButton to="/sign-in" title="Login" />

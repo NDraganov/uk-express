@@ -99,7 +99,7 @@ export default function App() {
               path="/users/:userId/account-information"
               element={<AccountInformation />}
             />
-            <Route path="/users/:userId/my-card" element={<MyCart />} />
+            <Route path="/users/:userId/my-cart" element={<MyCart />} />
             <Route
               path="/users/:userId/change-password"
               element={<ChangePassword />}

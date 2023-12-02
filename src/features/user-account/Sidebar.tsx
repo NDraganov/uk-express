@@ -14,7 +14,7 @@ export default function Sidebar() {
       <nav className="h-full">
         <ul className="flex flex-col items-start">
           <SidebarLink to="account-information" title="ACCOUNT INFORMATION" />
-          <SidebarLink to="my-card" title="MY CART" />
+          <SidebarLink to="my-cart" title="MY CART" />
           <SidebarLink to="change-password" title="CHANGE PASSWORD" />
           <SidebarLink to="/" title="SIGN OUT" onClick={onSignOut} />
         </ul>
