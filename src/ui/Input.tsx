@@ -16,7 +16,19 @@ export default function Input() {
     setIsActive((active) => !active);
   }
 
-  if (isError) return error;
+  if (isError) {
+    if ("status" in error) {
+      const errMsg =
+        "error" in error ? error.error : JSON.stringify(error.data);
+      return (
+        <div>
+          <p>An error has occurred:</p>
+          <p className="text-red-600">{errMsg}</p>
+        </div>
+      );
+    }
+  }
+  if (isLoading) return <Spinner />;
 
   return (
     <div>
@@ -32,11 +44,9 @@ export default function Input() {
       {isActive && (
         <div className="absolute mt-2 w-96 rounded-sm border border-gray-400 bg-slate-50 p-2 text-black">
           <ul>
-            {isLoading && <Spinner />}
-
             {singleProduct?.products.map((product) => (
               <li key={product.id}>
-                <h2>{product.title}</h2>
+                <p>{product.title}</p>
               </li>
             ))}
           </ul>
