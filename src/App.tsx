@@ -29,7 +29,7 @@ export default function App() {
       <CategoriesNav />
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/products" element={<AllProducts />} />
         <Route
           path="/products/category/smartphones"
           element={<Smartphones />}

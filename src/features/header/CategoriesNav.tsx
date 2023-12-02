@@ -1,50 +1,39 @@
-import { Outlet } from "react-router-dom";
-import NavigationLink from "../../ui/NavigationLink";
-import { useAppDispatch } from "../../store/hooks";
-import { fetchElectronics } from "../categories/electronics/electronicsSlice";
-import { fetchJewelry } from "../categories/jewelry/jewelerySlice";
-import { fetchMens } from "../categories/men-clothing/menSlice";
-import { fetchWomen } from "../categories/women-clothing/womenSlice";
-import { useGetAllProductsQuery } from "../../api/productsApiSlice";
+import { NavLink, Outlet } from "react-router-dom";
+import {
+  useGetAllProductsQuery,
+  useGetSmartphonesQuery,
+} from "../../api/productsApiSlice";
+import { Dropdown } from "flowbite-react";
 
 export default function CategoriesNav() {
-  const dispatch = useAppDispatch();
-  const { data } = useGetAllProductsQuery(undefined);
+  const { data: products } = useGetAllProductsQuery(undefined);
+  const { data: smartphones } = useGetSmartphonesQuery(undefined);
 
-  function fetchProducts() {
-    return data?.products;
-  }
   return (
     <>
-      <header>
-        <nav className="h-12 bg-black">
-          <ul className="flex items-center justify-center gap-4 py-1 text-sm text-slate-200">
-            <NavigationLink
-              to="all-products"
-              title="All products"
-              onClick={() => fetchProducts()}
-            />
-            <NavigationLink
-              to="electronics"
-              title="Electronics"
-              onClick={() => dispatch(fetchElectronics())}
-            />
-            <NavigationLink
-              to="jewelry"
-              title="Jewelry"
-              onClick={() => dispatch(fetchJewelry())}
-            />
-            <NavigationLink
-              to="men-clothing"
-              title="Men's clothing"
-              onClick={() => dispatch(fetchMens())}
-            />
-            <NavigationLink
-              to="women-clothing"
-              title="Women's clothing"
-              onClick={() => dispatch(fetchWomen())}
-            />
-          </ul>
+      <header className="h-12 bg-black px-4 text-slate-50">
+        <nav>
+          <Dropdown className="" label="All categories" inline>
+            <Dropdown.Item
+              as={NavLink}
+              to="/products/category/smartphones"
+              onClick={() => {
+                return smartphones?.products;
+              }}
+            >
+              Smartphones
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item
+              as={NavLink}
+              to="/products"
+              onClick={() => {
+                return products?.products;
+              }}
+            >
+              All products
+            </Dropdown.Item>
+          </Dropdown>
         </nav>
       </header>
       <main>
