@@ -26,8 +26,11 @@ export default function Input() {
           <p className="text-red-600">{errMsg}</p>
         </div>
       );
+    } else {
+      return <p className="text-red-600">{error.message}</p>;
     }
   }
+
   if (isLoading) return <Spinner />;
 
   return (
