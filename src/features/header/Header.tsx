@@ -19,20 +19,20 @@ export default function Header() {
   }
 
   return (
-    <header className="flex h-14 items-center justify-between bg-black px-3 py-2 text-slate-200">
-      <h2 className="flex items-baseline text-2xl font-bold">
-        <NavLink to="/">UkExpress</NavLink>
-        <span className="text-base font-normal">.co.uk</span>
+    <header className="flex h-14 items-center justify-between px-3 py-2 text-black">
+      <h2 className="text-2xl font-light">
+        <NavLink to="/">
+          UkExpress
+          <span className="text-base">.co.uk</span>
+        </NavLink>
       </h2>
-      <div className="flex items-center">
+      <div className="flex items-center rounded-md border border-gray-400 pr-2">
         <Input />
-        <div className="rounded-r-md bg-orange-600 p-1">
-          <Icon value={{ className: "text-[1.5rem]" }}>
-            <IoIosSearch />
-          </Icon>
-        </div>
+        <Icon value={{ className: "text-[1.5rem]" }}>
+          <IoIosSearch />
+        </Icon>
       </div>
-      <div className="flex items-baseline gap-4 ">
+      <div className="flex items-center gap-4 ">
         {isAuthenticated === "authenticated" ? (
           <UserBadge />
         ) : (

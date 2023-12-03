@@ -13,7 +13,8 @@ export default function UserBadge() {
   const { isLoading } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
-  const userName = user?.user_metadata.firstName;
+  const userName =
+    user?.user_metadata.firstName + " " + user?.user_metadata.lastName;
   const userEmail = user?.email;
 
   return (
@@ -21,9 +22,7 @@ export default function UserBadge() {
       <Dropdown label={userName} inline>
         <Dropdown.Header>
           <span className="block text-sm">{userName}</span>
-          <span className="block truncate text-sm font-medium">
-            {userEmail}
-          </span>
+          <span className="block truncate text-sm font-light">{userEmail}</span>
         </Dropdown.Header>
         <Dropdown.Item
           as={NavLink}

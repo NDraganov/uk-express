@@ -35,7 +35,7 @@ export default function Input() {
     <div>
       <form>
         <input
-          className="h-8 w-96 rounded-l-md p-2 text-black"
+          className="mr-2 h-8 w-96 rounded-l-md border-none p-2 font-light text-black placeholder:font-light placeholder:text-gray-400"
           type="text"
           onChange={(e) => setInput(e.target.value)}
           onClick={() => handleClick()}
@@ -43,7 +43,7 @@ export default function Input() {
         />
       </form>
       {isActive && (
-        <div className="absolute mt-2 w-96 rounded-sm border border-gray-400 bg-slate-50 p-2 text-black">
+        <div className="absolute z-20 mt-2 w-96 rounded-sm border border-gray-400 bg-white p-2 text-black">
           <ul>
             {isLoading && <Spinner />}
             {singleProduct?.products.map((product) => (
