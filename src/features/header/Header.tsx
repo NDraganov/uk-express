@@ -20,7 +20,7 @@ export default function Header() {
   }
 
   return (
-    <div className="fixed left-0 right-0 top-0 bg-white">
+    <div className="fixed left-0 right-0 top-0 z-10 bg-white">
       <header className="flex h-14 items-center justify-between border-b border-gray-300 px-3 py-2 text-black">
         <h2 className="text-2xl font-light">
           <NavLink to="/">
