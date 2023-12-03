@@ -79,7 +79,7 @@ export default function SignInForm() {
         )}
       </div>
       <NavigationLink to="/" title="Forgot your password?" />
-      <FormButton type="submit" title="Sign In" />
+      <FormButton type="submit" title="Sign In" disabled={isLoading} />
     </form>
   );
 }

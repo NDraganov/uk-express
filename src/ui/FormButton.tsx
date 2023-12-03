@@ -23,7 +23,13 @@ export default function FormButton({
         title={title}
         {...restProps}
       >
-        {isLoading ? <Spinner /> : title}
+        {isLoading ? (
+          <div className="flex items-center justify-between gap-2">
+            <Spinner color="purple" size="sm" /> <span>Processing...</span>
+          </div>
+        ) : (
+          title
+        )}
       </button>
     );
   return (
@@ -35,7 +41,13 @@ export default function FormButton({
       title={title}
       {...restProps}
     >
-      {isLoading ? <Spinner /> : title}
+      {isLoading ? (
+        <div className="flex items-center justify-between gap-2">
+          <Spinner color="purple" size="sm" /> <span>Processing...</span>
+        </div>
+      ) : (
+        title
+      )}
     </button>
   );
 }

@@ -12,12 +12,13 @@ export default function SignUpForm() {
     formState: { errors },
     handleSubmit,
   } = useForm<SignUpUser>();
-  const { success, isLoading } = useAppSelector((state) => state.auth);
+  const { success, isLoading, isError } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
     dispatch(signUpUser(data));
+    if (isError) console.log("Something went wrong!");
     if (success) {
       setValue("firstName", "");
       setValue("lastName", "");
@@ -31,15 +32,18 @@ export default function SignUpForm() {
 
   return (
     <form
-      className="flex w-3/5 flex-col items-start justify-center gap-4"
+      className="flex w-2/5 flex-col items-center justify-center"
       onSubmit={onSubmit}
     >
-      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
-        <label className="text-lg font-light text-slate-700" htmlFor="fullName">
-          FIRST NAME
+      <div className="w-full">
+        <label
+          className="text-base font-light text-slate-700"
+          htmlFor="fullName"
+        >
+          First name
         </label>
         <input
-          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="text"
           placeholder="Full name"
           {...register("firstName", { required: "This field is required!" })}
@@ -49,12 +53,15 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.firstName.message}</p>
         )}
       </div>
-      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
-        <label className="text-lg font-light text-slate-700" htmlFor="lastName">
-          LAST NAME
+      <div className="w-full">
+        <label
+          className="text-base font-light text-slate-700"
+          htmlFor="lastName"
+        >
+          Last name
         </label>
         <input
-          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="text"
           placeholder="Last name"
           {...register("lastName", { required: "This field is required!" })}
@@ -64,12 +71,12 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.lastName.message}</p>
         )}
       </div>
-      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
-        <label className="text-lg font-light text-slate-700" htmlFor="email">
-          EMAIL ADDRESS
+      <div className="w-full">
+        <label className="text-base font-light text-slate-700" htmlFor="email">
+          Email address
         </label>
         <input
-          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -85,12 +92,15 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.email.message}</p>
         )}
       </div>
-      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
-        <label className="text-lg font-light text-slate-700" htmlFor="password">
-          PASSWORD (min of 8 characters)
+      <div className="w-full">
+        <label
+          className="text-base font-light text-slate-700"
+          htmlFor="password"
+        >
+          Password (min of 8 characters)
         </label>
         <input
-          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           placeholder="Password"
           {...register("password", {
@@ -106,15 +116,15 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.password.message}</p>
         )}
       </div>
-      <div className="grid w-full grid-flow-col grid-cols-4 place-items-start items-center justify-between gap-2">
+      <div className="w-full">
         <label
-          className="text-lg font-light text-slate-700"
+          className="text-base font-light text-slate-700"
           htmlFor="confirmPassword"
         >
-          REPEAT PASSWORD
+          Repeat password
         </label>
         <input
-          className="col-span-2 my-1 w-full rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           type="password"
           placeholder="Confirm password"
           {...register("confirmPassword", {
@@ -128,8 +138,8 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.confirmPassword.message}</p>
         )}
       </div>
-      <div className="mt-10">
-        <FormButton type="submit" title="SIGN UP" />
+      <div className="">
+        <FormButton type="submit" title="Sign Up" disabled={isLoading} />
       </div>
     </form>
   );
