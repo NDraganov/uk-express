@@ -29,7 +29,7 @@ export default function ProductItem({
   if (isLoading) return <Spinner color="info" size="xl" />;
 
   return (
-    <div className="flex h-full flex-col items-center justify-between rounded-md border border-gray-300 p-2 text-slate-700">
+    <div className="flex h-full flex-col items-center justify-between rounded-md border border-gray-300 p-2 text-slate-700 shadow-lg shadow-gray-300">
       <img className="w-full rounded-t-md" src={images[1]} alt={title} />
       <div className=" w-full">
         <h3 className="text-xl">{title}</h3>
