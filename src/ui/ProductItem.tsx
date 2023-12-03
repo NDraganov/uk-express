@@ -29,16 +29,16 @@ export default function ProductItem({
   if (isLoading) return <Spinner color="info" size="xl" />;
 
   return (
-    <div className=" flex h-full flex-col items-center justify-between border-b-2 border-slate-200 text-slate-700">
-      <img className="mb-4 mt-4 w-32" src={images[1]} alt={title} />
+    <div className="flex h-full flex-col items-center justify-between rounded-md border border-gray-300 p-2 text-slate-700">
+      <img className="w-full rounded-t-md" src={images[1]} alt={title} />
       <div className=" w-full">
-        <h3>{title}</h3>
+        <h3 className="text-xl">{title}</h3>
         <h4>{brand}</h4>
-        <p>
+        <p className="my-2">
           ⭐️⭐️⭐️⭐️⭐️ <span>{rating}</span>
         </p>
         <p>
-          £<span className="text-lg font-bold">{price}</span>
+          £<span className="text-xl font-medium">{price}</span>
         </p>
         <p>
           availability: <span className="font-normal">{stock}</span>
