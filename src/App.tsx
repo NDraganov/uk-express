@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./features/header/Header";
-import CategoriesNav from "./features/header/CategoriesNav";
 import HomePage from "./pages/HomePage";
 import AllProducts from "./features/categories/all-products/AllProducts";
 import ProductPage from "./pages/ProductPage";
@@ -40,7 +39,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <CategoriesNav />
       <Routes>
         <Route index element={<HomePage />} />
         // All products Route

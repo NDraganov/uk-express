@@ -49,9 +49,9 @@ export default function CategoriesNav() {
 
   return (
     <>
-      <header className="h-12 bg-black px-4 text-slate-50">
+      <div className="flex h-full items-center border-b border-gray-300 px-4 py-1">
         <nav>
-          <Dropdown className="" label="All categories" inline>
+          <Dropdown className="" label="Categories" inline>
             <div className="flex">
               <div id="first-six">
                 <Dropdown.Item
@@ -255,7 +255,7 @@ export default function CategoriesNav() {
             </Dropdown.Item>
           </Dropdown>
         </nav>
-      </header>
+      </div>
       <main>
         <Outlet />
       </main>

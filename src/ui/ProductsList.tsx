@@ -15,8 +15,10 @@ export default function ProductsList({ data, isLoading }: ProductListProps) {
       </div>
     );
   return (
-    <div className="mx-40 my-20">
-      <p className="mb-4 text-2xl font-medium text-slate-700">Results</p>
+    <div className="mx-40 my-40">
+      <p className="mb-4 text-2xl font-normal text-black">
+        Results <span className="text-lg font-light">1 of {data?.length}</span>
+      </p>
       <ul className="grid gap-5 md:grid-cols-4">
         {data?.map((product) => (
           <li key={product.id}>
