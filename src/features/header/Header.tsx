@@ -38,7 +38,6 @@ export default function Header() {
         ) : (
           <div className="flex items-center gap-2">
             <AuthHeaderButton to="/sign-in" title="Login" />
-            /
             <AuthHeaderButton to="/sign-up" title="Register" />
           </div>
         )}

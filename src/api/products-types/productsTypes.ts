@@ -9,7 +9,6 @@ export interface Product {
   rating: number;
   stock: number;
   thumbnail: string;
-  isLoading: boolean;
 }
 
 export interface Products {

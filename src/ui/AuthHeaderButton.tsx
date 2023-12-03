@@ -7,7 +7,7 @@ interface AuthHeaderButtonProps {
 
 export default function AuthHeaderButton({ to, title }: AuthHeaderButtonProps) {
   return (
-    <button className="text-slate-100 font-medium hover:text-orange-500">
+    <button className="font-normal text-slate-100 hover:text-orange-500">
       <NavLink to={to}>{title}</NavLink>
     </button>
   );

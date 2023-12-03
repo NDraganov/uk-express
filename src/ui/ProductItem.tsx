@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { addToCart } from "../features/cart/cartSlice";
 import { type Product } from "../api/products-types/productsTypes";
 import Button from "./Button";
-import { Spinner } from "flowbite-react";
 
 export default function ProductItem({
   id,
@@ -13,7 +12,6 @@ export default function ProductItem({
   images,
   rating,
   stock,
-  isLoading,
 }: Product) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -25,8 +23,6 @@ export default function ProductItem({
   function handleReviewProduct() {
     navigate(`/all-products/product/${id}`);
   }
-
-  if (isLoading) return <Spinner color="info" size="xl" />;
 
   return (
     <div className="flex h-full flex-col items-center justify-between rounded-md border border-gray-300 p-2 text-slate-700 shadow-lg shadow-gray-300">
