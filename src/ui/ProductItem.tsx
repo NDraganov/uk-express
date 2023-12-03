@@ -1,8 +1,9 @@
 import { useAppDispatch } from "../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../features/cart/cartSlice";
-import Button from "./Button";
 import { type Product } from "../api/products-types/productsTypes";
+import Button from "./Button";
+import { Spinner } from "flowbite-react";
 
 export default function ProductItem({
   id,
@@ -12,6 +13,7 @@ export default function ProductItem({
   images,
   rating,
   stock,
+  isLoading,
 }: Product) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -23,6 +25,8 @@ export default function ProductItem({
   function handleReviewProduct() {
     navigate(`/all-products/product/${id}`);
   }
+
+  if (isLoading) return <Spinner color="info" size="xl" />;
 
   return (
     <div className=" flex h-full flex-col items-center justify-between border-b-2 border-slate-200 text-slate-700">

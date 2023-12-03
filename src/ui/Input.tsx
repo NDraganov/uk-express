@@ -1,6 +1,6 @@
-import { Spinner } from "flowbite-react";
 import { useGetSingleProductQuery } from "../api/productsApiSlice";
 import { useState } from "react";
+import { Spinner } from "flowbite-react";
 
 export default function Input() {
   const [isActive, setIsActive] = useState(false);
@@ -31,8 +31,6 @@ export default function Input() {
     }
   }
 
-  if (isLoading) return <Spinner />;
-
   return (
     <div>
       <form>
@@ -47,6 +45,7 @@ export default function Input() {
       {isActive && (
         <div className="absolute mt-2 w-96 rounded-sm border border-gray-400 bg-slate-50 p-2 text-black">
           <ul>
+            {isLoading && <Spinner />}
             {singleProduct?.products.map((product) => (
               <li key={product.id}>
                 <p>{product.title}</p>

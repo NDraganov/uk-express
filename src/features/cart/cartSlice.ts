@@ -12,12 +12,14 @@ interface CartState {
   items: CartItem[];
   shipping: number;
   isVisible: boolean;
+  isSuccess: boolean;
 }
 
 const initialState: CartState = {
   items: [],
   shipping: 0,
   isVisible: false,
+  isSuccess: false,
 };
 
 const cartSlice = createSlice({
@@ -39,6 +41,7 @@ const cartSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.items[itemIndex].quantity++;
+        state.isSuccess = true;
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
@@ -50,12 +53,14 @@ const cartSlice = createSlice({
 
       if (state.items[itemIndex].quantity === 1) {
         state.items.splice(itemIndex, 1);
+        state.isSuccess = true;
       } else {
         state.items[itemIndex].quantity--;
       }
     },
     addShipping(state, action: PayloadAction<number>) {
       state.shipping = action.payload;
+      state.isSuccess = true;
     },
     openCart(state) {
       state.isVisible = true;
