@@ -6,7 +6,7 @@ export default function SignInPage() {
   const navigate = useNavigate();
 
   return (
-    <main>
+    <main className="my-20">
       <div className="flex h-screen items-center">
         <div className="flex w-3/4 flex-col items-center justify-center">
           <h1 className="mb-5 text-5xl font-semibold text-black">

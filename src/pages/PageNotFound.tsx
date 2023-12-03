@@ -10,12 +10,12 @@ export default function PageNotFound() {
   }
 
   return (
-    <main>
+    <main className="my-40">
       <BackButton />
-      <div className="flex items-center justify-center flex-col h-screen">
-        <p className="text-5xl text-red-500 font-bold">404</p>
-        <h1 className="text-4xl text-slate-900 my-3">Page not found!</h1>
-        <p className="text-slate-500 my-2">
+      <div className="flex h-screen flex-col items-center justify-center">
+        <p className="text-5xl font-bold text-red-500">404</p>
+        <h1 className="my-3 text-4xl text-slate-900">Page not found!</h1>
+        <p className="my-2 text-slate-500">
           Please double check your Url or visit our Home page
         </p>
         <Button title="Home" onClick={handleClick} />

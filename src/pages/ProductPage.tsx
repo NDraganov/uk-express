@@ -14,19 +14,19 @@ export default function ProductPage() {
   );
 
   return (
-    <main>
+    <main className="my-40">
       {!product && <p>Error</p>}
-      <div className="mt-10 ml-10">
+      <div className="ml-10 mt-10">
         <BackButton />
       </div>
-      <div className="flex my-10 mx-20">
-        <div className="w-1/2 flex items-center justify-center">
+      <div className="mx-20 my-10 flex">
+        <div className="flex w-1/2 items-center justify-center">
           <img className="h-96" src={product?.image} alt={product?.title} />
         </div>
-        <section className="w-1/2 flex items-baseline justify-start flex-col pt-10">
+        <section className="flex w-1/2 flex-col items-baseline justify-start pt-10">
           <h2 className="text-3xl text-slate-700">{product?.title}</h2>
           <p className="pt-10 text-slate-600">{product?.description}</p>
-          <div className="flex items-baseline justify-left w-full flex-col">
+          <div className="justify-left flex w-full flex-col items-baseline">
             <p className="pt-5">
               ⭐️⭐️⭐️⭐️⭐️
               <span className="text-slate-700"> {product?.rating.rate}</span>
@@ -41,7 +41,7 @@ export default function ProductPage() {
               <span> {product?.rating.count}</span>
             </p>
           </div>
-          <div className="flex items-center justify-end gap-4 w-full">
+          <div className="flex w-full items-center justify-end gap-4">
             <CheckoutButton />
           </div>
         </section>

@@ -4,7 +4,7 @@ import Sidebar from "../features/user-account/Sidebar";
 
 export default function UserAccountPage() {
   return (
-    <div className="min-h-screen">
+    <div className="mt-20 min-h-screen">
       <UserHeader />
       <div className="flex">
         <Sidebar />
