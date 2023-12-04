@@ -20,7 +20,7 @@ export default function CartModal() {
   }
 
   return (
-    <div className="absolute right-6 top-24 z-10 w-2/4 rounded-md border border-slate-300 bg-white p-4  text-black shadow-md dark:bg-slate-800 dark:text-gray-400">
+    <div className="absolute right-6 top-24 z-10 w-2/4 rounded-md border border-slate-300 bg-white p-4 text-black  shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-400">
       <div>
         <h3 className="text-xl font-medium dark:text-gray-300">Your cart</h3>
 
