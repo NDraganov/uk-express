@@ -5,13 +5,17 @@ import { IconContext } from "react-icons";
 export default function BackButton() {
   const navigate = useNavigate();
 
-  function handleClick() {
-    navigate(-1);
-  }
   return (
-    <button className="" title="Back" onClick={handleClick}>
+    <button
+      className="rounded-full border border-white p-2 hover:border-black dark:border-slate-900 dark:hover:border-cyan-300"
+      title="Back"
+      onClick={() => navigate(-1)}
+    >
       <IconContext.Provider
-        value={{ className: "text-lg fill-slate-500 hover:fill-slate-900" }}
+        value={{
+          className:
+            "text-lg fill-black dark:fill-cyan-500 dark:hover:fill-cyan-300",
+        }}
       >
         <FaArrowLeft />
       </IconContext.Provider>

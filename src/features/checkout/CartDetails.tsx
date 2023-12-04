@@ -1,10 +1,11 @@
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import DeliveryMethod from "../../ui/DeliveryMethod";
 import CartItem from "../cart/CartItem";
+import { cancelShipping } from "../cart/cartSlice";
 
 export default function CartDetails() {
-  const cartItems = useAppSelector((state) => state.cart.items);
-  const shipping = useAppSelector((state) => state.cart.shipping);
+  const { items: cartItems, shipping } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
   const totalPriceItems = cartItems.reduce(
     (value, item) => value + item.price * item.quantity,
@@ -18,14 +19,14 @@ export default function CartDetails() {
     <aside className="flex w-1/2 flex-col">
       <div>
         <div className="mt-5">
-          <h3 className="text-lg font-medium text-slate-400">Pay UkExpress</h3>
-          <span className="text-3xl font-normal text-slate-800">
-            £{formattedTotalPriceWithShipping}
+          <h3 className="text-lg font-medium text-gray-400">Pay UkExpress</h3>
+          <span className="text-xl font-normal text-slate-800 dark:text-cyan-500">
+            £<span className="text-3xl">{formattedTotalPriceWithShipping}</span>
           </span>
         </div>
 
         {cartItems.length === 0 && (
-          <p className="text-slate-600">No items in cart!</p>
+          <p className="text-slate-600 dark:text-gray-400">No items in cart!</p>
         )}
 
         {cartItems.length > 0 && (
@@ -44,20 +45,33 @@ export default function CartDetails() {
         <DeliveryMethod type="standard" />
         <DeliveryMethod type="express" />
       </div>
-      <div>
-        <p className="flex items-center justify-between font-medium text-slate-600">
-          Subtotal:{" "}
-          <span className="text-slate-800">£{formattedTotalPriceItems}</span>
+
+      {/* Cancel shipping */}
+      {shipping > 0 && (
+        <p
+          className="text-center underline hover:cursor-pointer dark:hover:text-cyan-500"
+          onClick={() => dispatch(cancelShipping())}
+        >
+          Cancel shipping
         </p>
-        <hr className="my-4 w-full border" />
-        <p className="flex items-center justify-between text-slate-400">
+      )}
+
+      <div>
+        <p className="flex items-center justify-between font-medium dark:text-white">
+          Subtotal:{" "}
+          <span className="text-sm dark:text-cyan-500">
+            £<span className="text-base">{formattedTotalPriceItems}</span>
+          </span>
+        </p>
+        <hr className="my-4 w-full border dark:border-gray-500" />
+        <p className="flex items-center justify-between text-sm text-slate-400">
           Shipping: <span>£{shipping}</span>
         </p>
-        <hr className="my-4 w-full border" />
-        <p className="flex items-center justify-between text-lg font-medium text-slate-600">
+        <hr className="my-4 w-full border dark:border-gray-500" />
+        <p className="flex items-center justify-between text-lg font-medium dark:text-white">
           Total due:{" "}
-          <strong className="text-xl font-medium text-slate-800">
-            £ {formattedTotalPriceWithShipping}
+          <strong className="text-base font-medium dark:text-cyan-500">
+            £<span className="text-xl">{formattedTotalPriceWithShipping}</span>
           </strong>
         </p>
       </div>

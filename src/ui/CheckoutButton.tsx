@@ -12,7 +12,7 @@ export default function CheckoutButton({ onClose }: CheckoutButtonProps) {
     <div>
       {cartItems.length > 0 && (
         <button
-          className="rounded-full ring-1 ring-slate-700 px-5 py-1 mt-2 mb-2 hover:ring-offset-1 hover:ring-orange-500 text-slate-700"
+          className="mb-2 mt-2 rounded-full px-5 py-1 ring-1 ring-black hover:ring-slate-500 hover:ring-offset-1 hover:ring-offset-slate-500 dark:text-gray-400 dark:ring-cyan-500 dark:hover:text-cyan-300 dark:hover:ring-cyan-300 dark:hover:ring-offset-gray-800"
           onClick={onClose}
         >
           <NavLink to="/checkout">Checkout</NavLink>

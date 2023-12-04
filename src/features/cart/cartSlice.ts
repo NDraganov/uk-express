@@ -13,6 +13,8 @@ interface CartState {
   shipping: number;
   isVisible: boolean;
   isSuccess: boolean;
+  isStandard: boolean;
+  isExpress: boolean;
 }
 
 const initialState: CartState = {
@@ -20,6 +22,8 @@ const initialState: CartState = {
   shipping: 0,
   isVisible: false,
   isSuccess: false,
+  isStandard: false,
+  isExpress: false,
 };
 
 const cartSlice = createSlice({
@@ -58,9 +62,22 @@ const cartSlice = createSlice({
         state.items[itemIndex].quantity--;
       }
     },
-    addShipping(state, action: PayloadAction<number>) {
+    addStandardShipping(state, action: PayloadAction<number>) {
+      state.isStandard = !state.isStandard;
+      state.isExpress = false;
       state.shipping = action.payload;
       state.isSuccess = true;
+    },
+    addExpressShipping(state, action: PayloadAction<number>) {
+      state.isExpress = !state.isExpress;
+      state.isStandard = false;
+      state.shipping = action.payload;
+      state.isSuccess = true;
+    },
+    cancelShipping(state) {
+      state.isStandard = false;
+      state.isExpress = false;
+      state.shipping = 0;
     },
     openCart(state) {
       state.isVisible = true;
@@ -71,6 +88,13 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, addShipping, openCart, closeCart } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  addStandardShipping,
+  addExpressShipping,
+  cancelShipping,
+  openCart,
+  closeCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;
