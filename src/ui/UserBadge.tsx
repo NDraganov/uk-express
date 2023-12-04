@@ -21,7 +21,7 @@ export default function UserBadge() {
     <div>
       <Dropdown className="dark:bg-slate-800" label={userName} inline>
         <Dropdown.Header className="dark:text-gray-400">
-          <span className="block text-sm text-white">{userName}</span>
+          <span className="block text-sm dark:text-white">{userName}</span>
           <span className="block truncate text-xs font-light">{userEmail}</span>
         </Dropdown.Header>
         <Dropdown.Item
