@@ -37,13 +37,13 @@ export default function SignUpForm() {
     >
       <div className="w-full">
         <label
-          className="text-base font-light text-slate-700"
+          className="text-base font-light text-black dark:text-gray-400"
           htmlFor="fullName"
         >
           First name
         </label>
         <input
-          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="text"
           placeholder="Full name"
           {...register("firstName", { required: "This field is required!" })}
@@ -55,13 +55,13 @@ export default function SignUpForm() {
       </div>
       <div className="w-full">
         <label
-          className="text-base font-light text-slate-700"
+          className="text-base font-light text-black dark:text-gray-400"
           htmlFor="lastName"
         >
           Last name
         </label>
         <input
-          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="text"
           placeholder="Last name"
           {...register("lastName", { required: "This field is required!" })}
@@ -72,11 +72,14 @@ export default function SignUpForm() {
         )}
       </div>
       <div className="w-full">
-        <label className="text-base font-light text-slate-700" htmlFor="email">
+        <label
+          className="text-base font-light text-black dark:text-gray-400"
+          htmlFor="email"
+        >
           Email address
         </label>
         <input
-          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="email"
           placeholder="Email"
           {...register("email", {
@@ -94,13 +97,13 @@ export default function SignUpForm() {
       </div>
       <div className="w-full">
         <label
-          className="text-base font-light text-slate-700"
+          className="text-base font-light text-black dark:text-gray-400"
           htmlFor="password"
         >
           Password (min of 8 characters)
         </label>
         <input
-          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="password"
           placeholder="Password"
           {...register("password", {
@@ -118,13 +121,13 @@ export default function SignUpForm() {
       </div>
       <div className="w-full">
         <label
-          className="text-base font-light text-slate-700"
+          className="text-base font-light text-black dark:text-gray-400"
           htmlFor="confirmPassword"
         >
           Repeat password
         </label>
         <input
-          className="my-1 w-full rounded-full border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="password"
           placeholder="Confirm password"
           {...register("confirmPassword", {
