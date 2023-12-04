@@ -20,9 +20,9 @@ export default function CartModal() {
   }
 
   return (
-    <div className="right-6 top-28 z-10 absolute w-2/4 rounded-md border bg-neutral-50 border-slate-300 shadow-md p-4 text-slate-600">
+    <div className="absolute right-6 top-24 z-10 w-2/4 rounded-md border border-slate-300 bg-white p-4  text-black shadow-md dark:bg-slate-800 dark:text-gray-400">
       <div>
-        <h3 className="text-xl font-medium">Your cart</h3>
+        <h3 className="text-xl font-medium dark:text-gray-300">Your cart</h3>
 
         {cartItems.length === 0 && <p>No items in cart!</p>}
 
@@ -30,7 +30,7 @@ export default function CartModal() {
           <ul className="mb-2 mt-2">
             {cartItems.map((item) => {
               return (
-                <li className="justify-between flex items-center" key={item.id}>
+                <li className="flex items-center justify-between" key={item.id}>
                   <CartItem {...item} />
                 </li>
               );
@@ -42,7 +42,7 @@ export default function CartModal() {
       <div className="mt-4 flex items-center justify-between">
         <p>
           Total due:{" "}
-          <strong className="text-orange-500">£{formattedTotalPrice}</strong>
+          <strong className="dark:text-gray-300">£{formattedTotalPrice}</strong>
         </p>
         <div className="flex items-center gap-4">
           <Button title="Close" onClick={handleCloseCart} />

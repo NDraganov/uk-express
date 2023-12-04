@@ -17,7 +17,8 @@ export default function QuantityButtons({
     <div className="flex gap-3">
       <Icon
         value={{
-          className: "text-2xl fill-slate-500 hover:fill-slate-700",
+          className:
+            "text-2xl fill-black hover:fill-slate-500 dark:fill-cyan-500 hover:dark:fill-cyan-300",
         }}
       >
         <button onClick={onRemove}>
@@ -25,11 +26,12 @@ export default function QuantityButtons({
         </button>
       </Icon>
 
-      <span className="text-slate-700">{item.quantity}</span>
+      <span className="dark:text-gray-300">{item.quantity}</span>
 
       <Icon
         value={{
-          className: "text-2xl fill-slate-500 hover:fill-slate-700",
+          className:
+            "text-2xl fill-black hover:fill-slate-500 dark:fill-cyan-500 hover:dark:fill-cyan-300",
         }}
       >
         <button onClick={onAdd}>

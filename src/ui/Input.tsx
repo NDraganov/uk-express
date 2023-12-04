@@ -35,7 +35,7 @@ export default function Input() {
     <div>
       <form>
         <input
-          className="mr-2 h-8 w-96 rounded-l-md border-none p-2 font-light text-black placeholder:font-light placeholder:text-gray-400"
+          className="mr-2 h-8 w-96 rounded-l-md border-none p-2 font-light text-black placeholder:font-light placeholder:text-gray-400 dark:border-gray-500 dark:bg-slate-900 dark:text-white"
           type="text"
           onChange={(e) => setInput(e.target.value)}
           onClick={() => handleClick()}

@@ -19,12 +19,13 @@ export default function UserBadge() {
 
   return (
     <div>
-      <Dropdown label={userName} inline>
-        <Dropdown.Header>
-          <span className="block text-sm">{userName}</span>
-          <span className="block truncate text-sm font-light">{userEmail}</span>
+      <Dropdown className="dark:bg-slate-800" label={userName} inline>
+        <Dropdown.Header className="dark:text-gray-400">
+          <span className="block text-sm text-white">{userName}</span>
+          <span className="block truncate text-xs font-light">{userEmail}</span>
         </Dropdown.Header>
         <Dropdown.Item
+          className="dark:text-gray-400"
           as={NavLink}
           to={`/users/${id}`}
           icon={HiOutlineViewGrid}
@@ -32,15 +33,19 @@ export default function UserBadge() {
           My Account
         </Dropdown.Item>
         <Dropdown.Item
+          className="dark:text-gray-400"
           as={NavLink}
           to={`/users/${id}/my-cart`}
           icon={GiShoppingCart}
         >
           My Cart
         </Dropdown.Item>
-        <Dropdown.Item icon={IoBagCheckOutline}>Checkout</Dropdown.Item>
+        <Dropdown.Item className="dark:text-gray-400" icon={IoBagCheckOutline}>
+          Checkout
+        </Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item
+          className="dark:text-gray-400"
           icon={isLoading ? <Spinner /> : HiLogout}
           onClick={() => dispatch(signOutUser())}
         >

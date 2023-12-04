@@ -49,12 +49,13 @@ export default function CategoriesNav() {
 
   return (
     <>
-      <div className="flex h-full items-center border-b border-gray-300 px-4 py-1">
+      <div className="flex h-full items-center border-b border-gray-300 px-4 py-1 dark:border-gray-500">
         <nav>
-          <Dropdown className="" label="Categories" inline>
+          <Dropdown className="dark:bg-slate-800" label="Categories" inline>
             <div className="flex">
               <div id="first-six">
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/smartphones"
                   onClick={() => {
@@ -64,6 +65,7 @@ export default function CategoriesNav() {
                   Smartphones
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/laptops"
                   onClick={() => {
@@ -73,6 +75,7 @@ export default function CategoriesNav() {
                   Laptops
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/fragrances"
                   onClick={() => {
@@ -82,6 +85,7 @@ export default function CategoriesNav() {
                   Fragrances
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/skincare"
                   onClick={() => {
@@ -91,6 +95,7 @@ export default function CategoriesNav() {
                   Skincare
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/groceries"
                   onClick={() => {
@@ -100,6 +105,7 @@ export default function CategoriesNav() {
                   Groceries
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/home-decoration"
                   onClick={() => {
@@ -111,6 +117,7 @@ export default function CategoriesNav() {
               </div>
               <div id="second-six">
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/furniture"
                   onClick={() => {
@@ -120,6 +127,7 @@ export default function CategoriesNav() {
                   Furniture
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/tops"
                   onClick={() => {
@@ -129,6 +137,7 @@ export default function CategoriesNav() {
                   Tops
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/sunglasses"
                   onClick={() => {
@@ -138,6 +147,7 @@ export default function CategoriesNav() {
                   Sunglasses
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/automotive"
                   onClick={() => {
@@ -147,6 +157,7 @@ export default function CategoriesNav() {
                   Automotive
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/motorcycle"
                   onClick={() => {
@@ -156,6 +167,7 @@ export default function CategoriesNav() {
                   Motorcycle
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/lighting"
                   onClick={() => {
@@ -167,6 +179,7 @@ export default function CategoriesNav() {
               </div>
               <div id="womens">
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/womens-dresses"
                   onClick={() => {
@@ -176,6 +189,7 @@ export default function CategoriesNav() {
                   Womens dresses
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/womens-shoes"
                   onClick={() => {
@@ -185,6 +199,7 @@ export default function CategoriesNav() {
                   Womens shoes
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/womens-watches"
                   onClick={() => {
@@ -194,6 +209,7 @@ export default function CategoriesNav() {
                   Womens watches
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/womens-bags"
                   onClick={() => {
@@ -203,6 +219,7 @@ export default function CategoriesNav() {
                   Womens bags
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/womens-jewellery"
                   onClick={() => {
@@ -214,6 +231,7 @@ export default function CategoriesNav() {
               </div>
               <div id="mens">
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/mens-shirts"
                   onClick={() => {
@@ -223,6 +241,7 @@ export default function CategoriesNav() {
                   Mens shirts
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/mens-shoes"
                   onClick={() => {
@@ -232,6 +251,7 @@ export default function CategoriesNav() {
                   Mens Shoes
                 </Dropdown.Item>
                 <Dropdown.Item
+                  className="dark:text-gray-400"
                   as={NavLink}
                   to="/products/category/mens-watches"
                   onClick={() => {
@@ -245,6 +265,7 @@ export default function CategoriesNav() {
 
             <Dropdown.Divider />
             <Dropdown.Item
+              className="dark:text-gray-400"
               as={NavLink}
               to="/products"
               onClick={() => {

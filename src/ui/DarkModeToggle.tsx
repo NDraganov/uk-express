@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Icon from "./Icon";
-import { IoSunnyOutline } from "react-icons/io5";
+import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonStars } from "react-icons/bs";
 
 export default function DarkModeToggle() {
@@ -21,11 +21,19 @@ export default function DarkModeToggle() {
     <div>
       <button className="" onClick={() => setIsDarkMode((isDark) => !isDark)}>
         {isDarkMode ? (
-          <Icon value={{ className: "fill-cyan-500 dark:fill-amber-500" }}>
-            <IoSunnyOutline />
+          <Icon
+            value={{
+              className: "fill-cyan-500 hover:fill-cyan-300 text-lg",
+            }}
+          >
+            <BsFillSunFill />
           </Icon>
         ) : (
-          <Icon value={{ className: "fill-cyan-500 dark:fill-cyan-500" }}>
+          <Icon
+            value={{
+              className: "fill-black hover:fill-cyan-500 text-lg",
+            }}
+          >
             <BsMoonStars />
           </Icon>
         )}

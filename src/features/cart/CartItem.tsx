@@ -18,13 +18,15 @@ export default function CartItem(item: CartItem) {
 
   return (
     <div className="mt-6 flex w-full items-center gap-4">
-      <img className="w-10" src={item.images[1]} alt={item.title} />
+      <img
+        className="w-10 dark:border dark:border-gray-300"
+        src={item.images[1]}
+        alt={item.title}
+      />
       <div className="flex w-full flex-col">
-        <div className="flex items-center justify-between">
-          <span className="font-medium text-slate-700">{item.title}</span>
-          <span className="font-medium text-slate-700">
-            £{formattedSumPrice}
-          </span>
+        <div className="flex items-center justify-between dark:text-gray-300">
+          <span className="font-medium">{item.title}</span>
+          <span className="font-medium">£{formattedSumPrice}</span>
         </div>
         <QuantityButtons
           item={item}

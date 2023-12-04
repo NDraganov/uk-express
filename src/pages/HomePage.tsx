@@ -2,7 +2,7 @@ import HomeCarousel from "../features/home/HomeCarousel";
 
 export default function HomePage() {
   return (
-    <main className="my-40">
+    <main className="py-40 dark:bg-slate-900">
       <HomeCarousel />
     </main>
   );

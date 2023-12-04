@@ -21,8 +21,8 @@ export default function Header() {
   }
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-10 bg-white">
-      <header className="flex h-14 items-center justify-between border-b border-gray-300 px-3 py-2 text-black">
+    <div className="fixed left-0 right-0 top-0 z-10 bg-white text-black dark:bg-slate-900 dark:text-white">
+      <header className="flex h-14 items-center justify-between px-3 py-2">
         <h2 className="text-2xl font-light">
           <NavLink to="/">
             UkExpress
@@ -41,8 +41,8 @@ export default function Header() {
             <UserBadge />
           ) : (
             <div className="flex items-center gap-2">
-              <AuthHeaderButton to="/sign-in" title="Login" />
-              <AuthHeaderButton to="/sign-up" title="Register" />
+              <AuthHeaderButton to="/sign-in" title="Sign In" />
+              <AuthHeaderButton to="/sign-up" title="Sign Up" />
             </div>
           )}
           <CartBadge onOpen={handleOpenCart} />
