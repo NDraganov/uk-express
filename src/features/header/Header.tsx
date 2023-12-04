@@ -6,9 +6,10 @@ import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "../../ui/UserBadge";
+import CategoriesNav from "./CategoriesNav";
+import DarkModeToggle from "../../ui/DarkModeToggle";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
-import CategoriesNav from "./CategoriesNav";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -35,6 +36,7 @@ export default function Header() {
           </Icon>
         </div>
         <div className="flex items-center gap-4 ">
+          <DarkModeToggle />
           {isAuthenticated === "authenticated" ? (
             <UserBadge />
           ) : (
