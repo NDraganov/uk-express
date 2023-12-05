@@ -3,12 +3,14 @@ import ShippingForm from "./ShippingForm";
 export default function Shipping() {
   return (
     <section>
-      <div className="flex items-center justify-center gap-4 my-6">
-        <hr className="border border-slate-300 w-1/3" />
-        <p className="text-slate-400 text-sm">Or pay with card</p>
-        <hr className="border border-slate-300 w-1/3" />
+      <div className="my-6 flex items-center justify-center gap-4">
+        <hr className="w-1/3 border border-slate-300 dark:border-gray-500" />
+        <p className="text-sm text-slate-400 dark:text-gray-400">
+          Or pay with card
+        </p>
+        <hr className="w-1/3 border border-slate-300 dark:border-gray-500" />
       </div>
-      <h3 className="font-medium text-slate-600 my-4">Shipping information</h3>
+      <h3 className="my-4 font-medium dark:text-white">Shipping information</h3>
       <ShippingForm />
     </section>
   );

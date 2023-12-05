@@ -2,12 +2,15 @@ export default function PaymentDetailsForm() {
   return (
     <form>
       <div>
-        <label className="text-sm font-medium text-slate-500" htmlFor="card">
+        <label
+          className="text-sm font-medium text-slate-500 dark:text-gray-400"
+          htmlFor="card"
+        >
           Card information
         </label>
         <div>
           <input
-            className="w-full h-10 border border-slate-300 rounded-t-md p-1"
+            className="h-10 w-full rounded-t-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
             id="card"
             type="tel"
             inputMode="numeric"
@@ -18,14 +21,14 @@ export default function PaymentDetailsForm() {
           />
           <div className="flex items-center">
             <input
-              className="w-full h-10 border border-t-0 border-slate-300 rounded-bl-md p-1"
+              className="dark:bg-slate-90 h-10 w-full rounded-bl-md border border-t-0 border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
               type="text"
               name="expire"
               id="expire"
               placeholder="MM/YY"
             />
             <input
-              className="w-full h-10 border border-t-0 border-slate-300 rounded-br-md p-1"
+              className="dark:bg-slate-90 h-10 w-full rounded-br-md border border-t-0 border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
               type="tel"
               name="cvc"
               id="cvc"
@@ -38,13 +41,11 @@ export default function PaymentDetailsForm() {
         </div>
       </div>
       <div className="mt-3 flex items-center gap-2">
-        <input
-          className="accent-blue-300"
-          type="checkbox"
-          name="billing"
-          id="billing"
-        />
-        <label className="text-sm font-medium text-slate-500" htmlFor="billing">
+        <input type="checkbox" name="billing" id="billing" />
+        <label
+          className="text-sm font-medium text-slate-500 dark:text-gray-400"
+          htmlFor="billing"
+        >
           Billing address is same as shipping
         </label>
       </div>

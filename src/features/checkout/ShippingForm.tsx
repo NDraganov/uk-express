@@ -1,25 +1,32 @@
 export default function ShippingForm() {
   return (
     <form>
-      <div className="flex items-start flex-col">
-        <label className="text-slate-500 font-medium text-sm" htmlFor="email">
+      <div className="flex flex-col items-start">
+        <label
+          className="text-sm font-normal text-slate-500 dark:text-gray-400"
+          htmlFor="email"
+        >
           Email
         </label>
         <input
-          className="border border-slate-300 rounded-md h-10 w-full p-1"
+          className="h-10 w-full rounded-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
           type="email"
           name="email"
-          id="email"
           title="email"
+          id="email"
+          placeholder="Email"
         />
       </div>
       <div className="my-4">
-        <label className="text-slate-500 font-medium text-sm" htmlFor="address">
+        <label
+          className="text-sm font-normal text-slate-500 dark:text-gray-400"
+          htmlFor="address"
+        >
           Shipping address
         </label>
-        <div className="flex items-start flex-col">
+        <div className="flex flex-col items-start">
           <input
-            className="border border-slate-300 rounded-t-md h-10 w-full p-1"
+            className="h-10 w-full rounded-t-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
             type="text"
             name="name"
             id="name"
@@ -27,7 +34,7 @@ export default function ShippingForm() {
             title="Name"
           />
           <select
-            className="border border-slate-300 border-t-0 border-b-0 h-10 w-full p-1 text-slate-400"
+            className="h-10 w-full border  border-b-0 border-t-0 border-slate-300 p-1 text-slate-400 dark:border-gray-500 dark:bg-slate-900"
             name="country"
             id="country"
             title="country"
@@ -46,7 +53,7 @@ export default function ShippingForm() {
             </option>
           </select>
           <input
-            className="border border-slate-300 rounded-b-md h-10 w-full p-1"
+            className="h-10 w-full rounded-b-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
             type="text"
             name="address"
             id="address"
