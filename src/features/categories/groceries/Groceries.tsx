@@ -1,5 +1,5 @@
 import { useGetGroceriesQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function Groceries() {
   const { data, isLoading } = useGetGroceriesQuery(undefined);

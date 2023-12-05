@@ -5,6 +5,7 @@ export interface CartItem {
   title: string;
   price: number;
   images: string[];
+  thumbnail: string;
   quantity: number;
 }
 
@@ -37,6 +38,7 @@ const cartSlice = createSlice({
         title: string;
         price: number;
         images: string[];
+        thumbnail: string;
       }>,
     ) {
       const itemIndex = state.items.findIndex(

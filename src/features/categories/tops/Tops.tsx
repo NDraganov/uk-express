@@ -1,5 +1,5 @@
 import { useGetTopsQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function Tops() {
   const { data, isLoading } = useGetTopsQuery(undefined);

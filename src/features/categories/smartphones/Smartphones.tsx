@@ -1,5 +1,5 @@
 import { useGetSmartphonesQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function Smartphones() {
   const { data, isLoading } = useGetSmartphonesQuery(undefined);

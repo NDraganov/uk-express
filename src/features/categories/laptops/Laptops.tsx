@@ -1,5 +1,5 @@
 import { useGetLaptopsQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function Laptops() {
   const { data, isLoading } = useGetLaptopsQuery(undefined);

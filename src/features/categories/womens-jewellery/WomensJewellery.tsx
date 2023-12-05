@@ -1,5 +1,5 @@
 import { useGetWomensJewelleryQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function WomensJewellery() {
   const { data, isLoading } = useGetWomensJewelleryQuery(undefined);

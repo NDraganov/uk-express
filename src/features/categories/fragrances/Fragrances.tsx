@@ -1,5 +1,5 @@
 import { useGetFragrancesQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function Fragrances() {
   const { data, isLoading } = useGetFragrancesQuery(undefined);

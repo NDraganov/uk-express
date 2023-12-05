@@ -1,5 +1,5 @@
 import { useGetHomeDecorationQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function HomeDecoration() {
   const { data, isLoading } = useGetHomeDecorationQuery(undefined);

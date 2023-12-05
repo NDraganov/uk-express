@@ -1,5 +1,5 @@
 import { useGetSunglassesQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function Sunglasses() {
   const { data, isLoading } = useGetSunglassesQuery(undefined);

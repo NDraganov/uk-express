@@ -20,7 +20,7 @@ export default function CartItem(item: CartItem) {
     <div className="mt-6 flex w-full items-center gap-4">
       <img
         className="w-10 dark:border dark:border-gray-300"
-        src={item.images[1]}
+        src={item.thumbnail}
         alt={item.title}
       />
       <div className="flex w-full flex-col">

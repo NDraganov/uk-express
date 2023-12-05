@@ -1,5 +1,5 @@
 import { useGetWomensShoesQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../../ui/ProductsList";
+import ProductsList from "../../product/ProductsList";
 
 export default function WomensShoes() {
   const { data, isLoading } = useGetWomensShoesQuery(undefined);

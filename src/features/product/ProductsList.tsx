@@ -1,5 +1,5 @@
-import ProductItem from "./ProductItem";
-import { type Product } from "../api/products-types/productsTypes";
+import ProductItem from "./product/ProductItem";
+import { type Product } from "../../api/products-types/productsTypes";
 import { Spinner } from "flowbite-react";
 
 interface ProductListProps {

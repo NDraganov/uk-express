@@ -32,7 +32,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
       <button
         className={`border border-${
           isStandardSelected ? "orange-500" : "slate-300"
-        } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-500 dark:border-${
+        } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-400 dark:border-${
           isStandardSelected ? "cyan-500" : "gray-500"
         } dark:hover:border-cyan-300`}
         onClick={handleStandardClick}

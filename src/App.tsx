@@ -86,10 +86,7 @@ export default function App() {
           element={<MensWatches />}
         />
         // Singe product Route
-        <Route
-          path="/all-products/product/:productId"
-          element={<ProductPage />}
-        />
+        <Route path="/products/:productId" element={<ProductPage />} />
         // User Route
         <Route element={<ProtectedRoute />}>
           <Route path="/users/:userId" element={<UserAccountPage />}>
