@@ -24,7 +24,7 @@ export default function AccountInformation() {
   const onSubmit = handleSubmit((data) => {
     dispatch(updateUser(data));
     if (success) {
-      navigate("/");
+      navigate("/sign-in");
       dispatch(signOutUser());
     }
   });
@@ -38,15 +38,18 @@ export default function AccountInformation() {
   }
 
   return (
-    <div className="h-screen">
-      <form className="mx-10 grid h-4/6" onSubmit={onSubmit}>
-        <h1 className="flex items-center justify-start border-b-2 border-gray-200 font-bold text-black">
+    <div className="flex h-screen items-center justify-center">
+      <form className="grid h-4/6  w-1/2" onSubmit={onSubmit}>
+        <h1 className="flex items-center justify-start border-b border-gray-300 font-normal dark:text-cyan-500">
           ACCOUNT INFORMATION
         </h1>
-        <div className="flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
-          <label htmlFor="firstName">FIRST NAME</label>
+
+        <div className="flex items-center justify-between">
+          <label className="font-light" htmlFor="firstName">
+            First Name
+          </label>
           <input
-            className="rounded-sm border border-gray-400 placeholder:text-xl placeholder:font-light placeholder:text-gray-400"
+            className="w-4/6 rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="firstName"
             title="First name"
@@ -55,10 +58,13 @@ export default function AccountInformation() {
             disabled={!isActive || isLoading}
           />
         </div>
-        <div className="flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
-          <label htmlFor="lastName">LAST NAME</label>
+
+        <div className="flex items-center justify-between">
+          <label className="font-light" htmlFor="lastName">
+            Last Name
+          </label>
           <input
-            className="rounded-sm border border-gray-400 placeholder:text-xl placeholder:font-light placeholder:text-gray-400"
+            className="w-4/6 rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="lastName"
             title="Last name"
@@ -67,10 +73,13 @@ export default function AccountInformation() {
             disabled={!isActive || isLoading}
           />
         </div>
-        <div className="mb-8 flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
-          <label htmlFor="email">EMAIL ADDRESS</label>
+
+        <div className="flex items-center justify-between">
+          <label className="font-light" htmlFor="email">
+            Email Address
+          </label>
           <input
-            className="rounded-sm border border-gray-400 placeholder:text-xl placeholder:font-light placeholder:text-gray-400"
+            className="w-4/6 rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="email"
             id="email"
             title="Email"
@@ -87,16 +96,19 @@ export default function AccountInformation() {
             <p className="text-red-600">{errors.email.message}</p>
           )}
         </div>
+
         <div className="flex items-center justify-end gap-5">
-          {isActive && (
+          {isActive ? (
             <FormButton
               type="button"
-              title="CANCEL"
+              title="Cancel"
               onClick={() => onCancel()}
             />
+          ) : (
+            <FormButton type="button" title="Edit" onClick={() => onEdit()} />
           )}
-          <FormButton type="button" title="EDIT" onClick={() => onEdit()} />
-          <FormButton type="submit" title="UPDATE" />
+
+          <FormButton type="submit" title="Update" />
         </div>
       </form>
     </div>
