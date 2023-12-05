@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
+import { useGetAllProductsQuery } from "../api/productsApiSlice";
+import ProductGallery from "../features/product/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
-import { useGetAllProductsQuery } from "../api/productsApiSlice";
 
 export default function ProductPage() {
   const { productId } = useParams();
@@ -16,9 +17,9 @@ export default function ProductPage() {
       <div className="ml-10 mt-10">
         <BackButton />
       </div>
-      <div className="mx-20 my-10 flex">
-        <div className="flex w-1/2 items-center justify-center">
-          <img className="h-96" src={product?.images[1]} alt={product?.title} />
+      <div className="my-10 flex">
+        <div className="w-1/2">
+          <ProductGallery id={productId} />
         </div>
         <section className="flex w-1/2 flex-col items-baseline justify-start pt-10">
           <h2 className="text-3xl text-slate-700">{product?.title}</h2>
