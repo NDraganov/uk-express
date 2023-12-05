@@ -3,7 +3,7 @@ import NavigationLink from "../../ui/NavigationLink";
 export default function NeedHelp() {
   return (
     <section className="my-6">
-      <h4 className="text-sm font-semibold text-black dark:text-gray-500">
+      <h4 className="text-sm font-semibold text-black dark:text-white">
         NEED HELP?
       </h4>
       <div className="mt-2 flex flex-col items-start justify-between gap-2">

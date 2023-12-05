@@ -15,20 +15,22 @@ export default function OrderConfirmationPage() {
     <main className="mx-28 my-40">
       <div className="flex items-baseline justify-between">
         <div className="w-2/3">
-          <h2 className="text-lg font-medium text-slate-700">
-            Hi <span className="font-semibold">{userName}</span>, thank you for
-            shopping with UkExpress!
+          <h2 className="text-lg font-light">
+            Hi <span className="dark:text-cyan-500">{userName}</span>, thank you
+            for shopping with UkExpress!
           </h2>
-          <div className="my-2 flex w-2/3 items-center justify-between rounded-md border-2 border-green-500 px-2 py-1">
-            <h1 className="text-2xl font-semibold text-slate-900">
+          <div className="my-2 flex w-2/3 items-center justify-between rounded-md border-2 border-lime-500 px-2 py-1">
+            <h1 className="text-2xl font-normal dark:text-white">
               YOUR ORDER WAS PLACED SUCCESSFULLY
             </h1>
-            <Icon value={{ className: "fill-green-500" }}>
+            <Icon value={{ className: "fill-lime-500" }}>
               <FaCheckCircle />
             </Icon>
           </div>
-          <p className="text-sm text-slate-600">Order number: (NUMBER)</p>
-          <p className="my-2 text-base text-slate-600">
+          <p className="text-sm font-light text-slate-600 dark:text-gray-400">
+            Order number: (NUMBER)
+          </p>
+          <p className="my-2 text-base font-light text-slate-600 dark:text-gray-400">
             We will send confirmation email to shortly
           </p>
           <Club />

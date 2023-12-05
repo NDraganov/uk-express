@@ -14,20 +14,25 @@ export default function OrderSummary() {
 
   return (
     <section className="w-full">
-      <div className="border border-slate-300 rounded-md p-4 text-slate-700 shadow-md">
-        <h3 className="font-semibold">ORDER SUMMARY</h3>
-        <p className="flex items-center justify-between my-1">
-          {cartItems.length} items <span>£{formattedTotalPriceItems}</span>
+      <div className="rounded-md border border-slate-300 p-4 font-light shadow-md dark:border-gray-500">
+        <h3 className="font-medium dark:text-white">ORDER SUMMARY</h3>
+        <p className="my-1 flex items-center justify-between">
+          {cartItems.length} items{" "}
+          <span className="font-normal">£{formattedTotalPriceItems}</span>
         </p>
-        <p className="flex items-center justify-between my-1">
-          Subtotal <span>£{formattedTotalPriceItems}</span>
+        <p className="my-1 flex items-center justify-between">
+          Subtotal{" "}
+          <span className="font-normal">£{formattedTotalPriceItems}</span>
         </p>
-        <p className="flex items-center justify-between my-1">
-          Shipping <span>£{shipping}</span>
+        <p className="my-1 flex items-center justify-between">
+          Shipping <span className="font-normal">£{shipping}</span>
         </p>
 
-        <p className="flex items-center justify-between my-1 text-slate-900 font-medium">
-          Total <span>£{formattedTotalPriceWithShipping}</span>{" "}
+        <p className="my-1 flex items-center justify-between font-normal">
+          Total{" "}
+          <span className="text-red-700 dark:text-cyan-500">
+            £{formattedTotalPriceWithShipping}
+          </span>
         </p>
       </div>
     </section>
