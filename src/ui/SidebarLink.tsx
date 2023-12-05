@@ -13,16 +13,24 @@ export default function SidebarLink({
   ...restProps
 }: SidebarLinkProps) {
   return (
-    <li className="text-1xl w-full py-6 pl-10 pr-4 font-bold text-zinc-400">
+    <li className="text-1xl w-full py-6 pl-10 pr-4 font-normal text-zinc-400">
       <NavLink
-        className={({ isActive }) => (isActive ? " text-black" : "")}
+        className={({ isActive }) =>
+          isActive ? " text-black dark:text-gray-500" : ""
+        }
         to={to}
         {...restProps}
       >
         {({ isActive }) => (
           <div className="flex w-full items-center justify-between">
             <span>{title}</span>
-            <Icon value={{ className: isActive ? "fill-black" : "hidden" }}>
+            <Icon
+              value={{
+                className: isActive
+                  ? "fill-orange-500 dark:fill-cyan-500"
+                  : "hidden",
+              }}
+            >
               <MdArrowForwardIos />
             </Icon>
           </div>

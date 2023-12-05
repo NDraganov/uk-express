@@ -1,22 +1,35 @@
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import SidebarLink from "../../ui/SidebarLink";
 import { signOutUser } from "../auth/authSlice";
 
 export default function Sidebar() {
+  const user = useAppSelector((state) => state.auth.user);
   const dispatch = useAppDispatch();
 
-  function onSignOut() {
-    dispatch(signOutUser());
-  }
+  const userName = user?.user_metadata.firstName;
 
   return (
-    <aside className="min-h-screen w-1/4 border-r-2 border-gray-200">
-      <nav className="h-full">
-        <ul className="flex flex-col items-start">
+    <aside className="min-h-screen w-1/4">
+      <div className="flex items-center justify-start gap-2 p-6">
+        <img
+          className="w-12 rounded-full"
+          src="/default-user.jpg"
+          alt={userName}
+        />
+        <h1 className="space-x-10 text-xl font-thin">
+          Hello, <span className="text-2xl dark:text-cyan-500">{userName}</span>
+        </h1>
+      </div>
+      <nav className="mt-16 border-r border-gray-300 dark:border-gray-500">
+        <ul className="grid-col-1 grid">
           <SidebarLink to="account-information" title="ACCOUNT INFORMATION" />
           <SidebarLink to="my-cart" title="MY CART" />
           <SidebarLink to="change-password" title="CHANGE PASSWORD" />
-          <SidebarLink to="/" title="SIGN OUT" onClick={onSignOut} />
+          <SidebarLink
+            to="/"
+            title="SIGN OUT"
+            onClick={() => dispatch(signOutUser())}
+          />
         </ul>
       </nav>
     </aside>
