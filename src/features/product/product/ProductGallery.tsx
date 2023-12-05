@@ -21,6 +21,7 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
             className={`rounded-md p-[3px] ${
               imageIndex === index ? "bg-orange-500 dark:bg-cyan-500" : ""
             }`}
+            key={index}
           >
             <img
               className={`border-1 w-40 rounded-md border-gray-400 hover:cursor-pointer hover:opacity-60 ${
@@ -28,7 +29,6 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
                   ? "border-orange-500 dark:border-cyan-500"
                   : ""
               }`}
-              key={index}
               src={image}
               alt="image"
               onClick={() => handleSetIndex(index)}

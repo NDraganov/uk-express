@@ -1,12 +1,21 @@
 import { useParams } from "react-router-dom";
-import { useGetAllProductsQuery } from "../api/productsApiSlice";
+import {
+  useGetAllProductsQuery,
+  useGetCommentsQuery,
+} from "../api/productsApiSlice";
 import ProductGallery from "../features/product/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
+import ProductReviews from "../features/product/product/ProductReviews";
+import { useState } from "react";
 
 export default function ProductPage() {
+  const [reviews, setReviews] = useState(false);
+
   const { productId } = useParams();
+
   const { data } = useGetAllProductsQuery(undefined);
+  const { data: comments } = useGetCommentsQuery(undefined);
   const product = data?.products.find(
     (product) => product.id === Number(productId),
   );
@@ -17,35 +26,51 @@ export default function ProductPage() {
 
       <BackButton />
 
-      <div className="my-10 flex gap-4">
-        <section className="w-1/2">
+      <div className="my-10 flex">
+        <section className="w-3/5">
           <ProductGallery id={productId} />
         </section>
 
-        <section className="flex w-1/2 flex-col items-baseline justify-start">
+        <section className="flex w-2/5 flex-col items-baseline justify-start">
           <h2 className="text-3xl font-extralight dark:text-white">
             {product?.title}
           </h2>
 
           <p>{product?.brand}</p>
+          <div className="mt-2 flex items-center gap-4">
+            <p className="">
+              ⭐️⭐️⭐️⭐️⭐️
+              <span className="dark:text-white"> {product?.rating}</span>
+            </p>
+            <p
+              className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
+              onClick={() => setReviews(true)}
+            >
+              Reviews ({comments?.comments.length})
+            </p>
+          </div>
 
-          <p className="pt-5">
-            ⭐️⭐️⭐️⭐️⭐️
-            <span className="dark:text-white"> {product?.rating}</span>
-          </p>
-
-          <p className="pt-5">
-            <span className="text-xl font-semibold dark:text-white">
+          <p className="py-5">
+            <span className="text-xl font-normal dark:text-white">
               £<span className="text-2xl">{product?.price}</span>
             </span>
           </p>
-          <p>
-            Availability :
-            <span className="dark:text-white">
-              {" "}
-              {product?.stock === 0 ? "Out of stock" : "In Stock"}
-            </span>
-          </p>
+
+          <div>
+            <p>
+              Availability :
+              <span className="text-sky-700 dark:text-white">
+                {" "}
+                {product?.stock === 0 ? "Out of stock" : "In Stock"}
+              </span>
+            </p>
+            <p>
+              Tags :{" "}
+              <span className="text-sky-700 dark:text-white">
+                {product?.category}
+              </span>
+            </p>
+          </div>
 
           <p className="pt-5">{product?.description}</p>
         </section>
@@ -53,6 +78,7 @@ export default function ProductPage() {
       <div className="flex w-full items-center justify-end gap-4">
         <CheckoutButton />
       </div>
+      {reviews && <ProductReviews title={product?.title} />}
     </main>
   );
 }
