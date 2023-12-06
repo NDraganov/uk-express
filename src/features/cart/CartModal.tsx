@@ -27,7 +27,7 @@ export default function CartModal() {
         {cartItems.length === 0 && <p>No items in cart!</p>}
 
         {cartItems.length > 0 && (
-          <ul className="mb-2 mt-2">
+          <ul className="mt-2">
             {cartItems.map((item) => {
               return (
                 <li className="flex items-center justify-between" key={item.id}>
@@ -46,7 +46,10 @@ export default function CartModal() {
         </p>
         <div className="flex items-center gap-4">
           <Button title="Close" onClick={handleCloseCart} />
-          <CheckoutButton onClose={handleCloseCart} />
+          <CheckoutButton
+            title="Proceed to Checkout"
+            onClose={handleCloseCart}
+          />
         </div>
       </div>
     </div>

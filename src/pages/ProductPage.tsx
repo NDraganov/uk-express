@@ -76,7 +76,7 @@ export default function ProductPage() {
         </section>
       </div>
       <div className="flex w-full items-center justify-end gap-4">
-        <CheckoutButton />
+        <CheckoutButton title="Proceed to Checkout" />
       </div>
       {reviews && <ProductReviews title={product?.title} />}
     </main>
