@@ -17,7 +17,12 @@ export default function ProductsList({ data, isLoading }: ProductListProps) {
   return (
     <div className="mx-40 my-40">
       <p className="mb-4 text-2xl font-normal dark:text-gray-400">
-        Results <span className="text-lg font-light">1 of {data?.length}</span>
+        Results{" "}
+        <span className="text-lg font-normal dark:text-cyan-500">1</span>{" "}
+        <span className="text-lg font-light">of</span>{" "}
+        <span className="text-lg font-normal dark:text-cyan-500">
+          {data?.length}
+        </span>
       </p>
       <ul className="grid gap-5 md:grid-cols-4">
         {data?.map((product) => (
