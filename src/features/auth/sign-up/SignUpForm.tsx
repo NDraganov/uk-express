@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { signUpUser, type SignUpUser } from "../authSlice";
 import FormButton from "../../../ui/FormButton";
+import NavigationLink from "../../../ui/NavigationLink";
 
 export default function SignUpForm() {
   const {
@@ -141,6 +142,14 @@ export default function SignUpForm() {
           <p className="text-red-600">{errors.confirmPassword.message}</p>
         )}
       </div>
+      <p className=" pt-1 font-light">
+        By creating an account, you agree with our{" "}
+        <NavigationLink
+          type="terms"
+          title="Terms & Conditions"
+          to="/policies"
+        />
+      </p>
       <div className="">
         <FormButton type="submit" title="Sign Up" disabled={isLoading} />
       </div>

@@ -37,7 +37,7 @@ export default function ChangePassword() {
           CHANGE PASSWORD
         </h1>
 
-        <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-500">
+        <div className="flex items-center justify-between">
           <label htmlFor="password">
             New Password <br />
             (min of 8 characters)
@@ -64,7 +64,7 @@ export default function ChangePassword() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-b border-gray-300 dark:border-gray-500">
+        <div className="flex items-center justify-between">
           <label htmlFor="confirmNewPassword">Repeat Password</label>
           <div className="w-4/6">
             <input

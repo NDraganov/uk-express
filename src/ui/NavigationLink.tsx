@@ -3,10 +3,16 @@ import { NavLink } from "react-router-dom";
 interface NavLinkProps {
   to: string;
   title: string;
+  type?: string;
   onClick?: () => void;
 }
 
-export default function NavigationLink({ to, title, onClick }: NavLinkProps) {
+export default function NavigationLink({
+  to,
+  title,
+  type,
+  onClick,
+}: NavLinkProps) {
   if (onClick) {
     return (
       <li>
@@ -20,7 +26,13 @@ export default function NavigationLink({ to, title, onClick }: NavLinkProps) {
     );
   } else {
     return (
-      <button className="my-1 text-sm font-light text-slate-800 underline hover:text-slate-500 dark:text-gray-400 dark:hover:text-gray-300">
+      <button
+        className={`my-1 text-sm font-light ${
+          type === "terms"
+            ? "text-slate-800 dark:text-cyan-500"
+            : "text-slate-800 dark:text-gray-400"
+        }  underline hover:text-slate-500  dark:hover:text-gray-300`}
+      >
         <NavLink to={to}>{title}</NavLink>
       </button>
     );
