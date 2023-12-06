@@ -16,7 +16,7 @@ export default function SidebarLink({
     <li className="text-1xl w-full py-6 pl-10 pr-4 font-normal text-zinc-400">
       <NavLink
         className={({ isActive }) =>
-          isActive ? " text-black dark:text-gray-500" : ""
+          isActive ? " text-black dark:text-cyan-500" : ""
         }
         to={to}
         {...restProps}

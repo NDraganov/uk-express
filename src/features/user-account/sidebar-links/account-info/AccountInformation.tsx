@@ -39,7 +39,7 @@ export default function AccountInformation() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <form className="grid h-4/6  w-1/2" onSubmit={onSubmit}>
+      <form className="grid h-4/6 w-1/2" onSubmit={onSubmit}>
         <h1 className="flex items-center justify-start border-b border-gray-300 font-normal dark:border-gray-500 dark:text-cyan-500">
           ACCOUNT INFORMATION
         </h1>

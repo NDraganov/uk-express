@@ -31,47 +31,61 @@ export default function ChangePassword() {
   });
 
   return (
-    <div className="h-screen">
-      <form className="mx-10 grid h-2/4" onSubmit={onSubmit}>
-        <h1 className="flex items-center justify-start border-b-2 border-gray-200 font-bold text-black">
+    <div className="flex h-screen items-center justify-center font-light">
+      <form className="grid h-4/6 w-1/2" onSubmit={onSubmit}>
+        <h1 className="flex items-center justify-start border-b border-gray-300 font-normal dark:border-gray-500 dark:text-cyan-500">
           CHANGE PASSWORD
         </h1>
-        <div className="flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
-          <label htmlFor="password">NEW PASSWORD (min of 8 characters)</label>
-          <input
-            className="col-span-2 my-1 w-2/4 rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
-            type="password"
-            placeholder="Password"
-            {...register("password", {
-              required: "This field is required!",
-              minLength: {
-                value: 8,
-                message: "Password needs a minimum of 8 characters!",
-              },
-            })}
-            disabled={isLoading}
-          />
-          {errors?.password && (
-            <p className="text-red-600">{errors.password.message}</p>
-          )}
+
+        <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-500">
+          <label htmlFor="password">
+            New Password <br />
+            (min of 8 characters)
+          </label>
+          <div className="w-4/6">
+            <input
+              className="w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+              type="password"
+              placeholder="Password"
+              {...register("password", {
+                required: "This field is required!",
+                minLength: {
+                  value: 8,
+                  message: "Password needs a minimum of 8 characters!",
+                },
+              })}
+              disabled={isLoading}
+            />
+            {errors?.password && (
+              <p className="pt-1 text-red-600 dark:text-red-500">
+                {errors.password.message}
+              </p>
+            )}
+          </div>
         </div>
-        <div className="flex items-center justify-between border-b-2 border-gray-200 pr-96 font-bold text-black">
-          <label htmlFor="confirmNewPassword">REPEAT PASSWORD</label>
-          <input
-            className="col-span-2 my-1 w-2/4 rounded-md border border-slate-300 placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
-            type="password"
-            placeholder="Confirm password"
-            {...register("confirmNewPassword", {
-              required: "This field is required!",
-              validate: (value) =>
-                value === getValues().password || "Passwords need to match!",
-            })}
-            disabled={isLoading}
-          />
-          {errors?.confirmNewPassword && (
-            <p className="text-red-600">{errors.confirmNewPassword.message}</p>
-          )}
+
+        <div className="flex items-center justify-between border-b border-gray-300 dark:border-gray-500">
+          <label htmlFor="confirmNewPassword">Repeat Password</label>
+          <div className="w-4/6">
+            <input
+              className="w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+              type="password"
+              placeholder="Confirm password"
+              {...register("confirmNewPassword", {
+                required: "This field is required!",
+                validate: (value) =>
+                  value === getValues().password || "Passwords need to match!",
+              })}
+              disabled={isLoading}
+            />
+            {errors?.confirmNewPassword && (
+              <p className="pt-1 text-red-600 dark:text-red-500">
+                {errors.confirmNewPassword.message}
+              </p>
+            )}
+          </div>
         </div>
+
         <div className="flex items-center justify-end">
           <FormButton title="Update" type="submit" />
         </div>
