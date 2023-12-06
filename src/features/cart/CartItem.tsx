@@ -1,6 +1,12 @@
 import { useAppDispatch } from "../../store/hooks";
-import { addToCart, removeFromCart, type CartItem } from "./cartSlice";
+import {
+  addToCart,
+  removeFromCart,
+  type CartItem,
+  deleteFromCart,
+} from "./cartSlice";
 import QuantityButtons from "../../ui/QuantityButtons";
+import DeleteButton from "../../ui/DeleteButton";
 
 export default function CartItem(item: CartItem) {
   const dispatch = useAppDispatch();
@@ -10,10 +16,6 @@ export default function CartItem(item: CartItem) {
 
   function handleAddToCart(item: CartItem) {
     dispatch(addToCart(item));
-  }
-
-  function handleRemoveFromCart(id: number) {
-    dispatch(removeFromCart(id));
   }
 
   return (
@@ -26,11 +28,14 @@ export default function CartItem(item: CartItem) {
       <div className="flex w-full flex-col">
         <div className="flex items-center justify-between dark:text-gray-300">
           <span className="font-medium">{item.title}</span>
-          <span className="font-medium">£{formattedSumPrice}</span>
+          <div className="flex items-center gap-4">
+            <span className="font-medium">£{formattedSumPrice}</span>
+            <DeleteButton onDelete={() => dispatch(deleteFromCart(item.id))} />
+          </div>
         </div>
         <QuantityButtons
           item={item}
-          onRemove={() => handleRemoveFromCart(item.id)}
+          onRemove={() => dispatch(removeFromCart(item.id))}
           onAdd={() => handleAddToCart(item)}
         />
       </div>

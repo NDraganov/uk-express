@@ -64,6 +64,14 @@ const cartSlice = createSlice({
         state.items[itemIndex].quantity--;
       }
     },
+    deleteFromCart(state, action: PayloadAction<number>) {
+      const itemIndex = state.items.findIndex(
+        (item) => item.id === action.payload,
+      );
+
+      state.items.splice(itemIndex, 1);
+      state.isSuccess = true;
+    },
     addStandardShipping(state, action: PayloadAction<number>) {
       state.isStandard = !state.isStandard;
       state.isExpress = false;
@@ -93,6 +101,7 @@ const cartSlice = createSlice({
 export const {
   addToCart,
   removeFromCart,
+  deleteFromCart,
   addStandardShipping,
   addExpressShipping,
   cancelShipping,

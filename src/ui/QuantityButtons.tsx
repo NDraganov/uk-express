@@ -15,29 +15,29 @@ export default function QuantityButtons({
 }: QuantityButtonsProps) {
   return (
     <div className="flex gap-3">
-      <Icon
-        value={{
-          className:
-            "text-2xl fill-black hover:fill-slate-500 dark:fill-cyan-500 hover:dark:fill-cyan-300",
-        }}
-      >
-        <button onClick={onRemove}>
+      <button onClick={onRemove} disabled={item.quantity <= 1}>
+        <Icon
+          value={{
+            className:
+              "text-2xl fill-black hover:fill-slate-500 dark:fill-cyan-500 hover:dark:fill-cyan-300",
+          }}
+        >
           <CiCircleMinus />
-        </button>
-      </Icon>
+        </Icon>
+      </button>
 
       <span className="dark:text-gray-300">{item.quantity}</span>
 
-      <Icon
-        value={{
-          className:
-            "text-2xl fill-black hover:fill-slate-500 dark:fill-cyan-500 hover:dark:fill-cyan-300",
-        }}
-      >
-        <button onClick={onAdd}>
+      <button onClick={onAdd}>
+        <Icon
+          value={{
+            className:
+              "text-2xl fill-black hover:fill-slate-500 dark:fill-cyan-500 hover:dark:fill-cyan-300",
+          }}
+        >
           <CiCirclePlus />
-        </button>
-      </Icon>
+        </Icon>
+      </button>
     </div>
   );
 }
