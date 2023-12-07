@@ -2,19 +2,31 @@ import { useGetCommentsQuery } from "../../../api/productsApiSlice";
 
 interface ProductReviewsProps {
   title: string | undefined;
+  setState: (arg: boolean) => void;
 }
 
-export default function ProductReviews({ title }: ProductReviewsProps) {
-  const { data: reviews } = useGetCommentsQuery(undefined);
+export default function ProductReviews({
+  title,
+  setState,
+}: ProductReviewsProps) {
+  const { data: comments } = useGetCommentsQuery(undefined);
 
   return (
     <div>
-      <p className="text-xl">
-        Reviews for{" "}
-        <span className="font-semibold dark:text-white">{title}</span>
-      </p>
+      <div className="flex items-center justify-between">
+        <p className="text-xl">
+          Reviews for{" "}
+          <span className="font-semibold dark:text-white">{title}</span>
+        </p>
+        <button
+          className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
+          onClick={() => setState(false)}
+        >
+          hide reviews
+        </button>
+      </div>
       <ul className="mt-5 flex flex-col gap-4">
-        {reviews?.comments.map((review) => (
+        {comments?.comments.map((review) => (
           <li
             className="rounded-sm border border-slate-300 p-4 dark:border-gray-500"
             key={review.id}

@@ -45,12 +45,12 @@ export default function ProductPage() {
               ⭐️⭐️⭐️⭐️⭐️
               <span className="dark:text-white"> {rating}</span>
             </p>
-            <p
+            <button
               className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
               onClick={() => setReviews(true)}
             >
               Reviews ({comments?.comments.length})
-            </p>
+            </button>
           </div>
 
           <div className="my-10 flex items-baseline gap-2">
@@ -89,7 +89,9 @@ export default function ProductPage() {
       <div className="flex w-full items-center justify-end gap-4">
         <CheckoutButton title="Proceed to Checkout" />
       </div>
-      {reviews && <ProductReviews title={product?.title} />}
+      {reviews && (
+        <ProductReviews title={product?.title} setState={setReviews} />
+      )}
     </main>
   );
 }
