@@ -61,94 +61,87 @@ export default function CategoriesNav() {
               }}
             />
             <NavigationLink
-              to="/products/category/smartphones"
+              to="/category/smartphones"
               title="Smartphones"
               onClick={() => {
                 return smartphones?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/laptops"
+              to="/category/laptops"
               title="Laptops"
               onClick={() => {
                 return laptops?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/fragrances"
+              to="/category/fragrances"
               title="Fragrances"
               onClick={() => {
                 return fragrances?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/skincare"
+              to="/category/skincare"
               title="Skincare"
               onClick={() => {
                 return skincare?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/groceries"
+              to="/category/groceries"
               title="Groceries"
               onClick={() => {
                 return groceries?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/home-decoration"
+              to="/category/home-decoration"
               title="Home decoration"
               onClick={() => {
                 return homeDecoration?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/furniture"
+              to="/category/furniture"
               title="Furniture"
               onClick={() => {
                 return furniture?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/tops"
+              to="/category/tops"
               title="Tops"
               onClick={() => {
                 return tops?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/sunglasses"
+              to="/category/sunglasses"
               title="Sunglasses"
               onClick={() => {
                 return sunglasses?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/automotive"
+              to="/category/automotive"
               title="Automotive"
               onClick={() => {
                 return automotive?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/motorcycle"
+              to="/category/motorcycle"
               title="Motorcycle"
               onClick={() => {
                 return motorcycle?.products;
               }}
             />
             <NavigationLink
-              to="/products/category/lighting"
+              to="/category/lighting"
               title="Lighting"
               onClick={() => {
                 return lighting?.products;
-              }}
-            />
-            <NavigationLink
-              to="/products/category/smartphones"
-              title="Smartphones"
-              onClick={() => {
-                return smartphones?.products;
               }}
             />
 
@@ -156,7 +149,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/womens-dresses"
+                to="/category/womens-dresses"
                 onClick={() => {
                   return womansDresses?.products;
                 }}
@@ -166,7 +159,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/womens-shoes"
+                to="/category/womens-shoes"
                 onClick={() => {
                   return womensShoes?.products;
                 }}
@@ -176,7 +169,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/womens-watches"
+                to="/category/womens-watches"
                 onClick={() => {
                   return womensWatches?.products;
                 }}
@@ -186,7 +179,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/womens-bags"
+                to="/category/womens-bags"
                 onClick={() => {
                   return womensBags?.products;
                 }}
@@ -196,7 +189,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/womens-jewellery"
+                to="/category/womens-jewellery"
                 onClick={() => {
                   return womensJewellery?.products;
                 }}
@@ -209,7 +202,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/mens-shirts"
+                to="/category/mens-shirts"
                 onClick={() => {
                   return mensShirts?.products;
                 }}
@@ -219,7 +212,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/mens-shoes"
+                to="/category/mens-shoes"
                 onClick={() => {
                   return mensShoes?.products;
                 }}
@@ -229,7 +222,7 @@ export default function CategoriesNav() {
               <Dropdown.Item
                 className="dark:text-gray-400"
                 as={NavLink}
-                to="/products/category/mens-watches"
+                to="/category/mens-watches"
                 onClick={() => {
                   return mensWatches?.products;
                 }}

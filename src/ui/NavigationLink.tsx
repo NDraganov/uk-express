@@ -1,23 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, type NavLinkProps } from "react-router-dom";
 
-interface NavLinkProps {
+type NavigationLinkProps = {
   to: string;
   title: string;
   type?: string;
   onClick?: () => void;
-}
+} & NavLinkProps;
 
 export default function NavigationLink({
   to,
   title,
   type,
   onClick,
-}: NavLinkProps) {
+}: NavigationLinkProps) {
   if (onClick) {
     return (
       <li>
-        <button className="font-normal" onClick={onClick}>
-          <NavLink className="" to={to}>
+        <button
+          className="font-normal hover:text-orange-500 dark:hover:text-cyan-500"
+          onClick={onClick}
+        >
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "font-semibold text-orange-500 dark:text-cyan-500" : ""
+            }
+            to={to}
+          >
             {title}
           </NavLink>
         </button>
