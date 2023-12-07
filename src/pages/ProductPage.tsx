@@ -22,6 +22,10 @@ export default function ProductPage() {
   const productPrice = product?.price;
   const rating = product?.rating.toFixed(1);
   const discount = product?.discountPercentage.toFixed(0);
+  const originalPrice =
+    (product?.price || product?.discountPercentage) &&
+    product.price / (1 - 13 / 100);
+  const formattedOriginalPrice = originalPrice?.toFixed(0);
 
   return (
     <main className="mx-20 my-40">
@@ -38,8 +42,9 @@ export default function ProductPage() {
           <h2 className="text-3xl font-extralight dark:text-white">
             {product?.title}
           </h2>
-
           <p>{product?.brand}</p>
+
+          {/* Rewiews */}
           <div className="mt-2 flex items-center gap-4">
             <p className="">
               ⭐️⭐️⭐️⭐️⭐️
@@ -53,17 +58,33 @@ export default function ProductPage() {
             </button>
           </div>
 
-          <div className="my-10 flex items-baseline gap-2">
-            <p className="">
+          {/* Prices */}
+          <div className="my-10 flex flex-col items-baseline gap-2">
+            {product?.price
+              ? product.price < 500 ||
+                (product.price > 1000 && (
+                  <div className="flex items-baseline gap-2">
+                    <p className="text-gray-500 dark:text-orange-500">
+                      Was £
+                      <span className="line-through">
+                        {formattedOriginalPrice}
+                      </span>
+                    </p>
+                    <p className="rounded-md bg-red-500 px-1 text-white">
+                      <span className="text-lg">{discount}%</span> OFF
+                    </p>
+                  </div>
+                ))
+              : ""}
+
+            <p>
               <span className="text-xl font-normal dark:text-white">
-                £<span className="text-2xl">{productPrice}</span>
+                Now £<span className="text-2xl">{productPrice}</span>
               </span>
-            </p>
-            <p className="text-red-600">
-              <span>{discount}%</span> OFF
             </p>
           </div>
 
+          {/* Availability */}
           <div>
             <p>
               Availability :
@@ -83,7 +104,8 @@ export default function ProductPage() {
             </p>
           </div>
 
-          <p className="pt-5">{product?.description}</p>
+          {/* Description */}
+          <p className="pt-5 text-xl">{product?.description}</p>
         </section>
       </div>
       <div className="flex w-full items-center justify-end gap-4">
