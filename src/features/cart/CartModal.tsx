@@ -17,12 +17,12 @@ export default function CartModal() {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="absolute right-6 top-24 z-10 w-2/4 rounded-md border border-slate-300 bg-white p-4 text-black  shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-400">
+    <div className="absolute right-6 top-24 z-10 w-1/3 rounded-md border border-slate-300 bg-white p-4 text-black  shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-400">
       <div>
-        <h3 className="pb-2 text-xl font-medium dark:text-white">MY CART</h3>
+        <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 
         {cartItems.length === 0 && (
-          <p className="dark:text-orange-500">
+          <p className="pt-4 text-red-600 dark:text-orange-500">
             {isAuthenticated
               ? `${user?.user_metadata.firstName}, your cart is empty!`
               : "Your cart is empty!"}

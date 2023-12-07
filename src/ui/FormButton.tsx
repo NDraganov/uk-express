@@ -25,7 +25,7 @@ export default function FormButton({
       >
         {isLoading ? (
           <div className="flex items-center justify-between gap-2">
-            <Spinner color="purple" size="sm" /> <span>Processing...</span>
+            <Spinner color="info" size="sm" /> <span>Processing...</span>
           </div>
         ) : (
           title
@@ -43,7 +43,7 @@ export default function FormButton({
     >
       {isLoading ? (
         <div className="flex items-center justify-between gap-2">
-          <Spinner color="purple" size="sm" /> <span>Processing...</span>
+          <Spinner color="info" size="sm" /> <span>Processing...</span>
         </div>
       ) : (
         title
