@@ -16,11 +16,10 @@ export default function NavigationLink({
   if (onClick) {
     return (
       <li>
-        <button
-          className="rounded-md px-5 py-1 font-medium ring-1 ring-slate-300 hover:ring-offset-1"
-          onClick={onClick}
-        >
-          <NavLink to={to}>{title}</NavLink>
+        <button className="font-normal" onClick={onClick}>
+          <NavLink className="" to={to}>
+            {title}
+          </NavLink>
         </button>
       </li>
     );

@@ -23,6 +23,7 @@ import {
   useGetWomesWatchesQuery,
 } from "../../api/productsApiSlice";
 import { Dropdown } from "flowbite-react";
+import NavigationLink from "../../ui/NavigationLink";
 
 export default function CategoriesNav() {
   const { data: products } = useGetAllProductsQuery(undefined);
@@ -49,232 +50,194 @@ export default function CategoriesNav() {
 
   return (
     <>
-      <div className="flex h-full items-center border-b border-gray-300 px-4 py-1 dark:border-gray-500">
+      <div className="border-b border-gray-300 px-4 py-2 dark:border-gray-500">
         <nav>
-          <Dropdown className="dark:bg-slate-800" label="Categories" inline>
-            <div className="flex">
-              <div id="first-six">
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/smartphones"
-                  onClick={() => {
-                    return smartphones?.products;
-                  }}
-                >
-                  Smartphones
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/laptops"
-                  onClick={() => {
-                    return laptops?.products;
-                  }}
-                >
-                  Laptops
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/fragrances"
-                  onClick={() => {
-                    return fragrances?.products;
-                  }}
-                >
-                  Fragrances
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/skincare"
-                  onClick={() => {
-                    return skincare?.products;
-                  }}
-                >
-                  Skincare
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/groceries"
-                  onClick={() => {
-                    return groceries?.products;
-                  }}
-                >
-                  Groceries
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/home-decoration"
-                  onClick={() => {
-                    return homeDecoration?.products;
-                  }}
-                >
-                  Home decoration
-                </Dropdown.Item>
-              </div>
-              <div id="second-six">
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/furniture"
-                  onClick={() => {
-                    return furniture?.products;
-                  }}
-                >
-                  Furniture
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/tops"
-                  onClick={() => {
-                    return tops?.products;
-                  }}
-                >
-                  Tops
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/sunglasses"
-                  onClick={() => {
-                    return sunglasses?.products;
-                  }}
-                >
-                  Sunglasses
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/automotive"
-                  onClick={() => {
-                    return automotive?.products;
-                  }}
-                >
-                  Automotive
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/motorcycle"
-                  onClick={() => {
-                    return motorcycle?.products;
-                  }}
-                >
-                  Motorcycle
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/lighting"
-                  onClick={() => {
-                    return lighting?.products;
-                  }}
-                >
-                  Lighting
-                </Dropdown.Item>
-              </div>
-              <div id="womens">
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/womens-dresses"
-                  onClick={() => {
-                    return womansDresses?.products;
-                  }}
-                >
-                  Womens dresses
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/womens-shoes"
-                  onClick={() => {
-                    return womensShoes?.products;
-                  }}
-                >
-                  Womens shoes
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/womens-watches"
-                  onClick={() => {
-                    return womensWatches?.products;
-                  }}
-                >
-                  Womens watches
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/womens-bags"
-                  onClick={() => {
-                    return womensBags?.products;
-                  }}
-                >
-                  Womens bags
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/womens-jewellery"
-                  onClick={() => {
-                    return womensJewellery?.products;
-                  }}
-                >
-                  Womens jewellery
-                </Dropdown.Item>
-              </div>
-              <div id="mens">
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/mens-shirts"
-                  onClick={() => {
-                    return mensShirts?.products;
-                  }}
-                >
-                  Mens shirts
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/mens-shoes"
-                  onClick={() => {
-                    return mensShoes?.products;
-                  }}
-                >
-                  Mens Shoes
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="dark:text-gray-400"
-                  as={NavLink}
-                  to="/products/category/mens-watches"
-                  onClick={() => {
-                    return mensWatches?.products;
-                  }}
-                >
-                  Mens watches
-                </Dropdown.Item>
-              </div>
-            </div>
-
-            <Dropdown.Divider />
-            <Dropdown.Item
-              className="dark:text-gray-400"
-              as={NavLink}
+          <ul className="no-scrollbar grid w-full grid-flow-col items-center gap-10 overflow-scroll">
+            <NavigationLink
               to="/products"
+              title="All products"
               onClick={() => {
                 return products?.products;
               }}
-            >
-              All products
-            </Dropdown.Item>
-          </Dropdown>
+            />
+            <NavigationLink
+              to="/products/category/smartphones"
+              title="Smartphones"
+              onClick={() => {
+                return smartphones?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/laptops"
+              title="Laptops"
+              onClick={() => {
+                return laptops?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/fragrances"
+              title="Fragrances"
+              onClick={() => {
+                return fragrances?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/skincare"
+              title="Skincare"
+              onClick={() => {
+                return skincare?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/groceries"
+              title="Groceries"
+              onClick={() => {
+                return groceries?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/home-decoration"
+              title="Home decoration"
+              onClick={() => {
+                return homeDecoration?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/furniture"
+              title="Furniture"
+              onClick={() => {
+                return furniture?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/tops"
+              title="Tops"
+              onClick={() => {
+                return tops?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/sunglasses"
+              title="Sunglasses"
+              onClick={() => {
+                return sunglasses?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/automotive"
+              title="Automotive"
+              onClick={() => {
+                return automotive?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/motorcycle"
+              title="Motorcycle"
+              onClick={() => {
+                return motorcycle?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/lighting"
+              title="Lighting"
+              onClick={() => {
+                return lighting?.products;
+              }}
+            />
+            <NavigationLink
+              to="/products/category/smartphones"
+              title="Smartphones"
+              onClick={() => {
+                return smartphones?.products;
+              }}
+            />
+
+            <Dropdown className="dark:bg-slate-800" label="Womans" inline>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/womens-dresses"
+                onClick={() => {
+                  return womansDresses?.products;
+                }}
+              >
+                Womens dresses
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/womens-shoes"
+                onClick={() => {
+                  return womensShoes?.products;
+                }}
+              >
+                Womens shoes
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/womens-watches"
+                onClick={() => {
+                  return womensWatches?.products;
+                }}
+              >
+                Womens watches
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/womens-bags"
+                onClick={() => {
+                  return womensBags?.products;
+                }}
+              >
+                Womens bags
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/womens-jewellery"
+                onClick={() => {
+                  return womensJewellery?.products;
+                }}
+              >
+                Womens jewellery
+              </Dropdown.Item>
+            </Dropdown>
+
+            <Dropdown className="dark:bg-slate-800" label="Mens" inline>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/mens-shirts"
+                onClick={() => {
+                  return mensShirts?.products;
+                }}
+              >
+                Mens shirts
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/mens-shoes"
+                onClick={() => {
+                  return mensShoes?.products;
+                }}
+              >
+                Mens Shoes
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dark:text-gray-400"
+                as={NavLink}
+                to="/products/category/mens-watches"
+                onClick={() => {
+                  return mensWatches?.products;
+                }}
+              >
+                Mens watches
+              </Dropdown.Item>
+            </Dropdown>
+          </ul>
         </nav>
       </div>
       <main>
