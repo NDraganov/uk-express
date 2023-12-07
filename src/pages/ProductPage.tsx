@@ -61,8 +61,7 @@ export default function ProductPage() {
           {/* Prices */}
           <div className="my-10 flex flex-col items-baseline gap-2">
             {product?.price
-              ? product.price < 500 ||
-                (product.price > 1000 && (
+              ? (product.price <= 500 || product.price >= 1000) && (
                   <div className="flex items-baseline gap-2">
                     <p className="text-gray-500 dark:text-orange-500">
                       Was £
@@ -74,7 +73,7 @@ export default function ProductPage() {
                       <span className="text-lg">{discount}%</span> OFF
                     </p>
                   </div>
-                ))
+                )
               : ""}
 
             <p>
