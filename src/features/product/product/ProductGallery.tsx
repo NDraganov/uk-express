@@ -13,27 +13,21 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
   function handleSetIndex(index: number) {
     setImageIndex(index);
   }
+
   return (
     <div className="flex gap-4">
       <div className="grid gap-2">
         {product?.images.map((image, index) => (
-          <div
-            className={`rounded-md p-[3px] ${
-              imageIndex === index ? "bg-orange-500 dark:bg-cyan-500" : ""
+          <img
+            className={`w-40 rounded-md border-4 hover:cursor-pointer hover:opacity-60 ${
+              imageIndex === index
+                ? "border-orange-500 dark:border-cyan-500"
+                : "border-white dark:border-slate-900"
             }`}
-            key={index}
-          >
-            <img
-              className={`border-1 w-40 rounded-md border-gray-400 hover:cursor-pointer hover:opacity-60 ${
-                imageIndex === index
-                  ? "border-orange-500 dark:border-cyan-500"
-                  : ""
-              }`}
-              src={image}
-              alt="image"
-              onClick={() => handleSetIndex(index)}
-            />
-          </div>
+            src={image}
+            alt="image"
+            onClick={() => handleSetIndex(index)}
+          />
         ))}
       </div>
       <div>
