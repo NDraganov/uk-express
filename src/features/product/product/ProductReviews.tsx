@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useGetCommentsQuery } from "../../../api/productsApiSlice";
+import { Pagination } from "flowbite-react";
 
 interface ProductReviewsProps {
   title: string | undefined;
@@ -9,7 +11,22 @@ export default function ProductReviews({
   title,
   setState,
 }: ProductReviewsProps) {
+  const [currentPage, setCurrentPage] = useState(1);
   const { data: comments } = useGetCommentsQuery(undefined);
+
+  const reviewsPerPage = 10;
+
+  const totalPages =
+    comments?.comments.length &&
+    Number(comments.comments.length / reviewsPerPage);
+
+  const indexOfLastPost = currentPage * reviewsPerPage;
+  const indexOfFirstReview = indexOfLastPost - reviewsPerPage;
+  const currentReviews = comments?.comments.slice(
+    indexOfFirstReview,
+    indexOfLastPost,
+  );
+  const onPageChange = (page: number) => setCurrentPage(page);
 
   return (
     <div>
@@ -26,7 +43,7 @@ export default function ProductReviews({
         </button>
       </div>
       <ul className="mt-5 flex flex-col gap-4">
-        {comments?.comments.map((review) => (
+        {currentReviews?.map((review) => (
           <li
             className="rounded-sm border border-slate-300 p-4 dark:border-gray-500"
             key={review.id}
@@ -49,6 +66,14 @@ export default function ProductReviews({
           </li>
         ))}
       </ul>
+      <div className="flex overflow-x-auto sm:justify-center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={onPageChange}
+          showIcons
+        />
+      </div>
     </div>
   );
 }
