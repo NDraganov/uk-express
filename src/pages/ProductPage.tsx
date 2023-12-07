@@ -19,6 +19,9 @@ export default function ProductPage() {
   const product = data?.products.find(
     (product) => product.id === Number(productId),
   );
+  const productPrice = product?.price;
+  const rating = product?.rating.toFixed(1);
+  const discount = product?.discountPercentage.toFixed(0);
 
   return (
     <main className="mx-20 my-40">
@@ -40,7 +43,7 @@ export default function ProductPage() {
           <div className="mt-2 flex items-center gap-4">
             <p className="">
               ⭐️⭐️⭐️⭐️⭐️
-              <span className="dark:text-white"> {product?.rating}</span>
+              <span className="dark:text-white"> {rating}</span>
             </p>
             <p
               className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
@@ -50,11 +53,16 @@ export default function ProductPage() {
             </p>
           </div>
 
-          <p className="py-5">
-            <span className="text-xl font-normal dark:text-white">
-              £<span className="text-2xl">{product?.price}</span>
-            </span>
-          </p>
+          <div className="my-10 flex items-baseline gap-2">
+            <p className="">
+              <span className="text-xl font-normal dark:text-white">
+                £<span className="text-2xl">{productPrice}</span>
+              </span>
+            </p>
+            <p className="text-red-600">
+              <span>{discount}%</span> OFF
+            </p>
+          </div>
 
           <div>
             <p>
@@ -62,6 +70,9 @@ export default function ProductPage() {
               <span className="text-sky-700 dark:text-white">
                 {" "}
                 {product?.stock === 0 ? "Out of stock" : "In Stock"}
+              </span>{" "}
+              <span className="text-sky-700 dark:text-white">
+                ({product?.stock})
               </span>
             </p>
             <p>
