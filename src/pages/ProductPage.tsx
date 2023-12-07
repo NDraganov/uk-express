@@ -24,7 +24,7 @@ export default function ProductPage() {
   const discount = product?.discountPercentage.toFixed(0);
   const originalPrice =
     (product?.price || product?.discountPercentage) &&
-    product.price / (1 - 13 / 100);
+    product.price / (1 - product.discountPercentage / 100);
   const formattedOriginalPrice = originalPrice?.toFixed(0);
 
   return (
