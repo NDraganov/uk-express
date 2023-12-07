@@ -17,7 +17,7 @@ export default function NavigationLink({
     return (
       <li>
         <button
-          className="font-normal hover:text-orange-500 dark:hover:text-cyan-500"
+          className="w-max font-normal hover:text-orange-500 dark:hover:text-cyan-500"
           onClick={onClick}
         >
           <NavLink

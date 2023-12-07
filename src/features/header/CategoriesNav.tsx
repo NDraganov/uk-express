@@ -50,7 +50,7 @@ export default function CategoriesNav() {
 
   return (
     <>
-      <div className="border-b border-gray-300 px-4 py-2 dark:border-gray-500">
+      <div className="border-b border-gray-300 px-4 py-4 dark:border-gray-500">
         <nav>
           <ul className="no-scrollbar grid w-full grid-flow-col items-center gap-10 overflow-scroll">
             <NavigationLink
