@@ -2,11 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
-import {
-  type UpdateUser,
-  updateUser,
-  signOutUser,
-} from "../../../auth/authSlice";
+import { updateUser, signOutUser } from "../../../auth/authSlice";
+import { UpdateUser } from "../../../auth/authTypes";
 import FormButton from "../../../../ui/FormButton";
 
 export default function AccountInformation() {

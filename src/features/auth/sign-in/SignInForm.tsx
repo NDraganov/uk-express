@@ -1,7 +1,8 @@
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { signInUser, type SignInUser } from "../authSlice";
+import { signInUser } from "../authSlice";
+import { type SignInUser } from "../authTypes";
 import FormButton from "../../../ui/FormButton";
 import NavigationLink from "../../../ui/NavigationLink";
 
@@ -36,7 +37,7 @@ export default function SignInForm() {
     >
       <div className="flex w-full flex-col items-start justify-center">
         <input
-          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="email"
           title="Email"
           id="username"
@@ -56,7 +57,7 @@ export default function SignInForm() {
       </div>
       <div className="flex w-full flex-col items-start justify-center">
         <input
-          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+          className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
           type="password"
           title="Password"
           id="password"

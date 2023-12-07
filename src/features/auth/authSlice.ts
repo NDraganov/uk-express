@@ -1,26 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { type User } from "@supabase/supabase-js";
 import supabase from "../../services/superbase";
-
-export interface SignUpUser {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword?: string;
-}
-export interface SignInUser {
-  email: string;
-  password: string;
-}
-
-export interface UpdateUser {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmNewPassword: string;
-}
+import { type User } from "@supabase/supabase-js";
+import { type SignInUser, type SignUpUser, type UpdateUser } from "./authTypes";
 
 export const signUpUser = createAsyncThunk(
   "auth/signUp",

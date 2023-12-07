@@ -1,10 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
-import {
-  type UpdateUser,
-  updateUser,
-  signOutUser,
-} from "../../../auth/authSlice";
+import { updateUser, signOutUser } from "../../../auth/authSlice";
+import { type UpdateUser } from "../../../auth/authTypes";
 import FormButton from "../../../../ui/FormButton";
 
 export default function ChangePassword() {
