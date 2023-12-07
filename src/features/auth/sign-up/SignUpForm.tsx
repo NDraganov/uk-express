@@ -150,7 +150,7 @@ export default function SignUpForm() {
             <p className="text-red-600">{errors.phone.message}</p>
           )}
         </div>
-        <div className="w-full">
+        <div className="w-3/4">
           <label
             className="text-base font-light text-black dark:text-gray-400"
             htmlFor="phone"

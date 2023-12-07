@@ -5,11 +5,20 @@ import { type SignInUser, type SignUpUser, type UpdateUser } from "./authTypes";
 
 export const signUpUser = createAsyncThunk(
   "auth/signUp",
-  async ({ firstName, lastName, email, password }: SignUpUser) => {
+  async ({
+    firstName,
+    lastName,
+    email,
+    password,
+    code,
+    phone,
+    address,
+  }: SignUpUser) => {
     const { data } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { firstName, lastName } },
+      phone,
+      options: { data: { firstName, lastName, address, code } },
     });
 
     return data;

@@ -8,8 +8,7 @@ import FormButton from "../../../../ui/FormButton";
 
 export default function AccountInformation() {
   const [isActive, setIsActive] = useState(false);
-  const { isLoading, success } = useAppSelector((state) => state.auth);
-  const user = useAppSelector((state) => state.auth.user);
+  const { user, isLoading, success } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const {
     register,
@@ -25,14 +24,6 @@ export default function AccountInformation() {
       dispatch(signOutUser());
     }
   });
-
-  function onEdit() {
-    setIsActive(true);
-  }
-
-  function onCancel() {
-    setIsActive(false);
-  }
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -103,10 +94,14 @@ export default function AccountInformation() {
             <FormButton
               type="button"
               title="Cancel"
-              onClick={() => onCancel()}
+              onClick={() => setIsActive(false)}
             />
           ) : (
-            <FormButton type="button" title="Edit" onClick={() => onEdit()} />
+            <FormButton
+              type="button"
+              title="Edit"
+              onClick={() => setIsActive(true)}
+            />
           )}
 
           <FormButton type="submit" title="Update" />

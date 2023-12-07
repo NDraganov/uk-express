@@ -5,8 +5,8 @@ import CheckoutButton from "../../../../ui/CheckoutButton";
 import Button from "../../../../ui/Button";
 
 export default function MyCart() {
-  const user = useAppSelector((state) => state.auth.user);
-  const cartItems = useAppSelector((state) => state.cart.items);
+  const { user } = useAppSelector((state) => state.auth);
+  const { items: cartItems } = useAppSelector((state) => state.cart);
   const navigate = useNavigate();
 
   return (
