@@ -15,7 +15,7 @@ export default function ProductsList({ data, isLoading }: ProductListProps) {
       </div>
     );
   return (
-    <div className="mx-40 my-40">
+    <div className="mx-40 mt-40">
       <p className="mb-4 text-2xl font-normal dark:text-gray-400">
         Results{" "}
         <span className="text-lg font-normal dark:text-cyan-500">1</span>{" "}
