@@ -16,14 +16,10 @@ export default function Header() {
   const { isAuthenticated } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
-  function handleOpenCart() {
-    dispatch(openCart());
-  }
-
   return (
     <div className="fixed left-0 right-0 top-0 z-10 bg-white text-black dark:bg-slate-900 dark:text-white">
       <header className="flex h-14 items-center justify-between px-3 py-2">
-        <h2 className="text-2xl font-light">
+        <h2 className="text-2xl font-light hover:text-orange-500 dark:hover:text-cyan-300">
           <NavLink to="/">
             UkExpress
             <span className="text-base">.co.uk</span>
@@ -45,7 +41,7 @@ export default function Header() {
               {/* <AuthHeaderButton type="sign-up" to="/sign-up" title="SIGN UP" /> */}
             </div>
           )}
-          <CartBadge onOpen={handleOpenCart} />
+          <CartBadge onOpen={() => dispatch(openCart())} />
         </div>
 
         {cart === true && <CartModal />}
