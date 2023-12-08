@@ -1,6 +1,7 @@
 import Banner from "../features/home/Banner";
 import BigSale from "../features/home/BigSale";
 import Carousel from "../features/home/Carousel";
+import NewCollection from "../features/home/NewCollection";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Banner />
       <Carousel />
       <BigSale />
+      <NewCollection />
     </main>
   );
 }
