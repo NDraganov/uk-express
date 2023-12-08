@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   useGetAllProductsQuery,
@@ -7,18 +8,17 @@ import ProductGallery from "../features/product/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
 import ProductReviews from "../features/product/product/ProductReviews";
-import { useState } from "react";
 
 export default function ProductPage() {
   const [reviews, setReviews] = useState(false);
-
   const { productId } = useParams();
 
-  const { data } = useGetAllProductsQuery(undefined);
+  const { data: products } = useGetAllProductsQuery(undefined);
   const { data: comments } = useGetCommentsQuery(undefined);
-  const product = data?.products.find(
+  const product = products?.products.find(
     (product) => product.id === Number(productId),
   );
+
   const productPrice = product?.price;
   const rating = product?.rating.toFixed(1);
   const discount = product?.discountPercentage.toFixed(0);
@@ -33,12 +33,12 @@ export default function ProductPage() {
 
       <BackButton />
 
-      <div className="my-10 flex">
-        <section className="w-3/5">
+      <div className="my-10 flex gap-10">
+        <section className="w-2/4">
           <ProductGallery id={productId} />
         </section>
 
-        <section className="flex w-2/5 flex-col items-baseline justify-start">
+        <section className="flex w-2/4 flex-col items-baseline justify-start">
           <h2 className="text-3xl font-extralight dark:text-white">
             {product?.title}
           </h2>
@@ -108,7 +108,7 @@ export default function ProductPage() {
           <p className="pt-5 text-xl dark:text-white">{product?.description}</p>
         </section>
       </div>
-      <div className="flex w-full items-center justify-end gap-4">
+      <div className="flex w-full items-center justify-end">
         <CheckoutButton title="Proceed to Checkout" />
       </div>
       {reviews && (

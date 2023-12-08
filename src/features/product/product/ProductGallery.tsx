@@ -15,27 +15,28 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
   }
 
   return (
-    <div className="flex gap-4">
-      <div className="grid gap-2">
+    <div className="flex flex-col gap-4">
+      <div className="h-3/5">
+        <img
+          className="h-96 w-full rounded-md border-2 border-gray-400 dark:border-gray-500"
+          src={product?.images[imageIndex]}
+          alt=""
+        />
+      </div>
+      <div className="grid h-2/5 grid-flow-col place-items-center gap-2">
         {product?.images.map((image, index) => (
           <img
-            className={`w-40 rounded-md border-4 hover:cursor-pointer hover:opacity-60 ${
+            className={`h-32 w-40 rounded-md border-4 hover:cursor-pointer hover:opacity-60 ${
               imageIndex === index
-                ? "border-orange-500 dark:border-cyan-500"
+                ? "border-orange-500 opacity-60 dark:border-cyan-500"
                 : "border-white dark:border-slate-900"
             }`}
+            key={image}
             src={image}
             alt="image"
             onClick={() => handleSetIndex(index)}
           />
         ))}
-      </div>
-      <div>
-        <img
-          className="rounded-md border-2 border-gray-400 dark:border-gray-500"
-          src={product?.images[imageIndex]}
-          alt=""
-        />
       </div>
     </div>
   );
