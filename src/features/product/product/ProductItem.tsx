@@ -24,9 +24,15 @@ export default function ProductItem({
   }
 
   return (
-    <div className="flex h-full flex-col items-center justify-between rounded-md border border-gray-300 p-2 shadow-lg shadow-gray-300 dark:border-gray-500 dark:bg-slate-800 dark:shadow-none">
-      <img className="h-1/2 w-full rounded-t-md" src={thumbnail} alt={title} />
-      <div className=" w-full">
+    <div className="flex h-[28rem] flex-col items-center rounded-md border border-gray-300 p-2 shadow-lg shadow-gray-300 dark:border-gray-500 dark:bg-slate-800 dark:shadow-none">
+      <div className="h-3/5 w-full">
+        <img
+          className="h-full w-full rounded-t-md"
+          src={thumbnail}
+          alt={title}
+        />
+      </div>
+      <div className="flex h-2/5 w-full flex-col justify-between">
         <p className="text-xl dark:text-white">{title}</p>
         <p className="my-2">
           ⭐️⭐️⭐️⭐️⭐️ <span>{rating}</span>
@@ -34,7 +40,7 @@ export default function ProductItem({
         <p className="text-xl font-light dark:text-cyan-500">
           £<span className="font-normal">{price}</span>
         </p>
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between">
           <Button title="Review" onClick={handleReviewProduct} />
           <Button title="Add to cart" onClick={handleAddToCart} />
         </div>
