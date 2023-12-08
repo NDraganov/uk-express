@@ -9,7 +9,22 @@ export default {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        banner: "banner 5s linear infinite",
+        banner2: "banner2 5s linear infinite",
+      },
+      keyframes: {
+        banner: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        banner2: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
   important: true,
