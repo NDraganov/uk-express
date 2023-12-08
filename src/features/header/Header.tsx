@@ -41,8 +41,8 @@ export default function Header() {
             <UserBadge />
           ) : (
             <div className="flex items-center gap-2">
-              <AuthHeaderButton to="/sign-in" title="Sign In" />
-              <AuthHeaderButton to="/sign-up" title="Sign Up" />
+              <AuthHeaderButton type="sign-in" to="/sign-in" title="SIGN IN" />
+              {/* <AuthHeaderButton type="sign-up" to="/sign-up" title="SIGN UP" /> */}
             </div>
           )}
           <CartBadge onOpen={handleOpenCart} />
