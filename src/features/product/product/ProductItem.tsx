@@ -28,7 +28,7 @@ export default function ProductItem({
       <div className="h-3/5 w-full">
         <img
           className="h-full w-full rounded-t-md"
-          src={thumbnail}
+          src={images[2]}
           alt={title}
         />
       </div>
