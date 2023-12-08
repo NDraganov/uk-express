@@ -14,11 +14,17 @@ export default function CartBadge({ onOpen }: CartBadgeProps) {
 
   return (
     <button className="flex h-full items-center" onClick={onOpen}>
-      <span className="absolute right-4 top-0 font-normal dark:text-cyan-500">
+      <span className="absolute right-4 top-0 font-extrabold text-red-600 dark:text-red-600">
         {cartItems.length > 0 && cartQuantity}
       </span>
       <Icon
-        value={{ className: "text-[1.5rem] fill-black dark:fill-gray-300" }}
+        value={{
+          className: `text-[1.5rem] hover:fill-orange-500 dark:hover:fill-cyan-300 ${
+            cartItems.length > 0
+              ? "dark:fill-cyan-300"
+              : "fill-black dark:fill-white"
+          }`,
+        }}
       >
         <GiShoppingCart />
       </Icon>
