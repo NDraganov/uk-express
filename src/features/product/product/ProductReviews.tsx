@@ -65,7 +65,7 @@ export default function ProductReviews({
           </li>
         ))}
       </ul>
-      <div className="flex overflow-x-auto sm:justify-center">
+      <div className="mt-4 flex overflow-x-auto sm:justify-center">
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

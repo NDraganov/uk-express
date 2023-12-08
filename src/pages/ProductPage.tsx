@@ -77,8 +77,9 @@ export default function ProductPage() {
               : ""}
 
             <p>
-              <span className="text-xl font-normal dark:text-white">
-                Now £<span className="text-2xl">{productPrice}</span>
+              <span className="text-xl font-medium dark:text-white">
+                Now
+                <span className="text-3xl font-semibold"> £{productPrice}</span>
               </span>
             </p>
           </div>
@@ -104,7 +105,7 @@ export default function ProductPage() {
           </div>
 
           {/* Description */}
-          <p className="pt-5 text-xl">{product?.description}</p>
+          <p className="pt-5 text-xl dark:text-white">{product?.description}</p>
         </section>
       </div>
       <div className="flex w-full items-center justify-end gap-4">
