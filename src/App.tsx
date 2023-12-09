@@ -34,6 +34,7 @@ import MensShirts from "./features/categories/mens-shirts/MensShirts";
 import MensShoes from "./features/categories/mens-shoes/MensShoes";
 import MensWatches from "./features/categories/mens-watches/MensWatches";
 import Lighting from "./features/categories/lighting/Lighting";
+import DiscountedProducts from "./pages/DiscountedProducts";
 
 export default function App() {
   return (
@@ -41,9 +42,11 @@ export default function App() {
       <Header />
       <Routes>
         <Route index element={<HomePage />} />
-        // All products Route
+        {/* All products Route */}
         <Route path="/products" element={<AllProducts />} />
-        // Categories routes
+        {/* Discounted products */}
+        <Route path="/discounted-products" element={<DiscountedProducts />} />
+        {/* Categories routes */}
         <Route path="/category/smartphones" element={<Smartphones />} />
         <Route path="/category/laptops" element={<Laptops />} />
         <Route path="/category/fragrances" element={<Fragrances />} />
@@ -67,9 +70,9 @@ export default function App() {
         <Route path="/category/mens-shirts" element={<MensShirts />} />
         <Route path="/category/mens-shoes" element={<MensShoes />} />
         <Route path="/category/mens-watches" element={<MensWatches />} />
-        // Singe product Route
+        {/* Singe product Route */}
         <Route path="/products/:productId" element={<ProductPage />} />
-        // User Route
+        {/* User Route */}
         <Route element={<ProtectedRoute />}>
           <Route path="/users/:userId" element={<UserAccountPage />}>
             <Route
@@ -82,14 +85,14 @@ export default function App() {
               element={<ChangePassword />}
             />
           </Route>
-          // Checkout Route
+          {/* Checkout Route */}
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route
             path="/order-confirmation"
             element={<OrderConfirmationPage />}
           />
         </Route>
-        // Auth Routes
+        {/* Auth Routes */}
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<RegisterPage />} />
         <Route path="*" element={<PageNotFound />} />
