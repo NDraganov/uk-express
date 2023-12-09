@@ -1,5 +1,6 @@
-import { useGetSingleProductQuery } from "../api/productsApiSlice";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useGetSingleProductQuery } from "../api/productsApiSlice";
 import { Spinner } from "flowbite-react";
 
 export default function Input() {
@@ -11,10 +12,6 @@ export default function Input() {
     isError,
     error,
   } = useGetSingleProductQuery(input || "");
-
-  function handleClick() {
-    setIsActive((active) => !active);
-  }
 
   if (isError) {
     if ("status" in error) {
@@ -35,22 +32,34 @@ export default function Input() {
     <div>
       <form>
         <input
-          className="mr-2 h-8 w-96 rounded-l-md border-none p-2 font-light text-black placeholder:font-light placeholder:text-gray-400 dark:border-gray-500 dark:bg-slate-900 dark:text-white"
+          className="mr-2 h-8 w-96 rounded-l-md border-none p-2 font-light placeholder:font-light placeholder:text-gray-400 dark:border-gray-500 dark:bg-slate-900 dark:text-white"
           type="text"
-          onChange={(e) => setInput(e.target.value)}
-          onClick={() => handleClick()}
+          onChange={(e) => {
+            setInput(e.target.value);
+            setIsActive(true);
+          }}
+          onClick={() => setIsActive((prevActive) => !prevActive)}
           placeholder="Search products"
         />
       </form>
       {isActive && (
-        <div className="absolute z-20 mt-2 w-96 rounded-sm border border-gray-400 bg-white p-2 text-black">
+        <div className="absolute z-20 mt-1 h-auto max-h-60 w-96 overflow-y-scroll rounded-b-lg border border-t-0 border-gray-400 bg-white px-4 py-2 shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-300">
           <ul>
             {isLoading && <Spinner />}
-            {singleProduct?.products.map((product) => (
-              <li key={product.id}>
-                <p>{product.title}</p>
-              </li>
-            ))}
+            {input !== "" &&
+              singleProduct?.products.map((product) => (
+                <li key={product.id}>
+                  <NavLink
+                    to={`/products/${product.id}`}
+                    onClick={() => {
+                      setIsActive(false);
+                      setInput("");
+                    }}
+                  >
+                    <p>{product.title}</p>
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </div>
       )}
