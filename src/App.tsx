@@ -45,7 +45,7 @@ export default function App() {
         {/* All products Route */}
         <Route path="/products" element={<AllProducts />} />
         {/* Discounted products */}
-        <Route path="/discounted-products" element={<DiscountedProducts />} />
+        <Route path="/products-on-sale" element={<DiscountedProducts />} />
         {/* Categories routes */}
         <Route path="/category/smartphones" element={<Smartphones />} />
         <Route path="/category/laptops" element={<Laptops />} />

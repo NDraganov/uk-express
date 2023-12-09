@@ -1,3 +1,5 @@
+import DiscountedButton from "../../ui/DiscountedButton";
+
 export default function BigSale() {
   return (
     <section className="flex h-[40rem] flex-col items-start justify-center pl-96">
@@ -12,6 +14,7 @@ export default function BigSale() {
           Till next <span className="font-semibold text-rose-600">FRIDAY</span>
         </p>
       </div>
+      <DiscountedButton />
     </section>
   );
 }
