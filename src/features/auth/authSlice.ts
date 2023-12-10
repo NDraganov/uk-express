@@ -60,6 +60,7 @@ interface InitialStateProps {
   success: boolean;
   isAuthenticated: string | undefined;
   user: User | null;
+  fullName: string;
 }
 
 const initialState: InitialStateProps = {
@@ -68,6 +69,7 @@ const initialState: InitialStateProps = {
   success: false,
   isAuthenticated: "",
   user: null,
+  fullName: "",
 };
 
 const authSlice = createSlice({
@@ -97,6 +99,10 @@ const authSlice = createSlice({
       state.success = true;
       state.user = action.payload.user;
       state.isAuthenticated = action.payload.user?.role;
+      state.fullName =
+        action.payload.user?.user_metadata.firstName +
+        " " +
+        action.payload.user?.user_metadata.lastName;
     });
     builder.addCase(signInUser.rejected, (state) => {
       state.isLoading = false;
