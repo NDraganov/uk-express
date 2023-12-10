@@ -35,13 +35,11 @@ import MensShoes from "./features/categories/mens-shoes/MensShoes";
 import MensWatches from "./features/categories/mens-watches/MensWatches";
 import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
-import NewsModal from "./features/news-subscription/NewsModal";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <NewsModal />
       <Routes>
         <Route index element={<HomePage />} />
         {/* All products Route */}
