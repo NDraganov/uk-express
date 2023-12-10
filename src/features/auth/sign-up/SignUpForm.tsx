@@ -53,7 +53,7 @@ export default function SignUpForm() {
             First name
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             placeholder="First name"
             {...register("firstName", { required: "This field is required!" })}
@@ -71,7 +71,7 @@ export default function SignUpForm() {
             Last name
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             placeholder="Last name"
             {...register("lastName", { required: "This field is required!" })}
@@ -92,7 +92,7 @@ export default function SignUpForm() {
             Email address
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="email"
             placeholder="Email"
             {...register("email", {
@@ -116,7 +116,7 @@ export default function SignUpForm() {
             Address
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             placeholder="Address"
             {...register("address", { required: "This field is required!" })}
@@ -137,7 +137,7 @@ export default function SignUpForm() {
             Code
           </label>
           <select
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             {...register("code", { required: "Code is required!" })}
           >
             {countries?.map((country) => (
@@ -158,7 +158,7 @@ export default function SignUpForm() {
             Phone number
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="tel"
             placeholder="Phone number"
             {...register("phone", {
@@ -186,7 +186,7 @@ export default function SignUpForm() {
             Password (min of 8 characters)
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="password"
             placeholder="Password"
             {...register("password", {
@@ -210,7 +210,7 @@ export default function SignUpForm() {
             Repeat password
           </label>
           <input
-            className="my-1 w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="my-1 w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="password"
             placeholder="Confirm password"
             {...register("confirmPassword", {
