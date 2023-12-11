@@ -78,7 +78,11 @@ export default function ProductPage() {
 
             <p>
               <span className="text-xl font-medium dark:text-white">
-                Now
+                {product?.price
+                  ? (product.price <= 500 || product.price >= 1000) && (
+                      <span>Now</span>
+                    )
+                  : ""}
                 <span className="text-3xl font-semibold"> £{productPrice}</span>
               </span>
             </p>
