@@ -103,7 +103,7 @@ export default function ProductPage() {
             <p>
               Tags :{" "}
               <NavLink to={`/category/${product?.category}`}>
-                <span className="text-sky-700 hover:text-sky-900 dark:text-white">
+                <span className="text-sky-700 hover:text-sky-900 dark:text-white dark:hover:text-cyan-300">
                   {product?.category}
                 </span>
               </NavLink>
