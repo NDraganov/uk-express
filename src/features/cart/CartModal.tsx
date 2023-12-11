@@ -23,14 +23,20 @@ export default function CartModal() {
       <div>
         <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 
-        {cartItems.length === 0 ||
-          (isProcessed && (
-            <p className="pt-4 text-red-600 dark:text-orange-500">
-              {isAuthenticated
-                ? `${user?.user_metadata.firstName}, your cart is empty!`
-                : "Your cart is empty!"}
-            </p>
-          ))}
+        {cartItems.length === 0 && (
+          <p className="pt-4 text-red-600 dark:text-orange-500">
+            {isAuthenticated
+              ? `${user?.user_metadata.firstName}, your cart is empty!`
+              : "Your cart is empty!"}
+          </p>
+        )}
+        {isProcessed && (
+          <p className="pt-4 text-red-600 dark:text-orange-500">
+            {isAuthenticated
+              ? `${user?.user_metadata.firstName}, your cart is empty!`
+              : "Your cart is empty!"}
+          </p>
+        )}
 
         {cartItems.length > 0 && (
           <ul className={`mt-2 ${isProcessed ? "hidden" : ""}`}>
