@@ -1,7 +1,12 @@
 import { useAppSelector } from "../../store/hooks";
 
 export default function DeliveryDetails() {
-  const cartItems = useAppSelector((state) => state.cart.items);
+  const {
+    items: cartItems,
+    isStandard,
+    standardDays,
+    expressDays,
+  } = useAppSelector((state) => state.cart);
 
   return (
     <section className="my-6">
@@ -18,7 +23,8 @@ export default function DeliveryDetails() {
           ))}
         </ul>
         <p>
-          Your order will be delivered in (Number) days by{" "}
+          Your order will be delivered in (
+          {isStandard ? standardDays : expressDays}) days by{" "}
           <span className="font-medium text-red-700">Royal Mail</span>
         </p>
       </div>

@@ -15,7 +15,9 @@ interface CartState {
   isVisible: boolean;
   isSuccess: boolean;
   isStandard: boolean;
+  standardDays: string;
   isExpress: boolean;
+  expressDays: string;
   isLoading: boolean;
   isProcessed: boolean;
 }
@@ -26,7 +28,9 @@ const initialState: CartState = {
   isVisible: false,
   isSuccess: false,
   isStandard: false,
+  standardDays: "4-7",
   isExpress: false,
+  expressDays: "2-4",
   isLoading: false,
   isProcessed: false,
 };

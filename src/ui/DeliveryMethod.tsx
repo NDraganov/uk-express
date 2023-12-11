@@ -15,8 +15,12 @@ interface ShippingMethodProps {
 }
 
 export default function DeliveryMethod({ type }: ShippingMethodProps) {
-  const { isStandard: isStandardSelected, isExpress: isExpressSelected } =
-    useAppSelector((state) => state.cart);
+  const {
+    isStandard: isStandardSelected,
+    isExpress: isExpressSelected,
+    standardDays,
+    expressDays,
+  } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
   function handleStandardClick() {
@@ -47,7 +51,9 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             >
               Standard
             </h3>
-            <p className="font-light text-slate-400">5-10 business days</p>
+            <p className="font-light text-slate-400">
+              {standardDays} business days
+            </p>
           </div>
           {isStandardSelected && (
             <IconContext.Provider
@@ -86,7 +92,9 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             >
               Express
             </h3>
-            <p className="font-light text-slate-400">2-5 business days</p>
+            <p className="font-light text-slate-400">
+              {expressDays} business days
+            </p>
           </div>
           {isExpressSelected && (
             <IconContext.Provider
