@@ -1,11 +1,9 @@
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppSelector } from "../../store/hooks";
 import DeliveryMethod from "../../ui/DeliveryMethod";
 import CartItem from "../cart/CartItem";
-import { cancelShipping } from "../cart/cartSlice";
 
 export default function CartDetails() {
   const { items: cartItems, shipping } = useAppSelector((state) => state.cart);
-  const dispatch = useAppDispatch();
 
   const totalPriceItems = cartItems.reduce(
     (value, item) => value + item.price * item.quantity,
@@ -45,16 +43,6 @@ export default function CartDetails() {
         <DeliveryMethod type="standard" />
         <DeliveryMethod type="express" />
       </div>
-
-      {/* Cancel shipping */}
-      {shipping > 0 && (
-        <p
-          className="text-center underline hover:cursor-pointer dark:hover:text-cyan-500"
-          onClick={() => dispatch(cancelShipping())}
-        >
-          Cancel shipping
-        </p>
-      )}
 
       <div>
         <p className="flex items-center justify-between font-medium dark:text-white">

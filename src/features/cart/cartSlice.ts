@@ -98,11 +98,6 @@ const cartSlice = createSlice({
       state.shipping = action.payload;
       state.isSuccess = true;
     },
-    cancelShipping(state) {
-      state.isStandard = false;
-      state.isExpress = false;
-      state.shipping = 0;
-    },
     processPayment(state) {
       state.isLoading = true;
     },
@@ -123,7 +118,6 @@ export const {
   deleteFromCart,
   addStandardShipping,
   addExpressShipping,
-  cancelShipping,
   processPayment,
   completePayment,
   endProcessPayment,
