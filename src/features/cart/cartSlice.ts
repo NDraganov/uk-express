@@ -25,7 +25,7 @@ interface CartState {
 
 const initialState: CartState = {
   items: [],
-  shipping: 0,
+  shipping: 5,
   isFreeShipping: false,
   isVisible: false,
   isSuccess: false,
@@ -88,6 +88,16 @@ const cartSlice = createSlice({
       } else {
         state.items[itemIndex].quantity--;
       }
+      const totalPrice = state.items.reduce(
+        (value, item) => value + item.price * item.quantity,
+        0,
+      );
+      if (totalPrice > 100) {
+        state.shipping = 0;
+        state.isFreeShipping = true;
+      } else {
+        state.isFreeShipping = false;
+      }
     },
     deleteFromCart(state, action: PayloadAction<number>) {
       const itemIndex = state.items.findIndex(
@@ -117,6 +127,13 @@ const cartSlice = createSlice({
       state.shipping = action.payload;
       state.isFreeShipping = false;
       state.isSuccess = true;
+      const totalPrice = state.items.reduce(
+        (value, item) => value + item.price * item.quantity,
+        0,
+      );
+      if (totalPrice > 100) {
+        state.isFreeShipping = true;
+      }
     },
     processPayment(state) {
       state.isLoading = true;

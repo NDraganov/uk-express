@@ -20,17 +20,8 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
     standardDays,
     expressDays,
     isFreeShipping,
-    shipping,
   } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-
-  function handleStandardClick() {
-    dispatch(addStandardShipping(standard));
-  }
-
-  function handleExpressClick() {
-    dispatch(addExpressShipping(express));
-  }
 
   if (type === "standard") {
     return (
@@ -40,7 +31,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-400 dark:border-${
           isStandardSelected ? "cyan-500" : "gray-500"
         } dark:hover:border-cyan-300`}
-        onClick={handleStandardClick}
+        onClick={() => dispatch(addStandardShipping(standard))}
         id="standard"
       >
         <div className="flex w-full items-baseline justify-between text-left">
@@ -64,12 +55,16 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             </IconContext.Provider>
           )}
         </div>
-        <span
-          className={`dark:text-${isStandardSelected ? "cyan-500" : "white"}`}
-        >
-          £
-          {isFreeShipping ? `${shipping} Eligible for free shipping` : standard}
-        </span>
+        <div>
+          <span
+            className={`dark:text-${isStandardSelected ? "cyan-500" : "white"}`}
+          >
+            £{isFreeShipping ? "0" : standard}
+          </span>
+          <span className="text-sm font-light text-slate-500">
+            {isFreeShipping && " Eligible for free shipping"}
+          </span>
+        </div>
       </button>
     );
   }
@@ -82,7 +77,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-500 dark:border-${
           isExpressSelected ? "cyan-500" : "gray-500"
         } dark:hover:border-cyan-300`}
-        onClick={handleExpressClick}
+        onClick={() => dispatch(addExpressShipping(express))}
         id="express"
       >
         <div className="flex w-full items-baseline justify-between text-left">
