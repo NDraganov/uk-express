@@ -15,3 +15,17 @@ export interface Product {
 export interface Products {
   products: Product[];
 }
+
+export interface Review {
+  id: number;
+  body: string;
+  postId: number;
+  user: {
+    id: number;
+    username: string;
+  };
+  likes: number;
+}
+export interface Reviews {
+  comments: Review[];
+}

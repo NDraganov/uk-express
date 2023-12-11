@@ -1,4 +1,4 @@
-import ProductItem from "./product/ProductItem";
+import ProductItem from "./products/ProductItem";
 import { type Product } from "../../api/products-types/productsTypes";
 import { Spinner } from "flowbite-react";
 

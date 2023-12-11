@@ -1,19 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { type Products } from "./products-types/productsTypes";
-
-export interface Review {
-  id: number;
-  body: string;
-  postId: number;
-  user: {
-    id: number;
-    username: string;
-  };
-  likes: number;
-}
-interface Reviews {
-  comments: Review[];
-}
+import { Reviews, type Products } from "./products-types/productsTypes";
 
 export const productsApi = createApi({
   reducerPath: "productsApi",

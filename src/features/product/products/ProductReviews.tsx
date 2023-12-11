@@ -27,6 +27,7 @@ export default function ProductReviews({
   );
   const onPageChange = (page: number) => setCurrentPage(page);
 
+  console.log()
   return (
     <div>
       <div className="flex items-center justify-between">
