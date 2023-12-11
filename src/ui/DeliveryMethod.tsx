@@ -8,7 +8,6 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const standard = 5;
 const express = 15;
-// const reset = 0;
 
 interface ShippingMethodProps {
   type: "standard" | "express";
@@ -20,6 +19,8 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
     isExpress: isExpressSelected,
     standardDays,
     expressDays,
+    isFreeShipping,
+    shipping,
   } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
@@ -66,7 +67,8 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         <span
           className={`dark:text-${isStandardSelected ? "cyan-500" : "white"}`}
         >
-          £{standard}
+          £
+          {isFreeShipping ? `${shipping} Eligible for free shipping` : standard}
         </span>
       </button>
     );

@@ -23,9 +23,9 @@ export default function CartDetails() {
           </span>
         </div>
 
-        {cartItems.length === 0 && (
+        {/* {cartItems.length === 0 && (
           <p className="text-slate-600 dark:text-gray-400">No items in cart!</p>
-        )}
+        )} */}
 
         {cartItems.length > 0 && (
           <ul className="mb-2 mt-2">

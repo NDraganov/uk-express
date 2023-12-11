@@ -11,9 +11,10 @@ export interface CartItem {
 
 interface CartState {
   items: CartItem[];
-  shipping: number;
   isVisible: boolean;
   isSuccess: boolean;
+  shipping: number;
+  isFreeShipping: boolean;
   isStandard: boolean;
   standardDays: string;
   isExpress: boolean;
@@ -25,6 +26,7 @@ interface CartState {
 const initialState: CartState = {
   items: [],
   shipping: 0,
+  isFreeShipping: false,
   isVisible: false,
   isSuccess: false,
   isStandard: false,
@@ -65,6 +67,15 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
+
+      const totalPrice = state.items.reduce(
+        (value, item) => value + item.price * item.quantity,
+        0,
+      );
+      if (totalPrice > 100) {
+        state.shipping = 0;
+        state.isFreeShipping = true;
+      }
     },
     removeFromCart(state, action: PayloadAction<number>) {
       const itemIndex = state.items.findIndex(
@@ -87,15 +98,24 @@ const cartSlice = createSlice({
       state.isSuccess = true;
     },
     addStandardShipping(state, action: PayloadAction<number>) {
-      state.isStandard = !state.isStandard;
+      state.isStandard = true;
       state.isExpress = false;
       state.shipping = action.payload;
       state.isSuccess = true;
+      const totalPrice = state.items.reduce(
+        (value, item) => value + item.price * item.quantity,
+        0,
+      );
+      if (totalPrice > 100) {
+        state.shipping = 0;
+        state.isFreeShipping = true;
+      }
     },
     addExpressShipping(state, action: PayloadAction<number>) {
-      state.isExpress = !state.isExpress;
+      state.isExpress = true;
       state.isStandard = false;
       state.shipping = action.payload;
+      state.isFreeShipping = false;
       state.isSuccess = true;
     },
     processPayment(state) {
