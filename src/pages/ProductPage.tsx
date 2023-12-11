@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import {
   useGetAllProductsQuery,
   useGetCommentsQuery,
@@ -102,9 +102,11 @@ export default function ProductPage() {
             </p>
             <p>
               Tags :{" "}
-              <span className="text-sky-700 dark:text-white">
-                {product?.category}
-              </span>
+              <NavLink to={`/category/${product?.category}`}>
+                <span className="text-sky-700 hover:text-sky-900 dark:text-white">
+                  {product?.category}
+                </span>
+              </NavLink>
             </p>
           </div>
 
