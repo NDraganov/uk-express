@@ -122,7 +122,7 @@ export default function AccountInformation() {
               //   message: "Please enter a valid phone number!",
               // },
             })}
-            disabled={isLoading}
+            disabled={!isActive || isLoading}
           />
           {/* {errors?.phone && (
             <p className="text-red-600">{errors.phone.message}</p>
