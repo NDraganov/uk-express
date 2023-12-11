@@ -17,6 +17,8 @@ export interface UpdateUser {
   firstName: string;
   lastName: string;
   email: string;
+  address: string;
+  phone: string;
   password: string;
   confirmNewPassword: string;
 }

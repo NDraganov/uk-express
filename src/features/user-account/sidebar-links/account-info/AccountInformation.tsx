@@ -37,7 +37,7 @@ export default function AccountInformation() {
             First Name
           </label>
           <input
-            className="w-4/6 rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="firstName"
             title="First name"
@@ -52,7 +52,7 @@ export default function AccountInformation() {
             Last Name
           </label>
           <input
-            className="w-4/6 rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="lastName"
             title="Last name"
@@ -68,7 +68,7 @@ export default function AccountInformation() {
           </label>
           <div className="w-4/6">
             <input
-              className="w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+              className="w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
               type="email"
               id="email"
               title="Email"
@@ -87,6 +87,46 @@ export default function AccountInformation() {
               </p>
             )}
           </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <label className="font-light" htmlFor="address">
+            Adress
+          </label>
+          <input
+            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            type="text"
+            id="adress"
+            title="Address"
+            placeholder={user?.user_metadata.address}
+            {...register("address")}
+            disabled={!isActive || isLoading}
+          />
+        </div>
+
+        <div className="flex items-center justify-between">
+          <label
+            className="text-base font-light text-black dark:text-gray-400"
+            htmlFor="phone"
+          >
+            Phone number
+          </label>
+          <input
+            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            type="tel"
+            placeholder={user?.user_metadata.phone}
+            {...register("phone", {
+              // pattern: {
+              //   value:
+              //     /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+              //   message: "Please enter a valid phone number!",
+              // },
+            })}
+            disabled={isLoading}
+          />
+          {/* {errors?.phone && (
+            <p className="text-red-600">{errors.phone.message}</p>
+          )} */}
         </div>
 
         <div className="flex items-center justify-end gap-5">

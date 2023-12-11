@@ -17,8 +17,7 @@ export const signUpUser = createAsyncThunk(
     const { data } = await supabase.auth.signUp({
       email,
       password,
-      phone,
-      options: { data: { firstName, lastName, address, code } },
+      options: { data: { firstName, lastName, address, code, phone } },
     });
 
     return data;
@@ -39,11 +38,23 @@ export const signInUser = createAsyncThunk(
 
 export const updateUser = createAsyncThunk(
   "auth/updateUser",
-  async ({ firstName, lastName, email, password }: UpdateUser) => {
+  async ({
+    firstName,
+    lastName,
+    email,
+    password,
+    address,
+    phone,
+  }: UpdateUser) => {
     const { data } = await supabase.auth.updateUser({
       email: email,
       password: password,
-      data: { firstName: firstName, lastName: lastName },
+      data: {
+        firstName: firstName,
+        lastName: lastName,
+        address: address,
+        phone: phone,
+      },
     });
 
     return data;

@@ -163,11 +163,11 @@ export default function SignUpForm() {
             placeholder="Phone number"
             {...register("phone", {
               required: "This field is required!",
-              pattern: {
-                value:
-                  /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
-                message: "Please enter a valid phone number!",
-              },
+              // pattern: {
+              //   value:
+              //     /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+              //   message: "Please enter a valid phone number!",
+              // },
             })}
             disabled={isLoading}
           />
