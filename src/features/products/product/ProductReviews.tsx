@@ -1,17 +1,16 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useGetCommentsQuery } from "../../../api/productsApiSlice";
+import { closeReviews } from "../productsSlice";
 import { Pagination } from "flowbite-react";
 
 interface ProductReviewsProps {
   title: string | undefined;
-  setState: (arg: boolean) => void;
 }
 
-export default function ProductReviews({
-  title,
-  setState,
-}: ProductReviewsProps) {
+export default function ProductReviews({ title }: ProductReviewsProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const dispatch = useDispatch();
   const { data: comments } = useGetCommentsQuery(undefined);
 
   const reviewsPerPage = 10;
@@ -27,7 +26,7 @@ export default function ProductReviews({
   );
   const onPageChange = (page: number) => setCurrentPage(page);
 
-  console.log()
+  console.log();
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -37,7 +36,7 @@ export default function ProductReviews({
         </p>
         <button
           className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
-          onClick={() => setState(false)}
+          onClick={() => dispatch(closeReviews())}
         >
           hide reviews
         </button>

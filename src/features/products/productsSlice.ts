@@ -1,23 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { type Review } from "../../api/products-types/productsTypes";
 
-interface ProductsState {
-  comments: Review[];
+interface InitialState {
+  isReviews: boolean;
 }
 
-const initialState: ProductsState = {
-  comments: [],
+const initialState: InitialState = {
+  isReviews: false,
 };
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    setReviews(state, action) {
-      state.comments = action.payload;
+    openReviews(state) {
+      state.isReviews = true;
+    },
+    closeReviews(state) {
+      state.isReviews = false;
     },
   },
 });
 
-export const { setReviews } = productsSlice.actions;
+export const { openReviews, closeReviews } = productsSlice.actions;
 export default productsSlice.reducer;

@@ -1,20 +1,22 @@
-import { useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
   useGetAllProductsQuery,
   useGetCommentsQuery,
 } from "../api/productsApiSlice";
+import { openReviews } from "../features/products/productsSlice";
 import ProductGallery from "../features/products/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
 import ProductReviews from "../features/products/product/ProductReviews";
 
 export default function ProductPage() {
-  const [reviews, setReviews] = useState(false);
-  const { productId } = useParams();
-
+  const { isReviews } = useAppSelector((state) => state.products);
   const { data: products } = useGetAllProductsQuery(undefined);
   const { data: comments } = useGetCommentsQuery(undefined);
+  const dispatch = useAppDispatch();
+  const { productId } = useParams();
+
   const product = products?.products.find(
     (product) => product.id === Number(productId),
   );
@@ -52,7 +54,7 @@ export default function ProductPage() {
             </p>
             <button
               className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
-              onClick={() => setReviews(true)}
+              onClick={() => dispatch(openReviews())}
             >
               Reviews ({comments?.comments.length})
             </button>
@@ -117,9 +119,7 @@ export default function ProductPage() {
       <div className="flex w-full items-center justify-end">
         <CheckoutButton title="Proceed to Checkout" />
       </div>
-      {reviews && (
-        <ProductReviews title={product?.title} setState={setReviews} />
-      )}
+      {isReviews && <ProductReviews title={product?.title} />}
     </main>
   );
 }
