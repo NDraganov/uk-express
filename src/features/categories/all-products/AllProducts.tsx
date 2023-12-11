@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../product/ProductsList";
+import ProductsList from "../../products/ProductsList";
 import { Pagination } from "flowbite-react";
 
 export default function AllProducts() {

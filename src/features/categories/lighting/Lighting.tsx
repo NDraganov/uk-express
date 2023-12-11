@@ -1,5 +1,5 @@
 import { useGetLightingQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../product/ProductsList";
+import ProductsList from "../../products/ProductsList";
 
 export default function Lighting() {
   const { data, isLoading } = useGetLightingQuery(undefined);

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import newsReducer from "../features/news-subscription/newsSlice";
 import authReducer from "../features/auth/authSlice";
-import productsReducer from "../features/product/productsSlice";
+import productsReducer from "../features/products/productsSlice";
 import cartReducer from "../features/cart/cartSlice";
 import { productsApi } from "../api/productsApiSlice";
 

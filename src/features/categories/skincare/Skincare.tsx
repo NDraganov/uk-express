@@ -1,5 +1,5 @@
 import { useGetSkincareQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../product/ProductsList";
+import ProductsList from "../../products/ProductsList";
 
 export default function Skincare() {
   const { data, isLoading } = useGetSkincareQuery(undefined);

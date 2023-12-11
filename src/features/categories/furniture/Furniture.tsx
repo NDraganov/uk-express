@@ -1,5 +1,5 @@
 import { useGetFurnitureQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../product/ProductsList";
+import ProductsList from "../../products/ProductsList";
 
 export default function Furniture() {
   const { data, isLoading } = useGetFurnitureQuery(undefined);

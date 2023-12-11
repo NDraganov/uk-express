@@ -4,10 +4,10 @@ import {
   useGetAllProductsQuery,
   useGetCommentsQuery,
 } from "../api/productsApiSlice";
-import ProductGallery from "../features/product/products/ProductGallery";
+import ProductGallery from "../features/products/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
-import ProductReviews from "../features/product/products/ProductReviews";
+import ProductReviews from "../features/products/product/ProductReviews";
 
 export default function ProductPage() {
   const [reviews, setReviews] = useState(false);

@@ -1,5 +1,5 @@
 import { useGetMotorcycleQuery } from "../../../api/productsApiSlice";
-import ProductsList from "../../product/ProductsList";
+import ProductsList from "../../products/ProductsList";
 
 export default function Motorcycle() {
   const { data, isLoading } = useGetMotorcycleQuery(undefined);
