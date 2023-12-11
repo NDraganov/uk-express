@@ -5,7 +5,9 @@ import Button from "../../ui/Button";
 import CheckoutButton from "../../ui/CheckoutButton";
 
 export default function CartModal() {
-  const { items: cartItems } = useAppSelector((state) => state.cart);
+  const { items: cartItems, isProcessed } = useAppSelector(
+    (state) => state.cart,
+  );
   const { isAuthenticated, user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
@@ -21,16 +23,17 @@ export default function CartModal() {
       <div>
         <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 
-        {cartItems.length === 0 && (
-          <p className="pt-4 text-red-600 dark:text-orange-500">
-            {isAuthenticated
-              ? `${user?.user_metadata.firstName}, your cart is empty!`
-              : "Your cart is empty!"}
-          </p>
-        )}
+        {cartItems.length === 0 ||
+          (isProcessed && (
+            <p className="pt-4 text-red-600 dark:text-orange-500">
+              {isAuthenticated
+                ? `${user?.user_metadata.firstName}, your cart is empty!`
+                : "Your cart is empty!"}
+            </p>
+          ))}
 
         {cartItems.length > 0 && (
-          <ul className="mt-2">
+          <ul className={`mt-2 ${isProcessed ? "hidden" : ""}`}>
             {cartItems.map((item) => {
               return (
                 <li className="flex items-center justify-between" key={item.id}>
@@ -45,7 +48,9 @@ export default function CartModal() {
       <div className="mt-4 flex items-center justify-between">
         <p>
           Total due:{" "}
-          <strong className="dark:text-gray-300">£{formattedTotalPrice}</strong>
+          <strong className="dark:text-gray-300">
+            £{isProcessed ? "0" : formattedTotalPrice}
+          </strong>
         </p>
         <div className="flex items-center gap-4">
           <Button title="Close" onClick={() => dispatch(closeCart())} />

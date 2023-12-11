@@ -7,14 +7,20 @@ interface CartBadgeProps {
 }
 
 export default function CartBadge({ onOpen }: CartBadgeProps) {
-  const cartItems = useAppSelector((state) => state.cart.items);
+  const { items: cartItems, isProcessed } = useAppSelector(
+    (state) => state.cart,
+  );
   const cartQuantity = useAppSelector((state) =>
     state.cart.items.reduce((val, item) => val + item.quantity, 0),
   );
 
   return (
     <button className="flex h-full items-center" onClick={onOpen}>
-      <span className="absolute right-4 top-0 font-extrabold text-red-600 dark:text-red-600">
+      <span
+        className={`absolute right-4 top-0 font-extrabold text-red-600 dark:text-red-600 ${
+          isProcessed ? "hidden" : ""
+        }`}
+      >
         {cartItems.length > 0 && cartQuantity}
       </span>
       <Icon
