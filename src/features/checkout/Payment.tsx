@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { completePayment, processPayment } from "../cart/cartSlice";
+import {
+  completePayment,
+  endProcessPayment,
+  processPayment,
+} from "../cart/cartSlice";
 import PaymentButton from "../../ui/PaymentButton";
 import PaymentDetails from "./PaymentDetails";
 import Shipping from "./Shipping";
@@ -22,8 +26,11 @@ export default function Payment() {
     dispatch(processPayment());
     setTimeout(() => {
       dispatch(completePayment());
+    }, 4000);
+    setTimeout(() => {
+      dispatch(endProcessPayment());
       navigate("/order-confirmation");
-    }, 3000);
+    }, 6000);
   }
   return (
     <aside className="w-1/2">

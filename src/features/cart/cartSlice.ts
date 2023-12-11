@@ -17,6 +17,7 @@ interface CartState {
   isStandard: boolean;
   isExpress: boolean;
   isLoading: boolean;
+  isProcessed: boolean;
 }
 
 const initialState: CartState = {
@@ -27,6 +28,7 @@ const initialState: CartState = {
   isStandard: false,
   isExpress: false,
   isLoading: false,
+  isProcessed: false,
 };
 
 const cartSlice = createSlice({
@@ -101,6 +103,9 @@ const cartSlice = createSlice({
       state.isLoading = true;
     },
     completePayment(state) {
+      state.isProcessed = true;
+    },
+    endProcessPayment(state) {
       state.isLoading = false;
     },
   },
@@ -117,5 +122,6 @@ export const {
   cancelShipping,
   processPayment,
   completePayment,
+  endProcessPayment,
 } = cartSlice.actions;
 export default cartSlice.reducer;
