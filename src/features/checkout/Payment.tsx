@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { completePayment, processPayment } from "../cart/cartSlice";
 import PaymentButton from "../../ui/PaymentButton";
 import PaymentDetails from "./PaymentDetails";
 import Shipping from "./Shipping";
-import { useAppSelector } from "../../store/hooks";
 
 export default function Payment() {
   const { items: cartItems, shipping } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const totalPriceItems = cartItems.reduce(
@@ -17,7 +19,11 @@ export default function Payment() {
   const formattedTotalPriceWithShipping = totalPriceWithShipping.toFixed(2);
 
   function handlePayment() {
-    navigate("/order-confirmation");
+    dispatch(processPayment());
+    setTimeout(() => {
+      dispatch(completePayment());
+      navigate("/order-confirmation");
+    }, 3000);
   }
   return (
     <aside className="w-1/2">

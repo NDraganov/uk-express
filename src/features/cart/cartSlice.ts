@@ -16,6 +16,7 @@ interface CartState {
   isSuccess: boolean;
   isStandard: boolean;
   isExpress: boolean;
+  isLoading: boolean;
 }
 
 const initialState: CartState = {
@@ -25,12 +26,19 @@ const initialState: CartState = {
   isSuccess: false,
   isStandard: false,
   isExpress: false,
+  isLoading: false,
 };
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    openCart(state) {
+      state.isVisible = true;
+    },
+    closeCart(state) {
+      state.isVisible = false;
+    },
     addToCart(
       state,
       action: PayloadAction<{
@@ -89,23 +97,25 @@ const cartSlice = createSlice({
       state.isExpress = false;
       state.shipping = 0;
     },
-    openCart(state) {
-      state.isVisible = true;
+    processPayment(state) {
+      state.isLoading = true;
     },
-    closeCart(state) {
-      state.isVisible = false;
+    completePayment(state) {
+      state.isLoading = false;
     },
   },
 });
 
 export const {
+  openCart,
+  closeCart,
   addToCart,
   removeFromCart,
   deleteFromCart,
   addStandardShipping,
   addExpressShipping,
   cancelShipping,
-  openCart,
-  closeCart,
+  processPayment,
+  completePayment,
 } = cartSlice.actions;
 export default cartSlice.reducer;
