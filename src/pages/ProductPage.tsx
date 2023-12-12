@@ -9,6 +9,9 @@ import ProductGallery from "../features/products/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
 import ProductReviews from "../features/products/product/ProductReviews";
+import Icon from "../ui/Icon";
+import { BsBoxes } from "react-icons/bs";
+import { BsTags } from "react-icons/bs";
 
 export default function ProductPage() {
   const { isReviews } = useAppSelector((state) => state.products);
@@ -50,7 +53,7 @@ export default function ProductPage() {
           <div className="mt-2 flex items-center gap-4">
             <p className="">
               ⭐️⭐️⭐️⭐️⭐️
-              <span className="dark:text-white"> {rating}</span>
+              <span className="dark:text-gray-300"> {rating}</span>
             </p>
             <button
               className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
@@ -65,21 +68,21 @@ export default function ProductPage() {
             {product?.price
               ? (product.price <= 500 || product.price >= 1000) && (
                   <div className="flex items-baseline gap-2">
-                    <p className="text-gray-500 dark:text-orange-500">
+                    <p className="text-gray-500 dark:text-gray-300">
                       Was £
                       <span className="line-through">
                         {formattedOriginalPrice}
                       </span>
                     </p>
-                    <p className="rounded-md bg-red-500 px-1 text-white">
-                      <span className="text-lg">{discount}%</span> OFF
+                    <p className="rounded-md bg-red-500 p-1 px-2 text-base font-semibold text-white">
+                      <span>{discount}%</span> OFF
                     </p>
                   </div>
                 )
               : ""}
 
             <p>
-              <span className="text-xl font-medium dark:text-white">
+              <span className="text-xl font-medium dark:text-gray-300">
                 {product?.price
                   ? (product.price <= 500 || product.price >= 1000) && (
                       <span>Now</span>
@@ -91,29 +94,38 @@ export default function ProductPage() {
           </div>
 
           {/* Availability */}
-          <div>
-            <p>
-              Availability :
-              <span className="text-sky-700 dark:text-white">
-                {" "}
-                {product?.stock === 0 ? "Out of stock" : "In Stock"}
-              </span>{" "}
-              <span className="text-sky-700 dark:text-white">
-                ({product?.stock})
-              </span>
-            </p>
-            <p>
-              Tags :{" "}
-              <NavLink to={`/category/${product?.category}`}>
-                <span className="text-sky-700 hover:text-sky-900 dark:text-white dark:hover:text-cyan-300">
-                  {product?.category}
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <Icon value={{ className: "text-xl dark:fill-cyan-500" }}>
+                <BsBoxes />
+              </Icon>
+              <p>
+                <span className="text-sky-700 dark:text-gray-300">
+                  {product?.stock === 0 ? "Out of stock" : "In Stock"}
+                </span>{" "}
+                <span className="text-sky-700 dark:text-gray-300">
+                  ({product?.stock} left)
                 </span>
-              </NavLink>
-            </p>
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Icon value={{ className: "text-xl dark:fill-cyan-500" }}>
+                <BsTags />
+              </Icon>
+              <p>
+                <NavLink to={`/category/${product?.category}`}>
+                  <span className="text-sky-700 hover:text-sky-900 dark:text-gray-300 dark:hover:text-cyan-300">
+                    {product?.category}
+                  </span>
+                </NavLink>
+              </p>
+            </div>
           </div>
 
           {/* Description */}
-          <p className="pt-5 text-xl dark:text-white">{product?.description}</p>
+          <p className="pt-5 text-lg text-gray-500 dark:text-gray-400">
+            {product?.description}
+          </p>
         </section>
       </div>
       <div className="flex w-full items-center justify-end">
