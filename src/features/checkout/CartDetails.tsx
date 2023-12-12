@@ -52,7 +52,7 @@ export default function CartDetails() {
           </span>
         </p>
         <hr className="my-4 w-full border dark:border-gray-500" />
-        <p className="flex items-center justify-between text-sm text-slate-400">
+        <p className="flex items-center justify-between text-sm text-slate-400 dark:text-gray-400">
           Shipping: <span>£{shipping}</span>
         </p>
         <hr className="my-4 w-full border dark:border-gray-500" />

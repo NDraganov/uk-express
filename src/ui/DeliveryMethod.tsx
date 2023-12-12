@@ -43,7 +43,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             >
               Standard
             </h3>
-            <p className="font-light text-slate-400">
+            <p className="font-light text-slate-400 dark:text-gray-400">
               {standardDays} business days
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
           >
             £{isFreeShipping ? "0" : standard}
           </span>
-          <span className="text-sm font-light text-slate-500">
+          <span className="text-sm font-light text-slate-500 dark:text-gray-400">
             {isFreeShipping && " Eligible for free shipping"}
           </span>
         </div>
@@ -89,7 +89,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             >
               Express
             </h3>
-            <p className="font-light text-slate-400">
+            <p className="font-light text-slate-400 dark:text-gray-400">
               {expressDays} business days
             </p>
           </div>
