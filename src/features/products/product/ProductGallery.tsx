@@ -31,13 +31,13 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
             className={`rounded-md p-[0.125rem] ${
               imageIndex === index ? "bg-orange-500 dark:bg-cyan-500" : ""
             }`}
+            key={image}
           >
             <div className="m-0 rounded-md bg-white p-0">
               <img
                 className={`h-32 w-40 rounded-md hover:cursor-pointer hover:opacity-60 ${
                   imageIndex === index ? "opacity-60" : ""
                 }`}
-                key={image}
                 src={image}
                 alt={product.title}
                 onClick={() => handleImageIndex(index)}
