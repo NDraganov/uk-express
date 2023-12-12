@@ -25,7 +25,7 @@ export default function Header() {
             <span className="text-base">.co.uk</span>
           </NavLink>
         </h2>
-        <div className="flex items-center rounded-md border border-gray-400 pr-2">
+        <div className="flex items-center rounded-md border border-gray-400 pr-2 dark:border-gray-500">
           <Input />
           <Icon value={{ className: "text-[1.5rem]" }}>
             <IoIosSearch />
