@@ -17,7 +17,9 @@ export const signUpUser = createAsyncThunk(
     const { data } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { firstName, lastName, address, code, phone } },
+      options: {
+        data: { firstName, lastName, address, code, phone },
+      },
     });
 
     return data;

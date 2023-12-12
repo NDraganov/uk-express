@@ -26,7 +26,7 @@ export default function SignInForm() {
       setValue("email", "");
       setValue("password", "");
       reset;
-      navigate(`/users/${userId}`);
+      navigate(`/users/${userId}/account-information`);
     }
   });
 

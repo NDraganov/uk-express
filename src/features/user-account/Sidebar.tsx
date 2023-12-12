@@ -11,11 +11,6 @@ export default function Sidebar() {
   return (
     <aside className="min-h-screen w-1/4">
       <div className="flex items-center justify-start gap-2 p-6">
-        <img
-          className="w-12 rounded-full"
-          src="/default-user.jpg"
-          alt={userName}
-        />
         <h1 className="space-x-10 text-xl font-thin">
           Hello, <span className="text-2xl dark:text-cyan-500">{userName}</span>
         </h1>

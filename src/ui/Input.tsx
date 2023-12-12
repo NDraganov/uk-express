@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useGetSingleProductQuery } from "../api/productsApiSlice";
-import { Spinner } from "flowbite-react";
 
 export default function Input() {
   const [isActive, setIsActive] = useState(false);
   const [input, setInput] = useState("");
   const {
     data: singleProduct,
-    isLoading,
     isError,
     error,
   } = useGetSingleProductQuery(input || "");
@@ -43,9 +41,8 @@ export default function Input() {
         />
       </form>
       {isActive && (
-        <div className="absolute z-20 mt-1 h-auto max-h-60 w-96 overflow-y-scroll rounded-b-lg border border-t-0 border-gray-400 bg-white px-4 py-2 shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-300">
+        <div className="absolute z-20 mt-1 max-h-60 min-h-0 w-96 overflow-y-scroll rounded-b-lg border border-t-0 border-gray-400 bg-white px-4 py-2 shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-300">
           <ul>
-            {isLoading && <Spinner />}
             {input !== "" &&
               singleProduct?.products.map((product) => (
                 <li key={product.id}>

@@ -16,6 +16,7 @@ export default function SignUpForm() {
     setValue,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<SignUpUser>();
   const { success, isLoading, isError } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
@@ -34,9 +35,11 @@ export default function SignUpForm() {
       setValue("email", "");
       setValue("password", "");
       setValue("confirmPassword", "");
+      setValue("address", "");
+      setValue("phone", "");
+      reset;
       navigate("/sign-in");
     }
-    // Navigate to the Home page is set on Supabase
   });
 
   return (
