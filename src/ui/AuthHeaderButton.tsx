@@ -16,10 +16,10 @@ export default function AuthHeaderButton({
 }: AuthHeaderButtonProps) {
   return (
     <button className="font-normal hover:text-orange-500 dark:hover:text-cyan-300">
-      <NavLink className="flex items-center gap-2" to={to}>
+      <NavLink className="flex items-center gap-2 text-sm" to={to}>
         {title}
         {type === "sign-in" ? (
-          <Icon value={{ className: "text-2xl" }}>
+          <Icon value={{ className: "text-xl" }}>
             <FaUserCheck />
           </Icon>
         ) : (
