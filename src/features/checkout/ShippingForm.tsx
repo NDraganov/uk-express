@@ -9,7 +9,7 @@ export default function ShippingForm() {
           Email
         </label>
         <input
-          className="h-10 w-full rounded-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
+          className="h-10 w-full rounded-md border border-slate-400 p-1 placeholder:font-light focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:placeholder:text-gray-400 dark:focus:ring-cyan-500"
           type="email"
           name="email"
           title="email"
@@ -26,7 +26,7 @@ export default function ShippingForm() {
         </label>
         <div className="flex flex-col items-start">
           <input
-            className="h-10 w-full rounded-t-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
+            className="mb-[1px] h-10 w-full rounded-t-md border border-slate-400 p-1 placeholder:font-light focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:placeholder:text-gray-400 dark:focus:ring-cyan-500"
             type="text"
             name="name"
             id="name"
@@ -34,7 +34,7 @@ export default function ShippingForm() {
             title="Name"
           />
           <select
-            className="h-10 w-full border  border-b-0 border-t-0 border-slate-300 p-1 text-slate-400 dark:border-gray-500 dark:bg-slate-900"
+            className="h-10 w-full border border-b-0 border-t-0 border-slate-400 p-1 text-slate-400 focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:focus:ring-cyan-500"
             name="country"
             id="country"
             title="country"
@@ -53,7 +53,7 @@ export default function ShippingForm() {
             </option>
           </select>
           <input
-            className="h-10 w-full rounded-b-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
+            className="mt-[1px] h-10 w-full rounded-b-md border border-slate-400 p-1 placeholder:font-light focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:placeholder:text-gray-400 dark:focus:ring-cyan-500"
             type="text"
             name="address"
             id="address"

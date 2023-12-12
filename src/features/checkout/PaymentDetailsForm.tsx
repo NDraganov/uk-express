@@ -3,14 +3,14 @@ export default function PaymentDetailsForm() {
     <form>
       <div>
         <label
-          className="text-sm font-medium text-slate-500 dark:text-gray-400"
+          className="text-sm font-normal text-slate-500 dark:text-gray-400"
           htmlFor="card"
         >
           Card information
         </label>
         <div>
           <input
-            className="h-10 w-full rounded-t-md border border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
+            className="mb-[1px] h-10 w-full rounded-t-md border border-slate-400 p-1 placeholder:font-light focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:placeholder:text-gray-400 dark:focus:ring-cyan-500"
             id="card"
             type="tel"
             inputMode="numeric"
@@ -19,16 +19,16 @@ export default function PaymentDetailsForm() {
             maxLength={19}
             placeholder="xxxx xxxx xxxx xxxx"
           />
-          <div className="flex items-center">
+          <div className="flex items-center gap-[1px]">
             <input
-              className="dark:bg-slate-90 h-10 w-full rounded-bl-md border border-t-0 border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
+              className="h-10 w-full rounded-bl-md border border-t-0 border-slate-400 p-1 placeholder:font-light focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:placeholder:text-gray-400 dark:focus:ring-cyan-500"
               type="text"
               name="expire"
               id="expire"
               placeholder="MM/YY"
             />
             <input
-              className="dark:bg-slate-90 h-10 w-full rounded-br-md border border-t-0 border-slate-300 p-1 placeholder:font-light dark:border-gray-500 dark:bg-slate-900"
+              className="h-10 w-full rounded-br-md border border-t-0 border-slate-400 p-1 placeholder:font-light focus:border-0 focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:placeholder:text-gray-400 dark:focus:ring-cyan-500"
               type="tel"
               name="cvc"
               id="cvc"

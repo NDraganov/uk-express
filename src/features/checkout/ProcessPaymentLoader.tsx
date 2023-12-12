@@ -7,7 +7,7 @@ export default function ProcessPaymentLoader() {
   const { isProcessed } = useAppSelector((state) => state.cart);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 top-0 z-20 bg-white/50">
+    <div className="fixed bottom-0 left-0 right-0 top-0 z-20 bg-white/50 dark:bg-white/60">
       <div className="flex h-full items-center justify-center">
         <div className="flex h-96 w-[40rem] flex-col items-center justify-center gap-7 rounded-md bg-violet-950">
           <div className="animate-ping rounded-full bg-pink-500 p-2">
