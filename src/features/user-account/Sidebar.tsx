@@ -10,7 +10,7 @@ export default function Sidebar() {
 
   return (
     <aside className="min-h-screen w-1/4">
-      <div className="flex items-center justify-start gap-2 p-6">
+      <div className="flex items-center justify-start p-6 pl-10">
         <h1 className="space-x-10 text-xl font-thin">
           Hello, <span className="text-2xl dark:text-cyan-500">{userName}</span>
         </h1>
