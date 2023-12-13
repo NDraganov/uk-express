@@ -229,7 +229,7 @@ export default function SignUpForm() {
         </div>
       </div>
 
-      <p className=" pt-1 font-light">
+      <p className="pt-1 text-sm font-light">
         By creating an account, you agree with our{" "}
         <NavigationLink
           type="terms"

@@ -15,8 +15,8 @@ export default function SignUpPage() {
           <p className="text-center text-xl font-light">
             Enter your personal details and start shopping with us!
           </p>
-          <p className="mt-5 text-center text-base font-light">
-            You already have an account with us?
+          <p className="mt-5 text-center text-sm font-light">
+            Already have an account with us?
           </p>
           <FormButton
             type="button"
