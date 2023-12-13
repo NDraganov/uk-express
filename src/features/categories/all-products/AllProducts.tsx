@@ -24,7 +24,7 @@ export default function AllProducts() {
   return (
     <div className="min-h-screen">
       <ProductsList data={currentProducts} isLoading={isLoading} />
-      <div className="my-4 flex overflow-x-auto sm:justify-center">
+      <div className="mx-auto my-4 flex justify-center">
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
