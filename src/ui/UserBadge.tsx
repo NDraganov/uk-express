@@ -24,7 +24,7 @@ export default function UserBadge() {
         <Dropdown.Item
           className="dark:text-gray-400"
           as={NavLink}
-          to={`/users/${user?.id}`}
+          to={`/users/${user?.id}/account-information`}
           icon={HiOutlineViewGrid}
         >
           My Account
