@@ -13,6 +13,7 @@ interface CartState {
   items: CartItem[];
   isVisible: boolean;
   isSuccess: boolean;
+  isDeleted: boolean;
   shipping: number;
   isFreeShipping: boolean;
   isStandard: boolean;
@@ -29,6 +30,7 @@ const initialState: CartState = {
   isFreeShipping: false,
   isVisible: false,
   isSuccess: false,
+  isDeleted: false,
   isStandard: false,
   standardDays: "4-7",
   isExpress: false,
@@ -108,7 +110,7 @@ const cartSlice = createSlice({
       );
 
       state.items.splice(itemIndex, 1);
-      state.isSuccess = true;
+      state.isDeleted = true;
     },
     addStandardShipping(state, action: PayloadAction<number>) {
       state.isStandard = true;

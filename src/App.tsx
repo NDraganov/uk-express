@@ -39,11 +39,12 @@ import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
 
 export default function App() {
-  const { isSuccess } = useAppSelector((state) => state.cart);
+  const { isSuccess, isDeleted } = useAppSelector((state) => state.cart);
   return (
     <BrowserRouter>
       <Header />
-      {isSuccess && <PushNotification />}
+      {isSuccess && <PushNotification type="add-product" />}
+      {isDeleted && <PushNotification type="delete-product" />}
       <Routes>
         <Route index element={<HomePage />} />
         {/* All products Route */}
