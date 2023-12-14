@@ -68,6 +68,7 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
         state.isSuccess = true;
+        state.isDeleted = false;
       }
 
       const totalPrice = state.items.reduce(
@@ -81,6 +82,7 @@ const cartSlice = createSlice({
     },
     closeToast(state) {
       state.isSuccess = false;
+      state.isDeleted = false;
     },
     removeFromCart(state, action: PayloadAction<number>) {
       const itemIndex = state.items.findIndex(
