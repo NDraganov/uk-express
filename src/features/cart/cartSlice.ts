@@ -63,9 +63,9 @@ const cartSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.items[itemIndex].quantity++;
-        state.isSuccess = true;
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
+        state.isSuccess = true;
       }
 
       const totalPrice = state.items.reduce(
@@ -76,6 +76,9 @@ const cartSlice = createSlice({
         state.shipping = 0;
         state.isFreeShipping = true;
       }
+    },
+    closeToast(state) {
+      state.isSuccess = false;
     },
     removeFromCart(state, action: PayloadAction<number>) {
       const itemIndex = state.items.findIndex(
@@ -151,6 +154,7 @@ export const {
   openCart,
   closeCart,
   addToCart,
+  closeToast,
   removeFromCart,
   deleteFromCart,
   addStandardShipping,

@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useAppSelector } from "./store/hooks";
 import Header from "./features/header/Header";
+import PushNotification from "./ui/PushNotification";
 import HomePage from "./pages/HomePage";
 import AllProducts from "./features/categories/all-products/AllProducts";
 import ProductPage from "./pages/ProductPage";
@@ -37,9 +39,11 @@ import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
 
 export default function App() {
+  const { isSuccess } = useAppSelector((state) => state.cart);
   return (
     <BrowserRouter>
       <Header />
+      {isSuccess && <PushNotification />}
       <Routes>
         <Route index element={<HomePage />} />
         {/* All products Route */}
