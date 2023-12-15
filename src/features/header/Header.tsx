@@ -22,12 +22,12 @@ export default function Header() {
         <h2 className="text-2xl font-light hover:text-orange-500 dark:hover:text-cyan-300">
           <NavLink to="/">
             UkExpress
-            <span className="text-base">.co.uk</span>
+            <span className="hidden text-base sm:block">.co.uk</span>
           </NavLink>
         </h2>
-        <div className="flex items-center rounded-md border border-gray-400 pr-2 dark:border-gray-500">
+        <div className="flex items-center rounded-md border-gray-400 pr-2 dark:border-gray-500 sm:border">
           <Input />
-          <Icon value={{ className: "text-[1.5rem]" }}>
+          <Icon value={{ className: "text-[1.5rem] hidden sm:block" }}>
             <IoIosSearch />
           </Icon>
         </div>

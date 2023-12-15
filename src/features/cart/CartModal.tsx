@@ -19,7 +19,7 @@ export default function CartModal() {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="absolute right-6 top-24 z-10 w-1/3 rounded-md border border-slate-300 bg-white p-4 text-black  shadow-md dark:border-gray-500 dark:bg-slate-800 dark:text-gray-400">
+    <div className="absolute right-1 top-24 z-10 mx-3 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-800 dark:text-gray-400 sm:right-6 sm:w-1/3">
       <div>
         <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 
