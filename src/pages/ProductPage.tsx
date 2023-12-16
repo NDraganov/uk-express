@@ -34,17 +34,17 @@ export default function ProductPage() {
   const formattedOriginalPrice = originalPrice?.toFixed(0);
 
   return (
-    <main className="mx-20 my-40">
+    <main className="mx-4 my-40 sm:mx-20">
       {!product && <p>Error</p>}
 
       <BackButton />
 
-      <div className="my-10 flex gap-10">
-        <section className="w-2/4">
+      <div className="my-10 sm:flex sm:gap-10">
+        <section className="sm:w-2/4">
           <ProductGallery id={productId} />
         </section>
 
-        <section className="flex w-2/4 flex-col items-baseline justify-start">
+        <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/4">
           <h2 className="text-3xl font-extralight dark:text-white">
             {product?.title}
           </h2>
