@@ -34,7 +34,7 @@ export default function ProductPage() {
   const formattedOriginalPrice = originalPrice?.toFixed(0);
 
   return (
-    <main className="mx-4 my-40 sm:mx-20">
+    <main className="mx-4 mb-10 mt-40 sm:mx-20  sm:my-40">
       {!product && <p>Error</p>}
 
       <BackButton />

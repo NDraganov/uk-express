@@ -26,9 +26,8 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
   );
   const onPageChange = (page: number) => setCurrentPage(page);
 
-  console.log();
   return (
-    <div>
+    <div className="flex flex-col justify-center">
       <div className="flex items-center justify-between">
         <p className="text-xl">
           Reviews for{" "}
@@ -65,12 +64,11 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
           </li>
         ))}
       </ul>
-      <div className="mt-4 flex overflow-x-auto sm:justify-center">
+      <div className="mt-4 flex items-center justify-center">
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
-          showIcons
         />
       </div>
     </div>
