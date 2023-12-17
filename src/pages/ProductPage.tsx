@@ -13,10 +13,11 @@ import ProductRating from "../features/products/product/ProductRating";
 import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
+import ErrorMessage from "../ui/ErrorMessage";
 
 export default function ProductPage() {
   const { isReviews } = useAppSelector((state) => state.products);
-  const { data: products } = useGetAllProductsQuery(undefined);
+  const { data: products, error } = useGetAllProductsQuery(undefined);
   const { data: comments } = useGetCommentsQuery(undefined);
   const dispatch = useAppDispatch();
   const { productId } = useParams();
@@ -33,10 +34,26 @@ export default function ProductPage() {
     product.price / (1 - product.discountPercentage / 100);
   const formattedOriginalPrice = originalPrice?.toFixed(0);
 
+  if (error) {
+    if ("status" in error) {
+      const errMsg =
+        "error" in error ? error.error : JSON.stringify(error.data);
+      const errStatus = JSON.stringify(error.status);
+
+      return (
+        <ErrorMessage
+          userMessage="The product you are looking for can not be found!"
+          errorStatus={errStatus}
+          errorMessage={errMsg}
+        />
+      );
+    } else {
+      return <div>{error.message}</div>;
+    }
+  }
+
   return (
     <main className="mx-4 mb-10 mt-40 sm:mx-20  sm:my-40">
-      {!product && <p>Error</p>}
-
       <BackButton />
 
       <div className="my-10 sm:flex sm:gap-10">
