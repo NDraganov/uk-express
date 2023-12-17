@@ -19,7 +19,7 @@ export default function CartModal() {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="absolute right-1 top-24 z-10 mx-3 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-800 dark:text-gray-400 sm:right-6 sm:w-1/3">
+    <div className="absolute right-1 top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-800 dark:text-gray-400 sm:right-6 sm:w-1/3">
       <div>
         <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 
@@ -30,6 +30,7 @@ export default function CartModal() {
               : "Your cart is empty!"}
           </p>
         )}
+
         {isProcessed && (
           <p className="pt-4 text-red-600 dark:text-orange-500">
             {isAuthenticated
@@ -39,7 +40,11 @@ export default function CartModal() {
         )}
 
         {cartItems.length > 0 && (
-          <ul className={`mt-2 ${isProcessed ? "hidden" : ""}`}>
+          <ul
+            className={`no-scrollbar mt-2 h-52 overflow-scroll ${
+              isProcessed ? "hidden" : ""
+            }`}
+          >
             {cartItems.map((item) => {
               return (
                 <li className="flex items-center justify-between" key={item.id}>
