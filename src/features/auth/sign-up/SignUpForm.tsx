@@ -234,7 +234,7 @@ export default function SignUpForm() {
         <NavigationLink
           type="terms"
           title="Terms & Conditions"
-          to="/policies"
+          to="/terms-and-conditions"
         />
       </p>
 

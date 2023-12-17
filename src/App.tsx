@@ -37,6 +37,7 @@ import MensShoes from "./features/categories/mens-shoes/MensShoes";
 import MensWatches from "./features/categories/mens-watches/MensWatches";
 import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
+import TermsAndContions from "./pages/TermsAndConditions";
 
 export default function App() {
   const { isSuccess, isDeleted } = useAppSelector((state) => state.cart);
@@ -46,6 +47,7 @@ export default function App() {
       {isSuccess && <PushNotification type="add-product" />}
       {isDeleted && <PushNotification type="delete-product" />}
       <Routes>
+        <Route path="/terms-and-conditions" element={<TermsAndContions />} />
         <Route index element={<HomePage />} />
         {/* All products Route */}
         <Route path="/products" element={<AllProducts />} />
