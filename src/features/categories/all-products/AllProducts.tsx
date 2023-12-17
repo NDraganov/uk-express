@@ -8,9 +8,9 @@ export default function AllProducts() {
   const { data, isLoading } = useGetAllProductsQuery(undefined);
   const products = data?.products;
 
-  const productsPerPage = 20;
+  const productsPerPage = 21;
 
-  const totalPages = 100 / productsPerPage;
+  const totalPages = Math.ceil(100 / productsPerPage);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
