@@ -6,12 +6,14 @@ import Button from "../../../../ui/Button";
 
 export default function MyCart() {
   const { user } = useAppSelector((state) => state.auth);
-  const { items: cartItems } = useAppSelector((state) => state.cart);
+  const { items: cartItems, isProcessed } = useAppSelector(
+    (state) => state.cart,
+  );
   const navigate = useNavigate();
 
   return (
     <div className="flex h-screen items-center justify-center overflow-scroll">
-      {cartItems.length === 0 ? (
+      {cartItems.length === 0 || isProcessed ? (
         <div className="flex h-full flex-col items-center justify-center">
           <p className="pb-4 text-2xl font-light dark:text-white">
             <span className="dark:text-cyan-500">
