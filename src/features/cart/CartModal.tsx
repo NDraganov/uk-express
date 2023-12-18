@@ -19,7 +19,7 @@ export default function CartModal() {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="absolute right-1 top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-800 dark:text-gray-400 sm:right-6 sm:w-1/3">
+    <div className="absolute right-[0.05rem] top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-900 dark:text-gray-400 sm:right-6 sm:w-1/3">
       <div>
         <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 
@@ -41,7 +41,7 @@ export default function CartModal() {
 
         {cartItems.length > 0 && (
           <ul
-            className={`no-scrollbar mt-2 h-52 overflow-scroll ${
+            className={`no-scrollbar mt-2 max-h-52 overflow-scroll rounded-md border border-slate-300 px-1 dark:border-gray-500 dark:bg-slate-800 ${
               isProcessed ? "hidden" : ""
             }`}
           >
@@ -65,7 +65,7 @@ export default function CartModal() {
         </p>
         <div className="flex items-center gap-4">
           <Button title="Close" onClick={() => dispatch(closeCart())} />
-          <CheckoutButton title="Proceed to Checkout" />
+          <CheckoutButton title="Checkout" />
         </div>
       </div>
     </div>
