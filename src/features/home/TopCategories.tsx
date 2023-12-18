@@ -9,14 +9,14 @@ import { GiBigDiamondRing } from "react-icons/gi";
 
 export default function TopCategories() {
   return (
-    <div className="flex h-60 flex-col items-center justify-center gap-4 bg-lime-400">
+    <div className="my-10 flex h-60 flex-col items-center justify-center gap-4 bg-lime-400">
       <h2 className="text-2xl font-semibold dark:text-black">Top Categories</h2>
       <div className="flex items-center justify-center gap-10">
         <NavLink to="/category/laptops">
-          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6">
+          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6 hover:bg-lime-400">
             <Icon
               value={{
-                className: "text-6xl dark:text-black hover:fill-orange-500",
+                className: "text-6xl dark:text-black",
               }}
             >
               <GiLaptop />
@@ -25,10 +25,10 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/category/mens-shoes">
-          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6">
+          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6 hover:bg-lime-400">
             <Icon
               value={{
-                className: "text-6xl dark:text-black hover:fill-orange-500",
+                className: "text-6xl dark:text-black",
               }}
             >
               <GiConverseShoe />
@@ -37,10 +37,10 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/category/smartphones">
-          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6">
+          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6 hover:bg-lime-400">
             <Icon
               value={{
-                className: "text-6xl dark:text-black hover:fill-orange-500",
+                className: "text-6xl dark:text-black",
               }}
             >
               <IoPhonePortraitOutline />
@@ -49,10 +49,10 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/category/womens-dresses">
-          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6">
+          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6 hover:bg-lime-400">
             <Icon
               value={{
-                className: "text-6xl dark:text-black hover:fill-orange-500",
+                className: "text-6xl dark:text-black",
               }}
             >
               <GiDress />
@@ -61,10 +61,10 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/category/mens-watches">
-          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6">
+          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6 hover:bg-lime-400">
             <Icon
               value={{
-                className: "text-6xl dark:text-black hover:fill-orange-500",
+                className: "text-6xl dark:text-black",
               }}
             >
               <BsSmartwatch />
@@ -73,10 +73,10 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/category/womens-jewellery">
-          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6">
+          <div className="flex flex-col items-center justify-center rounded-full bg-white px-10 py-6 hover:bg-lime-400">
             <Icon
               value={{
-                className: "text-6xl dark:text-black hover:fill-orange-500",
+                className: "text-6xl dark:text-black",
               }}
             >
               <GiBigDiamondRing />
