@@ -13,6 +13,7 @@ interface CartState {
   items: CartItem[];
   isVisible: boolean;
   isSuccess: boolean;
+  isAdded: boolean;
   isDeleted: boolean;
   shipping: number;
   isFreeShipping: boolean;
@@ -30,6 +31,7 @@ const initialState: CartState = {
   isFreeShipping: false,
   isVisible: false,
   isSuccess: false,
+  isAdded: false,
   isDeleted: false,
   isStandard: false,
   standardDays: "4-7",
@@ -68,6 +70,7 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
         state.isSuccess = true;
+        state.isAdded = true;
         state.isDeleted = false;
       }
 
@@ -81,7 +84,7 @@ const cartSlice = createSlice({
       }
     },
     closeToast(state) {
-      state.isSuccess = false;
+      state.isAdded = false;
       state.isDeleted = false;
     },
     removeFromCart(state, action: PayloadAction<number>) {
@@ -112,6 +115,7 @@ const cartSlice = createSlice({
       );
 
       state.items.splice(itemIndex, 1);
+      state.isAdded = false;
       state.isDeleted = true;
     },
     addStandardShipping(state, action: PayloadAction<number>) {

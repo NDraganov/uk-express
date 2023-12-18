@@ -40,12 +40,14 @@ import DiscountedProducts from "./pages/DiscountedProducts";
 import TermsAndContions from "./pages/TermsAndConditions";
 
 export default function App() {
-  const { isSuccess, isDeleted } = useAppSelector((state) => state.cart);
+  const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
   return (
     <BrowserRouter>
       <Header />
-      {isSuccess && <PushNotification type="add-product" />}
+      {/* Toast */}
+      {isAdded && <PushNotification type="add-product" />}
       {isDeleted && <PushNotification type="delete-product" />}
+
       <Routes>
         <Route path="/terms-and-conditions" element={<TermsAndContions />} />
         <Route index element={<HomePage />} />
