@@ -26,8 +26,10 @@ export default function CartItem(item: CartItem) {
         alt={item.title}
       />
       <div className="flex w-full flex-col">
-        <div className="flex items-center justify-between dark:text-gray-300">
-          <span className="overflow-hidden font-medium">{item.title}</span>
+        <div className="flex items-center justify-between gap-10 dark:text-gray-300">
+          <span className="line-clamp-1 overflow-hidden font-medium">
+            {item.title}
+          </span>
           <div className="flex items-center gap-4">
             <span className="font-medium">£{formattedSumPrice}</span>
             <DeleteButton onDelete={() => dispatch(deleteFromCart(item.id))} />

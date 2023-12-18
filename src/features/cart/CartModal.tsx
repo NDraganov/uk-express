@@ -41,7 +41,7 @@ export default function CartModal() {
 
         {cartItems.length > 0 && (
           <ul
-            className={`no-scrollbar mt-2 max-h-52 overflow-scroll rounded-md border border-slate-300 px-1 dark:border-gray-500 dark:bg-slate-800 ${
+            className={`no-scrollbar mt-2 max-h-52 overflow-scroll rounded-md border border-slate-300 p-1 dark:border-gray-500 dark:bg-slate-800 ${
               isProcessed ? "hidden" : ""
             }`}
           >

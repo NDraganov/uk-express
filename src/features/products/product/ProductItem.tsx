@@ -27,7 +27,9 @@ export default function ProductItem({
       </div>
 
       <div className="flex h-2/5 w-full flex-col justify-between pt-2">
-        <p className="text-lg font-normal dark:text-gray-300">{title}</p>
+        <p className="line-clamp-1 text-lg font-normal dark:text-gray-300">
+          {title}
+        </p>
 
         <div className="my-2 flex items-center gap-1">
           <ProductRating rating={rating.toFixed(0)} />
