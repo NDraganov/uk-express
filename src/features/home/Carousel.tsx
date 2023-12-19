@@ -5,15 +5,18 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const images = [
   {
-    src: "/television.jpeg",
+    src: "/images/television.jpeg",
   },
   {
-    src: "/men-clothing.jpeg",
+    src: "/images/men-clothing.jpg",
   },
   {
-    src: "/women-clothing.jpeg",
+    src: "/images/women-clothing.jpg",
   },
-  { src: "/jewellery.jpeg" },
+  {
+    src: "/images/watches.jpg",
+  },
+  { src: "/images/jewellery.jpg" },
 ];
 
 export default function Carousel() {
@@ -32,7 +35,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative my-40 h-56 sm:h-[40rem]">
+    <div className="relative my-40 h-56 sm:h-full">
       <button
         className="absolute left-10 top-1/2 flex items-center justify-center rounded-full p-2 hover:bg-white hover:bg-opacity-30"
         onClick={prevSlide}
