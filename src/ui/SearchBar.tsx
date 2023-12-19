@@ -33,7 +33,7 @@ export default function SearchBar() {
     <div className="relative hidden sm:block">
       <div className="flex items-center">
         <input
-          className="h-8 w-40 border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:w-56 focus:border-orange-500 focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500"
+          className="h-8 w-56 border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500"
           type="text"
           title="Search products"
           onChange={(e) => {
@@ -51,7 +51,7 @@ export default function SearchBar() {
         <div className="absolute z-20 mt-2 max-h-60 w-56 overflow-y-scroll rounded-md bg-white shadow-md shadow-slate-400 dark:bg-slate-800 dark:text-gray-300">
           {input !== "" &&
             singleProduct?.products.map((product) => (
-              <div className="px-2" key={product.id}>
+              <div className="px-2 py-1" key={product.id}>
                 <NavLink
                   to={`/products/${product.id}`}
                   onClick={() => {
