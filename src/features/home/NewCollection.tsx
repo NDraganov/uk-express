@@ -17,7 +17,7 @@ export default function NewCollection() {
   const { data: womensBags } = useGetWomensBagsQuery(undefined);
 
   return (
-    <section>
+    <section className="my-40">
       <h2 className="pb-6 pl-10 text-3xl dark:text-white">New Collection</h2>
       <div className="no-scrollbar grid grid-flow-col gap-5 overflow-scroll px-10 pb-10">
         <NavLink to={`/products/${smartphones?.products[1].id}`}>

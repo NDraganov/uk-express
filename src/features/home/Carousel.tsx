@@ -32,7 +32,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative h-56 sm:h-[40rem]">
+    <div className="relative my-40 h-56 sm:h-[40rem]">
       <button
         className="absolute left-10 top-1/2 flex items-center justify-center rounded-full p-2 hover:bg-white hover:bg-opacity-30"
         onClick={prevSlide}
