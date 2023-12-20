@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
+import ErrorMessage from "../../../ui/ErrorMessage";
 import ProductsList from "../../products/ProductsList";
 import { Pagination } from "flowbite-react";
 
 export default function AllProducts() {
   const [currentPage, setCurrentPage] = useState(1);
-  const { data, isLoading } = useGetAllProductsQuery(undefined);
+  const { data, isLoading, error } = useGetAllProductsQuery(undefined);
   const products = data?.products;
 
   const productsPerPage = 21;
@@ -20,6 +21,24 @@ export default function AllProducts() {
   );
 
   const onPageChange = (page: number) => setCurrentPage(page);
+
+  if (error) {
+    if ("status" in error) {
+      const errMsg =
+        "error" in error ? error.error : JSON.stringify(error.data);
+      const errStatus = JSON.stringify(error.status);
+
+      return (
+        <ErrorMessage
+          userMessage="The products you are looking for can not be found!"
+          errorStatus={errStatus}
+          errorMessage={errMsg}
+        />
+      );
+    } else {
+      return <div>{error.message}</div>;
+    }
+  }
 
   return (
     <div className="min-h-screen">
