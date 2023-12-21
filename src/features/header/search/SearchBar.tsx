@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGetSingleProductQuery } from "../../../api/productsApiSlice";
-import { NavLink } from "react-router-dom";
+import ProductItem from "../../products/product/ProductItem";
 import Icon from "../../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
 
@@ -30,9 +30,9 @@ export default function SearchBar() {
 
   return (
     <div className="relative hidden sm:block">
-      <div className="flex items-center">
+      <div className="flex items-center justify-center">
         <input
-          className="h-8 w-56 border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500"
+          className="h-8 border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500 sm:w-3/5"
           type="text"
           title="Search products"
           onChange={(e) => {
@@ -46,23 +46,17 @@ export default function SearchBar() {
           <IoIosSearch />
         </Icon>
       </div>
+
       {isActive && (
-        <div className="absolute z-20 mt-2 max-h-60 w-56 overflow-y-scroll rounded-md bg-white shadow-md shadow-slate-400 dark:bg-slate-800 dark:text-gray-300">
-          {input !== "" &&
-            singleProduct?.products.map((product) => (
-              <div className="px-2 py-1" key={product.id}>
-                <NavLink
-                  to={`/products/${product.id}`}
-                  onClick={() => {
-                    setIsActive(false);
-                  }}
-                >
-                  <p className="line-clamp-1 text-sm hover:text-gray-500 dark:hover:text-gray-400">
-                    {product.title}
-                  </p>
-                </NavLink>
-              </div>
-            ))}
+        <div className="absolute z-20 mt-4 max-h-[22rem] overflow-y-scroll rounded-md bg-white dark:bg-slate-900 sm:w-full">
+          <ul className="grid gap-4 sm:grid-cols-3">
+            {input !== "" &&
+              singleProduct?.products.map((product) => (
+                <li className="" key={product.id}>
+                  <ProductItem {...product} />
+                </li>
+              ))}
+          </ul>
         </div>
       )}
     </div>

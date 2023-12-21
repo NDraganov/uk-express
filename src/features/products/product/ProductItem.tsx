@@ -1,6 +1,7 @@
 import { useAppDispatch } from "../../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../cart/cartSlice";
+import { closeSearchModal } from "../../header/search/searchSlice";
 import { type Product } from "../../../api/products-types/productsTypes";
 import ProductRating from "./ProductRating";
 import Button from "../../../ui/Button";
@@ -43,7 +44,13 @@ export default function ProductItem({
         </p>
 
         <div className="flex justify-between">
-          <Button title="Review" onClick={() => navigate(`/products/${id}`)} />
+          <Button
+            title="Review"
+            onClick={() => {
+              dispatch(closeSearchModal());
+              navigate(`/products/${id}`);
+            }}
+          />
           <Button
             title="Add to cart"
             onClick={() =>
