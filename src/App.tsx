@@ -38,15 +38,20 @@ import MensWatches from "./features/categories/mens-watches/MensWatches";
 import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
 import TermsAndContions from "./pages/TermsAndConditions";
+import SearchModal from "./features/header/search/SearchModal";
 
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
+  const { isVisible } = useAppSelector((state) => state.search);
   return (
     <BrowserRouter>
       <Header />
       {/* Toast */}
       {isAdded && <PushNotification type="add-product" />}
       {isDeleted && <PushNotification type="delete-product" />}
+
+      {/* SearchModal */}
+      {isVisible && <SearchModal />}
 
       <Routes>
         <Route path="/terms-and-conditions" element={<TermsAndContions />} />

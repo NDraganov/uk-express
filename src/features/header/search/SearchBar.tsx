@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useGetSingleProductQuery } from "../api/productsApiSlice";
+import { useGetSingleProductQuery } from "../../../api/productsApiSlice";
 import { NavLink } from "react-router-dom";
-
+import Icon from "../../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
-import Icon from "./Icon";
 
 export default function SearchBar() {
   const [isActive, setIsActive] = useState(false);

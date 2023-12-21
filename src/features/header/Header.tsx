@@ -1,13 +1,15 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { NavLink } from "react-router-dom";
+import { showSearchModal } from "./search/searchSlice";
 import { openCart } from "../cart/cartSlice";
-import SearchBar from "../../ui/SearchBar";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "../../ui/UserBadge";
 import CategoriesNav from "./CategoriesNav";
 import DarkModeToggle from "../../ui/DarkModeToggle";
+import Icon from "../../ui/Icon";
+import { IoIosSearch } from "react-icons/io";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -25,7 +27,11 @@ export default function Header() {
         </h2>
 
         <div className="flex items-center gap-4 ">
-          <SearchBar />
+          <button onClick={() => dispatch(showSearchModal())}>
+            <Icon value={{ className: "text-xl" }}>
+              <IoIosSearch />
+            </Icon>
+          </button>
           <DarkModeToggle />
           {isAuthenticated === "authenticated" ? (
             <UserBadge />
