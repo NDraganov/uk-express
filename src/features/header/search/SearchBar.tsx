@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { setInput, showSearchResults } from "./searchSlice";
 import { useGetSingleProductQuery } from "../../../api/productsApiSlice";
 import ProductItem from "../../products/product/ProductItem";
 import Icon from "../../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
 
 export default function SearchBar() {
-  const [isActive, setIsActive] = useState(false);
-  const [input, setInput] = useState("");
+  const { isActive, input } = useAppSelector((state) => state.search);
   const {
     data: singleProduct,
     isError,
     error,
   } = useGetSingleProductQuery(input || "");
+  const dispatch = useAppDispatch();
 
   if (isError) {
     if ("status" in error) {
@@ -36,10 +37,9 @@ export default function SearchBar() {
           type="text"
           title="Search products"
           onChange={(e) => {
-            setInput(e.target.value);
-            setIsActive(true);
+            dispatch(setInput(e.target.value));
+            dispatch(showSearchResults());
           }}
-          onClick={() => setIsActive((prevActive) => !prevActive)}
           placeholder="Search products"
         />
         <Icon value={{ className: "text-xl" }}>

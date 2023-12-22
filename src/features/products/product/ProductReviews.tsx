@@ -47,11 +47,7 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
             key={review.id}
           >
             <div className="flex items-center justify-start gap-4">
-              <img
-                className="w-8 rounded-full"
-                src="/default-user.jpg"
-                alt="user"
-              />
+              <img className="w-8 rounded-full" src="" alt="user" />
               <p className="font-medium dark:text-white">
                 {review.user.username}
               </p>

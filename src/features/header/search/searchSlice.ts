@@ -2,10 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface Search {
   isVisible: boolean;
+  isActive: boolean;
+  input: string;
 }
 
 const initialState: Search = {
   isVisible: false,
+  isActive: false,
+  input: "",
 };
 
 export const searchSlice = createSlice({
@@ -18,8 +22,19 @@ export const searchSlice = createSlice({
     closeSearchModal(state) {
       state.isVisible = false;
     },
+    showSearchResults(state) {
+      state.isActive = true;
+    },
+    setInput(state, action) {
+      state.input = action.payload;
+    },
   },
 });
 
-export const { showSearchModal, closeSearchModal } = searchSlice.actions;
+export const {
+  showSearchModal,
+  closeSearchModal,
+  showSearchResults,
+  setInput,
+} = searchSlice.actions;
 export default searchSlice.reducer;
