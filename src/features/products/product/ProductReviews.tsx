@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useAppSelector } from "../../../store/hooks";
 import { useDispatch } from "react-redux";
 import { useGetCommentsQuery } from "../../../api/productsApiSlice";
-import { closeReviews } from "../productsSlice";
+import { closeReviews, setCurrentPage } from "../productsSlice";
 import { Pagination } from "flowbite-react";
 
 interface ProductReviewsProps {
@@ -9,7 +9,7 @@ interface ProductReviewsProps {
 }
 
 export default function ProductReviews({ title }: ProductReviewsProps) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { currentPage } = useAppSelector((state) => state.products);
   const dispatch = useDispatch();
   const { data: comments } = useGetCommentsQuery(undefined);
 
@@ -24,7 +24,7 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
     indexOfFirstReview,
     indexOfLastPost,
   );
-  const onPageChange = (page: number) => setCurrentPage(page);
+  const onPageChange = (page: number) => dispatch(setCurrentPage(page));
 
   return (
     <div className="flex flex-col justify-center">
