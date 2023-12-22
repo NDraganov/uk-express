@@ -18,8 +18,9 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
   const totalPages =
     comments?.comments.length && comments.comments.length / reviewsPerPage;
 
-  const indexOfLastPost = currentPage * reviewsPerPage;
-  const indexOfFirstReview = indexOfLastPost - reviewsPerPage;
+  const indexOfLastPost = currentPage && currentPage * reviewsPerPage;
+  const indexOfFirstReview =
+    indexOfLastPost && indexOfLastPost - reviewsPerPage;
   const currentReviews = comments?.comments.slice(
     indexOfFirstReview,
     indexOfLastPost,

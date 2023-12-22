@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialState {
   isReviews: boolean;
-  currentPage: number;
+  currentPage: number | undefined;
 }
 
 const initialState: InitialState = {
