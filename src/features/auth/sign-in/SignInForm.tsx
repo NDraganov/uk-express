@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signInUser } from "../authSlice";
 import { type SignInUser } from "../authTypes";
 import FormButton from "../../../ui/FormButton";
+import Button from "../../../ui/Button";
 import NavigationLink from "../../../ui/NavigationLink";
 
 export default function SignInForm() {
@@ -29,6 +30,11 @@ export default function SignInForm() {
       navigate(`/users/${userId}/account-information`);
     }
   });
+
+  function demoAccount() {
+    setValue("email", "ned@email.com");
+    setValue("password", "12345678");
+  }
 
   return (
     <form
@@ -71,6 +77,7 @@ export default function SignInForm() {
       </div>
       <NavigationLink to="/" title="Forgot your password?" />
       <FormButton type="submit" title="Sign In" disabled={isLoading} />
+      <Button title="Demo account" onClick={demoAccount} />
     </form>
   );
 }
