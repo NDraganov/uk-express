@@ -48,7 +48,7 @@ export default function SearchBar() {
       </div>
 
       {isActive && (
-        <div className="absolute z-20 mt-4 max-h-[22rem] overflow-y-scroll rounded-md bg-white dark:bg-slate-900 sm:w-full">
+        <div className="absolute z-20 mt-10 overflow-y-scroll rounded-md bg-white dark:bg-slate-900 sm:max-h-[30rem] sm:w-full">
           <ul className="grid gap-4 sm:grid-cols-3">
             {input !== "" &&
               singleProduct?.products.map((product) => (
