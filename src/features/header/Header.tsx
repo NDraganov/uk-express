@@ -40,7 +40,12 @@ export default function Header() {
 
         <div className="flex items-center gap-4 ">
           <button onClick={() => dispatch(showSearchModal())}>
-            <Icon value={{ className: "text-xl" }}>
+            <Icon
+              value={{
+                className:
+                  "text-xl hover:fill-slate-400 dark:hover:fill-cyan-300",
+              }}
+            >
               <IoIosSearch />
             </Icon>
           </button>

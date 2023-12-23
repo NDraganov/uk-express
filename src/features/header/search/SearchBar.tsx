@@ -36,6 +36,7 @@ export default function SearchBar() {
           className="h-8 border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500 sm:w-3/5"
           type="text"
           title="Search products"
+          autoFocus
           onChange={(e) => {
             dispatch(setInput(e.target.value));
             dispatch(showSearchResults());
