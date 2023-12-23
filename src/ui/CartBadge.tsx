@@ -1,9 +1,10 @@
+import { type FormEvent } from "react";
 import { useAppSelector } from "../store/hooks";
 import Icon from "./Icon";
 import { GiShoppingCart } from "react-icons/gi";
 
 interface CartBadgeProps {
-  onOpen: () => void;
+  onOpen: (e: FormEvent) => void;
 }
 
 export default function CartBadge({ onOpen }: CartBadgeProps) {

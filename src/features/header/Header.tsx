@@ -1,7 +1,8 @@
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { type FormEvent, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { showSearchModal } from "./search/searchSlice";
-import { openCart } from "../cart/cartSlice";
+import { closeCart, openCart } from "../cart/cartSlice";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
@@ -15,6 +16,17 @@ export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
   const { isAuthenticated } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
+
+  function handleOpenCart(e: FormEvent) {
+    e.stopPropagation();
+    dispatch(openCart());
+  }
+
+  useEffect(() => {
+    document.body.addEventListener("click", () => {
+      dispatch(closeCart());
+    });
+  }, [dispatch]);
 
   return (
     <div className="fixed left-0 right-0 top-0 z-10 bg-white text-black dark:bg-slate-900 dark:text-white">
@@ -41,7 +53,7 @@ export default function Header() {
               {/* <AuthHeaderButton type="sign-up" to="/sign-up" title="SIGN UP" /> */}
             </div>
           )}
-          <CartBadge onOpen={() => dispatch(openCart())} />
+          <CartBadge onOpen={(e) => handleOpenCart(e)} />
         </div>
 
         {cart === true && <CartModal />}
