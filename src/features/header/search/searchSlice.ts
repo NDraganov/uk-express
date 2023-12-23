@@ -21,6 +21,7 @@ export const searchSlice = createSlice({
     },
     closeSearchModal(state) {
       state.isVisible = false;
+      state.isActive = false;
     },
     showSearchResults(state) {
       state.isActive = true;
