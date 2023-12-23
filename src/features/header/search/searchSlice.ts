@@ -20,6 +20,7 @@ export const searchSlice = createSlice({
       state.isVisible = true;
     },
     closeSearchModal(state) {
+      state.input = "";
       state.isVisible = false;
       state.isActive = false;
     },
