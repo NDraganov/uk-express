@@ -39,6 +39,7 @@ import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
 import TermsAndContions from "./pages/TermsAndConditions";
 import SearchModal from "./features/header/search/SearchModal";
+import PrivacyPage from "./pages/PrivacyPage";
 
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
@@ -55,6 +56,7 @@ export default function App() {
 
       <Routes>
         <Route path="/terms-and-conditions" element={<TermsAndContions />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
         <Route index element={<HomePage />} />
         {/* All products Route */}
         <Route path="/products" element={<AllProducts />} />
