@@ -19,7 +19,7 @@ export default function ProductItem({
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-[28rem] flex-col items-center rounded-md border border-gray-300 p-2 shadow-lg shadow-gray-300 hover:scale-105 dark:border-gray-500 dark:bg-slate-800 dark:shadow-none">
+    <div className="flex h-[28rem] flex-col items-center rounded-md border border-gray-300 p-2 shadow-lg shadow-gray-300 hover:scale-105 hover:bg-orange-50 dark:border-gray-500 dark:bg-slate-800 dark:shadow-none dark:hover:bg-slate-700">
       <div className="h-3/5 w-full">
         <Img
           className="h-full w-full rounded-t-md"
