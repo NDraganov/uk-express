@@ -23,6 +23,7 @@ export default function ProductItem({
       <div className="h-3/5 w-full">
         <Img
           className="h-full w-full rounded-t-md"
+          loading="lazy"
           src={thumbnail}
           alt={title}
         />
