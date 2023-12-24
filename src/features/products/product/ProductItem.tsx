@@ -1,8 +1,9 @@
-import { useAppDispatch } from "../../../store/hooks";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../../store/hooks";
 import { addToCart } from "../../cart/cartSlice";
 import { closeSearchModal } from "../../header/search/searchSlice";
 import { type Product } from "../../../api/products-types/productsTypes";
+import { Img } from "react-image";
 import ProductRating from "./ProductRating";
 import Button from "../../../ui/Button";
 
@@ -18,11 +19,11 @@ export default function ProductItem({
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-[28rem] flex-col items-center rounded-md border border-gray-300 p-2 shadow-lg shadow-gray-300 dark:border-gray-500 dark:bg-slate-800 dark:shadow-none">
+    <div className="flex h-[28rem] flex-col items-center rounded-md border border-gray-300 p-2 shadow-lg shadow-gray-300 hover:scale-105 dark:border-gray-500 dark:bg-slate-800 dark:shadow-none">
       <div className="h-3/5 w-full">
-        <img
+        <Img
           className="h-full w-full rounded-t-md"
-          src={images[0]}
+          src={thumbnail}
           alt={title}
         />
       </div>
