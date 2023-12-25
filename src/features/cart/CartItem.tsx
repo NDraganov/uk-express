@@ -1,3 +1,4 @@
+import { type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks";
 import {
@@ -22,8 +23,19 @@ export default function CartItem(item: CartItem) {
     navigate(`/products/${item.id}`);
   }
 
-  function handleAddToCart(item: CartItem) {
+  function handleAddToCart(item: CartItem, e: FormEvent) {
+    e.stopPropagation();
     dispatch(addToCart(item));
+  }
+
+  function handleRemoveFromCart(e: FormEvent) {
+    e.stopPropagation();
+    dispatch(removeFromCart(item.id));
+  }
+
+  function handleDeleteItem(e: FormEvent) {
+    e.stopPropagation();
+    dispatch(deleteFromCart(item.id));
   }
 
   return (
@@ -41,13 +53,13 @@ export default function CartItem(item: CartItem) {
           </span>
           <div className="flex items-center gap-4">
             <span className="font-medium">£{formattedSumPrice}</span>
-            <DeleteButton onDelete={() => dispatch(deleteFromCart(item.id))} />
+            <DeleteButton onDelete={(e: FormEvent) => handleDeleteItem(e)} />
           </div>
         </div>
         <QuantityButtons
           item={item}
-          onRemove={() => dispatch(removeFromCart(item.id))}
-          onAdd={() => handleAddToCart(item)}
+          onRemove={(e: FormEvent) => handleRemoveFromCart(e)}
+          onAdd={(e: FormEvent) => handleAddToCart(item, e)}
         />
       </div>
     </div>

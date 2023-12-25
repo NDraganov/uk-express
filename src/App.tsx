@@ -44,6 +44,7 @@ import PrivacyPage from "./pages/PrivacyPage";
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
   const { isVisible } = useAppSelector((state) => state.search);
+
   return (
     <BrowserRouter>
       <Header />

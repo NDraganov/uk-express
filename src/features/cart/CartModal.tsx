@@ -1,3 +1,4 @@
+import { type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeCart } from "./cartSlice";
 import CartItem from "./CartItem";
@@ -19,7 +20,10 @@ export default function CartModal() {
   const formattedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="absolute right-[0.05rem] top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-900 dark:text-gray-400 sm:right-6 sm:w-1/3">
+    <div
+      className="absolute right-[0.05rem] top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-900 dark:text-gray-400 sm:right-6 sm:w-1/3"
+      onClick={(e: FormEvent) => e.stopPropagation()}
+    >
       <div>
         <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
 

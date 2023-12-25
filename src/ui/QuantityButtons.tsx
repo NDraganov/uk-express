@@ -1,11 +1,12 @@
+import { type FormEvent } from "react";
 import { type CartItem } from "../features/cart/cartSlice";
 import Icon from "./Icon";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
 interface QuantityButtonsProps {
   item: CartItem;
-  onAdd: () => void;
-  onRemove: () => void;
+  onAdd: (e: FormEvent) => void;
+  onRemove: (e: FormEvent) => void;
 }
 
 export default function QuantityButtons({

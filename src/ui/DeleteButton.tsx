@@ -1,8 +1,9 @@
+import { type FormEvent } from "react";
 import Icon from "./Icon";
 import { BsTrash3 } from "react-icons/bs";
 
 interface DeleteButtonProps {
-  onDelete: () => void;
+  onDelete: (e: FormEvent) => void;
 }
 
 export default function DeleteButton({ onDelete }: DeleteButtonProps) {
