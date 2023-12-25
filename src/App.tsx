@@ -37,9 +37,9 @@ import MensShoes from "./features/categories/mens-shoes/MensShoes";
 import MensWatches from "./features/categories/mens-watches/MensWatches";
 import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
-import TermsAndContions from "./pages/TermsAndConditions";
+import TermsAndContions from "./features/policies/policies-links/TermsAndConditions";
 import SearchModal from "./features/header/search/SearchModal";
-import PrivacyPage from "./pages/PrivacyPage";
+import PrivacyPage from "./features/policies/policies-links/PrivacyPage";
 import PoliciesPage from "./pages/PoliciesPage";
 
 export default function App() {

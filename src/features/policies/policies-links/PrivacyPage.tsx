@@ -1,6 +1,6 @@
 export default function PrivacyPage() {
   return (
-    <div className="mx-80 mb-10 mt-40">
+    <div className="mx-80 my-10">
       <h1 className="text-3xl font-bold dark:text-white">
         UkExpress Privacy Policy
       </h1>
