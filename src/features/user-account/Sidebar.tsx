@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import SidebarLink from "../../ui/SidebarLink";
+import SidebarLink from "./SidebarLink";
 import { signOutUser } from "../auth/authSlice";
 
 export default function Sidebar() {

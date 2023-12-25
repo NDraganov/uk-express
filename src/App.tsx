@@ -40,6 +40,7 @@ import DiscountedProducts from "./pages/DiscountedProducts";
 import TermsAndContions from "./pages/TermsAndConditions";
 import SearchModal from "./features/header/search/SearchModal";
 import PrivacyPage from "./pages/PrivacyPage";
+import PoliciesPage from "./pages/PoliciesPage";
 
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
@@ -57,9 +58,9 @@ export default function App() {
 
       {/* Policies page */}
       <Routes>
-        <Route path="/policies">
+        <Route path="/policies" element={<PoliciesPage />}>
           <Route
-            path="/policies/terms-and-conditions"
+            path="/policies/terms&conditions"
             element={<TermsAndContions />}
           />
           <Route path="/policies/privacy" element={<PrivacyPage />} />

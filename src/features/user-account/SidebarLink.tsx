@@ -1,5 +1,5 @@
 import { NavLink, type NavLinkProps } from "react-router-dom";
-import Icon from "./Icon";
+import Icon from "../../ui/Icon";
 import { MdArrowForwardIos } from "react-icons/md";
 
 type SidebarLinkProps = {
