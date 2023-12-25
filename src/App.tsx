@@ -55,9 +55,15 @@ export default function App() {
       {/* SearchModal */}
       {isVisible && <SearchModal />}
 
+      {/* Policies page */}
       <Routes>
-        <Route path="/terms-and-conditions" element={<TermsAndContions />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/policies">
+          <Route
+            path="/policies/terms-and-conditions"
+            element={<TermsAndContions />}
+          />
+          <Route path="/policies/privacy" element={<PrivacyPage />} />
+        </Route>
         <Route index element={<HomePage />} />
         {/* All products Route */}
         <Route path="/products" element={<AllProducts />} />
