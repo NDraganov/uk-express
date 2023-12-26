@@ -39,8 +39,9 @@ import Lighting from "./features/categories/lighting/Lighting";
 import DiscountedProducts from "./pages/DiscountedProducts";
 import TermsAndContions from "./features/policies/policies-links/TermsAndConditions";
 import SearchModal from "./features/header/search/SearchModal";
-import PrivacyPage from "./features/policies/policies-links/PrivacyPage";
+import Privacy from "./features/policies/policies-links/Privacy";
 import PoliciesPage from "./pages/PoliciesPage";
+import Refund from "./features/policies/policies-links/Refund";
 
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
@@ -63,7 +64,8 @@ export default function App() {
             path="/policies/terms&conditions"
             element={<TermsAndContions />}
           />
-          <Route path="/policies/privacy" element={<PrivacyPage />} />
+          <Route path="/policies/privacy" element={<Privacy />} />
+          <Route path="/policies/refund" element={<Refund />} />
         </Route>
         <Route index element={<HomePage />} />
         {/* All products Route */}

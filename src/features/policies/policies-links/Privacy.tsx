@@ -1,4 +1,4 @@
-export default function PrivacyPage() {
+export default function Privacy() {
   return (
     <div className="mx-80 my-10">
       <h1 className="text-3xl font-bold dark:text-white">

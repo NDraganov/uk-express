@@ -1,6 +1,7 @@
 import PolicyNavLink from "./PolicyNavLink";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { MdPrivacyTip } from "react-icons/md";
+import { RiRefund2Fill } from "react-icons/ri";
 
 export default function PoliciesNav() {
   return (
@@ -14,6 +15,7 @@ export default function PoliciesNav() {
             icon={<IoDocumentTextSharp />}
           />
           <PolicyNavLink title="Privacy" to="privacy" icon={<MdPrivacyTip />} />
+          <PolicyNavLink title="Refund" to="refund" icon={<RiRefund2Fill />} />
         </ul>
       </nav>
     </div>
