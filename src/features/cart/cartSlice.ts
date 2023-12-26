@@ -46,7 +46,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     openCart(state) {
-      state.isVisible = true;
+      state.isVisible = !state.isVisible;
     },
     closeCart(state) {
       state.isVisible = false;
