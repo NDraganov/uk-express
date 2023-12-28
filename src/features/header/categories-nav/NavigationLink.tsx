@@ -17,12 +17,12 @@ export default function NavigationLink({
     return (
       <li>
         <button
-          className="w-max font-normal hover:text-orange-500 dark:hover:text-cyan-500"
+          className="w-max text-sm hover:text-orange-500 dark:hover:text-cyan-500"
           onClick={onClick}
         >
           <NavLink
             className={({ isActive }) =>
-              isActive ? "font-semibold text-orange-500 dark:text-cyan-500" : ""
+              isActive ? "text-orange-500 dark:text-cyan-500" : ""
             }
             to={to}
           >

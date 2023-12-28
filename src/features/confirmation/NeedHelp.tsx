@@ -1,4 +1,4 @@
-import NavigationLink from "../../ui/NavigationLink";
+import NavigationLink from "../header/categories-nav/NavigationLink";
 
 export default function NeedHelp() {
   return (

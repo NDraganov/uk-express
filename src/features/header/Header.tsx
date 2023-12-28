@@ -8,7 +8,7 @@ import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "../../ui/UserBadge";
-import CategoriesNav from "./CategoriesNav";
+import CategoriesNav from "./categories-nav/CategoriesNav";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";

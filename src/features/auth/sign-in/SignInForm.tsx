@@ -5,7 +5,7 @@ import { signInUser } from "../authSlice";
 import { type SignInUser } from "../authTypes";
 import FormButton from "../../../ui/FormButton";
 import Button from "../../../ui/Button";
-import NavigationLink from "../../../ui/NavigationLink";
+import NavigationLink from "../../header/categories-nav/NavigationLink";
 
 export default function SignInForm() {
   const {

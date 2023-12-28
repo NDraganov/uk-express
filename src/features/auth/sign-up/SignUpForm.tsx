@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { signUpUser } from "../authSlice";
 import { type Country, type SignUpUser } from "../authTypes";
 import FormButton from "../../../ui/FormButton";
-import NavigationLink from "../../../ui/NavigationLink";
+import NavigationLink from "../../header/categories-nav/NavigationLink";
 import data from "../../data/CountryCodeData.json";
 
 export default function SignUpForm() {
