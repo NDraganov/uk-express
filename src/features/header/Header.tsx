@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { showSearchModal } from "./search/searchSlice";
 import { closeCart, openCart } from "../cart/cartSlice";
+import MainNav from "./main-nav/MainNav";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
@@ -37,6 +38,8 @@ export default function Header() {
             <span className="hidden text-base sm:block">.co.uk</span>
           </NavLink>
         </h2>
+
+        <MainNav />
 
         <div className="flex items-center gap-4 ">
           <button onClick={() => dispatch(showSearchModal())}>
