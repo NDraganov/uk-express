@@ -3,11 +3,11 @@ import MainNavLink from "./MainNavLink";
 export default function MainNav() {
   return (
     <nav>
-      <ul className="flex items-center">
-        <MainNavLink title="Home" to="/" />
-        <MainNavLink title="About us" to="/about_us" />
+      <ul className="flex items-center gap-4">
+        <MainNavLink title="HOME" to="/" />
+        <MainNavLink title="ABOUT US" to="/about_us" />
         <MainNavLink title="FAQ" to="/faq" />
-        <MainNavLink title="Contact us" to="/contact_us" />
+        <MainNavLink title="CONTACT US" to="/contact_us" />
       </ul>
     </nav>
   );
