@@ -8,7 +8,6 @@ import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "../../ui/UserBadge";
-import CategoriesNav from "./categories-nav/CategoriesNav";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
@@ -30,8 +29,8 @@ export default function Header() {
   }, [dispatch]);
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-10 bg-white text-black dark:bg-slate-900 dark:text-white">
-      <header className="flex items-center justify-between px-3 py-2">
+    <div className="fixed left-0 right-0 top-0 z-10 border-b border-gray-300 bg-white text-black dark:bg-slate-900 dark:text-white">
+      <header className="flex items-center justify-between px-3 py-5">
         <div className="flex items-baseline gap-4">
           <h2 className="text-2xl font-light hover:text-orange-500 dark:hover:text-cyan-300">
             <NavLink className="flex items-baseline" to="/">
@@ -67,7 +66,6 @@ export default function Header() {
 
         {cart === true && <CartModal />}
       </header>
-      <CategoriesNav />
     </div>
   );
 }
