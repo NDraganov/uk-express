@@ -53,7 +53,7 @@ export default function ProductPage() {
   }
 
   return (
-    <main className="mx-4 mb-10 mt-40 sm:mx-20  sm:my-40">
+    <main className="mx-4 mb-10 mt-28 sm:mx-20  sm:my-28">
       <BackButton />
 
       <div className="my-10 sm:flex sm:gap-10">

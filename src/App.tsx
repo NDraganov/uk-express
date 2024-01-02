@@ -69,6 +69,7 @@ export default function App() {
           <Route path="/policies/refund" element={<Refund />} />
         </Route>
         <Route index element={<HomePage />} />
+
         {/* All products Route */}
         <Route element={<CategoriesNav />}>
           <Route path="/products" element={<AllProducts />} />
@@ -137,9 +138,11 @@ export default function App() {
             path="/products/category/mens-watches"
             element={<MensWatches />}
           />
-          {/* Singe product Route */}
-          <Route path="/products/:productId" element={<ProductPage />} />
         </Route>
+
+        {/* Singe product Route */}
+        <Route path="/products/:productId" element={<ProductPage />} />
+
         {/* User Route */}
         <Route element={<ProtectedRoute />}>
           <Route path="/users/:userId" element={<UserAccountPage />}>
@@ -153,6 +156,7 @@ export default function App() {
               element={<ChangePassword />}
             />
           </Route>
+
           {/* Checkout Route */}
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route
@@ -160,6 +164,7 @@ export default function App() {
             element={<OrderConfirmationPage />}
           />
         </Route>
+
         {/* Auth Routes */}
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<RegisterPage />} />
