@@ -5,6 +5,7 @@ export default function MainNav() {
     <nav>
       <ul className="flex items-center gap-4">
         <MainNavLink title="HOME" to="/" />
+        <MainNavLink title="PRODUCTS" to="/products" />
         <MainNavLink title="ABOUT US" to="/about_us" />
         <MainNavLink title="FAQ" to="/faq" />
         <MainNavLink title="CONTACT US" to="/contact_us" />
