@@ -3,6 +3,7 @@ import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
 import ErrorMessage from "../../../ui/ErrorMessage";
 import ProductsList from "../../products/ProductsList";
 import { Pagination } from "flowbite-react";
+import CategoriesNav from "../../header/categories-nav/CategoriesNav";
 
 export default function AllProducts() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,7 +42,8 @@ export default function AllProducts() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="mt-20">
+      <CategoriesNav />
       <ProductsList data={currentProducts} isLoading={isLoading} />
       <div className="mx-auto my-4 flex justify-center">
         <Pagination

@@ -16,6 +16,7 @@ import UserAccountPage from "./pages/UserAccountPage";
 import AccountInformation from "./features/user-account/sidebar-links/account-info/AccountInformation";
 import MyCart from "./features/user-account/sidebar-links/my-cart/MyCart";
 import ChangePassword from "./features/user-account/sidebar-links/change-password/ChangePassword";
+import CategoriesNav from "./features/header/categories-nav/CategoriesNav";
 import Smartphones from "./features/categories/smartphones/Smartphones";
 import Laptops from "./features/categories/laptops/Laptops";
 import Fragrances from "./features/categories/fragrances/Fragrances";
@@ -69,35 +70,76 @@ export default function App() {
         </Route>
         <Route index element={<HomePage />} />
         {/* All products Route */}
-        <Route path="/products" element={<AllProducts />} />
-        {/* Discounted products */}
-        <Route path="/products-on-sale" element={<DiscountedProducts />} />
-        {/* Categories routes */}
-        <Route path="/category/smartphones" element={<Smartphones />} />
-        <Route path="/category/laptops" element={<Laptops />} />
-        <Route path="/category/fragrances" element={<Fragrances />} />
-        <Route path="/category/skincare" element={<Skincare />} />
-        <Route path="/category/groceries" element={<Groceries />} />
-        <Route path="/category/home-decoration" element={<HomeDecoration />} />
-        <Route path="/category/furniture" element={<Furniture />} />
-        <Route path="/category/tops" element={<Tops />} />
-        <Route path="/category/sunglasses" element={<Sunglasses />} />
-        <Route path="/category/automotive" element={<Automotive />} />
-        <Route path="/category/motorcycle" element={<Motorcycle />} />
-        <Route path="/category/lighting" element={<Lighting />} />
-        <Route path="/category/womens-dresses" element={<WomensDresses />} />
-        <Route path="/category/womens-shoes" element={<WomensShoes />} />
-        <Route path="/category/womens-watches" element={<WomensWatches />} />
-        <Route path="/category/womens-bags" element={<WomensBags />} />
-        <Route
-          path="/category/womens-jewellery"
-          element={<WomensJewellery />}
-        />
-        <Route path="/category/mens-shirts" element={<MensShirts />} />
-        <Route path="/category/mens-shoes" element={<MensShoes />} />
-        <Route path="/category/mens-watches" element={<MensWatches />} />
-        {/* Singe product Route */}
-        <Route path="/products/:productId" element={<ProductPage />} />
+        <Route element={<CategoriesNav />}>
+          <Route path="/products" element={<AllProducts />} />
+          {/* Discounted products */}
+          <Route
+            path="/products/products-on-sale"
+            element={<DiscountedProducts />}
+          />
+          {/* Categories routes */}
+          <Route
+            path="/products/category/smartphones"
+            element={<Smartphones />}
+          />
+          <Route path="/products/category/laptops" element={<Laptops />} />
+          <Route
+            path="/products/category/fragrances"
+            element={<Fragrances />}
+          />
+          <Route path="/products/category/skincare" element={<Skincare />} />
+          <Route path="/products/category/groceries" element={<Groceries />} />
+          <Route
+            path="/products/category/home-decoration"
+            element={<HomeDecoration />}
+          />
+          <Route path="/products/category/furniture" element={<Furniture />} />
+          <Route path="/products/category/tops" element={<Tops />} />
+          <Route
+            path="/products/category/sunglasses"
+            element={<Sunglasses />}
+          />
+          <Route
+            path="/products/category/automotive"
+            element={<Automotive />}
+          />
+          <Route
+            path="/products/category/motorcycle"
+            element={<Motorcycle />}
+          />
+          <Route path="/products/category/lighting" element={<Lighting />} />
+          <Route
+            path="/products/category/womens-dresses"
+            element={<WomensDresses />}
+          />
+          <Route
+            path="/products/category/womens-shoes"
+            element={<WomensShoes />}
+          />
+          <Route
+            path="/products/category/womens-watches"
+            element={<WomensWatches />}
+          />
+          <Route
+            path="/products/category/womens-bags"
+            element={<WomensBags />}
+          />
+          <Route
+            path="/products/category/womens-jewellery"
+            element={<WomensJewellery />}
+          />
+          <Route
+            path="/products/category/mens-shirts"
+            element={<MensShirts />}
+          />
+          <Route path="/products/category/mens-shoes" element={<MensShoes />} />
+          <Route
+            path="/products/category/mens-watches"
+            element={<MensWatches />}
+          />
+          {/* Singe product Route */}
+          <Route path="/products/:productId" element={<ProductPage />} />
+        </Route>
         {/* User Route */}
         <Route element={<ProtectedRoute />}>
           <Route path="/users/:userId" element={<UserAccountPage />}>
