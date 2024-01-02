@@ -81,7 +81,7 @@ export default function CategoriesNav() {
               }}
             />
             <NavigationLink
-              to="category/skincare"
+              to="/products/category/skincare"
               title="Skincare"
               onClick={() => {
                 return skincare?.products;
