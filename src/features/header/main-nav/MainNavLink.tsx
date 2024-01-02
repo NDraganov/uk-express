@@ -10,7 +10,7 @@ export default function MainNavLink({ title, to }: MainNavLinkProps) {
     <NavLink to={to}>
       {({ isActive }) => (
         <li
-          className={`text-sm hover:text-gray-500 dark:hover:text-gray-300 ${
+          className={`text-base hover:text-gray-500 dark:hover:text-gray-300 ${
             isActive ? "text-orange-500 dark:text-cyan-500" : ""
           }`}
         >

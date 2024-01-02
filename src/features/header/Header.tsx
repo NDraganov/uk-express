@@ -29,7 +29,7 @@ export default function Header() {
   }, [dispatch]);
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-10 border-b border-gray-300 bg-white text-black dark:bg-slate-900 dark:text-white">
+    <div className="fixed left-0 right-0 top-0 z-10 border-b border-gray-300 bg-white text-black dark:border-gray-500 dark:bg-slate-900 dark:text-white">
       <header className="flex items-center justify-between px-3 py-5">
         <div className="flex items-baseline gap-4">
           <h2 className="text-2xl font-light hover:text-orange-500 dark:hover:text-cyan-300">
