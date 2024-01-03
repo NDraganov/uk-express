@@ -14,8 +14,8 @@ export default function HomePage() {
       <HomeVideo />
       <Carousel />
       <BigSale />
-      <NewCollection />
       <TopCategories />
+      <NewCollection />
     </main>
   );
 }
