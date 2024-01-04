@@ -18,14 +18,14 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="h-3/5">
+      <div>
         <img
           className="h-96 w-full rounded-md"
           src={product?.images[imageIndex]}
           alt={product?.title}
         />
       </div>
-      <div className="grid h-2/5 grid-flow-col place-items-center gap-2">
+      <div className="grid grid-flow-col place-items-center gap-2">
         {product?.images.map((image, index) => (
           <div
             className={`rounded-md p-[0.125rem] ${
@@ -35,7 +35,7 @@ export default function ProductGallery({ id }: ProductGalleryProps) {
           >
             <div className="m-0 rounded-md bg-white p-0">
               <img
-                className={`h-32 w-40 rounded-md hover:cursor-pointer hover:opacity-60 ${
+                className={`h-28 rounded-md hover:cursor-pointer hover:opacity-60 ${
                   imageIndex === index ? "opacity-60" : ""
                 }`}
                 src={image}
