@@ -7,7 +7,9 @@ export default function LearnLinks() {
       <h5 className="text-lg dark:text-slate-200">LEARN</h5>
       <div className="flex flex-col">
         {learnOptions.map((option) => (
-          <NavLink to={option.path}>{option.title}</NavLink>
+          <NavLink key={option.title} to={option.path}>
+            {option.title}
+          </NavLink>
         ))}
       </div>
     </div>
