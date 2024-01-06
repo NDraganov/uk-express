@@ -43,6 +43,7 @@ import SearchModal from "./features/header/search/SearchModal";
 import Privacy from "./features/policies/policies-links/Privacy";
 import PoliciesPage from "./pages/PoliciesPage";
 import Refund from "./features/policies/policies-links/Refund";
+import ScrollToTop from "./ui/ScrollToTop";
 
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
@@ -50,6 +51,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       {/* Toast */}
       {isAdded && <PushNotification type="add-product" />}
