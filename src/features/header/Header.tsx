@@ -7,7 +7,7 @@ import MainNav from "./main-nav/MainNav";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
-import UserBadge from "../../ui/UserBadge";
+import UserBadge from "./user-badge/UserBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";

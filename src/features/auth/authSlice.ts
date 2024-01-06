@@ -71,8 +71,9 @@ interface InitialStateProps {
   isLoading: boolean;
   isError: boolean;
   success: boolean;
-  isAuthenticated: string | undefined;
   user: User | null;
+  isAuthenticated: string | undefined;
+  isUserBadgeVisible: boolean;
   fullName: string;
 }
 
@@ -80,15 +81,20 @@ const initialState: InitialStateProps = {
   isLoading: false,
   isError: false,
   success: false,
-  isAuthenticated: "",
   user: null,
+  isAuthenticated: "",
+  isUserBadgeVisible: false,
   fullName: "",
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    showUserBadge(state) {
+      state.isUserBadgeVisible = !state.isUserBadgeVisible;
+    },
+  },
   extraReducers: (builder) => {
     // Sign Up user
     builder.addCase(signUpUser.pending, (state) => {
@@ -151,4 +157,5 @@ const authSlice = createSlice({
   },
 });
 
+export const { showUserBadge } = authSlice.actions;
 export default authSlice.reducer;
