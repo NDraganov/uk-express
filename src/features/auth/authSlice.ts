@@ -94,6 +94,9 @@ const authSlice = createSlice({
     showUserBadge(state) {
       state.isUserBadgeVisible = !state.isUserBadgeVisible;
     },
+    closeUserBadge(state) {
+      state.isUserBadgeVisible = false;
+    },
   },
   extraReducers: (builder) => {
     // Sign Up user
@@ -157,5 +160,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { showUserBadge } = authSlice.actions;
+export const { showUserBadge, closeUserBadge } = authSlice.actions;
 export default authSlice.reducer;

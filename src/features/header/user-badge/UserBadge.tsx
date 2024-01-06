@@ -1,3 +1,4 @@
+import { type FormEvent } from "react";
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { showUserBadge, signOutUser } from "../../auth/authSlice";
@@ -13,11 +14,16 @@ export default function UserBadge() {
   const { items } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
+  function handleOpenUserBadge(e: FormEvent) {
+    e.stopPropagation();
+    dispatch(showUserBadge());
+  }
+
   return (
     <div>
       <div
         className="hover:cursor-pointer hover:text-gray-600"
-        onClick={() => dispatch(showUserBadge())}
+        onClick={(e) => handleOpenUserBadge(e)}
       >
         {fullName}
       </div>

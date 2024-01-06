@@ -11,6 +11,7 @@ import UserBadge from "./user-badge/UserBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
+import { closeUserBadge } from "../auth/authSlice";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -25,6 +26,12 @@ export default function Header() {
   useEffect(() => {
     document.body.addEventListener("click", () => {
       dispatch(closeCart());
+    });
+  }, [dispatch]);
+
+  useEffect(() => {
+    document.body.addEventListener("click", () => {
+      dispatch(closeUserBadge());
     });
   }, [dispatch]);
 
