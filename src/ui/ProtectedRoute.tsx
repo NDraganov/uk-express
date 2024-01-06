@@ -1,7 +1,6 @@
 import { useAppSelector } from "../store/hooks";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Spinner } from "flowbite-react";
 
 export default function ProtectedRoute() {
   const { isLoading, isAuthenticated } = useAppSelector((state) => state.auth);
@@ -20,7 +19,7 @@ export default function ProtectedRoute() {
     return (
       <main>
         <div className="flex h-screen items-center justify-center">
-          <Spinner />
+          Loading...
         </div>
       </main>
     );

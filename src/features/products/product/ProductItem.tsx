@@ -4,7 +4,6 @@ import { addToCart } from "../../cart/cartSlice";
 import { closeSearchModal } from "../../header/search/searchSlice";
 import { type Product } from "../../../api/products-types/productsTypes";
 import { Img } from "react-image";
-import ProductRating from "./ProductRating";
 import Button from "../../../ui/Button";
 
 export default function ProductItem({
@@ -35,7 +34,6 @@ export default function ProductItem({
         </p>
 
         <div className="my-2 flex items-center gap-1">
-          <ProductRating rating={rating.toFixed(0)} />
           <p className="text-gray-500 dark:text-gray-400">
             <span>{rating.toFixed(0)}</span>
           </p>

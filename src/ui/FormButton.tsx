@@ -1,6 +1,5 @@
 import { useAppSelector } from "../store/hooks";
 import { type ComponentPropsWithoutRef } from "react";
-import { Spinner } from "flowbite-react";
 
 type FormButtonProps = {
   title: string;
@@ -25,7 +24,7 @@ export default function FormButton({
       >
         {isLoading ? (
           <div className="flex items-center justify-between gap-2">
-            <Spinner color="info" size="sm" /> <span>Processing...</span>
+            <span>Processing...</span>
           </div>
         ) : (
           title
@@ -43,7 +42,7 @@ export default function FormButton({
     >
       {isLoading ? (
         <div className="flex items-center justify-between gap-2">
-          <Spinner color="info" size="sm" /> <span>Processing...</span>
+          <span>Processing...</span>
         </div>
       ) : (
         title

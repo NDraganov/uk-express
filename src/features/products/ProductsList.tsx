@@ -1,6 +1,5 @@
 import ProductItem from "./product/ProductItem";
 import { type Product } from "../../api/products-types/productsTypes";
-import { Spinner } from "flowbite-react";
 
 interface ProductListProps {
   data: Product[] | undefined;
@@ -11,7 +10,7 @@ export default function ProductsList({ data, isLoading }: ProductListProps) {
   if (isLoading)
     return (
       <div className="flex h-screen items-center justify-center">
-        <Spinner color="info" size="xl" />
+        Loading...
       </div>
     );
   return (

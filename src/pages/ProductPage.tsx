@@ -8,8 +8,6 @@ import { openReviews } from "../features/products/productsSlice";
 import ProductGallery from "../features/products/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
-// import ProductReviews from "../features/products/product/ProductReviews";
-import ProductRating from "../features/products/product/ProductRating";
 import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
@@ -70,7 +68,6 @@ export default function ProductPage() {
           {/* Rewiews */}
           <div className="mt-2 flex items-center gap-10">
             <div className="flex items-center gap-2">
-              <ProductRating rating={product?.rating.toFixed(0)} />
               <p className="font-light text-gray-500 dark:text-gray-400">
                 <span>{rating}</span> out of 5
               </p>
@@ -151,7 +148,6 @@ export default function ProductPage() {
       <div className="flex w-full items-center justify-end">
         <CheckoutButton title="Proceed to Checkout" />
       </div>
-      {/* {isReviews && <ProductReviews title={product?.title} />} */}
     </main>
   );
 }
