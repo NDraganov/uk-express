@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import shopOptions from "../data/FooterShop.json";
+import shopOptions from "../../data/FooterShop.json";
 
 export default function ShopLinks() {
   return (

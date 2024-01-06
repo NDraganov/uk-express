@@ -1,4 +1,4 @@
-import Icon from "../../ui/Icon";
+import Icon from "../../../ui/Icon";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 
