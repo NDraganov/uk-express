@@ -18,8 +18,8 @@ export default function ProductItem({
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-[28rem] flex-col items-center shadow-gray-300 hover:shadow-lg dark:border-gray-500 dark:shadow-slate-800">
-      <div className="h-3/5 w-full">
+    <div className="flex h-[28rem] flex-col items-center rounded-md shadow-gray-300 hover:shadow-lg dark:border-gray-500 dark:shadow-slate-800">
+      <div className="h-3/5">
         <Img
           className="h-full w-full rounded-t-md"
           loading="lazy"
