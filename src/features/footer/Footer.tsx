@@ -7,7 +7,7 @@ import PoliciesLinks from "./footer-components/PoliciesLinks";
 export default function Footer() {
   return (
     <footer className="flex h-60 flex-col justify-between border-t border-gray-300 p-4 text-black dark:border-gray-500 dark:bg-slate-900 dark:text-gray-400">
-      <div className="flex justify-between">
+      <div className="flex items-start justify-between">
         <ShopLinks />
         <LearnLinks />
         <FollowLinks />
