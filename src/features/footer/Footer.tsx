@@ -1,6 +1,6 @@
 import ShopLinks from "./ShopLinks";
 import LearnLinks from "./LearnLinks";
-import SocialMediaIcons from "./SocialMediaIcons";
+import FollowLinks from "./FollowLinks";
 import PoliciesLinks from "./PoliciesLinks";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="flex items-center justify-between">
         <ShopLinks />
         <LearnLinks />
-        <SocialMediaIcons />
+        <FollowLinks />
       </div>
       <PoliciesLinks />
     </footer>
