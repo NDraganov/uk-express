@@ -37,7 +37,7 @@ export default function AccountInformation() {
             First Name
           </label>
           <input
-            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="w-4/6 rounded-full border border-slate-400 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="firstName"
             title="First name"
@@ -52,7 +52,7 @@ export default function AccountInformation() {
             Last Name
           </label>
           <input
-            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="w-4/6 rounded-full border border-slate-400 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="lastName"
             title="Last name"
@@ -68,7 +68,7 @@ export default function AccountInformation() {
           </label>
           <div className="w-4/6">
             <input
-              className="w-full rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+              className="w-full rounded-full border border-slate-400 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
               type="email"
               id="email"
               title="Email"
@@ -94,7 +94,7 @@ export default function AccountInformation() {
             Adress
           </label>
           <input
-            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="w-4/6 rounded-full border border-slate-400 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="text"
             id="adress"
             title="Address"
@@ -112,7 +112,7 @@ export default function AccountInformation() {
             Phone number
           </label>
           <input
-            className="w-4/6 rounded-full border border-slate-400 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+            className="w-4/6 rounded-full border border-slate-400 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
             type="tel"
             placeholder={user?.user_metadata.phone}
             {...register("phone", {

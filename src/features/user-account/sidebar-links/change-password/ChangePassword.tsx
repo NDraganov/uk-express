@@ -41,7 +41,7 @@ export default function ChangePassword() {
           </label>
           <div className="w-4/6">
             <input
-              className="w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+              className="w-full rounded-full border border-slate-300 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
               type="password"
               placeholder="Password"
               {...register("password", {
@@ -65,7 +65,7 @@ export default function ChangePassword() {
           <label htmlFor="confirmNewPassword">Repeat Password</label>
           <div className="w-4/6">
             <input
-              className="w-full rounded-full border border-slate-300 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
+              className="w-full rounded-full border border-slate-300 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
               type="password"
               placeholder="Confirm password"
               {...register("confirmNewPassword", {
