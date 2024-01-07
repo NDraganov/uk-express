@@ -4,10 +4,17 @@ import shopOptions from "../../data/FooterShop.json";
 export default function ShopLinks() {
   return (
     <div className="flex flex-col gap-4">
-      <h5 className="text-lg dark:text-slate-200">SHOP</h5>
+      <h5 className="text-lg font-medium text-slate-200 dark:text-slate-200">
+        SHOP
+      </h5>
+
       <div className="flex flex-col">
         {shopOptions.map((option) => (
-          <NavLink key={option.title} to={option.path}>
+          <NavLink
+            className="hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100"
+            key={option.title}
+            to={option.path}
+          >
             {option.title}
           </NavLink>
         ))}

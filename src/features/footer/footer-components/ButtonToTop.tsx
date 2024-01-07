@@ -7,7 +7,7 @@ export default function ButtonToTop() {
       <Icon
         value={{
           className:
-            "text-2xl hover:fill-orange-500 hover:dark:fill-gray-400 dark:fill-slate-200",
+            "text-2xl hover:fill-slate-200 hover:dark:fill-gray-400 dark:fill-slate-200",
         }}
       >
         <BsArrowUpSquare />

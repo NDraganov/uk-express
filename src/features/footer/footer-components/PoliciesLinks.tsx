@@ -6,16 +6,16 @@ export default function PoliciesLinks() {
     <div className="flex flex-col gap-2 text-sm">
       <CurrentYear />
       <div className="flex items-center gap-2 text-xs">
-        <NavLink className="hover:text-slate-600" to="/policies/privacy">
+        <NavLink className="hover:text-slate-200" to="/policies/privacy">
           Privacy policy
         </NavLink>
         <NavLink
-          className="hover:text-slate-600"
+          className="hover:text-slate-200"
           to="/policies/terms&conditions"
         >
           Terms & conditions
         </NavLink>
-        <NavLink className="hover:text-slate-600" to="/policies/refund">
+        <NavLink className="hover:text-slate-200" to="/policies/refund">
           Refund policy
         </NavLink>
       </div>
