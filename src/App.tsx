@@ -44,6 +44,7 @@ import Privacy from "./features/policies/policies-links/Privacy";
 import PoliciesPage from "./pages/PoliciesPage";
 import Refund from "./features/policies/policies-links/Refund";
 import ScrollToTop from "./ui/ScrollToTop";
+import Contact from "./pages/Contact";
 
 export default function App() {
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
@@ -144,6 +145,9 @@ export default function App() {
 
         {/* Singe product Route */}
         <Route path="/products/:productId" element={<ProductPage />} />
+
+        {/* Contact page */}
+        <Route path="/contact_us" element={<Contact />} />
 
         {/* User Route */}
         <Route element={<ProtectedRoute />}>
