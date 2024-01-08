@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function ContactInfo() {
   return (
-    <aside className="flex min-h-screen w-2/6 flex-col items-center justify-center py-10">
+    <aside className="flex h-screen w-2/6 flex-col items-center justify-center py-10">
       <div className="my-4 flex flex-col gap-4">
         <h1 className="text-5xl font-light">Get in touch</h1>
         <p className="flex items-center gap-2">

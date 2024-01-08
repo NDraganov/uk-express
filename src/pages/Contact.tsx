@@ -3,7 +3,7 @@ import ContactInfo from "../features/contact/ContactInfo";
 
 export default function Contact() {
   return (
-    <main className="my-20 flex">
+    <main className="mt-20 flex h-screen">
       <ContactInfo />
       <ContactForm />
     </main>
