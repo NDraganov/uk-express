@@ -3,7 +3,7 @@ import { type ComponentPropsWithoutRef } from "react";
 
 type FormButtonProps = {
   title: string;
-  type: string;
+  type?: string;
 } & ComponentPropsWithoutRef<"button">;
 
 export default function FormButton({
