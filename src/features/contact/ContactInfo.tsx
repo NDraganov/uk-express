@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Icon from "../../ui/Icon";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -7,27 +8,33 @@ export default function ContactInfo() {
   return (
     <aside className="flex h-screen w-2/6 flex-col items-center justify-center py-10">
       <div className="my-4 flex flex-col gap-4">
-        <h1 className="text-5xl font-light">Get in touch</h1>
+        <h1 className="text-5xl font-light dark:text-white">Get in touch</h1>
         <p className="flex items-center gap-2">
-          <Icon value={{ className: "" }}>
+          <Icon value={{ className: "dark:fill-slate-200" }}>
             <FaPhoneAlt />
           </Icon>
-          <span>+44 7654321890</span>
+          <span className="dark:text-gray-300">+44 7654321890</span>
         </p>
         <p className="flex items-center gap-2">
-          <Icon value={{ className: "" }}>
+          <Icon value={{ className: "dark:fill-slate-200" }}>
             <MdEmail />
           </Icon>
-          <span>uk-express@gmail.com</span>
+          <span className="dark:text-gray-300">uk-express@gmail.com</span>
         </p>
         <p className="flex items-center gap-2">
-          <Icon value={{ className: "" }}>
+          <Icon value={{ className: "dark:fill-slate-200" }}>
             <FaLocationDot />
           </Icon>
-          <address className="not-italic">
+          <address className="not-italic dark:text-gray-300">
             Wembley Park 306, NE10 6AR, London, UK
           </address>
         </p>
+        <NavLink
+          className="text-sm underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
+          to="/faq"
+        >
+          Why not check our FAQ first?
+        </NavLink>
       </div>
     </aside>
   );
