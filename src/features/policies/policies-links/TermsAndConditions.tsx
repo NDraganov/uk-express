@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function TermsAndContions() {
   return (
     <div className="mx-80 my-10">
@@ -7,19 +9,19 @@ export default function TermsAndContions() {
       <div>
         <p className="py-4 font-light">
           Welcome to UkExpress These terms and conditions outline the rules and
-          regulations for the use of (Store Name)’s Website.
+          regulations for the use of UkExpress’s Website.
         </p>
         <p className="flex gap-2 py-2 font-semibold dark:text-gray-300">
           UkExpress is located at:{" "}
-          <address>Wembley Park 306, London, UK</address>
+          <address>Wembley Park 306, NE10 6AR, London, UK</address>
         </p>
       </div>
 
       <div>
         <p className="py-4 font-light">
           By accessing this website we assume you accept these terms and
-          conditions in full. Do not continue to use (Store Name)’s website if
-          you do not accept all of the terms and conditions stated on this page.
+          conditions in full. Do not continue to use UkExpress’s website if you
+          do not accept all of the terms and conditions stated on this page.
         </p>
         <p className="py-4 font-light">
           The following terminology applies to these Terms and Conditions,
@@ -37,7 +39,7 @@ export default function TermsAndContions() {
           duration, or any other means, for the express purpose of meeting the
           Client’s needs in respect of provision of the Company’s stated
           services/products, in accordance with and subject to, prevailing law
-          of (Address).
+          of United Kingdom and European Union.
         </p>
         <p className="py-4 font-light">
           Any use of the above terminology or other words in the singular,
@@ -50,10 +52,10 @@ export default function TermsAndContions() {
         <h2 className="py-2 font-semibold dark:text-white">Cookies</h2>
 
         <p className="py-4 font-light">
-          We employ the use of cookies. By using (Store Name)’s website you
-          consent to the use of cookies in accordance with (Store Name)’s
-          privacy policy. Most of the modern day interactive websites use
-          cookies to enable us to retrieve user details for each visit.
+          We employ the use of cookies. By using UkExpress’s website you consent
+          to the use of cookies in accordance with UkExpress’s privacy policy.
+          Most of the modern day interactive websites use cookies to enable us
+          to retrieve user details for each visit.
         </p>
         <p className="py-4 font-light">
           Cookies are used in some areas of our site to enable the functionality
@@ -65,8 +67,8 @@ export default function TermsAndContions() {
       <div>
         <h2 className="py-2 font-semibold dark:text-white">License</h2>
         <p className="py-4 font-light">
-          Unless otherwise stated, (Store Name) and/or its licensors own the
-          intellectual property rights for all material on (Store Name).
+          Unless otherwise stated, UkExpress and/or its licensors own the
+          intellectual property rights for all material on UkExpress.
         </p>
 
         <p className="py-4 font-light">
@@ -77,12 +79,39 @@ export default function TermsAndContions() {
 
         <p className="py-4 dark:text-gray-300">You must not:</p>
         <ul className="list-disc py-2 pl-7 font-light">
-          <li>Republish material from (Add URL).</li>
-          <li>Sell, rent or sub-license material from (Add URL).</li>
-          <li>Reproduce, duplicate or copy material from (Add URL).</li>
           <li>
-            Redistribute content from (Store Name) (unless content is
-            specifically made for redistribution).
+            Republish material from{" "}
+            <NavLink
+              className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-gray-400"
+              to="/"
+            >
+              UkExpress
+            </NavLink>
+            .
+          </li>
+          <li>
+            Sell, rent or sub-license material from{" "}
+            <NavLink
+              className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-gray-400"
+              to="/"
+            >
+              UkExpress
+            </NavLink>
+            .
+          </li>
+          <li>
+            Reproduce, duplicate or copy material from{" "}
+            <NavLink
+              className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-gray-400"
+              to="/"
+            >
+              UkExpress
+            </NavLink>
+            .
+          </li>
+          <li>
+            Redistribute content from UkExpress (unless content is specifically
+            made for redistribution).
           </li>
         </ul>
       </div>
