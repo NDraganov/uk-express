@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function Privacy() {
   return (
     <div className="mx-80 my-10">
@@ -6,8 +8,14 @@ export default function Privacy() {
       </h1>
       <p className="py-4 font-light">
         This Privacy Policy describes how your personal information is
-        collected, used, and shared when you visit or make a purchase from
-        (Store URL).
+        collected, used, and shared when you visit or make a purchase from{" "}
+        <NavLink
+          className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+          to="/"
+        >
+          UkExpress
+        </NavLink>
+        .
       </p>
       <div>
         <h2 className="py-2 font-semibold dark:text-white">
@@ -47,7 +55,7 @@ export default function Privacy() {
           the Site, we collect certain information from you, including your
           name, billing address, shipping address, payment information
           (including credit card numbers Mention all types of accepted payments,
-          email address, and phone number. This is called Order Information.
+          email address, and phone number. This is called Order Information).
         </p>
         <p className="py-4 font-light">
           By Personal Information in this Privacy Policy, we are talking both
@@ -149,7 +157,7 @@ export default function Privacy() {
         <h2 className="py-2 font-semibold dark:text-white">MINORS</h2>
         <p className="py-4 font-light">
           The Site is not intended for individuals under the age of{" "}
-          <span className="font-bold">18</span>.
+          <span className="font-bold dark:text-slate-200">18</span>.
         </p>
       </div>
 
@@ -162,7 +170,14 @@ export default function Privacy() {
         </p>
         <p className="py-4 font-light">
           If you have questions and/or require more information, do not hesitate
-          to contact us (Add Relevant contact information).
+          to{" "}
+          <NavLink
+            className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+            to="/contact_us"
+          >
+            contanct us
+          </NavLink>
+          .
         </p>
       </div>
     </div>
