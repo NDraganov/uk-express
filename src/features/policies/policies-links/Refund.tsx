@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function Refund() {
   return (
     <div className="mx-80 my-10">
@@ -44,8 +46,17 @@ export default function Refund() {
         </h3>
         <p className="py-4 font-light">
           We only replace items if they are defective or damaged. If you need to
-          exchange it for the same item, send us an email at (Add Relevant Email
-          Address) and send your item to: (Relevant Address).
+          exchange it for the same item, send us an email at{" "}
+          <NavLink
+            className="font-normal hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
+            to="/"
+          >
+            uk-express@gmail.com
+          </NavLink>{" "}
+          and send your item to:{" "}
+          <address className="font-normal not-italic dark:text-slate-200">
+            Wembley Park 306, NE10 6AR, London, UK.
+          </address>
         </p>
       </div>
 
@@ -98,7 +109,13 @@ export default function Refund() {
           </li>
           <li className="py-2">
             If you have done all of this and you still have not received your
-            refund yet, please contact us at (email and or phone number)
+            refund yet, please{" "}
+            <NavLink
+              className="font-normal underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
+              to="/contact_us"
+            >
+              contanct us
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -108,7 +125,10 @@ export default function Refund() {
         <ul className="list-disc py-2 pl-7 font-light">
           <li className="py-2">
             Please do not send the product back to the manufacturer. It must be
-            sent to the following Address (Relevant Address).
+            sent to the following Address{" "}
+            <address className="font-normal not-italic dark:text-slate-200">
+              Wembley Park 306, NE10 6AR, London, UK.
+            </address>
           </li>
           <li className="py-2">
             You will be responsible for paying for your own shipping costs for

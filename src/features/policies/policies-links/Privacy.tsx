@@ -10,7 +10,7 @@ export default function Privacy() {
         This Privacy Policy describes how your personal information is
         collected, used, and shared when you visit or make a purchase from{" "}
         <NavLink
-          className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+          className="font-normal underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
           to="/"
         >
           UkExpress
@@ -39,15 +39,15 @@ export default function Privacy() {
         </p>
         <ul className="list-disc py-2 pl-7 font-light">
           <li>
-            <span className="font-bold">Cookies</span> are data files that are
-            placed on your device or computer and often include an anonymous
-            unique identifier.
+            <span className="font-normal dark:text-slate-300">Cookies</span> are
+            data files that are placed on your device or computer and often
+            include an anonymous unique identifier.
           </li>
           <li>
-            <span className="font-bold">Log files</span> track actions occurring
-            on the Site, and collect data including your IP address, browser
-            type, Internet service provider, referring/exit pages, and date/time
-            stamps.
+            <span className="font-normal dark:text-slate-300">Log files</span>{" "}
+            track actions occurring on the Site, and collect data including your
+            IP address, browser type, Internet service provider, referring/exit
+            pages, and date/time stamps.
           </li>
         </ul>
         <p className="py-4 font-light">
@@ -102,7 +102,7 @@ export default function Privacy() {
         </p>
         <p className="py-4 font-light">
           We also use Google Analytics to help us understand how our customers
-          use (Store Name). How Google uses your Personal Information.
+          use UkExpress. How Google uses your Personal Information.
         </p>
         <p className="py-4 font-light">
           Finally, we may also share your Personal Information to comply with
@@ -172,7 +172,7 @@ export default function Privacy() {
           If you have questions and/or require more information, do not hesitate
           to{" "}
           <NavLink
-            className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+            className="font-normal underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
             to="/contact_us"
           >
             contanct us

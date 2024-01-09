@@ -11,9 +11,11 @@ export default function TermsAndContions() {
           Welcome to UkExpress These terms and conditions outline the rules and
           regulations for the use of UkExpress’s Website.
         </p>
-        <p className="flex gap-2 py-2 font-semibold dark:text-gray-300">
+        <p className="flex gap-2 py-2 font-light">
           UkExpress is located at:{" "}
-          <address>Wembley Park 306, NE10 6AR, London, UK</address>
+          <address className="font-normal not-italic dark:text-slate-200">
+            Wembley Park 306, NE10 6AR, London, UK
+          </address>
         </p>
       </div>
 
@@ -82,7 +84,7 @@ export default function TermsAndContions() {
           <li>
             Republish material from{" "}
             <NavLink
-              className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+              className="font-normal underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
               to="/"
             >
               UkExpress
@@ -92,7 +94,7 @@ export default function TermsAndContions() {
           <li>
             Sell, rent or sub-license material from{" "}
             <NavLink
-              className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+              className="font-normal underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
               to="/"
             >
               UkExpress
@@ -102,7 +104,7 @@ export default function TermsAndContions() {
           <li>
             Reproduce, duplicate or copy material from{" "}
             <NavLink
-              className="underline hover:text-gray-500 dark:text-slate-200 dark:hover:text-cyan-300"
+              className="font-normal underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
               to="/"
             >
               UkExpress
