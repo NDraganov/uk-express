@@ -2,8 +2,9 @@ import { type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeCart } from "./cartSlice";
 import CartItem from "./CartItem";
-import Button from "../../ui/Button";
 import CheckoutButton from "../../ui/CheckoutButton";
+import Icon from "../../ui/Icon";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function CartModal() {
   const { items: cartItems, isProcessed } = useAppSelector(
@@ -21,11 +22,23 @@ export default function CartModal() {
 
   return (
     <div
-      className="absolute right-[0.05rem] top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500  dark:bg-slate-900 dark:text-gray-400 sm:right-6 sm:w-1/3"
+      className="absolute right-[0.05rem] top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500 dark:bg-slate-900  dark:text-gray-400 dark:shadow-slate-700 sm:right-6 sm:w-1/3"
       onClick={(e: FormEvent) => e.stopPropagation()}
     >
       <div>
-        <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
+        <div className="flex items-start justify-between">
+          <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
+          <button onClick={() => dispatch(closeCart())}>
+            <Icon
+              value={{
+                className:
+                  "text-lg fill-black hover:fill-orange-500 dark:fill-white dark:hover:fill-cyan-300",
+              }}
+            >
+              <AiOutlineClose />
+            </Icon>
+          </button>
+        </div>
 
         {cartItems.length === 0 || isProcessed ? (
           <p className="pt-4 text-red-600 dark:text-orange-500">
@@ -58,7 +71,6 @@ export default function CartModal() {
           </strong>
         </p>
         <div className="flex items-center gap-4">
-          <Button title="Close" onClick={() => dispatch(closeCart())} />
           <CheckoutButton title="Checkout" />
         </div>
       </div>
