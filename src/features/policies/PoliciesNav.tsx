@@ -5,7 +5,7 @@ import { RiRefund2Fill } from "react-icons/ri";
 
 export default function PoliciesNav() {
   return (
-    <div className="flex flex-col items-center border border-l-0 border-r-0 border-t-0 border-slate-300 pt-4 dark:border-gray-500">
+    <div className="flex flex-col items-center border border-l-0 border-r-0 border-t-0 border-slate-300 pt-4 dark:border-gray-500 sm:mx-80">
       <h1 className="text-3xl dark:text-white">UkExpress Policies</h1>
       <nav className="mt-4">
         <ul className="flex items-center">
