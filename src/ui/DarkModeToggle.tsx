@@ -18,7 +18,7 @@ export default function DarkModeToggle() {
   );
 
   return (
-    <div>
+    <div className="flex items-center">
       <button className="" onClick={() => setIsDarkMode((isDark) => !isDark)}>
         {isDarkMode ? (
           <Icon
