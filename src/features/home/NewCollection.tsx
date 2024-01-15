@@ -17,9 +17,11 @@ export default function NewCollection() {
   const { data: womensBags } = useGetWomensBagsQuery(undefined);
 
   return (
-    <section className="my-40">
-      <h2 className="pb-6 pl-10 text-3xl dark:text-white">New Collection</h2>
-      <div className="no-scrollbar grid grid-flow-col gap-5 overflow-scroll px-10 pb-10">
+    <section className="mx-4 my-10 sm:mx-10 sm:my-40">
+      <h2 className="pb-6 text-xl dark:text-white sm:text-3xl">
+        New Collection
+      </h2>
+      <div className="no-scrollbar grid grid-flow-col gap-5 overflow-scroll pb-10">
         <NavLink to={`/products/${smartphones?.products[1].id}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">

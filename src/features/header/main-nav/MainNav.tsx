@@ -2,7 +2,7 @@ import MainNavLink from "./MainNavLink";
 
 export default function MainNav() {
   return (
-    <nav>
+    <nav className="hidden sm:block">
       <ul className="flex items-center gap-4">
         <MainNavLink title="Home" to="/" />
         <MainNavLink title="Products" to="/products" />

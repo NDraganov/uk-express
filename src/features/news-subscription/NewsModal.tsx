@@ -23,7 +23,7 @@ export default function NewsModal() {
     <>
       {isOpen && (
         <div className="fixed bottom-0 left-0 right-0 top-0 z-10 flex scroll-m-0 items-center justify-center bg-white/50">
-          <div className="flex h-96 w-[40rem] flex-col rounded-md bg-violet-950 p-4 text-white">
+          <div className="flex h-auto w-5/6 flex-col rounded-md bg-violet-950 p-4 text-white sm:h-96 sm:w-[40rem]">
             <div className="flex items-center justify-end">
               <button onClick={() => dispatch(closeModal())}>
                 <Icon
@@ -36,11 +36,11 @@ export default function NewsModal() {
               </button>
             </div>
 
-            <div className="flex flex-col items-start justify-center px-10">
-              <h2 className="py-4 text-[4rem] font-extrabold leading-none">
+            <div className="flex flex-col items-start justify-center sm:px-10">
+              <h2 className="py-4 text-4xl font-extrabold leading-none sm:text-[4rem]">
                 Never miss out on new products!
               </h2>
-              <p className="pb-6 pr-28 text-lg text-indigo-300">
+              <p className="pb-6 text-lg text-indigo-300 sm:pr-28">
                 Subscribe for our newsletter to be inform whenever we offer new
                 products!
               </p>

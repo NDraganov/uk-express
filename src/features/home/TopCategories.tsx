@@ -17,11 +17,11 @@ export default function TopCategories() {
   const { data: jewellery } = useGetWomensJewelleryQuery(undefined);
 
   return (
-    <section className="mx-10 my-10">
+    <section className="mx-4 my-5 sm:mx-10 sm:my-10">
       <h2 className="mb-4 text-xl dark:text-white">Top categories</h2>
-      <div className="grid grid-cols-6 gap-2 dark:text-white">
+      <div className="grid grid-cols-2 gap-2 dark:text-white sm:grid-cols-6">
         <NavLink to="/products/category/laptops">
-          <div className="dark:bg-slate-800items-center flex h-36 w-56  flex-col justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500">
+          <div className="flex h-36 flex-col items-center justify-center gap-2  rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
             <img
               className="h-5/6 rounded-md"
               src={laptops?.products[2].thumbnail}
@@ -30,7 +30,7 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/products/category/mens-shoes">
-          <div className="flex h-36 w-56 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500">
+          <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
             <img
               className="h-5/6 rounded-md"
               src={shoes?.products[4].thumbnail}
@@ -39,7 +39,7 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/products/category/smartphones">
-          <div className="flex h-36 w-56 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500">
+          <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
             <img
               className="h-5/6 rounded-md"
               src={smartphones?.products[1].thumbnail}
@@ -48,7 +48,7 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/products/category/womens-dresses">
-          <div className="flex h-36 w-56 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500">
+          <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
             <img
               className="h-5/6 rounded-md"
               src={bags?.products[1].thumbnail}
@@ -57,7 +57,7 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/products/category/mens-watches">
-          <div className="flex h-36 w-56 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500">
+          <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
             <img
               className="h-5/6 rounded-md"
               src={watches?.products[2].thumbnail}
@@ -66,7 +66,7 @@ export default function TopCategories() {
           </div>
         </NavLink>
         <NavLink to="/products/category/womens-jewellery">
-          <div className="flex h-36 w-56 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500">
+          <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
             <img
               className="h-5/6 rounded-md"
               src={jewellery?.products[2].thumbnail}

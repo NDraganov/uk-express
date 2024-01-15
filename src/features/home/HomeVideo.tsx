@@ -14,12 +14,14 @@ export default function HomeVideo() {
         autoPlay
         loop
       ></video>
-      <div className="absolute left-0 top-0 h-full w-full px-20 py-60 text-white">
-        <div className="flex h-full flex-col items-start justify-end text-5xl">
-          <div className="flex w-full items-end justify-between">
+      <div className="absolute left-0 top-0 h-full w-full px-4 py-60 text-white sm:px-20">
+        <div className="flex h-full flex-col items-start justify-end">
+          <div className="flex w-full flex-col justify-between sm:flex-row sm:items-end">
             <div>
-              <p className="py-2 font-medium">It is more than just sales</p>
-              <p className="text-3xl font-light">
+              <p className="py-2 text-3xl font-medium sm:text-5xl">
+                It is more than just sales
+              </p>
+              <p className="text-xl font-light sm:text-3xl">
                 The e-commerce platform that you can trust
               </p>
             </div>

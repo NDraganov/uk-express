@@ -48,26 +48,32 @@ export default function Header() {
           <MainNav />
         </div>
 
-        <div className="flex items-center gap-4 ">
-          <button onClick={() => dispatch(showSearchModal())}>
-            <Icon
-              value={{
-                className:
-                  "text-xl hover:fill-slate-400 dark:hover:fill-cyan-300",
-              }}
-            >
-              <IoIosSearch />
-            </Icon>
-          </button>
-          <DarkModeToggle />
-          {isAuthenticated === "authenticated" ? (
-            <UserBadge />
-          ) : (
-            <div className="flex items-center gap-2">
-              <AuthHeaderButton type="sign-in" to="/sign-in" title="Sign in" />
-            </div>
-          )}
-          <CartBadge onOpen={(e) => handleOpenCart(e)} />
+        <div className="hidden sm:block">
+          <div className="flex items-center gap-4">
+            <button onClick={() => dispatch(showSearchModal())}>
+              <Icon
+                value={{
+                  className:
+                    "text-xl hover:fill-slate-400 dark:hover:fill-cyan-300",
+                }}
+              >
+                <IoIosSearch />
+              </Icon>
+            </button>
+            <DarkModeToggle />
+            {isAuthenticated === "authenticated" ? (
+              <UserBadge />
+            ) : (
+              <div className="flex items-center gap-2">
+                <AuthHeaderButton
+                  type="sign-in"
+                  to="/sign-in"
+                  title="Sign in"
+                />
+              </div>
+            )}
+            <CartBadge onOpen={(e) => handleOpenCart(e)} />
+          </div>
         </div>
 
         {cart === true && <CartModal />}
