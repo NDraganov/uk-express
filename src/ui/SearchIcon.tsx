@@ -3,13 +3,17 @@ import { IoIosSearch } from "react-icons/io";
 import Icon from "./Icon";
 import { showSearchModal } from "../features/header/search/searchSlice";
 
-export default function SearchIcon() {
+interface SearchIconProps {
+  size: string;
+}
+
+export default function SearchIcon({ size }: SearchIconProps) {
   const dispatch = useAppDispatch();
   return (
     <button onClick={() => dispatch(showSearchModal())}>
       <Icon
         value={{
-          className: "text-xl hover:fill-slate-400 dark:hover:fill-cyan-300",
+          className: `${size} hover:fill-slate-400 dark:hover:fill-cyan-300`,
         }}
       >
         <IoIosSearch />

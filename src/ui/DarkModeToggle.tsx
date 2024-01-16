@@ -3,7 +3,11 @@ import Icon from "./Icon";
 import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonStars } from "react-icons/bs";
 
-export default function DarkModeToggle() {
+interface DarkModeToggleProps {
+  size: string;
+}
+
+export default function DarkModeToggle({ size }: DarkModeToggleProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(
@@ -23,7 +27,7 @@ export default function DarkModeToggle() {
         {isDarkMode ? (
           <Icon
             value={{
-              className: "fill-cyan-500 hover:fill-cyan-300 text-lg",
+              className: `fill-cyan-500 hover:fill-cyan-300 ${size}`,
             }}
           >
             <BsFillSunFill />
@@ -31,7 +35,7 @@ export default function DarkModeToggle() {
         ) : (
           <Icon
             value={{
-              className: "fill-black hover:fill-cyan-500 text-lg",
+              className: `fill-cyan-500 hover:fill-cyan-300 ${size}`,
             }}
           >
             <BsMoonStars />
