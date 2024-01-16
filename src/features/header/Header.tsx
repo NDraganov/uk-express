@@ -62,7 +62,7 @@ export default function Header() {
                 />
               </div>
             )}
-            <CartBadge onOpen={(e) => handleOpenCart(e)} />
+            <CartBadge size="text-[1.5rem]" onOpen={(e) => handleOpenCart(e)} />
           </div>
         </div>
         <MobileMenuButton />

@@ -4,10 +4,11 @@ import Icon from "./Icon";
 import { GiShoppingCart } from "react-icons/gi";
 
 interface CartBadgeProps {
-  onOpen: (e: FormEvent) => void;
+  size: string;
+  onOpen?: (e: FormEvent) => void;
 }
 
-export default function CartBadge({ onOpen }: CartBadgeProps) {
+export default function CartBadge({ size, onOpen }: CartBadgeProps) {
   const { items: cartItems, isProcessed } = useAppSelector(
     (state) => state.cart,
   );
@@ -26,7 +27,7 @@ export default function CartBadge({ onOpen }: CartBadgeProps) {
       </span>
       <Icon
         value={{
-          className: `text-[1.5rem] hover:fill-orange-500 dark:hover:fill-cyan-300 ${
+          className: `${size} hover:fill-orange-500 dark:hover:fill-cyan-300 ${
             cartItems.length > 0
               ? "dark:fill-cyan-300"
               : "fill-black dark:fill-white"
