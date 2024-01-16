@@ -46,10 +46,16 @@ import Refund from "./features/policies/policies-links/Refund";
 import ScrollToTop from "./ui/ScrollToTop";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import MobileMenu from "./features/mobile-menu/MobileMenu";
 
 export default function App() {
+  const { isVisible: isVisibleMenu } = useAppSelector(
+    (state) => state.mobileMenu,
+  );
   const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
-  const { isVisible } = useAppSelector((state) => state.search);
+  const { isVisible: isVisibleSearch } = useAppSelector(
+    (state) => state.search,
+  );
 
   return (
     <BrowserRouter>
@@ -59,8 +65,11 @@ export default function App() {
       {isAdded && <PushNotification type="add-product" />}
       {isDeleted && <PushNotification type="delete-product" />}
 
-      {/* SearchModal */}
-      {isVisible && <SearchModal />}
+      {/* Mobile Menu */}
+      {isVisibleMenu && <MobileMenu />}
+
+      {/* Search Modal */}
+      {isVisibleSearch && <SearchModal />}
 
       {/* Policies page */}
       <Routes>

@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import newsReducer from "../features/news-subscription/newsSlice";
+import mobileMenuReducer from "../features/mobile-menu/mobileMenuSlice";
 import authReducer from "../features/auth/authSlice";
 import searchReducer from "../features/header/search/searchSlice";
 import productsReducer from "../features/products/productsSlice";
@@ -9,6 +10,7 @@ import { productsApi } from "../api/productsApiSlice";
 export const store = configureStore({
   reducer: {
     news: newsReducer,
+    mobileMenu: mobileMenuReducer,
     auth: authReducer,
     search: searchReducer,
     products: productsReducer,
