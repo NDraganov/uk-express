@@ -1,7 +1,6 @@
 import { type FormEvent, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { showSearchModal } from "./search/searchSlice";
 import { closeCart, openCart } from "../cart/cartSlice";
 import MainNav from "./main-nav/MainNav";
 import CartModal from "../cart/CartModal";
@@ -9,10 +8,9 @@ import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "./user-badge/UserBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
-import Icon from "../../ui/Icon";
-import { IoIosSearch } from "react-icons/io";
 import { closeUserBadge } from "../auth/authSlice";
 import MobileMenuButton from "../../ui/MobileMenuButton";
+import SearchIcon from "../../ui/SearchIcon";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -51,16 +49,7 @@ export default function Header() {
 
         <div className="hidden sm:block">
           <div className="flex items-center gap-4">
-            <button onClick={() => dispatch(showSearchModal())}>
-              <Icon
-                value={{
-                  className:
-                    "text-xl hover:fill-slate-400 dark:hover:fill-cyan-300",
-                }}
-              >
-                <IoIosSearch />
-              </Icon>
-            </button>
+            <SearchIcon />
             <DarkModeToggle />
             {isAuthenticated === "authenticated" ? (
               <UserBadge />
