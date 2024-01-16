@@ -6,6 +6,7 @@ import SearchIcon from "../../ui/SearchIcon";
 import CloseButton from "./menu-components/CloseButton";
 import MobileMenuLink from "./menu-components/MobileMenuLink";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
+import SignOutButton from "./menu-components/SignOutButton";
 
 export default function MobileMenu() {
   const { user, isAuthenticated, fullName } = useAppSelector(
@@ -13,11 +14,11 @@ export default function MobileMenu() {
   );
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 top-0 z-10 bg-lime-500 p-5 dark:bg-slate-900">
+    <div className="fixed bottom-0 left-0 right-0 top-0 z-10 bg-white p-5 dark:bg-slate-900">
       <div className="flex h-full flex-col justify-between">
         <div>
           <div className="flex justify-between">
-            <p className="text-xl text-slate-100">UkExpress</p>
+            <p className="text-xl dark:text-slate-200">UkExpress</p>
             <CloseButton />
           </div>
 
@@ -36,22 +37,28 @@ export default function MobileMenu() {
           </div>
 
           <nav>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col items-center py-10">
               <MobileMenuLink to="/" title="Home" />
               <MobileMenuLink to="/products" title="Products" />
+              <MobileMenuLink to="/about_us" title="About" />
+              <MobileMenuLink to="/faq" title="FAQ" />
+              <MobileMenuLink to="/contact_us" title="Contact" />
             </ul>
           </nav>
         </div>
 
-        <div className="flex items-center justify-center py-10">
+        <div className="flex flex-col items-center justify-center gap-2 py-10">
           {isAuthenticated === "authenticated" && (
             <p>
               Sign in as{" "}
-              <span className="text-lg text-white dark:text-cyan-500">
+              <span className="text-lg text-orange-500 dark:text-cyan-500">
                 {fullName}
               </span>
             </p>
           )}
+          <div className="flex items-center justify-center">
+            {isAuthenticated === "authenticated" && <SignOutButton />}
+          </div>
         </div>
       </div>
     </div>

@@ -6,8 +6,17 @@ interface MobileMenuLinkProps {
 }
 export default function MobileMenuLink({ to, title }: MobileMenuLinkProps) {
   return (
-    <NavLink to={to}>
-      {({ isActive }) => <li className={`${isActive ? "" : ""}`}>{title}</li>}
+    <NavLink
+      to={to}
+      className="py-2 text-xl hover:text-orange-500 dark:text-white dark:hover:text-cyan-300"
+    >
+      {({ isActive }) => (
+        <li
+          className={`${isActive ? "text-orange-500 dark:text-cyan-500" : ""}`}
+        >
+          {title}
+        </li>
+      )}
     </NavLink>
   );
 }

@@ -10,7 +10,8 @@ export default function CloseButton() {
     <button onClick={() => dispatch(closeMobileMenu())}>
       <Icon
         value={{
-          className: "text-2xl fill-slate-100 hover:fill-black",
+          className:
+            "text-2xl fill-black hover:fill-gray-500 dark:fill-slate-200 dark:hover:fill-white",
         }}
       >
         <AiOutlineClose />
