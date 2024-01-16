@@ -12,6 +12,7 @@ import DarkModeToggle from "../../ui/DarkModeToggle";
 import Icon from "../../ui/Icon";
 import { IoIosSearch } from "react-icons/io";
 import { closeUserBadge } from "../auth/authSlice";
+import MobileMenuButton from "../../ui/MobileMenuButton";
 
 export default function Header() {
   const cart = useAppSelector((state) => state.cart.isVisible);
@@ -75,6 +76,7 @@ export default function Header() {
             <CartBadge onOpen={(e) => handleOpenCart(e)} />
           </div>
         </div>
+        <MobileMenuButton />
 
         {cart === true && <CartModal />}
       </header>
