@@ -2,13 +2,13 @@ import { Img } from "react-image";
 
 export default function OurMission() {
   return (
-    <div className="flex">
-      <div className="w-3/6">
+    <div className="flex flex-col sm:flex-row">
+      <div className="w-full sm:w-3/6">
         <Img src="/images/team.jpg" />
       </div>
-      <div className="flex w-3/6 flex-col items-center justify-center">
+      <div className="flex w-full flex-col items-center justify-center py-4 sm:w-3/6 sm:py-0">
         <h2 className="text-4xl font-medium dark:text-white">Our Mission</h2>
-        <p className="pt-10 text-center text-lg">
+        <p className="pt-2 text-center text-lg sm:pt-10">
           At UkExpress, our purpose is simple - to offer and deliver goods in
           the best way!
         </p>

@@ -13,7 +13,7 @@ export default function SearchIcon({ size }: SearchIconProps) {
     <button onClick={() => dispatch(showSearchModal())}>
       <Icon
         value={{
-          className: `${size} hover:fill-slate-400 dark:hover:fill-cyan-300`,
+          className: `${size} hover:fill-slate-400 dark:fill-slate-100 dark:hover:fill-cyan-300`,
         }}
       >
         <IoIosSearch />
