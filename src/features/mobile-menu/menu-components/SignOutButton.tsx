@@ -1,15 +1,21 @@
 import { useAppDispatch } from "../../../store/hooks";
 import { signOutUser } from "../../auth/authSlice";
+import { closeMobileMenu } from "../mobileMenuSlice";
 import Icon from "../../../ui/Icon";
 import { BiLogOut } from "react-icons/bi";
 
 export default function SignOutButton() {
   const dispatch = useAppDispatch();
 
+  function handleSignOut() {
+    dispatch(signOutUser());
+    dispatch(closeMobileMenu());
+  }
+
   return (
     <button
       className="flex items-center justify-center gap-2 dark:text-slate-200"
-      onClick={() => dispatch(signOutUser())}
+      onClick={handleSignOut}
     >
       <Icon
         value={{

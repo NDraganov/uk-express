@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../store/hooks";
 import CartBadge from "../../ui/CartBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
@@ -28,13 +27,13 @@ export default function MobileMenu() {
             )}
           </div>
 
-          <div className="flex items-center justify-between px-10 py-5">
+          <ul className="flex items-center justify-between px-10 py-5">
             <SearchIcon size="text-4xl" />
             <DarkModeToggle size="text-3xl" />
-            <NavLink to={`/users/${user?.id}/my-cart`}>
+            <MobileMenuLink to={`/users/${user?.id}/my-cart`}>
               <CartBadge size="text-4xl" />
-            </NavLink>
-          </div>
+            </MobileMenuLink>
+          </ul>
 
           <nav>
             <ul className="flex flex-col items-center py-10">
