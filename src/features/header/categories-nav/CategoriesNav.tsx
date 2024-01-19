@@ -51,7 +51,7 @@ export default function CategoriesNav() {
     <>
       <div className="">
         <nav>
-          <ul className="justify-centers mx-40 mt-32 grid grid-cols-7 items-center gap-2">
+          <ul className="mx-4 mt-32 grid grid-cols-2 items-center justify-center gap-2 sm:mx-40 sm:grid-cols-7">
             <NavigationLink
               to="/products"
               title="All products"
