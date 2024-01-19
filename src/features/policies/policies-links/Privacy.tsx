@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Privacy() {
   return (
-    <div className="mx-80 my-10">
+    <div className="mx-4 my-10 sm:mx-80">
       <h1 className="text-3xl font-bold dark:text-white">
         UkExpress Privacy Policy
       </h1>
