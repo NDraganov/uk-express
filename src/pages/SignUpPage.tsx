@@ -6,9 +6,9 @@ export default function SignUpPage() {
   const navigate = useNavigate();
 
   return (
-    <main className="my-20">
-      <div className="flex h-screen items-center">
-        <div className="flex h-4/6 w-1/4 flex-col items-center justify-center border-r border-gray-300 px-10 dark:border-gray-500">
+    <main className="mb-10 mt-20 sm:my-20">
+      <div className="items-center sm:flex sm:h-screen">
+        <div className="flex h-4/6 flex-col items-center justify-center border-r border-gray-300 px-10 dark:border-gray-500 sm:w-1/4">
           <h2 className="my-10 text-5xl font-extralight dark:text-white">
             Hello, there!
           </h2>
@@ -24,8 +24,9 @@ export default function SignUpPage() {
             onClick={() => navigate("/sign-in")}
           />
         </div>
-        <div className="flex w-3/4 flex-col items-center justify-center">
-          <h1 className="mb-5 text-5xl font-extralight dark:text-white">
+
+        <div className="flex flex-col items-center justify-center px-4 pt-10 sm:w-3/4 sm:p-0">
+          <h1 className="pb-5 text-center text-5xl font-extralight dark:text-white">
             Sign up an Account with Us
           </h1>
           <SignUpForm />

@@ -44,7 +44,7 @@ export default function SignUpForm() {
 
   return (
     <form
-      className="flex w-3/5 flex-col items-center justify-center"
+      className="flex w-full flex-col items-center justify-center sm:w-3/5"
       onSubmit={onSubmit}
     >
       <div className="flex w-full items-center justify-between gap-4">
