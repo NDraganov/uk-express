@@ -10,7 +10,7 @@ export default function SearchModal() {
   return (
     <div className="fixed bottom-0 left-0 right-0 top-0 z-10 bg-black/40 dark:bg-white/20">
       <div className="flex h-screen items-start justify-center pt-20">
-        <div className="rounded-md bg-white p-4 dark:bg-slate-900 sm:w-4/5">
+        <div className="mx-4 w-full rounded-md bg-white p-4 dark:bg-slate-900 sm:mx-0 sm:w-4/5">
           <div className="flex justify-end">
             <button onClick={() => dispatch(closeSearchModal())}>
               <Icon

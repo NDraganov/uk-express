@@ -15,7 +15,7 @@ export default function SignInPage() {
           <SignInForm />
         </div>
 
-        <div className="flex flex-col items-center justify-center border-l border-gray-300 px-4 dark:border-gray-500 sm:h-4/6 sm:w-1/4 sm:px-10">
+        <div className="flex flex-col items-center justify-center border-gray-300 px-4 dark:border-gray-500 sm:h-4/6 sm:w-1/4 sm:border-l sm:px-10">
           <h2 className="mb-10 text-5xl font-extralight dark:text-white">
             New here?
           </h2>
