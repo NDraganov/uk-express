@@ -1,4 +1,4 @@
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import CartBadge from "../../ui/CartBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import SearchIcon from "../../ui/SearchIcon";
@@ -6,11 +6,13 @@ import CloseButton from "./menu-components/CloseButton";
 import MobileMenuLink from "./menu-components/MobileMenuLink";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import SignOutButton from "./menu-components/SignOutButton";
+import { closeMobileMenu } from "./mobileMenuSlice";
 
 export default function MobileMenu() {
   const { user, isAuthenticated, fullName } = useAppSelector(
     (state) => state.auth,
   );
+  const dispatch = useAppDispatch();
 
   return (
     <div className="fixed bottom-0 left-0 right-0 top-0 z-10 bg-white p-5 dark:bg-slate-900">
@@ -23,7 +25,12 @@ export default function MobileMenu() {
 
           <div className="flex items-center justify-center py-10">
             {isAuthenticated !== "authenticated" && (
-              <AuthHeaderButton type="sign-in" to="/sign-in" title="Sign in" />
+              <AuthHeaderButton
+                type="sign-in"
+                to="/sign-in"
+                title="Sign in"
+                onClose={() => dispatch(closeMobileMenu())}
+              />
             )}
           </div>
 
