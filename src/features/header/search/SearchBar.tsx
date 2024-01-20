@@ -33,7 +33,7 @@ export default function SearchBar() {
     <div className="relative">
       <div className="flex items-center justify-center">
         <input
-          className="h-8 w-4/5 border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500 sm:w-3/5"
+          className="h-8 w-4/5 rounded-none border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500 sm:w-3/5"
           type="text"
           title="Search products"
           autoFocus

@@ -7,7 +7,7 @@ export default function FooterNewsLetter() {
           Sign up for 10% off your first order.
         </label>
         <input
-          className="w-full border-b bg-inherit placeholder:text-slate-300 focus:border-black focus:outline-none focus:placeholder:text-black dark:focus:border-gray-400 dark:focus:placeholder:text-gray-400"
+          className="w-full rounded-none border-b bg-inherit placeholder:text-slate-300 focus:border-black focus:outline-none focus:placeholder:text-black dark:focus:border-gray-400 dark:focus:placeholder:text-gray-400"
           type="email"
           name="newsletter"
           id="newsletter"
