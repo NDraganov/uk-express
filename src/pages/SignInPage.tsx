@@ -6,15 +6,16 @@ export default function SignInPage() {
   const navigate = useNavigate();
 
   return (
-    <main className="my-20">
-      <div className="flex h-screen items-center">
-        <div className="flex w-3/4 flex-col items-center justify-center">
-          <h1 className="mb-5 text-5xl font-extralight dark:text-white">
+    <main className="mb-4 mt-24 sm:my-20">
+      <div className="flex flex-col-reverse items-center sm:flex sm:h-screen sm:flex-row">
+        <div className="flex flex-col items-center justify-center px-4 pt-10 sm:w-3/4 sm:p-0">
+          <h1 className="mb-5 text-center text-5xl font-extralight dark:text-white">
             Sign in to Your Account
           </h1>
           <SignInForm />
         </div>
-        <div className="flex h-4/6 w-1/4 flex-col items-center justify-center border-l border-gray-300 px-10 dark:border-gray-500">
+
+        <div className="flex flex-col items-center justify-center border-l border-gray-300 px-4 dark:border-gray-500 sm:h-4/6 sm:w-1/4 sm:px-10">
           <h2 className="mb-10 text-5xl font-extralight dark:text-white">
             New here?
           </h2>

@@ -38,7 +38,7 @@ export default function SignInForm() {
 
   return (
     <form
-      className="flex w-2/5 flex-col items-center justify-center"
+      className="flex w-full flex-col items-center justify-center sm:w-2/5"
       onSubmit={onSubmit}
     >
       <div className="flex w-full flex-col items-start justify-center">
