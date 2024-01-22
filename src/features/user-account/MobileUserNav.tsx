@@ -6,17 +6,19 @@ export default function RegularNav() {
   const dispatch = useAppDispatch();
 
   return (
-    <nav>
-      <ul className="flex items-center justify-around">
-        <MobileUserNavLink to="account-information" title="Account" />
-        <MobileUserNavLink to="my-cart" title="Cart" />
-        <MobileUserNavLink to="change-password" title="Password" />
-        <MobileUserNavLink
-          to="/"
-          title="Sign Out"
-          onClick={() => dispatch(signOutUser())}
-        />
-      </ul>
-    </nav>
+    <div className="sm:hidden">
+      <nav>
+        <ul className="flex items-center justify-around">
+          <MobileUserNavLink to="account-information" title="Account" />
+          <MobileUserNavLink to="my-cart" title="Cart" />
+          <MobileUserNavLink to="change-password" title="Password" />
+          <MobileUserNavLink
+            to="/"
+            title="Sign Out"
+            onClick={() => dispatch(signOutUser())}
+          />
+        </ul>
+      </nav>
+    </div>
   );
 }

@@ -26,8 +26,8 @@ export default function AccountInformation() {
   });
 
   return (
-    <div className="flex h-screen items-center justify-center">
-      <form className="grid h-4/6 sm:w-1/2" onSubmit={onSubmit}>
+    <div className="flex h-[30rem] items-center justify-center py-5 sm:h-screen">
+      <form className="grid h-full sm:h-4/6 sm:w-1/2" onSubmit={onSubmit}>
         <h1 className="flex items-center justify-start border-b border-gray-300 font-normal dark:border-gray-500 dark:text-cyan-500">
           ACCOUNT INFORMATION
         </h1>
