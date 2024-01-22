@@ -9,7 +9,7 @@ export default function Sidebar() {
   const userName = user?.user_metadata.firstName;
 
   return (
-    <aside className="min-h-screen w-1/4">
+    <aside className="hidden min-h-screen w-1/4 sm:block">
       <div className="flex items-center justify-start p-6 pl-10">
         <h1 className="space-x-10 text-xl font-thin">
           Hello, <span className="text-2xl dark:text-cyan-500">{userName}</span>
