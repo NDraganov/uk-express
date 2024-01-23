@@ -17,14 +17,20 @@ export default function CartBadge({ size, onOpen }: CartBadgeProps) {
   );
 
   return (
-    <button className="flex h-full items-center" onClick={onOpen}>
-      <span
-        className={`absolute right-4 top-0 font-extrabold text-red-600 dark:text-red-600 ${
+    <button className="relative" onClick={onOpen}>
+      <div
+        className={`absolute left-5 h-5 w-5 rounded-full bg-orange-500 dark:bg-lime-400 sm:left-3 sm:h-4 sm:w-4 ${
           isProcessed ? "hidden" : ""
         }`}
       >
-        {cartItems.length > 0 && cartQuantity}
-      </span>
+        <span
+          className={`flex h-full w-full items-center justify-center font-bold text-white dark:text-black ${
+            cartQuantity >= 10 ? "text-xs" : "text-sm"
+          }`}
+        >
+          {cartItems.length > 0 && cartQuantity}
+        </span>
+      </div>
       <Icon
         value={{
           className: `${size} hover:fill-orange-500 dark:hover:fill-cyan-300 ${
