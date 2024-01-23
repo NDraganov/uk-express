@@ -10,15 +10,15 @@ export default function DeliveryDetails() {
 
   return (
     <section className="my-6">
-      <div className="w-2/3 rounded-md border border-slate-300 p-4 shadow-md dark:border-gray-500">
+      <div className="rounded-md border border-slate-300 p-4 shadow-md dark:border-gray-500 sm:w-2/3">
         <h3 className="font-medium dark:text-white">DELIVERY DETAILS</h3>
-        <ul className="my-2 grid gap-2 md:grid-cols-5">
+        <ul className="my-2 grid grid-cols-3 gap-2 md:grid-cols-5">
           {cartItems.map((item) => (
             <li
               className="flex items-center justify-center rounded-md border border-slate-300 py-1"
               key={item.id}
             >
-              <img className="w-14" src={item.thumbnail} alt={item.title} />
+              <img className="w-20" src={item.thumbnail} alt={item.title} />
             </li>
           ))}
         </ul>

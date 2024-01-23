@@ -8,7 +8,7 @@ export default function Club() {
     navigate("/creators-club");
   }
   return (
-    <div className="w-2/3 rounded-md border border-slate-300 p-4 shadow-md dark:border-gray-500">
+    <div className="rounded-md border border-slate-300 p-4 shadow-md dark:border-gray-500 sm:w-2/3">
       <h3 className="mb-2 font-medium text-lime-600 dark:text-cyan-500">
         JOIN OUR CREATORS CLUB TO EARN EXCLUSIVE REWARDS
       </h3>
