@@ -33,12 +33,12 @@ export default function Payment() {
     }, 6000);
   }
   return (
-    <aside className="w-1/2">
-      <PaymentButton title="Pay" onPayment={handlePayment} />
+    <aside className="px-4 sm:w-1/2 sm:px-0">
+      <PaymentButton title="Pay" type="apple" onPayment={handlePayment} />
       <Shipping />
       <PaymentDetails />
       <PaymentButton
-        title={`Pay  £${formattedTotalPriceWithShipping}`}
+        title={`Pay £${formattedTotalPriceWithShipping}`}
         onPayment={handlePayment}
       />
     </aside>

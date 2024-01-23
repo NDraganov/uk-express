@@ -14,7 +14,7 @@ export default function CartDetails() {
   const formattedTotalPriceWithShipping = totalPriceWithShipping.toFixed(2);
 
   return (
-    <aside className="flex w-1/2 flex-col">
+    <aside className="flex flex-col px-4 sm:w-1/2 sm:px-0">
       <div>
         <div className="mt-5">
           <h3 className="text-lg font-medium text-gray-400">Pay UkExpress</h3>

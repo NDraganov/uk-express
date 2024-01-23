@@ -3,11 +3,13 @@ import { BsApple } from "react-icons/bs";
 
 interface PaymentButtonProps {
   title: string;
+  type?: string;
   onPayment: () => void;
 }
 
 export default function PaymentButton({
   title,
+  type,
   onPayment,
 }: PaymentButtonProps) {
   return (
@@ -16,9 +18,12 @@ export default function PaymentButton({
       title={title}
       onClick={onPayment}
     >
-      <Icon value={{ className: "text-xl fill-white dark:fill-black " }}>
-        <BsApple />
-      </Icon>
+      {type === "apple" && (
+        <Icon value={{ className: "text-xl fill-white dark:fill-black " }}>
+          <BsApple />
+        </Icon>
+      )}
+
       {title}
     </button>
   );
