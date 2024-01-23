@@ -62,8 +62,8 @@ export default function App() {
       <ScrollToTop />
       <Header />
       {/* Toast */}
-      {isAdded && <Toast type="addProduct" />}
-      {isDeleted && <Toast type="deleteProduct" />}
+      {isAdded && <Toast type="add" />}
+      {isDeleted && <Toast type="delete" />}
 
       {/* Mobile Menu */}
       {isVisibleMenu && <MobileMenu />}
