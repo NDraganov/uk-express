@@ -14,7 +14,7 @@ export default function MyCart() {
   return (
     <div className="flex items-center justify-center overflow-scroll sm:h-screen">
       {cartItems.length === 0 || isProcessed ? (
-        <div className="flex h-full flex-col items-center justify-center">
+        <div className="flex h-[30rem] flex-col items-center justify-center sm:h-full">
           <p className="pb-4 text-2xl font-light dark:text-white">
             <span className="dark:text-cyan-500">
               {user?.user_metadata.firstName}
