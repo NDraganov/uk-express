@@ -28,18 +28,21 @@ export default function ChangePassword() {
   });
 
   return (
-    <div className="flex h-screen items-center justify-center font-light">
-      <form className="grid h-4/6 w-1/2" onSubmit={onSubmit}>
+    <div className="flex h-[30rem] items-center justify-center font-light sm:h-screen">
+      <form
+        className="grid h-4/6 w-full px-4 sm:w-1/2 sm:px-0"
+        onSubmit={onSubmit}
+      >
         <h1 className="flex items-center justify-start border-b border-gray-300 font-normal dark:border-gray-500 dark:text-cyan-500">
           CHANGE PASSWORD
         </h1>
 
-        <div className="flex items-center justify-between">
+        <div className="mt-5 items-center justify-between sm:mt-0 sm:flex">
           <label htmlFor="password">
-            New Password <br />
+            New Password <br className="hidden sm:block" />
             (min of 8 characters)
           </label>
-          <div className="w-4/6">
+          <div className="sm:w-4/6">
             <input
               className="w-full rounded-full border border-slate-300 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
               type="password"
@@ -61,9 +64,9 @@ export default function ChangePassword() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="items-center justify-between sm:flex">
           <label htmlFor="confirmNewPassword">Repeat Password</label>
-          <div className="w-4/6">
+          <div className="sm:w-4/6">
             <input
               className="w-full rounded-full border border-slate-300 p-2 font-light placeholder-slate-400 focus:border-orange-500 focus:outline-none focus:ring-orange-500 dark:border-gray-500 dark:bg-slate-900 dark:ring-cyan-500 dark:placeholder:text-gray-300 dark:focus:border-cyan-500"
               type="password"
