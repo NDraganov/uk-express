@@ -19,9 +19,9 @@ export default function CartBadge({ size, onOpen }: CartBadgeProps) {
   return (
     <button className="relative" onClick={onOpen}>
       <div
-        className={`absolute left-5 h-5 w-5 rounded-full bg-orange-500 dark:bg-lime-400 sm:left-3 sm:h-4 sm:w-4 ${
-          isProcessed ? "hidden" : ""
-        }`}
+        className={`absolute left-5 h-5 w-5 rounded-full ${
+          cartQuantity > 0 ? "bg-orange-500 dark:bg-lime-400" : ""
+        } sm:left-3 sm:h-4 sm:w-4 ${isProcessed ? "hidden" : ""}`}
       >
         <span
           className={`flex h-full w-full items-center justify-center font-bold text-white dark:text-black ${
