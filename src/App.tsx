@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useAppSelector } from "./store/hooks";
 import Header from "./features/header/Header";
-import PushNotification from "./ui/PushNotification";
 import HomePage from "./pages/HomePage";
 import AllProducts from "./features/categories/all-products/AllProducts";
 import ProductPage from "./pages/ProductPage";
@@ -47,6 +46,7 @@ import ScrollToTop from "./ui/ScrollToTop";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import MobileMenu from "./features/mobile-menu/MobileMenu";
+import Toast from "./ui/Toast";
 
 export default function App() {
   const { isVisible: isVisibleMenu } = useAppSelector(
@@ -62,8 +62,8 @@ export default function App() {
       <ScrollToTop />
       <Header />
       {/* Toast */}
-      {isAdded && <PushNotification type="add-product" />}
-      {isDeleted && <PushNotification type="delete-product" />}
+      {isAdded && <Toast type="addProduct" />}
+      {isDeleted && <Toast type="deleteProduct" />}
 
       {/* Mobile Menu */}
       {isVisibleMenu && <MobileMenu />}
