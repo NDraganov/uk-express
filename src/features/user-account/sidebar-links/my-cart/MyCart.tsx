@@ -12,7 +12,7 @@ export default function MyCart() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-screen items-center justify-center overflow-scroll">
+    <div className="flex items-center justify-center overflow-scroll sm:h-screen">
       {cartItems.length === 0 || isProcessed ? (
         <div className="flex h-full flex-col items-center justify-center">
           <p className="pb-4 text-2xl font-light dark:text-white">
@@ -27,9 +27,9 @@ export default function MyCart() {
           />
         </div>
       ) : (
-        <div className="flex h-5/6 w-1/2 flex-col items-center justify-center">
+        <div className="flex h-5/6 flex-col items-center justify-center px-4 py-5 sm:w-1/2 sm:px-0 sm:py-0">
           <div className="w-full">
-            <h3 className="flex w-full items-center justify-start border-b border-gray-300 pb-5 font-normal dark:border-gray-500 dark:text-cyan-500">
+            <h3 className="flex w-full items-center justify-start border-b border-gray-300 pb-2 font-normal dark:border-gray-500 dark:text-cyan-500">
               MY CART
             </h3>
             {cartItems.length > 0 && (
