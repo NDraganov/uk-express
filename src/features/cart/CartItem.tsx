@@ -1,5 +1,6 @@
 import { type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useAppDispatch } from "../../store/hooks";
 import {
   addToCart,
@@ -36,6 +37,7 @@ export default function CartItem(item: CartItem) {
   function handleDeleteItem(e: FormEvent) {
     e.stopPropagation();
     dispatch(deleteFromCart(item.id));
+    toast.success("Product deleted!");
   }
 
   return (

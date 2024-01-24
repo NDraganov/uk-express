@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useAppDispatch } from "../../../store/hooks";
 import { addToCart } from "../../cart/cartSlice";
 import { closeSearchModal } from "../../header/search/searchSlice";
 import { type Product } from "../../../api/products-types/productsTypes";
 import { Img } from "react-image";
 import Button from "../../../ui/Button";
-import { toast } from "react-toastify";
 
 export default function ProductItem({
   id,
