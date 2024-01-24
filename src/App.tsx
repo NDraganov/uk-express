@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useAppSelector } from "./store/hooks";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Header from "./features/header/Header";
 import HomePage from "./pages/HomePage";
 import AllProducts from "./features/categories/all-products/AllProducts";
@@ -46,13 +48,11 @@ import ScrollToTop from "./ui/ScrollToTop";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import MobileMenu from "./features/mobile-menu/MobileMenu";
-import Toast from "./ui/Toast";
 
 export default function App() {
   const { isVisible: isVisibleMenu } = useAppSelector(
     (state) => state.mobileMenu,
   );
-  const { isAdded, isDeleted } = useAppSelector((state) => state.cart);
   const { isVisible: isVisibleSearch } = useAppSelector(
     (state) => state.search,
   );
@@ -62,8 +62,7 @@ export default function App() {
       <ScrollToTop />
       <Header />
       {/* Toast */}
-      {isAdded && <Toast type="add" />}
-      {isDeleted && <Toast type="delete" />}
+      <ToastContainer />
 
       {/* Mobile Menu */}
       {isVisibleMenu && <MobileMenu />}
