@@ -1,13 +1,13 @@
+import { toast } from "react-toastify";
 import { type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { useAppDispatch } from "../../store/hooks";
 import {
   addToCart,
   removeFromCart,
   type CartItem,
-  deleteFromCart,
   closeCart,
+  deleteFromCart,
 } from "./cartSlice";
 import QuantityButtons from "../../ui/QuantityButtons";
 import DeleteButton from "../../ui/DeleteButton";
@@ -39,7 +39,6 @@ export default function CartItem(item: CartItem) {
     dispatch(deleteFromCart(item.id));
     toast.success("Product deleted!");
   }
-
   return (
     <div className="mt-6 flex w-full items-center gap-4">
       <img
