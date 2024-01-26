@@ -12,6 +12,7 @@ import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
 import ErrorMessage from "../ui/ErrorMessage";
+import RatingStars from "../ui/RatingStars";
 
 export default function ProductPage() {
   // const { isReviews } = useAppSelector((state) => state.products);
@@ -25,7 +26,7 @@ export default function ProductPage() {
   );
 
   const productPrice = product?.price;
-  const rating = product?.rating.toFixed(2);
+  const rating = product?.rating.toFixed(1);
   const discount = product?.discountPercentage.toFixed(0);
   const originalPrice =
     (product?.price || product?.discountPercentage) &&
@@ -68,6 +69,7 @@ export default function ProductPage() {
           {/* Rewiews */}
           <div className="mt-2 flex items-center gap-10">
             <div className="flex items-center gap-2">
+              <RatingStars rating={product?.rating.toFixed(0).toString()} />
               <p className="font-light text-gray-500 dark:text-gray-400">
                 <span>{rating}</span> out of 5
               </p>

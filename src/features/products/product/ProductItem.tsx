@@ -6,6 +6,7 @@ import { closeSearchModal } from "../../header/search/searchSlice";
 import { type Product } from "../../../api/products-types/productsTypes";
 import { Img } from "react-image";
 import Button from "../../../ui/Button";
+import RatingStars from "../../../ui/RatingStars";
 
 export default function ProductItem({
   id,
@@ -40,6 +41,7 @@ export default function ProductItem({
         </p>
 
         <div className="my-2 flex items-center gap-1">
+          <RatingStars rating={rating.toFixed(0).toString()} />
           <p className="text-gray-500 dark:text-gray-400">
             <span>{rating.toFixed(0)}</span>
           </p>
