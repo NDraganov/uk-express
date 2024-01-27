@@ -48,6 +48,7 @@ import ScrollToTop from "./ui/ScrollToTop";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import MobileMenu from "./features/mobile-menu/MobileMenu";
+import Breadcrumbs from "./ui/Breadcrumbs";
 
 export default function App() {
   const { isVisible: isVisibleMenu } = useAppSelector(
@@ -61,6 +62,8 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Header />
+      <Breadcrumbs />
+
       {/* Toast */}
       <ToastContainer />
 
