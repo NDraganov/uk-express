@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useAppSelector } from "../../../store/hooks";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
 import ErrorMessage from "../../../ui/ErrorMessage";
 import ProductsList from "../../products/ProductsList";
-import Pagination from "../../../ui/Pagination";
+import Pagination from "../../pagination/Pagination";
 
 export default function AllProducts() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { currentPage, itemsPerPage } = useAppSelector(
+    (state) => state.pagination,
+  );
   const {
     data: allProducts,
     isLoading,
@@ -30,7 +32,6 @@ export default function AllProducts() {
     }
   }
 
-  const itemsPerPage = 21;
   const totalPages =
     allProducts?.products.length &&
     Math.ceil(allProducts.products.length / itemsPerPage);
@@ -43,19 +44,10 @@ export default function AllProducts() {
     indexOfLastItem,
   );
 
-  // Change page
-  function paginate(pageNumber: number) {
-    setCurrentPage(pageNumber);
-  }
-
   return (
     <div className="mt-20">
       <ProductsList data={currentItems} isLoading={isLoading} />
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        paginate={paginate}
-      />
+      <Pagination totalPages={totalPages} />
     </div>
   );
 }
