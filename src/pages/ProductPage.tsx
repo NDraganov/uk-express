@@ -1,5 +1,5 @@
 import { NavLink, useParams } from "react-router-dom";
-import { useAppDispatch } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
   useGetAllProductsQuery,
   useGetCommentsQuery,
@@ -13,9 +13,10 @@ import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
 import ErrorMessage from "../ui/ErrorMessage";
 import RatingStars from "../ui/RatingStars";
+import ProductReviews from "../features/products/product/ProductReviews";
 
 export default function ProductPage() {
-  // const { isReviews } = useAppSelector((state) => state.products);
+  const { isReviews } = useAppSelector((state) => state.products);
   const { data: products, error } = useGetAllProductsQuery(undefined);
   const { data: comments } = useGetCommentsQuery(undefined);
   const dispatch = useAppDispatch();
@@ -150,6 +151,7 @@ export default function ProductPage() {
       <div className="flex w-full items-center justify-end">
         <CheckoutButton title="Proceed to Checkout" />
       </div>
+      {isReviews && <ProductReviews title={product?.title} />}
     </main>
   );
 }
