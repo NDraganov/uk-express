@@ -4,6 +4,7 @@ import { useGetCommentsQuery } from "../../../api/productsApiSlice";
 import { closeReviews } from "../productsSlice";
 import { getTotalPages } from "../../pagination/paginationSlice";
 import Pagination from "../../pagination/Pagination";
+import userAvatar from "../../../assets/user.jpg";
 
 interface ProductReviewsProps {
   title: string | undefined;
@@ -39,19 +40,19 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
           hide reviews
         </button>
       </div>
-      <ul className="mt-5 flex flex-col gap-4">
+      <ul className="mt-5 grid gap-4 sm:grid-cols-3">
         {currentReviews?.map((review) => (
           <li
-            className="rounded-sm border border-slate-300 p-4 dark:border-gray-500"
+            className="rounded-md border border-slate-300 p-4 dark:border-gray-500"
             key={review.id}
           >
             <div className="flex items-center justify-start gap-4">
-              <img className="w-8 rounded-full" src="" alt="user" />
+              <img className="w-8 rounded-full" src={userAvatar} alt="user" />
               <p className="font-medium dark:text-white">
                 {review.user.username}
               </p>
             </div>
-            <div className="px-12 py-2">
+            <div className="px-12 py-2 sm:px-0">
               <p className="font-light text-slate-500 dark:text-gray-400">
                 {review.body}
               </p>
