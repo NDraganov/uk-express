@@ -1,4 +1,5 @@
 import ProductItem from "./product/ProductItem";
+import Spinner from "../../ui/Spinner";
 import { type Product } from "../../api/products-types/productsTypes";
 
 interface ProductListProps {
@@ -10,7 +11,7 @@ export default function ProductsList({ data, isLoading }: ProductListProps) {
   if (isLoading)
     return (
       <div className="flex h-screen items-center justify-center">
-        Loading...
+        <Spinner />
       </div>
     );
   return (
