@@ -29,7 +29,11 @@ export default function Pagination({ totalPages }: PaginationProps) {
       >
         Previous
       </button>
-      <ul className="flex w-72 items-center overflow-x-scroll last:border-r last:border-r-gray-300 dark:last:border-r-gray-500">
+      <ul
+        className={`flex items-center last:border-r last:border-r-gray-300 dark:last:border-r-gray-500 ${
+          pageNumbers.length > 5 && "w-72 overflow-x-scroll"
+        }`}
+      >
         {pageNumbers.map((page, i) => (
           <Link to="#" key={i} onClick={() => dispatch(paginate(page))}>
             <li

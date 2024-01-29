@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
   useGetAllProductsQuery,
@@ -79,7 +79,9 @@ export default function ProductPage() {
               className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
               onClick={() => dispatch(openReviews())}
             >
-              Reviews ({comments?.comments.length})
+              <Link to="#productReviews" reloadDocument>
+                Reviews ({comments?.comments.length})
+              </Link>
             </button>
           </div>
 

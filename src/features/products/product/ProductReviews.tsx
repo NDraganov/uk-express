@@ -27,14 +27,14 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
   );
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center pt-20" id="productReviews">
       <div className="flex items-center justify-between">
-        <p className="text-xl">
+        <p className="text-sm sm:text-xl">
           Reviews for{" "}
           <span className="font-semibold dark:text-white">{title}</span>
         </p>
         <button
-          className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
+          className="text-sm font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300 sm:text-base"
           onClick={() => dispatch(closeReviews())}
         >
           hide reviews
