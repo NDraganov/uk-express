@@ -1,13 +1,15 @@
-import { useAppSelector } from "../../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
+import { getTotalPages } from "../../pagination/paginationSlice";
 import ErrorMessage from "../../../ui/ErrorMessage";
 import ProductsList from "../../products/ProductsList";
 import Pagination from "../../pagination/Pagination";
 
 export default function AllProducts() {
-  const { currentPage, itemsPerPage } = useAppSelector(
+  const { currentPage, itemsPerPage, totalPages } = useAppSelector(
     (state) => state.pagination,
   );
+  const dispatch = useAppDispatch();
   const {
     data: allProducts,
     isLoading,
@@ -32,9 +34,7 @@ export default function AllProducts() {
     }
   }
 
-  const totalPages =
-    allProducts?.products.length &&
-    Math.ceil(allProducts.products.length / itemsPerPage);
+  dispatch(getTotalPages(allProducts?.products.length));
 
   // Get current products
   const indexOfLastItem = currentPage * itemsPerPage;

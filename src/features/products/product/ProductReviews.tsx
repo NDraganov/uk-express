@@ -2,6 +2,7 @@ import { useAppSelector } from "../../../store/hooks";
 import { useDispatch } from "react-redux";
 import { useGetCommentsQuery } from "../../../api/productsApiSlice";
 import { closeReviews } from "../productsSlice";
+import { getTotalPages } from "../../pagination/paginationSlice";
 import Pagination from "../../pagination/Pagination";
 
 interface ProductReviewsProps {
@@ -9,16 +10,15 @@ interface ProductReviewsProps {
 }
 
 export default function ProductReviews({ title }: ProductReviewsProps) {
-  const { currentPage, itemsPerPage } = useAppSelector(
+  const { currentPage, itemsPerPage, totalPages } = useAppSelector(
     (state) => state.pagination,
   );
   const dispatch = useDispatch();
   const { data: comments } = useGetCommentsQuery(undefined);
 
-  const totalPages =
-    comments?.comments.length && comments.comments.length / itemsPerPage;
+  dispatch(getTotalPages(comments?.comments.length));
 
-  const indexOfLastPost = currentPage && currentPage * itemsPerPage;
+  const indexOfLastPost = currentPage * itemsPerPage;
   const indexOfFirstReview = indexOfLastPost && indexOfLastPost - itemsPerPage;
   const currentReviews = comments?.comments.slice(
     indexOfFirstReview,
