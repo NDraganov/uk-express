@@ -15,12 +15,17 @@ export default function Breadcrumbs() {
       currentLink += `/${crumb}`;
 
       const capitalized = crumb.charAt(0).toUpperCase() + crumb.slice(1);
+
       return (
         <div className="last:text-orange-500" key={crumb}>
           <NavLink className="flex items-center" to={currentLink}>
             <p>{capitalized}</p>
             <Icon value={{ className: "text-lg" }}>
-              <MdOutlineKeyboardArrowRight />
+              {crumb === location.pathname.split("/").slice(-1).toString() ? (
+                ""
+              ) : (
+                <MdOutlineKeyboardArrowRight />
+              )}
             </Icon>
           </NavLink>
         </div>
