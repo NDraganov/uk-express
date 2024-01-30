@@ -19,7 +19,7 @@ export default function Breadcrumbs() {
       return (
         <div className="last:text-orange-500" key={crumb}>
           <NavLink className="flex items-center" to={currentLink}>
-            <p>{capitalized.replace("%20", " ")}</p>
+            <p>{capitalized.replace(/%20/g, " ")}</p>
             <Icon value={{ className: "text-lg" }}>
               {crumb === location.pathname.split("/").slice(-1).toString() ? (
                 ""
