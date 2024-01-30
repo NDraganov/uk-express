@@ -33,11 +33,17 @@ export default function ProductsList({
         <span className="text-lg dark:text-cyan-500">{data?.length}</span>
       </p>
       <ul className="grid gap-5 md:grid-cols-3 2xl:grid-cols-4">
-        {currentData?.map((product) => (
-          <li key={product.id}>
-            <ProductItem {...product} />
-          </li>
-        ))}
+        {currentData
+          ? currentData?.map((product) => (
+              <li key={product.id}>
+                <ProductItem {...product} />
+              </li>
+            ))
+          : data?.map((product) => (
+              <li key={product.id}>
+                <ProductItem {...product} />
+              </li>
+            ))}
       </ul>
     </div>
   );
