@@ -15,8 +15,9 @@ export default function SignInForm() {
     formState: { errors },
     reset,
   } = useForm<SignInUser>();
-  const { isLoading, isError, success } = useAppSelector((state) => state.auth);
-  const userId = useAppSelector((state) => state.auth.user?.id);
+  const { fullName, isLoading, isError, success } = useAppSelector(
+    (state) => state.auth,
+  );
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ export default function SignInForm() {
       setValue("password", "");
       reset;
     }
-    navigate(`/users/${userId}/account-information`);
+    navigate(`/users/${!isLoading && fullName}/account`);
   });
 
   function demoAccount() {

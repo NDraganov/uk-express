@@ -9,9 +9,9 @@ export default function RegularNav() {
     <div className="sm:hidden">
       <nav>
         <ul className="flex items-center justify-around">
-          <MobileUserNavLink to="account-information" title="Account" />
-          <MobileUserNavLink to="my-cart" title="Cart" />
-          <MobileUserNavLink to="change-password" title="Password" />
+          <MobileUserNavLink to="account" title="Account" />
+          <MobileUserNavLink to="cart" title="Cart" />
+          <MobileUserNavLink to="password" title="Password" />
           <MobileUserNavLink
             to="/"
             title="Sign Out"

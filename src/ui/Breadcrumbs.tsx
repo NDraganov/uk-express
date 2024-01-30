@@ -19,7 +19,7 @@ export default function Breadcrumbs() {
       return (
         <div className="last:text-orange-500" key={crumb}>
           <NavLink className="flex items-center" to={currentLink}>
-            <p>{capitalized}</p>
+            <p>{capitalized.replace("%20", " ")}</p>
             <Icon value={{ className: "text-lg" }}>
               {crumb === location.pathname.split("/").slice(-1).toString() ? (
                 ""
@@ -33,7 +33,7 @@ export default function Breadcrumbs() {
     });
 
   return (
-    <div className="ml-10 mt-24 flex items-center gap-2">
+    <div className="invisible ml-10 mt-24 flex items-center gap-2 sm:visible">
       <Icon value={{ className: "text-lg" }}>
         <FaHome />
         <MdOutlineKeyboardArrowRight />

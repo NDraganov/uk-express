@@ -163,14 +163,14 @@ export default function App() {
 
         {/* User Route */}
         <Route element={<ProtectedRoute />}>
-          <Route path="/users/:userId" element={<UserAccountPage />}>
+          <Route path="/users/:fullName" element={<UserAccountPage />}>
             <Route
-              path="/users/:userId/account-information"
+              path="/users/:fullName/account"
               element={<AccountInformation />}
             />
-            <Route path="/users/:userId/my-cart" element={<MyCart />} />
+            <Route path="/users/:fullName/cart" element={<MyCart />} />
             <Route
-              path="/users/:userId/change-password"
+              path="/users/:fullName/password"
               element={<ChangePassword />}
             />
           </Route>

@@ -3,7 +3,7 @@ import SidebarLink from "./SidebarLink";
 import { signOutUser } from "../auth/authSlice";
 
 export default function Sidebar() {
-  const user = useAppSelector((state) => state.auth.user);
+  const { user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
   const userName = user?.user_metadata.firstName;
@@ -17,9 +17,9 @@ export default function Sidebar() {
       </div>
       <nav className="mt-16 border-r border-gray-300 dark:border-gray-500">
         <ul className="grid-col-1 grid">
-          <SidebarLink to="account-information" title="ACCOUNT INFORMATION" />
-          <SidebarLink to="my-cart" title="MY CART" />
-          <SidebarLink to="change-password" title="CHANGE PASSWORD" />
+          <SidebarLink to="account" title="ACCOUNT INFORMATION" />
+          <SidebarLink to="cart" title="MY CART" />
+          <SidebarLink to="password" title="CHANGE PASSWORD" />
           <SidebarLink
             to="/"
             title="SIGN OUT"
