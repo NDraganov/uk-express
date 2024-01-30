@@ -15,12 +15,12 @@ export default function NavigationLink({
 }: NavigationLinkProps) {
   if (onClick) {
     return (
-      <li>
-        <NavLink to={to}>
-          {({ isActive }) => (
+      <NavLink to={to}>
+        {({ isActive }) => (
+          <li>
             <button
               className={`w-max rounded-md border px-4 py-1 text-sm  hover:bg-zinc-100 dark:hover:bg-slate-700 ${
-                isActive
+                isActive && title !== "All products"
                   ? "border-black text-black dark:border-cyan-500 dark:text-cyan-500"
                   : "border-gray-500 text-gray-500 dark:text-slate-300"
               }`}
@@ -28,9 +28,9 @@ export default function NavigationLink({
             >
               {title}
             </button>
-          )}
-        </NavLink>
-      </li>
+          </li>
+        )}
+      </NavLink>
     );
   } else {
     return (
