@@ -33,12 +33,14 @@ export default function Breadcrumbs() {
     });
 
   return (
-    <div className="invisible ml-10 mt-24 flex items-center gap-2 sm:visible">
-      <Icon value={{ className: "text-lg" }}>
-        <FaHome />
-        <MdOutlineKeyboardArrowRight />
-      </Icon>
-      {crumbs}
+    <div className={`${location.pathname === "/" && "hidden"}`}>
+      <div className="invisible ml-10 mt-24 flex items-center gap-2 sm:visible">
+        <Icon value={{ className: "text-lg" }}>
+          <FaHome />
+          <MdOutlineKeyboardArrowRight />
+        </Icon>
+        {crumbs}
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import NewsModal from "../features/news-subscription/NewsModal";
 
 export default function HomePage() {
   return (
-    <main className="dark:bg-slate-900">
+    <main className="mt-[4.5rem] dark:bg-slate-900">
       <NewsModal />
       <Banner />
       <HomeVideo />
