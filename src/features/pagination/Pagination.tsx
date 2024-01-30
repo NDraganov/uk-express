@@ -12,10 +12,21 @@ export default function Pagination({ totalPages }: PaginationProps) {
 
   const pageNumbers = [];
 
-  if (totalPages !== undefined)
+  if (totalPages !== undefined) {
     for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(i);
     }
+  }
+
+  function handlePreviousClick() {
+    dispatch(prevPage());
+    if (currentPage > 1) window.scrollTo(0, 0);
+  }
+
+  function handleNextClick() {
+    dispatch(nextPage());
+    if (currentPage < pageNumbers.length) window.scrollTo(0, 0);
+  }
 
   return (
     <nav className="my-4 flex items-center justify-center">
@@ -25,7 +36,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
             ? "border-gray-300 hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white"
             : "text-gray-400 dark:border-gray-700 dark:text-gray-500"
         }`}
-        onClick={() => dispatch(prevPage())}
+        onClick={handlePreviousClick}
       >
         Previous
       </button>
@@ -35,7 +46,14 @@ export default function Pagination({ totalPages }: PaginationProps) {
         }`}
       >
         {pageNumbers.map((page, i) => (
-          <Link to="#" key={i} onClick={() => dispatch(paginate(page))}>
+          <Link
+            to="#"
+            key={i}
+            onClick={() => {
+              dispatch(paginate(page));
+              window.scrollTo(0, 0);
+            }}
+          >
             <li
               className={`flex h-10 w-14 items-center justify-center border border-r-0 border-gray-300 font-light hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white ${
                 page === currentPage
@@ -54,7 +72,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
             ? "border-gray-300 hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white"
             : "text-gray-400 dark:border-gray-700 dark:text-gray-500"
         }`}
-        onClick={() => dispatch(nextPage())}
+        onClick={handleNextClick}
       >
         Next
       </button>
