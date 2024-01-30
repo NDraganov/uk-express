@@ -1,9 +1,10 @@
 import FormButton from "../../ui/FormButton";
+import map from "../../assets/images/map.jpeg";
 
 export default function ContactForm() {
   return (
     <div className="relative sm:w-5/6">
-      <img className="h-screen" src="/images/map.jpeg" alt="Map" />
+      <img className="h-screen" src={map} alt="Map" />
       <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <form className="w-96 rounded-md bg-white px-6 py-4 dark:bg-slate-800">
           <div className="py-2">

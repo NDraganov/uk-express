@@ -2,22 +2,7 @@ import { useState } from "react";
 import Icon from "../../ui/Icon";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-
-const images = [
-  {
-    src: "/images/television.jpeg",
-  },
-  {
-    src: "/images/men-clothing.jpg",
-  },
-  {
-    src: "/images/women-clothing.jpg",
-  },
-  {
-    src: "/images/watches.jpg",
-  },
-  { src: "/images/jewellery.jpg" },
-];
+import images from "../../data/CarouselImages.json";
 
 export default function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -47,7 +32,7 @@ export default function Carousel() {
       <img
         className="h-full w-full"
         src={images[slideIndex].src}
-        alt="Television"
+        alt="Carousel image"
       />
       <button
         className="absolute right-10 top-1/2 flex items-center justify-center rounded-full p-2 hover:bg-white hover:bg-opacity-30"

@@ -1,10 +1,11 @@
 import { Img } from "react-image";
+import team from "../../assets/images/team.jpg";
 
 export default function OurMission() {
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="w-full sm:w-3/6">
-        <Img src="/images/team.jpg" />
+        <Img src={team} />
       </div>
       <div className="flex w-full flex-col items-center justify-center py-4 sm:w-3/6 sm:py-0">
         <h2 className="text-4xl font-medium dark:text-white">Our Mission</h2>

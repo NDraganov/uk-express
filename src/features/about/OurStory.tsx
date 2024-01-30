@@ -1,4 +1,5 @@
 import { Img } from "react-image";
+import london from "../../assets/images/london.jpg";
 
 export default function OurStory() {
   return (
@@ -15,7 +16,7 @@ export default function OurStory() {
         </p>
       </div>
       <div className="w-full sm:w-3/6">
-        <Img src="/images/london.jpg" />
+        <Img src={london} />
       </div>
     </div>
   );

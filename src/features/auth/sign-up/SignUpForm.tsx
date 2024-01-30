@@ -6,7 +6,7 @@ import { signUpUser } from "../authSlice";
 import { type Country, type SignUpUser } from "../authTypes";
 import FormButton from "../../../ui/FormButton";
 import NavigationLink from "../../header/categories-nav/NavigationLink";
-import data from "../../data/CountryCodeData.json";
+import data from "../../../data/CountryCodeData.json";
 
 export default function SignUpForm() {
   const [countries, setCountries] = useState<Country[] | undefined>();

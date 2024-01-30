@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import learnOptions from "../../data/FooterLearn.json";
+import learnOptions from "../../../data/FooterLearn.json";
 
 export default function LearnLinks() {
   return (

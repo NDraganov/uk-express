@@ -3,7 +3,7 @@ import { useGetCommentsQuery } from "../../../api/productsApiSlice";
 import { closeReviews } from "../productsSlice";
 import { getTotalPages } from "../../pagination/paginationSlice";
 import Pagination from "../../pagination/Pagination";
-import userAvatar from "../../../assets/user.jpg";
+import userAvatar from "../../../assets/images/user.jpg";
 
 interface ProductReviewsProps {
   title: string | undefined;
