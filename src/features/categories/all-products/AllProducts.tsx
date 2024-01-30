@@ -46,7 +46,13 @@ export default function AllProducts() {
 
   return (
     <div className="mt-20">
-      <ProductsList data={currentItems} isLoading={isLoading} />
+      <ProductsList
+        data={allProducts?.products}
+        currentData={currentItems}
+        isLoading={isLoading}
+        firstIndex={indexOfFirstItem}
+        lastIndex={indexOfLastItem}
+      />
       <Pagination totalPages={totalPages} />
     </div>
   );

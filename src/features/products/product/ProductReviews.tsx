@@ -1,5 +1,4 @@
-import { useAppSelector } from "../../../store/hooks";
-import { useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useGetCommentsQuery } from "../../../api/productsApiSlice";
 import { closeReviews } from "../productsSlice";
 import { getTotalPages } from "../../pagination/paginationSlice";
@@ -14,16 +13,16 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
   const { currentPage, itemsPerPage, totalPages } = useAppSelector(
     (state) => state.pagination,
   );
-  const dispatch = useDispatch();
   const { data: comments } = useGetCommentsQuery(undefined);
+  const dispatch = useAppDispatch();
 
   dispatch(getTotalPages(comments?.comments.length));
 
-  const indexOfLastPost = currentPage * itemsPerPage;
-  const indexOfFirstReview = indexOfLastPost && indexOfLastPost - itemsPerPage;
-  const currentReviews = comments?.comments.slice(
-    indexOfFirstReview,
-    indexOfLastPost,
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = comments?.comments.slice(
+    indexOfFirstItem,
+    indexOfLastItem,
   );
 
   return (
@@ -41,7 +40,7 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
         </button>
       </div>
       <ul className="mt-5 grid gap-4 sm:grid-cols-3">
-        {currentReviews?.map((review) => (
+        {currentItems?.map((review) => (
           <li
             className="rounded-md border border-slate-300 p-4 dark:border-gray-500"
             key={review.id}
