@@ -153,7 +153,7 @@ export default function App() {
         </Route>
 
         {/* Singe product Route */}
-        <Route path="/products/:productId" element={<ProductPage />} />
+        <Route path="/products/:title" element={<ProductPage />} />
 
         {/* About page */}
         <Route path="/about" element={<About />} />

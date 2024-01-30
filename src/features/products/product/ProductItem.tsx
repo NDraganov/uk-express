@@ -56,7 +56,7 @@ export default function ProductItem({
             title="Review"
             onClick={() => {
               dispatch(closeSearchModal());
-              navigate(`/products/${id}`);
+              navigate(`/products/${title}`);
             }}
           />
           <Button title="Add to cart" onClick={handleAddToCart} />

@@ -2,15 +2,13 @@ import { useState } from "react";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
 
 interface ProductGalleryProps {
-  id: string | undefined;
+  title: string | undefined;
 }
 
-export default function ProductGallery({ id }: ProductGalleryProps) {
+export default function ProductGallery({ title }: ProductGalleryProps) {
   const [imageIndex, setImageIndex] = useState(0);
   const { data: products } = useGetAllProductsQuery(undefined);
-  const product = products?.products.find(
-    (product) => product.id === Number(id),
-  );
+  const product = products?.products.find((product) => product.title === title);
 
   function handleImageIndex(index: number) {
     setImageIndex(index);

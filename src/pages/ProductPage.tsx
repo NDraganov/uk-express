@@ -20,11 +20,9 @@ export default function ProductPage() {
   const { data: products, error } = useGetAllProductsQuery(undefined);
   const { data: comments } = useGetCommentsQuery(undefined);
   const dispatch = useAppDispatch();
-  const { productId } = useParams();
+  const { title } = useParams();
 
-  const product = products?.products.find(
-    (product) => product.id === Number(productId),
-  );
+  const product = products?.products.find((product) => product.title === title);
 
   const productPrice = product?.price;
   const rating = product?.rating.toFixed(1);
@@ -58,7 +56,7 @@ export default function ProductPage() {
 
       <div className="my-10 sm:flex sm:gap-10">
         <section className="sm:w-2/4">
-          <ProductGallery id={productId} />
+          <ProductGallery title={title} />
         </section>
 
         <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/4">
