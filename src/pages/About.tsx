@@ -3,7 +3,7 @@ import OurMission from "../features/about/OurMission";
 
 export default function About() {
   return (
-    <main className="mt-[4.5rem]">
+    <main className="mt-10">
       <OurStory />
       <OurMission />
     </main>

@@ -28,7 +28,7 @@ export default function Breadcrumbs() {
     });
 
   return (
-    <div className="my-24 ml-10 flex items-center gap-2">
+    <div className="ml-10 mt-24 flex items-center gap-2">
       <Icon value={{ className: "text-lg" }}>
         <FaHome />
         <MdOutlineKeyboardArrowRight />

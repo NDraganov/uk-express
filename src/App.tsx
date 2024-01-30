@@ -89,10 +89,7 @@ export default function App() {
         <Route element={<CategoriesNav />}>
           <Route path="/products" element={<AllProducts />} />
           {/* Discounted products */}
-          <Route
-            path="/products/products-on-sale"
-            element={<DiscountedProducts />}
-          />
+          <Route path="/products/sale" element={<DiscountedProducts />} />
           {/* Categories routes */}
           <Route
             path="/products/category/smartphones"

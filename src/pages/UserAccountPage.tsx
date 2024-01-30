@@ -4,7 +4,7 @@ import MobileUserNav from "../features/user-account/MobileUserNav";
 
 export default function UserAccountPage() {
   return (
-    <div className="mt-24 sm:mt-28 sm:min-h-screen">
+    <div className="sm:min-h-screen">
       <div className="sm:flex">
         <Sidebar />
         <MobileUserNav />

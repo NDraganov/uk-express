@@ -6,7 +6,7 @@ export default function SignInPage() {
   const navigate = useNavigate();
 
   return (
-    <main className="mb-4 mt-24 sm:my-20">
+    <main className="mb-4">
       <div className="flex flex-col-reverse items-center sm:flex sm:h-screen sm:flex-row">
         <div className="flex flex-col items-center justify-center px-4 pt-10 sm:w-3/4 sm:p-0">
           <h1 className="mb-5 text-center text-5xl font-extralight dark:text-white">

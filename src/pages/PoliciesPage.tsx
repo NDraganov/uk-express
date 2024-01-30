@@ -3,7 +3,7 @@ import PoliciesNav from "../features/policies/PoliciesNav";
 
 export default function PoliciesPage() {
   return (
-    <div className="mt-28 min-h-screen">
+    <div className="mt-5 min-h-screen">
       <PoliciesNav />
       <main>
         <Outlet />
