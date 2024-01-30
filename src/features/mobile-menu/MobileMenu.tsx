@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { closeMobileMenu } from "./mobileMenuSlice";
 import CartBadge from "../../ui/CartBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import SearchIcon from "../../ui/SearchIcon";
@@ -6,7 +7,6 @@ import CloseButton from "./menu-components/CloseButton";
 import MobileMenuLink from "./menu-components/MobileMenuLink";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import SignOutButton from "./menu-components/SignOutButton";
-import { closeMobileMenu } from "./mobileMenuSlice";
 
 export default function MobileMenu() {
   const { user, isAuthenticated, fullName } = useAppSelector(
