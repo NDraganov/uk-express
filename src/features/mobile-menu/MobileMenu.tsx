@@ -46,9 +46,9 @@ export default function MobileMenu() {
             <ul className="flex flex-col items-center py-10">
               <MobileMenuLink to="/" title="Home" />
               <MobileMenuLink to="/products" title="Products" />
-              <MobileMenuLink to="/about_us" title="About" />
+              <MobileMenuLink to="/about" title="About" />
               <MobileMenuLink to="/faq" title="FAQ" />
-              <MobileMenuLink to="/contact_us" title="Contact" />
+              <MobileMenuLink to="/contact" title="Contact" />
             </ul>
           </nav>
         </div>
