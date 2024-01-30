@@ -2,18 +2,18 @@ import { type FormEvent, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeCart, openCart } from "../cart/cartSlice";
+import { closeUserBadge } from "../auth/authSlice";
 import MainNav from "./main-nav/MainNav";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "./user-badge/UserBadge";
 import DarkModeToggle from "../../ui/DarkModeToggle";
-import { closeUserBadge } from "../auth/authSlice";
 import MobileMenuButton from "../../ui/MobileMenuButton";
 import SearchIcon from "../../ui/SearchIcon";
 
 export default function Header() {
-  const cart = useAppSelector((state) => state.cart.isVisible);
+  const { isVisible } = useAppSelector((state) => state.cart);
   const { isAuthenticated } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
@@ -67,7 +67,7 @@ export default function Header() {
         </div>
         <MobileMenuButton />
 
-        {cart === true && <CartModal />}
+        {isVisible === true && <CartModal />}
       </header>
     </div>
   );

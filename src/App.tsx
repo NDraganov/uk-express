@@ -156,10 +156,10 @@ export default function App() {
         <Route path="/products/:productId" element={<ProductPage />} />
 
         {/* About page */}
-        <Route path="/about_us" element={<About />} />
+        <Route path="/about" element={<About />} />
 
         {/* Contact page */}
-        <Route path="/contact_us" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
 
         {/* User Route */}
         <Route element={<ProtectedRoute />}>
