@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import VideoButton from "../../ui/VideoButton";
-import homeVideo from "../../assets/home-video.mp4";
+import homeVideo from "../../assets/home-video.webm";
 
 export default function HomeVideo() {
   const navigate = useNavigate();
