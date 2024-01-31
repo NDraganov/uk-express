@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import VideoButton from "../../ui/VideoButton";
-// import homeVideo from "../../assets/home-video.webm";
-import homeVideoMobile from "../../assets/home-video-mobile.mp4";
+import homeVideo from "../../assets/home-video.mp4";
 
 export default function HomeVideo() {
   const navigate = useNavigate();
@@ -11,8 +10,10 @@ export default function HomeVideo() {
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-black/30"></div>
       <video
         className="h-screen w-full object-cover"
-        src={homeVideoMobile}
+        src={homeVideo}
         autoPlay
+        muted
+        playsInline
         loop
       ></video>
       <div className="absolute left-0 top-0 h-full w-full px-4 py-60 text-white sm:px-20">
