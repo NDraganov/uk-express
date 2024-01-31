@@ -42,7 +42,8 @@ export default function Pagination({ totalPages }: PaginationProps) {
       </button>
       <ul
         className={`flex items-center last:border-r last:border-r-gray-300 dark:last:border-r-gray-500 ${
-          pageNumbers.length > 5 && "w-72 overflow-x-scroll"
+          pageNumbers.length > 5 &&
+          "w-72 overflow-x-scroll sm:w-auto sm:overflow-x-visible"
         }`}
       >
         {pageNumbers.map((page, i) => (
