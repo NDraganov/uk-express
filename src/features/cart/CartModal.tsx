@@ -22,7 +22,7 @@ export default function CartModal() {
 
   return (
     <div
-      className="absolute right-[0.05rem] top-24 z-10 mx-3 max-h-96 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md dark:border-gray-500 dark:bg-slate-900  dark:text-gray-400 dark:shadow-slate-700 sm:right-6 sm:w-1/3"
+      className="absolute right-0 top-20 z-10 mx-3 max-h-96 w-1/3 rounded-md border border-slate-300 bg-white p-4 text-black shadow-md  dark:border-gray-500 dark:bg-slate-900 dark:text-gray-400 dark:shadow-slate-700"
       onClick={(e: FormEvent) => e.stopPropagation()}
     >
       <div>
@@ -41,10 +41,10 @@ export default function CartModal() {
         </div>
 
         {cartItems.length === 0 || isProcessed ? (
-          <p className="pt-4 text-red-600 dark:text-orange-500">
+          <p className="text-gray-400">
             {isAuthenticated
               ? `${user?.user_metadata.firstName}, your cart is empty!`
-              : "Your cart is empty!"}
+              : "Looks like you haven’t added any items to the cart yet."}
           </p>
         ) : (
           <ul
@@ -64,9 +64,9 @@ export default function CartModal() {
       </div>
 
       <div className="mt-4 flex items-center justify-between">
-        <p>
+        <p className="dark:text-slate-100">
           Total due:{" "}
-          <strong className="dark:text-gray-300">
+          <strong className="dark:text-white">
             £{isProcessed ? "0" : formattedTotalPrice}
           </strong>
         </p>
