@@ -2,8 +2,6 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { setInput, showSearchResults } from "./searchSlice";
 import { useGetSingleProductQuery } from "../../../api/productsApiSlice";
 import ProductItem from "../../products/product/ProductItem";
-import Icon from "../../../ui/Icon";
-import { IoIosSearch } from "react-icons/io";
 
 export default function SearchBar() {
   const { isActive, input } = useAppSelector((state) => state.search);
@@ -30,10 +28,12 @@ export default function SearchBar() {
   }
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-center">
+    <>
+      <div className="flex flex-col items-center justify-center">
         <input
-          className="h-8 w-4/5 rounded-none border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500 sm:w-3/5"
+          className={`h-8 w-4/5 rounded-none border border-l-0 border-r-0 border-t-0 border-slate-300 p-2 font-light placeholder:text-sm placeholder:font-light placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-0 dark:border-gray-500 dark:bg-slate-900 dark:text-white dark:focus:border-cyan-500 ${
+            input ? "sm:w-3/5" : "sm:w-4/5"
+          }`}
           type="text"
           title="Search products"
           autoFocus
@@ -43,13 +43,14 @@ export default function SearchBar() {
           }}
           placeholder="Search products"
         />
-        <Icon value={{ className: "text-xl" }}>
-          <IoIosSearch />
-        </Icon>
       </div>
 
       {isActive && (
-        <div className="z-20 mt-10 h-[32rem] overflow-y-scroll rounded-md bg-white dark:bg-slate-900 sm:max-h-[30rem] sm:w-full">
+        <div
+          className={`z-20 mt-10 overflow-y-scroll rounded-md bg-white dark:bg-slate-900 sm:max-h-[30rem] sm:w-full ${
+            input ? "h-[32rem]" : "h-auto"
+          }`}
+        >
           <ul className="grid gap-4 sm:grid-cols-3">
             {input !== "" &&
               singleProduct?.products.map((product) => (
@@ -60,6 +61,6 @@ export default function SearchBar() {
           </ul>
         </div>
       )}
-    </div>
+    </>
   );
 }
