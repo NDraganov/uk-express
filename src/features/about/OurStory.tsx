@@ -1,4 +1,4 @@
-import london from "../../assets/images/london.jpg";
+import london from "../../assets/images/london.jpeg";
 
 export default function OurStory() {
   return (

@@ -1,4 +1,4 @@
-import team from "../../assets/images/team.jpg";
+import team from "../../assets/images/team.jpeg";
 
 export default function OurMission() {
   return (
