@@ -37,7 +37,7 @@ export default function MobileMenu() {
           <ul className="flex items-center justify-between px-10 py-5">
             <SearchIcon size="text-4xl" />
             <DarkModeToggle size="text-3xl" />
-            <MobileMenuLink to={`/users/${user?.id}/my-cart`}>
+            <MobileMenuLink to={`/users/${user?.id}/cart`}>
               <CartBadge size="text-4xl" />
             </MobileMenuLink>
           </ul>
