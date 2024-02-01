@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Img } from "react-image";
 import Icon from "../../ui/Icon";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
@@ -30,7 +29,7 @@ export default function Carousel() {
           <IoIosArrowBack />
         </Icon>
       </button>
-      <Img
+      <img
         className="h-full w-full"
         loading="lazy"
         role="presentation"

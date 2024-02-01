@@ -4,7 +4,6 @@ import { useAppDispatch } from "../../../store/hooks";
 import { addToCart } from "../../cart/cartSlice";
 import { closeSearchModal } from "../../header/search/searchSlice";
 import { type Product } from "../../../api/products-types/productsTypes";
-import { Img } from "react-image";
 import Button from "../../../ui/Button";
 import RatingStars from "../../../ui/RatingStars";
 
@@ -27,7 +26,7 @@ export default function ProductItem({
   return (
     <div className="flex h-[28rem] flex-col items-center rounded-md shadow-gray-300 hover:shadow-lg dark:border-gray-500 dark:shadow-slate-800">
       <div className="h-3/5">
-        <Img
+        <img
           className="h-full w-full rounded-t-md"
           loading="lazy"
           role="presentation"

@@ -1,11 +1,10 @@
-import { Img } from "react-image";
 import team from "../../assets/images/team.jpg";
 
 export default function OurMission() {
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="w-full sm:w-3/6">
-        <Img
+        <img
           loading="lazy"
           role="presentation"
           decoding="async"

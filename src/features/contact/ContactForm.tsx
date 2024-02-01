@@ -1,11 +1,10 @@
-import { Img } from "react-image";
 import FormButton from "../../ui/FormButton";
 import map from "../../assets/images/map.jpeg";
 
 export default function ContactForm() {
   return (
     <div className="relative sm:w-5/6">
-      <Img
+      <img
         className="h-screen"
         loading="lazy"
         role="presentation"

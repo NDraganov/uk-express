@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { Img } from "react-image";
 import {
   useGetFurnitureQuery,
   useGetLaptopsQuery,
@@ -37,7 +36,7 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <Img
+              <img
                 className="my-4 h-80 w-96 rounded-md"
                 loading="lazy"
                 role="presentation"
@@ -67,7 +66,7 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <Img
+              <img
                 className="my-4 h-80 w-96 rounded-md"
                 loading="lazy"
                 role="presentation"
@@ -97,7 +96,7 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <Img
+              <img
                 className="my-4 h-80 w-96 rounded-md"
                 loading="lazy"
                 role="presentation"
@@ -127,7 +126,7 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <Img
+              <img
                 className="my-4 h-80 w-96 rounded-md"
                 loading="lazy"
                 role="presentation"
@@ -157,7 +156,7 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <Img
+              <img
                 className="my-4 h-80 w-96 rounded-md"
                 loading="lazy"
                 role="presentation"
@@ -187,7 +186,7 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <Img
+              <img
                 className="my-4 h-80 w-96 rounded-md"
                 loading="lazy"
                 role="presentation"
