@@ -17,7 +17,7 @@ export default function CartDetails() {
     <aside className="flex flex-col px-4 sm:w-1/2 sm:px-0">
       <div>
         <div className="mt-5">
-          <h3 className="text-lg font-medium text-gray-400">Pay UkExpress</h3>
+          <p className="text-lg font-medium text-gray-400">Pay UkExpress</p>
           <span className="text-xl font-normal text-slate-800 dark:text-cyan-500">
             £<span className="text-3xl">{formattedTotalPriceWithShipping}</span>
           </span>

@@ -36,6 +36,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
             ? "border-gray-300 hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white"
             : "text-gray-400 dark:border-gray-700 dark:text-gray-500"
         }`}
+        title="Previous page"
         onClick={handlePreviousClick}
       >
         Previous
@@ -73,6 +74,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
             ? "border-gray-300 hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white"
             : "text-gray-400 dark:border-gray-700 dark:text-gray-500"
         }`}
+        title="Next page"
         onClick={handleNextClick}
       >
         Next

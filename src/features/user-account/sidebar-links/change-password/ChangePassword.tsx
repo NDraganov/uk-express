@@ -33,9 +33,9 @@ export default function ChangePassword() {
         className="grid h-4/6 w-full px-4 sm:w-1/2 sm:px-0"
         onSubmit={onSubmit}
       >
-        <h1 className="flex items-center justify-start border-b border-gray-300 font-normal dark:border-gray-500 dark:text-cyan-500">
+        <h2 className="flex items-center justify-start border-b border-gray-300 font-normal dark:border-gray-500 dark:text-cyan-500">
           CHANGE PASSWORD
-        </h1>
+        </h2>
 
         <div className="mt-5 items-center justify-between sm:mt-0 sm:flex">
           <label htmlFor="password">

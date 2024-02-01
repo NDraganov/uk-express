@@ -14,10 +14,10 @@ export default function ErrorMessage({
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="flex flex-col items-center justify-center">
-        <h2 className="text-3xl font-medium text-rose-500">
+        <h1 className="text-3xl font-medium text-rose-500">
           Oops, an error has occurred!
-        </h2>
-        <p className="text-xl">{userMessage}</p>
+        </h1>
+        <h2 className="text-xl">{userMessage}</h2>
         <div className="my-10 text-lg font-light">
           <p>
             Status:{" "}

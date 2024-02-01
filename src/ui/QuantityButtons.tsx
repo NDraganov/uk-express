@@ -16,7 +16,11 @@ export default function QuantityButtons({
 }: QuantityButtonsProps) {
   return (
     <div className="flex gap-3">
-      <button onClick={onRemove} disabled={item.quantity <= 1}>
+      <button
+        title="Reduce quantity"
+        onClick={onRemove}
+        disabled={item.quantity <= 1}
+      >
         <Icon
           value={{
             className:
@@ -29,7 +33,7 @@ export default function QuantityButtons({
 
       <span className="dark:text-gray-300">{item.quantity}</span>
 
-      <button onClick={onAdd}>
+      <button title="Increase quantity" onClick={onAdd}>
         <Icon
           value={{
             className:

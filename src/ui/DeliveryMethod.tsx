@@ -31,18 +31,19 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-400 dark:border-${
           isStandardSelected ? "cyan-500" : "gray-500"
         } dark:hover:border-cyan-300`}
+        title="Standard delivery"
         onClick={() => dispatch(addStandardShipping(standard))}
         id="standard"
       >
         <div className="flex w-full items-baseline justify-between text-left">
           <div>
-            <h3
+            <p
               className={`dark:text-${
                 isStandardSelected ? "cyan-500" : "white"
               }`}
             >
               Standard
-            </h3>
+            </p>
             <p className="font-light text-slate-400 dark:text-gray-400">
               {standardDays} business days
             </p>
@@ -77,18 +78,19 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-500 dark:border-${
           isExpressSelected ? "cyan-500" : "gray-500"
         } dark:hover:border-cyan-300`}
+        title="Express delivery"
         onClick={() => dispatch(addExpressShipping(express))}
         id="express"
       >
         <div className="flex w-full items-baseline justify-between text-left">
           <div>
-            <h3
+            <p
               className={`dark:text-${
                 isExpressSelected ? "cyan-500" : "white"
               }`}
             >
               Express
-            </h3>
+            </p>
             <p className="font-light text-slate-400 dark:text-gray-400">
               {expressDays} business days
             </p>

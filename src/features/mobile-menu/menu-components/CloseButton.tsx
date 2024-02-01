@@ -7,7 +7,7 @@ export default function CloseButton() {
   const dispatch = useAppDispatch();
 
   return (
-    <button onClick={() => dispatch(closeMobileMenu())}>
+    <button onClick={() => dispatch(closeMobileMenu())} title="Close menu">
       <Icon
         value={{
           className:

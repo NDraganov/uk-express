@@ -23,7 +23,10 @@ export default function DarkModeToggle({ size }: DarkModeToggleProps) {
 
   return (
     <div className="flex items-center">
-      <button className="" onClick={() => setIsDarkMode((isDark) => !isDark)}>
+      <button
+        title="Toggle dark and light mode"
+        onClick={() => setIsDarkMode((isDark) => !isDark)}
+      >
         {isDarkMode ? (
           <Icon
             value={{

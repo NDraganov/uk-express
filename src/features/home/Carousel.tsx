@@ -23,6 +23,7 @@ export default function Carousel() {
     <div className="relative my-5 h-56 sm:my-40 sm:h-full">
       <button
         className="absolute left-10 top-1/2 flex items-center justify-center rounded-full p-2 hover:bg-white hover:bg-opacity-30"
+        title="Previous image"
         onClick={prevSlide}
       >
         <Icon value={{ className: "fill-white sm:text-5xl" }}>
@@ -39,6 +40,7 @@ export default function Carousel() {
       />
       <button
         className="absolute right-10 top-1/2 flex items-center justify-center rounded-full p-2 hover:bg-white hover:bg-opacity-30"
+        title="Next image"
         onClick={nextSlide}
       >
         <Icon value={{ className: "fill-white sm:text-5xl" }}>

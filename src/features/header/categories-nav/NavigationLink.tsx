@@ -24,6 +24,7 @@ export default function NavigationLink({
                   ? "border-black text-black dark:border-cyan-500 dark:text-cyan-500"
                   : "border-gray-500 text-gray-500 dark:text-slate-300"
               }`}
+              title={title}
               onClick={onClick}
             >
               {title}
@@ -40,6 +41,7 @@ export default function NavigationLink({
             ? "text-slate-800 dark:text-cyan-500"
             : "text-slate-800 dark:text-gray-400"
         }  underline hover:text-slate-500  dark:hover:text-gray-300`}
+        title={title}
       >
         <NavLink to={to}>{title}</NavLink>
       </button>

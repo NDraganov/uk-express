@@ -28,7 +28,7 @@ export default function CartModal() {
       <div>
         <div className="flex items-start justify-between">
           <h3 className="pb-2 text-lg font-medium dark:text-white">My Cart</h3>
-          <button onClick={() => dispatch(closeCart())}>
+          <button onClick={() => dispatch(closeCart())} title="Close cart">
             <Icon
               value={{
                 className:

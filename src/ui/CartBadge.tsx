@@ -17,7 +17,7 @@ export default function CartBadge({ size, onOpen }: CartBadgeProps) {
   );
 
   return (
-    <button className="relative" onClick={onOpen}>
+    <button className="relative" title="Cart" onClick={onOpen}>
       <div
         className={`absolute left-5 h-5 w-5 rounded-full ${
           cartQuantity > 0 ? "bg-orange-500 dark:bg-lime-400" : ""

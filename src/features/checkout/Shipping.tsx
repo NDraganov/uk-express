@@ -10,7 +10,7 @@ export default function Shipping() {
         </p>
         <hr className="w-1/3 border border-slate-300 dark:border-gray-500" />
       </div>
-      <h3 className="my-4 font-medium dark:text-white">Shipping information</h3>
+      <p className="my-4 font-medium dark:text-white">Shipping information</p>
       <ShippingForm />
     </section>
   );

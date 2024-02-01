@@ -34,6 +34,7 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
         </p>
         <button
           className="text-sm font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300 sm:text-base"
+          title="Hide reviews"
           onClick={() => dispatch(closeReviews())}
         >
           hide reviews

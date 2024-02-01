@@ -60,10 +60,10 @@ export default function ProductPage() {
         </section>
 
         <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/4">
-          <h2 className="text-3xl font-extralight dark:text-white">
+          <h1 className="text-3xl font-extralight dark:text-white">
             {product?.title}
-          </h2>
-          <p>{product?.brand}</p>
+          </h1>
+          <h2>{product?.brand}</h2>
 
           {/* Rewiews */}
           <div className="mt-2 flex items-center gap-10">

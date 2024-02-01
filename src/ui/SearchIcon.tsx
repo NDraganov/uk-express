@@ -10,7 +10,7 @@ interface SearchIconProps {
 export default function SearchIcon({ size }: SearchIconProps) {
   const dispatch = useAppDispatch();
   return (
-    <button onClick={() => dispatch(showSearchModal())}>
+    <button title="Search products" onClick={() => dispatch(showSearchModal())}>
       <Icon
         value={{
           className: `${size} hover:fill-slate-400 dark:fill-slate-100 dark:hover:fill-cyan-300`,

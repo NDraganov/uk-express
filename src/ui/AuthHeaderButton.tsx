@@ -17,7 +17,10 @@ export default function AuthHeaderButton({
   onClose,
 }: AuthHeaderButtonProps) {
   return (
-    <button className="rounded-md bg-lime-400 px-2 py-1 hover:bg-lime-300 dark:text-black">
+    <button
+      className="rounded-md bg-lime-400 px-2 py-1 hover:bg-lime-300 dark:text-black"
+      title="Sign in"
+    >
       <NavLink
         className="flex items-center gap-2 text-sm"
         to={to}

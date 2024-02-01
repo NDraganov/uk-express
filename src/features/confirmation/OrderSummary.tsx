@@ -15,7 +15,7 @@ export default function OrderSummary() {
   return (
     <section className="w-full">
       <div className="rounded-md border border-slate-300 p-4 font-light shadow-md dark:border-gray-500">
-        <h3 className="font-medium dark:text-white">ORDER SUMMARY</h3>
+        <p className="font-medium dark:text-white">ORDER SUMMARY</p>
         <p className="my-1 flex items-center justify-between">
           {cartItems.length} items{" "}
           <span className="font-normal">£{formattedTotalPriceItems}</span>

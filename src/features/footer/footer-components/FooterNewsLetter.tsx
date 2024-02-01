@@ -1,7 +1,7 @@
 export default function FooterNewsLetter() {
   return (
     <div className="flex flex-col items-start gap-4 text-slate-200 sm:w-1/5">
-      <h4 className="hidden sm:block">STAY IN THE KNOW</h4>
+      <p className="hidden sm:block">STAY IN THE KNOW</p>
       <form className="flex w-full flex-col items-start gap-4">
         <label htmlFor="newsletter">
           Sign up for 10% off your first order.

@@ -9,6 +9,7 @@ export default function MobileMenuButton() {
   return (
     <button
       className="block sm:hidden"
+      title="Menu"
       onClick={() => dispatch(openMobileMenu())}
     >
       <Icon value={{ className: "text-lg" }}>

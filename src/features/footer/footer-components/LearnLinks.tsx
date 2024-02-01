@@ -4,9 +4,9 @@ import learnOptions from "../../../data/FooterLearn.json";
 export default function LearnLinks() {
   return (
     <div className="flex flex-col gap-4">
-      <h5 className="text-lg font-medium text-slate-200 dark:text-slate-200">
+      <p className="text-lg font-medium text-slate-200 dark:text-slate-200">
         LEARN
-      </h5>
+      </p>
       <div className="flex flex-col">
         {learnOptions.map((option) => (
           <NavLink

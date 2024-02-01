@@ -27,9 +27,9 @@ export default function NewCollection() {
             <div className="flex justify-between">
               <div>
                 <p className="text-lg">{smartphones?.products[1].brand}</p>
-                <h4 className="line-clamp-1 text-2xl dark:text-white">
+                <p className="line-clamp-1 text-2xl dark:text-white">
                   {smartphones?.products[1].title}
-                </h4>
+                </p>
               </div>
               <p className="flex h-8 w-16 items-center justify-center rounded-md bg-lime-400 px-2 py-1 text-lg dark:text-black">
                 New
@@ -57,9 +57,9 @@ export default function NewCollection() {
             <div className="flex justify-between">
               <div>
                 <p className="text-lg">{furniture?.products[1].brand}</p>
-                <h4 className="line-clamp-1 text-2xl dark:text-white">
+                <p className="line-clamp-1 text-2xl dark:text-white">
                   {furniture?.products[1].title}
-                </h4>
+                </p>
               </div>
               <p className="flex h-8 w-16 items-center justify-center rounded-md bg-lime-400 px-2 py-1 text-lg dark:text-black">
                 New
@@ -87,9 +87,9 @@ export default function NewCollection() {
             <div className="flex justify-between">
               <div>
                 <p className="text-lg">{laptops?.products[1].brand}</p>
-                <h4 className="line-clamp-1 text-2xl dark:text-white">
+                <p className="line-clamp-1 text-2xl dark:text-white">
                   {laptops?.products[1].title}
-                </h4>
+                </p>
               </div>
               <p className="flex h-8 w-16 items-center justify-center rounded-md bg-lime-400 px-2 py-1 text-lg dark:text-black">
                 New
@@ -117,9 +117,9 @@ export default function NewCollection() {
             <div className="flex justify-between">
               <div>
                 <p className="text-lg">{sunglasses?.products[1].brand}</p>
-                <h4 className="line-clamp-1 text-2xl dark:text-white">
+                <p className="line-clamp-1 text-2xl dark:text-white">
                   {sunglasses?.products[1].title}
-                </h4>
+                </p>
               </div>
               <p className="flex h-8 w-16 items-center justify-center rounded-md bg-lime-400 px-2 py-1 text-lg dark:text-black">
                 New
@@ -147,9 +147,9 @@ export default function NewCollection() {
             <div className="flex justify-between">
               <div>
                 <p className="text-lg">{mensShirts?.products[1].brand}</p>
-                <h4 className="line-clamp-1 text-2xl dark:text-white">
+                <p className="line-clamp-1 text-2xl dark:text-white">
                   {mensShirts?.products[1].title}
-                </h4>
+                </p>
               </div>
               <p className="flex h-8 w-16 items-center justify-center rounded-md bg-lime-400 px-2 py-1 text-lg dark:text-black">
                 New
@@ -177,9 +177,9 @@ export default function NewCollection() {
             <div className="flex justify-between">
               <div>
                 <p className="text-lg">{womensBags?.products[1].brand}</p>
-                <h4 className="line-clamp-1 text-2xl dark:text-white">
+                <p className="line-clamp-1 text-2xl dark:text-white">
                   {womensBags?.products[1].title}
-                </h4>
+                </p>
               </div>
               <p className="flex h-8 w-16 items-center justify-center rounded-md bg-lime-400 px-2 py-1 text-lg dark:text-black">
                 New

@@ -16,6 +16,7 @@ export default function SignOutButton() {
     <button
       className="flex items-center justify-center gap-2 dark:text-slate-200"
       onClick={handleSignOut}
+      title="Sign out"
     >
       <Icon
         value={{

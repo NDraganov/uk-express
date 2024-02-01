@@ -17,7 +17,10 @@ export default function SearchModal() {
           }`}
         >
           <div className="flex justify-end">
-            <button onClick={() => dispatch(closeSearchModal())}>
+            <button
+              onClick={() => dispatch(closeSearchModal())}
+              title="Close search"
+            >
               <Icon
                 value={{
                   className:

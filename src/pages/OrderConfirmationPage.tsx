@@ -15,14 +15,14 @@ export default function OrderConfirmationPage() {
     <main className="mx-4 mt-10 sm:mx-28">
       <div className="flex flex-col items-baseline justify-between sm:flex-row">
         <div className="sm:w-2/3">
-          <h2 className="text-lg font-light">
+          <h1 className="text-lg font-light">
             Hi <span className="dark:text-cyan-500">{userName}</span>, thank you
             for shopping with UkExpress!
-          </h2>
+          </h1>
           <div className="my-2 flex items-center justify-between rounded-md border-2 border-lime-500 px-2 py-1 sm:w-2/3">
-            <h1 className="font-normal dark:text-white sm:text-2xl">
+            <h2 className="font-normal dark:text-white sm:text-2xl">
               YOUR ORDER WAS PLACED SUCCESSFULLY
-            </h1>
+            </h2>
             <Icon value={{ className: "fill-lime-500" }}>
               <FaCheckCircle />
             </Icon>

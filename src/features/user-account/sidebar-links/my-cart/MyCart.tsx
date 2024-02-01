@@ -29,9 +29,9 @@ export default function MyCart() {
       ) : (
         <div className="flex h-5/6 flex-col items-center justify-center px-4 py-5 sm:w-1/2 sm:px-0 sm:py-0">
           <div className="w-full">
-            <h3 className="flex w-full items-center justify-start border-b border-gray-300 pb-2 font-normal dark:border-gray-500 dark:text-cyan-500">
+            <h2 className="flex w-full items-center justify-start border-b border-gray-300 pb-2 font-normal dark:border-gray-500 dark:text-cyan-500">
               MY CART
-            </h3>
+            </h2>
             {cartItems.length > 0 && (
               <ul className="mt-2">
                 {cartItems.map((item) => {
