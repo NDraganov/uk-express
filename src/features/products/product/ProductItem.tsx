@@ -30,6 +30,8 @@ export default function ProductItem({
         <Img
           className="h-full w-full rounded-t-md"
           loading="lazy"
+          role="presentation"
+          decoding="async"
           src={thumbnail}
           alt={title}
         />

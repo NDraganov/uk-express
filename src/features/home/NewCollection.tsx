@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Img } from "react-image";
 import {
   useGetFurnitureQuery,
   useGetLaptopsQuery,
@@ -36,8 +37,11 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <img
+              <Img
                 className="my-4 h-80 w-96 rounded-md"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={smartphones?.products[1].images[2]}
                 alt="iphone"
               />
@@ -63,8 +67,11 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <img
+              <Img
                 className="my-4 h-80 w-96 rounded-md"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={furniture?.products[1].images[2]}
                 alt="iphone"
               />
@@ -90,8 +97,11 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <img
+              <Img
                 className="my-4 h-80 w-96 rounded-md"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={laptops?.products[1].images[0]}
                 alt="iphone"
               />
@@ -117,8 +127,11 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <img
+              <Img
                 className="my-4 h-80 w-96 rounded-md"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={sunglasses?.products[1].thumbnail}
                 alt="iphone"
               />
@@ -144,8 +157,11 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <img
+              <Img
                 className="my-4 h-80 w-96 rounded-md"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={mensShirts?.products[1].images[0]}
                 alt="iphone"
               />
@@ -171,8 +187,11 @@ export default function NewCollection() {
               </p>
             </div>
             <div>
-              <img
+              <Img
                 className="my-4 h-80 w-96 rounded-md"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={womensBags?.products[1].images[3]}
                 alt="iphone"
               />

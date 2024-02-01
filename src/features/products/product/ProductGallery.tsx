@@ -1,3 +1,4 @@
+import { Img } from "react-image";
 import { useState } from "react";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
 
@@ -17,8 +18,11 @@ export default function ProductGallery({ title }: ProductGalleryProps) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex h-96 items-center justify-center">
-        <img
+        <Img
           className="h-full rounded-md"
+          loading="lazy"
+          role="presentation"
+          decoding="async"
           src={product?.images[imageIndex]}
           alt={product?.title}
         />
@@ -33,10 +37,13 @@ export default function ProductGallery({ title }: ProductGalleryProps) {
             key={image}
           >
             <div className="m-0 rounded-md bg-white p-0">
-              <img
+              <Img
                 className={`h-16 rounded-md hover:cursor-pointer hover:opacity-60 sm:h-24 ${
                   imageIndex === index ? "opacity-60" : ""
                 }`}
+                loading="lazy"
+                role="presentation"
+                decoding="async"
                 src={image}
                 alt={product.title}
                 onClick={() => handleImageIndex(index)}

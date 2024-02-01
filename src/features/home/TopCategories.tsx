@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Img } from "react-image";
 import {
   useGetLaptopsQuery,
   useGetMensShoesQuery,
@@ -22,8 +23,11 @@ export default function TopCategories() {
       <div className="grid grid-cols-2 gap-2 dark:text-white sm:grid-cols-6">
         <NavLink to="/products/category/laptops">
           <div className="flex h-36 flex-col items-center justify-center gap-2  rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
-            <img
+            <Img
               className="h-5/6 rounded-md"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
               src={laptops?.products[2].thumbnail}
             />
             <p>Laptops</p>
@@ -31,8 +35,11 @@ export default function TopCategories() {
         </NavLink>
         <NavLink to="/products/category/mens-shoes">
           <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
-            <img
+            <Img
               className="h-5/6 rounded-md"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
               src={shoes?.products[4].thumbnail}
             />
             <p>Shoes</p>
@@ -40,8 +47,11 @@ export default function TopCategories() {
         </NavLink>
         <NavLink to="/products/category/smartphones">
           <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
-            <img
+            <Img
               className="h-5/6 rounded-md"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
               src={smartphones?.products[1].thumbnail}
             />
             <p>Smartphones</p>
@@ -49,8 +59,11 @@ export default function TopCategories() {
         </NavLink>
         <NavLink to="/products/category/womens-dresses">
           <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
-            <img
+            <Img
               className="h-5/6 rounded-md"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
               src={bags?.products[1].thumbnail}
             />
             <p>Dresses</p>
@@ -58,8 +71,11 @@ export default function TopCategories() {
         </NavLink>
         <NavLink to="/products/category/mens-watches">
           <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
-            <img
+            <Img
               className="h-5/6 rounded-md"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
               src={watches?.products[2].thumbnail}
             />
             <p>Watches</p>
@@ -67,8 +83,11 @@ export default function TopCategories() {
         </NavLink>
         <NavLink to="/products/category/womens-jewellery">
           <div className="flex h-36 flex-col items-center justify-center gap-2 rounded-md px-5 py-2 shadow-xl hover:scale-105 hover:text-cyan-600 dark:bg-slate-800 hover:dark:text-cyan-500 sm:w-56">
-            <img
+            <Img
               className="h-5/6 rounded-md"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
               src={jewellery?.products[2].thumbnail}
             />
             <p>Jewellery</p>

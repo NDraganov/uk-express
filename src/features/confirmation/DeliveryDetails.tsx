@@ -1,3 +1,4 @@
+import { Img } from "react-image";
 import { useAppSelector } from "../../store/hooks";
 
 export default function DeliveryDetails() {
@@ -18,7 +19,14 @@ export default function DeliveryDetails() {
               className="flex items-center justify-center rounded-md border border-slate-300 py-1"
               key={item.id}
             >
-              <img className="w-20" src={item.thumbnail} alt={item.title} />
+              <Img
+                className="w-20"
+                loading="lazy"
+                role="presentation"
+                decoding="async"
+                src={item.thumbnail}
+                alt={item.title}
+              />
             </li>
           ))}
         </ul>

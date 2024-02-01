@@ -16,7 +16,13 @@ export default function OurStory() {
         </p>
       </div>
       <div className="w-full sm:w-3/6">
-        <Img src={london} />
+        <Img
+          loading="lazy"
+          role="presentation"
+          decoding="async"
+          src={london}
+          alt="London"
+        />
       </div>
     </div>
   );

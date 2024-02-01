@@ -11,6 +11,7 @@ import {
 } from "./cartSlice";
 import QuantityButtons from "../../ui/QuantityButtons";
 import DeleteButton from "../../ui/DeleteButton";
+import { Img } from "react-image";
 
 export default function CartItem(item: CartItem) {
   const dispatch = useAppDispatch();
@@ -41,8 +42,11 @@ export default function CartItem(item: CartItem) {
   }
   return (
     <div className="mt-6 flex w-full items-center gap-4">
-      <img
+      <Img
         className="w-10 hover:cursor-pointer dark:border dark:border-gray-300"
+        loading="lazy"
+        role="presentation"
+        decoding="async"
         src={item.thumbnail}
         alt={item.title}
         onClick={handleGoToProductPage}
