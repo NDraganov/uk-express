@@ -36,14 +36,19 @@ export default function Header() {
 
   return (
     <div className="fixed left-0 right-0 top-0 z-10 border-b border-gray-300 bg-white text-black dark:border-gray-500 dark:bg-slate-900 dark:text-white">
-      <header className="flex items-center justify-between px-3 py-5">
-        <div className="flex items-baseline gap-4">
-          <h2 className="text-2xl font-light hover:text-orange-500 dark:hover:text-cyan-300">
-            <NavLink className="flex items-baseline" to="/">
-              UkExpress
-              <span className="hidden text-base sm:block">.co.uk</span>
-            </NavLink>
-          </h2>
+      <header className="flex items-center justify-between px-3 py-2.5">
+        <div className="flex items-center gap-4">
+          <NavLink to="/">
+            <img
+              className="w-28"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
+              src="/src/assets/images/ukexpress-logo.svg"
+              alt=""
+            />
+          </NavLink>
+
           <MainNav />
         </div>
 
