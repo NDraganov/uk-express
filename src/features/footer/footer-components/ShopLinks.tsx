@@ -12,6 +12,7 @@ export default function ShopLinks() {
         {shopOptions.map((option) => (
           <NavLink
             className="hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100"
+            title={option.title}
             key={option.title}
             to={option.path}
           >

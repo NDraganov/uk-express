@@ -14,6 +14,7 @@ export default function MainNavLink({ title, to }: MainNavLinkProps) {
             isActive ? "text-orange-500 dark:text-cyan-500" : ""
           }`
         }
+        title={title}
         to={to}
       >
         {title}

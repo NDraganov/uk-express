@@ -41,6 +41,7 @@ export default function UserBadge() {
           <div className="flex flex-col border-b border-slate-300 py-1 dark:border-gray-500">
             <NavLink
               className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 dark:text-gray-400 hover:dark:bg-slate-700"
+              title="Account"
               to={`/users/${fullName}/account`}
             >
               <Icon value={{ className: "dark:fill-slate-200" }}>
@@ -50,6 +51,7 @@ export default function UserBadge() {
             </NavLink>
             <NavLink
               className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 dark:text-gray-400 hover:dark:bg-slate-700"
+              title="Cart"
               to={`/users/${fullName}/cart`}
             >
               <Icon value={{ className: "text-lg dark:fill-slate-200" }}>
@@ -59,6 +61,7 @@ export default function UserBadge() {
             </NavLink>
             <NavLink
               className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 dark:text-gray-400 hover:dark:bg-slate-700"
+              title="Checkout"
               to={`${
                 items.length === 0 ? `/users/${fullName}/cart` : "/checkout"
               }`}

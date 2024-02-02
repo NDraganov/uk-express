@@ -15,9 +15,9 @@ export default function NavigationLink({
 }: NavigationLinkProps) {
   if (onClick) {
     return (
-      <NavLink to={to}>
-        {({ isActive }) => (
-          <li>
+      <li>
+        <NavLink to={to}>
+          {({ isActive }) => (
             <button
               className={`w-max rounded-md border px-4 py-1 text-sm  hover:bg-zinc-100 dark:hover:bg-slate-700 ${
                 isActive && title !== "All products"
@@ -29,9 +29,9 @@ export default function NavigationLink({
             >
               {title}
             </button>
-          </li>
-        )}
-      </NavLink>
+          )}
+        </NavLink>
+      </li>
     );
   } else {
     return (
