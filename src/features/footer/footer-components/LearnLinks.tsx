@@ -7,7 +7,7 @@ export default function LearnLinks() {
       <p className="text-lg font-medium text-slate-200 dark:text-slate-200">
         LEARN
       </p>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-2">
         {learnOptions.map((option) => (
           <NavLink
             className="hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100"

@@ -38,7 +38,7 @@ export default function Header() {
     <div className="fixed left-0 right-0 top-0 z-10 border-b border-gray-300 bg-white text-black dark:border-gray-500 dark:bg-slate-900 dark:text-white">
       <header className="flex items-center justify-between px-3 py-2.5">
         <div className="flex items-center gap-4">
-          <NavLink to="/">
+          <NavLink to="/" title="Home">
             <img
               className="w-28"
               loading="lazy"
