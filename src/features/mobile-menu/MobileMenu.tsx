@@ -7,7 +7,6 @@ import CloseButton from "./menu-components/CloseButton";
 import MobileMenuLink from "./menu-components/MobileMenuLink";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import SignOutButton from "./menu-components/SignOutButton";
-import { Link } from "react-router-dom";
 
 export default function MobileMenu() {
   const { user, isAuthenticated, fullName } = useAppSelector(
@@ -39,13 +38,13 @@ export default function MobileMenu() {
             )}
           </div>
 
-          <section className="flex items-center justify-between px-10 py-5">
+          <ul className="flex items-center justify-between px-10 py-5">
             <SearchIcon size="text-4xl" />
             <DarkModeToggle size="text-3xl" />
-            <Link to={`/users/${user?.id}/cart`}>
+            <MobileMenuLink to={`/users/${user?.id}/cart`}>
               <CartBadge size="text-4xl" />
-            </Link>
-          </section>
+            </MobileMenuLink>
+          </ul>
 
           <nav>
             <ul className="flex flex-col items-center gap-4 py-10">

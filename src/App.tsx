@@ -37,9 +37,9 @@ import Refund from "./features/policies/policies-links/Refund";
 import ScrollToTop from "./ui/ScrollToTop";
 import MobileMenu from "./features/mobile-menu/MobileMenu";
 import Breadcrumbs from "./ui/Breadcrumbs";
+import SearchModal from "./features/header/search/SearchModal";
 import Spinner from "./ui/Spinner";
 
-const SearchModal = lazy(() => import("./features/header/search/SearchModal"));
 const PoliciesPage = lazy(() => import("./pages/PoliciesPage"));
 const AllProducts = lazy(
   () => import("./features/categories/all-products/AllProducts"),
