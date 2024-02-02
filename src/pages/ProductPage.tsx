@@ -15,6 +15,8 @@ import Spinner from "../ui/Spinner";
 import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
+import { addToCart } from "../features/cart/cartSlice";
+import { toast } from "react-toastify";
 
 const ProductReviews = lazy(
   () => import("../features/products/product/ProductReviews"),
@@ -29,13 +31,22 @@ export default function ProductPage() {
 
   const product = products?.products.find((product) => product.title === title);
 
-  const productPrice = product?.price;
+  const id = product?.id;
+  // const title = product?.title;
+  const price = product?.price;
+  const thumbnail = product?.thumbnail;
+  const images = product?.images;
   const rating = product?.rating.toFixed(1);
   const discount = product?.discountPercentage.toFixed(0);
   const originalPrice =
     (product?.price || product?.discountPercentage) &&
     product.price / (1 - product.discountPercentage / 100);
   const formattedOriginalPrice = originalPrice?.toFixed(0);
+
+  function handleAddToCart() {
+    dispatch(addToCart({ id, title, price, thumbnail, images }));
+    toast.success("Product added!");
+  }
 
   if (error) {
     if ("status" in error) {
@@ -113,7 +124,7 @@ export default function ProductPage() {
                       <span>Now</span>
                     )
                   : ""}
-                <span className="text-3xl font-semibold"> £{productPrice}</span>
+                <span className="text-3xl font-semibold"> £{price}</span>
               </span>
             </p>
           </div>
@@ -154,6 +165,12 @@ export default function ProductPage() {
         </section>
       </div>
       <div className="flex w-full items-center justify-end">
+        <button
+          className="border bg-cyan-300 px-5 py-2"
+          onClick={handleAddToCart}
+        >
+          Add to cart
+        </button>
         <CheckoutButton title="Proceed to Checkout" />
       </div>
       {isReviews && (

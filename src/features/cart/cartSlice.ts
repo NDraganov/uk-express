@@ -1,11 +1,11 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface CartItem {
-  id: number;
-  title: string;
-  price: number;
-  images: string[];
-  thumbnail: string;
+  id: number | undefined;
+  title: string | undefined;
+  price?: number | undefined;
+  images: string[] | undefined;
+  thumbnail: string | undefined;
   quantity: number;
 }
 
@@ -50,11 +50,11 @@ const cartSlice = createSlice({
     addToCart(
       state,
       action: PayloadAction<{
-        id: number;
-        title: string;
-        price: number;
-        images: string[];
-        thumbnail: string;
+        id: number | undefined;
+        title: string | undefined;
+        price: number | undefined;
+        images: string[] | undefined;
+        thumbnail: string | undefined;
       }>,
     ) {
       const itemIndex = state.items.findIndex(
@@ -69,7 +69,7 @@ const cartSlice = createSlice({
       }
 
       const totalPrice = state.items.reduce(
-        (value, item) => value + item.price * item.quantity,
+        (value, item) => value + Number(item.price) * item.quantity,
         0,
       );
       if (totalPrice > 100) {
@@ -89,7 +89,7 @@ const cartSlice = createSlice({
         state.items[itemIndex].quantity--;
       }
       const totalPrice = state.items.reduce(
-        (value, item) => value + item.price * item.quantity,
+        (value, item) => value + Number(item.price) * item.quantity,
         0,
       );
       if (totalPrice > 100) {
@@ -112,7 +112,7 @@ const cartSlice = createSlice({
       state.shipping = action.payload;
       state.isSuccess = true;
       const totalPrice = state.items.reduce(
-        (value, item) => value + item.price * item.quantity,
+        (value, item) => value + Number(item.price) * item.quantity,
         0,
       );
       if (totalPrice > 100) {
@@ -127,7 +127,7 @@ const cartSlice = createSlice({
       state.isFreeShipping = false;
       state.isSuccess = true;
       const totalPrice = state.items.reduce(
-        (value, item) => value + item.price * item.quantity,
+        (value, item) => value + Number(item.price) * item.quantity,
         0,
       );
       if (totalPrice > 100) {
