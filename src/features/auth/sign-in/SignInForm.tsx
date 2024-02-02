@@ -1,3 +1,4 @@
+import { type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -28,11 +29,12 @@ export default function SignInForm() {
       setValue("email", "");
       setValue("password", "");
       reset;
+      navigate(`/users/${fullName}/account`);
     }
-    navigate(`/users/${!isLoading && fullName}/account`);
   });
 
-  function demoAccount() {
+  function handleDemoAccount(e: FormEvent) {
+    e.preventDefault();
     setValue("email", "ned@email.com");
     setValue("password", "12345678");
   }
@@ -78,7 +80,10 @@ export default function SignInForm() {
       </div>
       <NavigationLink to="/" title="Forgot your password?" />
       <FormButton type="submit" title="Sign In" disabled={isLoading} />
-      <Button title="Demo account" onClick={demoAccount} />
+      <Button
+        title="Demo account"
+        onClick={(e: FormEvent) => handleDemoAccount(e)}
+      />
     </form>
   );
 }

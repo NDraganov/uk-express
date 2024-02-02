@@ -118,13 +118,13 @@ const authSlice = createSlice({
     });
     builder.addCase(signInUser.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.success = true;
       state.user = action.payload.user;
       state.isAuthenticated = action.payload.user?.role;
       state.fullName =
         action.payload.user?.user_metadata.firstName +
         " " +
         action.payload.user?.user_metadata.lastName;
+      state.success = true;
     });
     builder.addCase(signInUser.rejected, (state) => {
       state.isLoading = false;

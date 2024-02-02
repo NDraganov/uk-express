@@ -1,6 +1,8 @@
+import { type FormEvent } from "react";
+
 interface ButtonProps {
   title: string;
-  onClick: () => void;
+  onClick: (e: FormEvent) => void;
 }
 
 export default function Button({ title, onClick }: ButtonProps) {
