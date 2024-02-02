@@ -14,7 +14,7 @@ export default function CartModal() {
   const dispatch = useAppDispatch();
 
   const totalPrice = cartItems.reduce(
-    (value, item) => value + item.price * item.quantity,
+    (value, item) => value + Number(item.price) * item.quantity,
     0,
   );
 

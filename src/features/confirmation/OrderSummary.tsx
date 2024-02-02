@@ -5,7 +5,7 @@ export default function OrderSummary() {
   const shipping = useAppSelector((state) => state.cart.shipping);
 
   const totalPriceItems = cartItems.reduce(
-    (value, item) => value + item.price * item.quantity,
+    (value, item) => value + Number(item.price) * item.quantity,
     0,
   );
   const formattedTotalPriceItems = totalPriceItems.toFixed(2);

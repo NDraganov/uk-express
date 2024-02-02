@@ -18,6 +18,7 @@ export default function AddToCart({
   quantity,
 }: AddToCartProps) {
   const dispatch = useAppDispatch();
+
   function handleAddToCart() {
     dispatch(addToCart({ id, title, price, thumbnail, quantity }));
     toast.success("Product added!");

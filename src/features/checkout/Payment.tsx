@@ -15,7 +15,7 @@ export default function Payment() {
   const navigate = useNavigate();
 
   const totalPriceItems = cartItems.reduce(
-    (value, item) => value + item.price * item.quantity,
+    (value, item) => value + Number(item.price) * item.quantity,
     0,
   );
 
