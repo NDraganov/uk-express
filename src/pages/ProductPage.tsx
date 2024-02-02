@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import { Link, NavLink, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
@@ -8,12 +9,16 @@ import { openReviews } from "../features/products/productsSlice";
 import ProductGallery from "../features/products/product/ProductGallery";
 import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
+import ErrorMessage from "../ui/ErrorMessage";
+import RatingStars from "../ui/RatingStars";
+import Spinner from "../ui/Spinner";
 import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
-import ErrorMessage from "../ui/ErrorMessage";
-import RatingStars from "../ui/RatingStars";
-import ProductReviews from "../features/products/product/ProductReviews";
+
+const ProductReviews = lazy(
+  () => import("../features/products/product/ProductReviews"),
+);
 
 export default function ProductPage() {
   const { isReviews } = useAppSelector((state) => state.products);
@@ -151,7 +156,11 @@ export default function ProductPage() {
       <div className="flex w-full items-center justify-end">
         <CheckoutButton title="Proceed to Checkout" />
       </div>
-      {isReviews && <ProductReviews title={product?.title} />}
+      {isReviews && (
+        <Suspense fallback={<Spinner />}>
+          <ProductReviews title={product?.title} />
+        </Suspense>
+      )}
     </main>
   );
 }
