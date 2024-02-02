@@ -16,7 +16,7 @@ export default function CartItem(item: CartItem) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const itemSumPrice = item.price * item.quantity;
+  const itemSumPrice = Number(item.price) * item.quantity;
   const formattedSumPrice = itemSumPrice.toFixed(2);
 
   function handleGoToProductPage() {
@@ -31,12 +31,12 @@ export default function CartItem(item: CartItem) {
 
   function handleRemoveFromCart(e: FormEvent) {
     e.stopPropagation();
-    dispatch(removeFromCart(item.id));
+    dispatch(removeFromCart(Number(item.id)));
   }
 
   function handleDeleteItem(e: FormEvent) {
     e.stopPropagation();
-    dispatch(deleteFromCart(item.id));
+    dispatch(deleteFromCart(Number(item.id)));
     toast.success("Product deleted!");
   }
   return (

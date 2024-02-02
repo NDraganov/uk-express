@@ -3,8 +3,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 export interface CartItem {
   id: number | undefined;
   title: string | undefined;
-  price?: number | undefined;
-  images: string[] | undefined;
+  price: number | undefined;
   thumbnail: string | undefined;
   quantity: number;
 }
@@ -53,8 +52,8 @@ const cartSlice = createSlice({
         id: number | undefined;
         title: string | undefined;
         price: number | undefined;
-        images: string[] | undefined;
         thumbnail: string | undefined;
+        quantity: number | undefined;
       }>,
     ) {
       const itemIndex = state.items.findIndex(

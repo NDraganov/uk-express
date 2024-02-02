@@ -3,23 +3,31 @@ import { toast } from "react-toastify";
 import { useAppDispatch } from "../../../store/hooks";
 import { addToCart } from "../../cart/cartSlice";
 import { closeSearchModal } from "../../header/search/searchSlice";
-import { type Product } from "../../../api/products-types/productsTypes";
 import Button from "../../../ui/Button";
 import RatingStars from "../../../ui/RatingStars";
+
+interface ProductItemProps {
+  id: number | undefined;
+  title: string | undefined;
+  price: number | undefined;
+  rating: number;
+  thumbnail: string | undefined;
+  quantity?: number | undefined;
+}
 
 export default function ProductItem({
   id,
   title,
   price,
   rating,
-  images,
   thumbnail,
-}: Product) {
+  quantity,
+}: ProductItemProps) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   function handleAddToCart() {
-    dispatch(addToCart({ id, title, price, thumbnail, images }));
+    dispatch(addToCart({ id, title, price, thumbnail, quantity }));
     toast.success("Product added!");
   }
 

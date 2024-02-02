@@ -11,18 +11,18 @@ import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
 import ErrorMessage from "../ui/ErrorMessage";
 import RatingStars from "../ui/RatingStars";
+import AddToCart from "../ui/AddToCart";
 import Spinner from "../ui/Spinner";
 import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
-import { addToCart } from "../features/cart/cartSlice";
-import { toast } from "react-toastify";
 
 const ProductReviews = lazy(
   () => import("../features/products/product/ProductReviews"),
 );
 
 export default function ProductPage() {
+  const { items } = useAppSelector((state) => state.cart);
   const { isReviews } = useAppSelector((state) => state.products);
   const { data: products, error } = useGetAllProductsQuery(undefined);
   const { data: comments } = useGetCommentsQuery(undefined);
@@ -30,23 +30,17 @@ export default function ProductPage() {
   const { title } = useParams();
 
   const product = products?.products.find((product) => product.title === title);
+  const item = items.find((item) => item.title === title);
 
   const id = product?.id;
-  // const title = product?.title;
   const price = product?.price;
   const thumbnail = product?.thumbnail;
-  const images = product?.images;
   const rating = product?.rating.toFixed(1);
   const discount = product?.discountPercentage.toFixed(0);
   const originalPrice =
     (product?.price || product?.discountPercentage) &&
     product.price / (1 - product.discountPercentage / 100);
   const formattedOriginalPrice = originalPrice?.toFixed(0);
-
-  function handleAddToCart() {
-    dispatch(addToCart({ id, title, price, thumbnail, images }));
-    toast.success("Product added!");
-  }
 
   if (error) {
     if ("status" in error) {
@@ -165,12 +159,13 @@ export default function ProductPage() {
         </section>
       </div>
       <div className="flex w-full items-center justify-end">
-        <button
-          className="border bg-cyan-300 px-5 py-2"
-          onClick={handleAddToCart}
-        >
-          Add to cart
-        </button>
+        <AddToCart
+          id={id}
+          title={title}
+          price={price}
+          thumbnail={thumbnail}
+          quantity={Number(item?.quantity)}
+        />
         <CheckoutButton title="Proceed to Checkout" />
       </div>
       {isReviews && (
