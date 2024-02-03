@@ -12,7 +12,17 @@ export default function MobileUserNavLink({
 }: MobileUserNavLinkProps) {
   return (
     <li>
-      <NavLink to={to} {...restProps}>
+      <NavLink
+        to={to}
+        className={({ isActive }) =>
+          `${
+            isActive
+              ? "text-orange-500 dark:text-cyan-500"
+              : "text-black dark:text-white"
+          }`
+        }
+        {...restProps}
+      >
         {title}
       </NavLink>
     </li>

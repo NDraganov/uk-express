@@ -21,14 +21,14 @@ export default function ContactInfo() {
           </Icon>
           <span className="dark:text-gray-300">uk-express@gmail.com</span>
         </p>
-        <p className="flex items-center gap-2">
+        <address className="flex items-center gap-2">
           <Icon value={{ className: "dark:fill-slate-200" }}>
             <FaLocationDot />
           </Icon>
-          <address className="not-italic dark:text-gray-300">
+          <span className="not-italic dark:text-gray-300">
             Wembley Park 306, NE10 6AR, London, UK
-          </address>
-        </p>
+          </span>
+        </address>
         <NavLink
           className="text-sm underline hover:text-orange-500 dark:text-slate-200 dark:hover:text-cyan-300"
           to="/faq"
