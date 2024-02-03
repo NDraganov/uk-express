@@ -2,22 +2,27 @@ import { useState } from "react";
 import Icon from "../../ui/Icon";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import furniture from "../../assets/images/furniture.jpeg";
+import menClothing from "../../assets/images/men-clothing.jpeg";
+import womenClothing from "../../assets/images/women-clothing.jpeg";
+import watches from "../../assets/images/watches.jpeg";
+import jewellery from "../../assets/images/jewellery.jpeg";
 
 const images = [
   {
-    src: "/src/assets/images/jewellery.jpeg",
+    src: furniture,
   },
   {
-    src: "/src/assets/images/men-clothing.jpeg",
+    src: menClothing,
   },
   {
-    src: "/src/assets/images/women-clothing.jpeg",
+    src: womenClothing,
   },
   {
-    src: "/src/assets/images/watches.jpeg",
+    src: watches,
   },
   {
-    src: "/src/assets/images/television.jpeg",
+    src: jewellery,
   },
 ];
 
