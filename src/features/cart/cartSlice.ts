@@ -68,15 +68,28 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload.id,
       );
 
+      // If items available in the cart
       if (itemIndex >= 0) {
-        state.items[itemIndex].quantity++;
+        // If the item is available in the cart and the user set the product count
+        if (state.items[itemIndex].quantity > 0 && state.productCount > 0) {
+          // Increase the quantity with the product count
+          state.items[itemIndex].quantity =
+            state.items[itemIndex].quantity + state.productCount;
+        } else {
+          // Increase the item quantity with 1
+          state.items[itemIndex].quantity++;
+        }
+        // If the item is not available in the cart
       } else if (state.productCount > 0) {
+        // Push the item into the cart with the set product count
         state.items.push({ ...action.payload, quantity: state.productCount });
       } else {
+        // If the item is not available in the cart and the prodict count is not set, push the item with quantity 1
         state.items.push({ ...action.payload, quantity: 1 });
         state.isSuccess = true;
       }
 
+      // Set the product count back to 0 after the function perform
       state.productCount = 0;
 
       const totalPrice = state.items.reduce(
