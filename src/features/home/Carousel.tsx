@@ -2,7 +2,24 @@ import { useState } from "react";
 import Icon from "../../ui/Icon";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import images from "../../data/CarouselImages.json";
+
+const images = [
+  {
+    src: "/src/assets/images/jewellery.jpeg",
+  },
+  {
+    src: "/src/assets/images/men-clothing.jpeg",
+  },
+  {
+    src: "/src/assets/images/women-clothing.jpeg",
+  },
+  {
+    src: "/src/assets/images/watches.jpeg",
+  },
+  {
+    src: "/src/assets/images/television.jpeg",
+  },
+];
 
 export default function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
