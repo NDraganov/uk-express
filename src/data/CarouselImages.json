@@ -1,17 +1,17 @@
 [
   {
-    "src": "/src/assets/images/television.jpeg"
+    "src": "../assets/images/television.jpeg"
   },
   {
-    "src": "/src/assets/images/men-clothing.jpeg"
+    "src": "../assets/images/men-clothing.jpeg"
   },
   {
-    "src": "/src/assets/images/women-clothing.jpeg"
+    "src": "../assets/images/women-clothing.jpeg"
   },
   {
-    "src": "/src/assets/images/watches.jpeg"
+    "src": "../assets/images/watches.jpeg"
   },
   {
-    "src": "/src/assets/images/jewellery.jpeg"
+    "src": "../assets/images/jewellery.jpeg"
   }
 ]

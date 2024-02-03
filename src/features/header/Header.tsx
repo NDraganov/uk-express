@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeCart, openCart } from "../cart/cartSlice";
 import { closeUserBadge } from "../auth/authSlice";
+import logo from "../../assets/images/ukexpress-logo.svg";
 import MainNav from "./main-nav/MainNav";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
@@ -44,8 +45,8 @@ export default function Header() {
               loading="lazy"
               role="presentation"
               decoding="async"
-              src="/src/assets/images/ukexpress-logo.svg"
-              alt=""
+              src={logo}
+              alt="Logo"
             />
           </NavLink>
 
