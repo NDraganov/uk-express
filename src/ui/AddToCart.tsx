@@ -1,6 +1,10 @@
 import { toast } from "react-toastify";
-import { addToCart } from "../features/cart/cartSlice";
-import { useAppDispatch } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import {
+  addToCart,
+  decreaseProductCount,
+  increaseProductCount,
+} from "../features/cart/cartSlice";
 
 interface AddToCartProps {
   id: number | undefined;
@@ -17,17 +21,19 @@ export default function AddToCart({
   thumbnail,
   quantity,
 }: AddToCartProps) {
+  const { productCount } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
   function handleAddToCart() {
+    quantity = productCount;
     dispatch(addToCart({ id, title, price, thumbnail, quantity }));
     toast.success("Product added!");
   }
   return (
     <div>
-      <button>-</button>
-      <span>{quantity}</span>
-      <button>+</button>
+      <button onClick={() => dispatch(decreaseProductCount())}>-</button>
+      <span>{productCount}</span>
+      <button onClick={() => dispatch(increaseProductCount())}>+</button>
       <button
         className="border bg-cyan-300 px-5 py-2"
         onClick={handleAddToCart}

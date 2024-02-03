@@ -20,6 +20,7 @@ interface CartState {
   expressDays: string;
   isLoading: boolean;
   isProcessed: boolean;
+  productCount: number;
 }
 
 const initialState: CartState = {
@@ -34,6 +35,7 @@ const initialState: CartState = {
   expressDays: "2-4",
   isLoading: false,
   isProcessed: false,
+  productCount: 0,
 };
 
 const cartSlice = createSlice({
@@ -45,6 +47,12 @@ const cartSlice = createSlice({
     },
     closeCart(state) {
       state.isVisible = false;
+    },
+    increaseProductCount(state) {
+      state.productCount++;
+    },
+    decreaseProductCount(state) {
+      state.productCount--;
     },
     addToCart(
       state,
@@ -62,10 +70,14 @@ const cartSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.items[itemIndex].quantity++;
+      } else if (state.productCount > 0) {
+        state.items.push({ ...action.payload, quantity: state.productCount });
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
         state.isSuccess = true;
       }
+
+      state.productCount = 0;
 
       const totalPrice = state.items.reduce(
         (value, item) => value + Number(item.price) * item.quantity,
@@ -148,6 +160,8 @@ const cartSlice = createSlice({
 export const {
   openCart,
   closeCart,
+  increaseProductCount,
+  decreaseProductCount,
   addToCart,
   removeFromCart,
   deleteFromCart,
