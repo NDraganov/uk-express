@@ -7,7 +7,6 @@ import {
 } from "../api/productsApiSlice";
 import { openReviews } from "../features/products/productsSlice";
 import ProductGallery from "../features/products/product/ProductGallery";
-import CheckoutButton from "../ui/CheckoutButton";
 import BackButton from "../ui/BackButton";
 import ErrorMessage from "../ui/ErrorMessage";
 import RatingStars from "../ui/RatingStars";
@@ -153,21 +152,19 @@ export default function ProductPage() {
           </div>
 
           {/* Description */}
-          <p className="pt-5 text-lg text-gray-500 dark:text-gray-400">
+          <p className="pt-5 text-lg text-gray-500 dark:text-gray-100">
             {product?.description}
           </p>
+          <AddToCart
+            id={id}
+            title={title}
+            price={price}
+            thumbnail={thumbnail}
+            quantity={Number(item?.quantity)}
+          />
         </section>
       </div>
-      <div className="flex w-full items-center justify-end">
-        <AddToCart
-          id={id}
-          title={title}
-          price={price}
-          thumbnail={thumbnail}
-          quantity={Number(item?.quantity)}
-        />
-        <CheckoutButton title="Proceed to Checkout" />
-      </div>
+
       {isReviews && (
         <Suspense fallback={<Spinner />}>
           <ProductReviews title={product?.title} />
