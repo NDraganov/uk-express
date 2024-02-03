@@ -79,7 +79,7 @@ export default function ProductPage() {
             <div className="flex items-center gap-2">
               <RatingStars rating={product?.rating.toFixed(0).toString()} />
               <p className="font-light text-gray-500 dark:text-gray-400">
-                <span>{rating}</span> out of 5
+                <span>{rating}</span> of 5
               </p>
             </div>
             <button

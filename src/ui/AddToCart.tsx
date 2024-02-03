@@ -28,7 +28,6 @@ export default function AddToCart({
   const dispatch = useAppDispatch();
 
   function handleAddToCart() {
-    quantity = productCount;
     dispatch(addToCart({ id, title, price, thumbnail, quantity }));
     toast.success("Product added!");
   }
@@ -38,6 +37,7 @@ export default function AddToCart({
         <button
           onClick={() => dispatch(decreaseProductCount())}
           title="Increase"
+          disabled={productCount === 0}
         >
           <Icon
             value={{
