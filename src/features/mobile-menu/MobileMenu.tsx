@@ -7,6 +7,7 @@ import CloseButton from "./menu-components/CloseButton";
 import MobileMenuLink from "./menu-components/MobileMenuLink";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import SignOutButton from "./menu-components/SignOutButton";
+import logo from "../../assets/images/ukexpress-logo.svg";
 
 export default function MobileMenu() {
   const { user, isAuthenticated, fullName } = useAppSelector(
@@ -21,7 +22,10 @@ export default function MobileMenu() {
           <div className="flex items-start justify-between">
             <img
               className="w-24"
-              src="/src/assets/images/ukexpress-logo.svg"
+              loading="lazy"
+              role="presentation"
+              decoding="async"
+              src={logo}
               alt="Logo"
             />
             <CloseButton />
