@@ -32,8 +32,6 @@ export default function Carousel() {
       </button>
       <img
         className="h-full w-full"
-        role="presentation"
-        decoding="async"
         src={images[slideIndex].src}
         alt="Carousel image"
       />
