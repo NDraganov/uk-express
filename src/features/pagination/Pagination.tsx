@@ -31,7 +31,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
   return (
     <nav className="my-4 flex items-center justify-center">
       <button
-        className={`h-10 rounded-l-lg border border-r-0 px-4 py-2 font-light ${
+        className={`flex h-8 items-center justify-center rounded-l-lg border border-r-0 px-4 py-2 font-light sm:h-10 ${
           currentPage > 1
             ? "border-gray-300 hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white"
             : "text-gray-400 dark:border-gray-700 dark:text-gray-500"
@@ -57,7 +57,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
             }}
           >
             <li
-              className={`flex h-10 w-14 items-center justify-center border border-r-0 border-gray-300 font-light hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white ${
+              className={`flex h-8 w-10 items-center justify-center border border-r-0 border-gray-300 font-light hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white sm:h-10 sm:w-14 ${
                 page === currentPage
                   ? "bg-cyan-50 text-cyan-600 dark:bg-slate-600 dark:text-white"
                   : ""
@@ -69,7 +69,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
         ))}
       </ul>
       <button
-        className={`h-10 rounded-r-lg border px-4 py-2 font-light ${
+        className={`flex h-8 items-center justify-center rounded-r-lg border px-4 py-2 font-light sm:h-10 ${
           currentPage < pageNumbers.length
             ? "border-gray-300 hover:bg-slate-100 dark:border-gray-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-white"
             : "text-gray-400 dark:border-gray-700 dark:text-gray-500"
