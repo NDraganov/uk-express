@@ -7,9 +7,6 @@ import Header from "./features/header/Header";
 import HomePage from "./pages/HomePage";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Footer from "./features/footer/Footer";
-import AccountInformation from "./features/user-account/sidebar-links/account-info/AccountInformation";
-import MyCart from "./features/user-account/sidebar-links/my-cart/MyCart";
-import ChangePassword from "./features/user-account/sidebar-links/change-password/ChangePassword";
 import CategoriesNav from "./features/header/categories-nav/CategoriesNav";
 import Smartphones from "./features/categories/smartphones/Smartphones";
 import Laptops from "./features/categories/laptops/Laptops";
@@ -49,6 +46,21 @@ const ProductPage = lazy(() => import("./pages/ProductPage"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const UserAccountPage = lazy(() => import("./pages/UserAccountPage"));
+const AccountInformation = lazy(
+  () =>
+    import(
+      "./features/user-account/sidebar-links/account-info/AccountInformation"
+    ),
+);
+const MyCart = lazy(
+  () => import("./features/user-account/sidebar-links/my-cart/MyCart"),
+);
+const ChangePassword = lazy(
+  () =>
+    import(
+      "./features/user-account/sidebar-links/change-password/ChangePassword"
+    ),
+);
 const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
 const OrderConfirmationPage = lazy(
   () => import("./pages/OrderConfirmationPage"),
@@ -79,6 +91,7 @@ export default function App() {
 
       {/* Search Modal */}
       {isVisibleSearch && <SearchModal />}
+
       <Suspense fallback={<Spinner />}>
         <Routes>
           {/* Policies page */}
