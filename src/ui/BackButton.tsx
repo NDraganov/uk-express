@@ -7,7 +7,7 @@ export default function BackButton() {
 
   return (
     <button
-      className="rounded-full border border-white p-2 hover:border-black dark:border-slate-900 dark:hover:border-cyan-300"
+      className="rounded-full border border-white p-2 hover:border-black dark:border-slate-900 dark:hover:border-cyan-300 sm:hidden"
       title="Back"
       onClick={() => navigate(-1)}
     >

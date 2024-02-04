@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useGetAllProductsQuery } from "../api/productsApiSlice";
 import { getTotalPages } from "../features/pagination/paginationSlice";
@@ -15,7 +16,9 @@ export default function DiscountedProducts() {
     (product) => product.price <= 500 || product.price >= 1000,
   );
 
-  dispatch(getTotalPages(discountedProducts?.length));
+  useEffect(() => {
+    dispatch(getTotalPages(discountedProducts?.length));
+  }, [dispatch, discountedProducts]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

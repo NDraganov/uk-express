@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useGetCommentsQuery } from "../../../api/productsApiSlice";
 import { closeReviews } from "../productsSlice";
@@ -16,7 +17,9 @@ export default function ProductReviews({ title }: ProductReviewsProps) {
   const { data: comments } = useGetCommentsQuery(undefined);
   const dispatch = useAppDispatch();
 
-  dispatch(getTotalPages(comments?.comments.length));
+  useEffect(() => {
+    dispatch(getTotalPages(comments?.comments.length));
+  }, [dispatch, comments]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

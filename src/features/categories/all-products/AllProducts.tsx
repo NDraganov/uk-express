@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useGetAllProductsQuery } from "../../../api/productsApiSlice";
 import { getTotalPages } from "../../pagination/paginationSlice";
@@ -16,6 +17,10 @@ export default function AllProducts() {
     error,
   } = useGetAllProductsQuery(undefined);
 
+  useEffect(() => {
+    dispatch(getTotalPages(allProducts?.products.length));
+  }, [dispatch, allProducts]);
+
   if (error) {
     if ("status" in error) {
       const errMsg =
@@ -33,8 +38,6 @@ export default function AllProducts() {
       return <div>{error.message}</div>;
     }
   }
-
-  dispatch(getTotalPages(allProducts?.products.length));
 
   // Get current products
   const indexOfLastItem = currentPage * itemsPerPage;
