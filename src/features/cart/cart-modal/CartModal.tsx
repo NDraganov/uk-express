@@ -1,7 +1,7 @@
 import { type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { closeCart } from "../cartSlice";
-import CartItem from "../CartItem";
+import CartItemsList from "./CartItemsList";
 import CheckoutButton from "../../../ui/CheckoutButton";
 import Icon from "../../../ui/Icon";
 import { AiOutlineClose } from "react-icons/ai";
@@ -10,14 +10,13 @@ export default function CartModal() {
   const { items: cartItems, isProcessed } = useAppSelector(
     (state) => state.cart,
   );
-  const { isAuthenticated, user } = useAppSelector((state) => state.auth);
+
   const dispatch = useAppDispatch();
 
   const subtotalPrice = cartItems.reduce(
     (value, item) => value + Number(item.price) * item.quantity,
     0,
   );
-
   const formattedSubtotalPrice = subtotalPrice.toFixed(2);
 
   return (
@@ -41,33 +40,7 @@ export default function CartModal() {
             </button>
           </div>
 
-          {/* Cart Items */}
-          <div>
-            {cartItems.length === 0 || isProcessed ? (
-              <p className="text-gray-400">
-                {isAuthenticated
-                  ? `${user?.user_metadata.firstName}, your cart is empty!`
-                  : "Looks like you haven’t added any items to the cart yet."}
-              </p>
-            ) : (
-              <ul
-                className={`no-scrollbar mt-2 max-h-52 overflow-scroll rounded-md border border-slate-300 p-1 dark:border-gray-500 dark:bg-slate-800 ${
-                  isProcessed ? "hidden" : ""
-                }`}
-              >
-                {cartItems.map((item) => {
-                  return (
-                    <li
-                      className="flex items-center justify-between"
-                      key={item.id}
-                    >
-                      <CartItem {...item} />
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
+          <CartItemsList />
 
           <div className="mt-4 flex items-center justify-between">
             <p className="dark:text-slate-100">

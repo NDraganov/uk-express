@@ -36,8 +36,8 @@ import MobileMenu from "./features/mobile-menu/MobileMenu";
 import Breadcrumbs from "./ui/Breadcrumbs";
 import SearchModal from "./features/header/search/SearchModal";
 import Spinner from "./ui/Spinner";
+import CartModal from "./features/cart/cart-modal/CartModal";
 
-const CartModal = lazy(() => import("./features/cart/cart-modal/CartModal"));
 const PoliciesPage = lazy(() => import("./pages/PoliciesPage"));
 const AllProducts = lazy(
   () => import("./features/categories/all-products/AllProducts"),
@@ -89,7 +89,7 @@ export default function App() {
       <ToastContainer />
 
       {/* Cart Modal */}
-      {isVisible === true && <CartModal />}
+      {isVisible && <CartModal />}
 
       {/* Mobile Menu */}
       {isVisibleMenu && <MobileMenu />}

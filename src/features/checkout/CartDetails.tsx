@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../store/hooks";
 import DeliveryMethod from "../../ui/DeliveryMethod";
-import CartItem from "../cart/CartItem";
+import CartItem from "../cart/cart-modal/CartItem";
 
 export default function CartDetails() {
   const { items: cartItems, shipping } = useAppSelector((state) => state.cart);

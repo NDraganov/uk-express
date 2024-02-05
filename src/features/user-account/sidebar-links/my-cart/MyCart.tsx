@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../../../store/hooks";
 import { useNavigate } from "react-router-dom";
-import CartItem from "../../../cart/CartItem";
+import CartItem from "../../../cart/cart-modal/CartItem";
 import CheckoutButton from "../../../../ui/CheckoutButton";
 import Button from "../../../../ui/Button";
 
