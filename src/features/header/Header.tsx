@@ -6,7 +6,6 @@ import { closeUserBadge } from "../auth/authSlice";
 import blackLogo from "../../assets/images/ukexpress-black-logo.svg";
 import whiteLogo from "../../assets/images/ukexpress-white-logo.svg";
 import MainNav from "./main-nav/MainNav";
-import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "./user-badge/UserBadge";
@@ -15,7 +14,6 @@ import MobileMenuButton from "../../ui/MobileMenuButton";
 import SearchIcon from "../../ui/SearchIcon";
 
 export default function Header() {
-  const { isVisible } = useAppSelector((state) => state.cart);
   const { isAuthenticated } = useAppSelector((state) => state.auth);
   const { isDarkMode } = useAppSelector((state) => state.darkMode);
   const dispatch = useAppDispatch();
@@ -74,8 +72,6 @@ export default function Header() {
           </div>
         </div>
         <MobileMenuButton />
-
-        {isVisible === true && <CartModal />}
       </header>
     </div>
   );

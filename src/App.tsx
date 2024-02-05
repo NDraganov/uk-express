@@ -37,6 +37,7 @@ import Breadcrumbs from "./ui/Breadcrumbs";
 import SearchModal from "./features/header/search/SearchModal";
 import Spinner from "./ui/Spinner";
 
+const CartModal = lazy(() => import("./features/cart/cart-modal/CartModal"));
 const PoliciesPage = lazy(() => import("./pages/PoliciesPage"));
 const AllProducts = lazy(
   () => import("./features/categories/all-products/AllProducts"),
@@ -70,6 +71,7 @@ const SignUpPage = lazy(() => import("./pages/SignUpPage"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 export default function App() {
+  const { isVisible } = useAppSelector((state) => state.cart);
   const { isVisible: isVisibleMenu } = useAppSelector(
     (state) => state.mobileMenu,
   );
@@ -85,6 +87,9 @@ export default function App() {
 
       {/* Toast */}
       <ToastContainer />
+
+      {/* Cart Modal */}
+      {isVisible === true && <CartModal />}
 
       {/* Mobile Menu */}
       {isVisibleMenu && <MobileMenu />}
