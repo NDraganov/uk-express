@@ -1,7 +1,7 @@
-import { toast } from "react-toastify";
 import { type FormEvent } from "react";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import {
   addToCart,
   removeFromCart,
@@ -13,6 +13,7 @@ import QuantityButtons from "../../../ui/QuantityButtons";
 import DeleteButton from "../../../ui/DeleteButton";
 
 export default function CartItem(item: CartItem) {
+  const { items: cartItems } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -40,9 +41,13 @@ export default function CartItem(item: CartItem) {
     toast.success("Product deleted!");
   }
   return (
-    <div className="mt-6 flex w-full items-center gap-4">
+    <div
+      className={`flex h-36 w-full items-center gap-4 border-b border-t border-gray-300 py-4 dark:border-gray-500 ${
+        cartItems.length > 1 ? "border-b-0" : ""
+      }`}
+    >
       <img
-        className="w-10 hover:cursor-pointer dark:border dark:border-gray-300"
+        className="w-1/3 rounded-md hover:cursor-pointer dark:border dark:border-gray-500"
         loading="lazy"
         role="presentation"
         decoding="async"
@@ -50,21 +55,20 @@ export default function CartItem(item: CartItem) {
         alt={item.title}
         onClick={handleGoToProductPage}
       />
-      <div className="flex w-full flex-col">
-        <div className="flex items-center justify-between gap-10 dark:text-gray-300">
-          <span className="line-clamp-1 overflow-hidden font-medium">
-            {item.title}
-          </span>
-          <div className="flex items-center gap-4">
-            <span className="font-medium">£{formattedSumPrice}</span>
-            <DeleteButton onDelete={(e: FormEvent) => handleDeleteItem(e)} />
-          </div>
+      <div className="flex h-full w-full flex-col justify-between dark:text-slate-200">
+        <div className="flex items-center justify-between">
+          <h5 className="line-clamp-1 text-lg font-light">{item.title}</h5>
+          <DeleteButton onDelete={(e: FormEvent) => handleDeleteItem(e)} />
         </div>
-        <QuantityButtons
-          item={item}
-          onRemove={(e: FormEvent) => handleRemoveFromCart(e)}
-          onAdd={(e: FormEvent) => handleAddToCart(item, e)}
-        />
+
+        <div className="flex flex-col justify-between gap-4">
+          <QuantityButtons
+            item={item}
+            onRemove={(e: FormEvent) => handleRemoveFromCart(e)}
+            onAdd={(e: FormEvent) => handleAddToCart(item, e)}
+          />
+          <p className="font-normal">£{formattedSumPrice}</p>
+        </div>
       </div>
     </div>
   );
