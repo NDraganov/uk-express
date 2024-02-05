@@ -3,19 +3,21 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeCart, openCart } from "../cart/cartSlice";
 import { closeUserBadge } from "../auth/authSlice";
-import logo from "../../assets/images/ukexpress-logo.svg";
+import blackLogo from "../../assets/images/ukexpress-black-logo.svg";
+import whiteLogo from "../../assets/images/ukexpress-white-logo.svg";
 import MainNav from "./main-nav/MainNav";
 import CartModal from "../cart/CartModal";
 import CartBadge from "../../ui/CartBadge";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import UserBadge from "./user-badge/UserBadge";
-import DarkModeToggle from "../../ui/DarkModeToggle";
+import DarkModeToggle from "./dark-mode/DarkModeToggle";
 import MobileMenuButton from "../../ui/MobileMenuButton";
 import SearchIcon from "../../ui/SearchIcon";
 
 export default function Header() {
   const { isVisible } = useAppSelector((state) => state.cart);
   const { isAuthenticated } = useAppSelector((state) => state.auth);
+  const { isDarkMode } = useAppSelector((state) => state.darkMode);
   const dispatch = useAppDispatch();
 
   function handleOpenCart(e: FormEvent) {
@@ -41,11 +43,11 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <NavLink to="/" title="Home">
             <img
-              className="w-28"
+              className="h-14"
               loading="lazy"
               role="presentation"
               decoding="async"
-              src={logo}
+              src={isDarkMode ? whiteLogo : blackLogo}
               alt="Logo"
             />
           </NavLink>

@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
-import Icon from "./Icon";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import Icon from "../../../ui/Icon";
 import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonStars } from "react-icons/bs";
+import { toggleDarkMode } from "./darkModeSlice";
 
 interface DarkModeToggleProps {
   size: string;
 }
 
 export default function DarkModeToggle({ size }: DarkModeToggleProps) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode } = useAppSelector((state) => state.darkMode);
+  const dispatch = useAppDispatch();
 
   useEffect(
     function () {
@@ -25,7 +28,7 @@ export default function DarkModeToggle({ size }: DarkModeToggleProps) {
     <div className="flex items-center">
       <button
         title="Toggle dark and light mode"
-        onClick={() => setIsDarkMode((isDark) => !isDark)}
+        onClick={() => dispatch(toggleDarkMode())}
       >
         {isDarkMode ? (
           <Icon

@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import newsReducer from "../features/news-subscription/newsSlice";
+import darkModeReducer from "../features/header/dark-mode/darkModeSlice";
 import mobileMenuReducer from "../features/mobile-menu/mobileMenuSlice";
 import authReducer from "../features/auth/authSlice";
 import searchReducer from "../features/header/search/searchSlice";
@@ -11,6 +12,7 @@ import { productsApi } from "../api/productsApiSlice";
 export const store = configureStore({
   reducer: {
     news: newsReducer,
+    darkMode: darkModeReducer,
     mobileMenu: mobileMenuReducer,
     auth: authReducer,
     search: searchReducer,

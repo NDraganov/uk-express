@@ -1,18 +1,20 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { closeMobileMenu } from "./mobileMenuSlice";
 import CartBadge from "../../ui/CartBadge";
-import DarkModeToggle from "../../ui/DarkModeToggle";
+import DarkModeToggle from "../header/dark-mode/DarkModeToggle";
 import SearchIcon from "../../ui/SearchIcon";
 import CloseButton from "./menu-components/CloseButton";
 import MobileMenuLink from "./menu-components/MobileMenuLink";
 import AuthHeaderButton from "../../ui/AuthHeaderButton";
 import SignOutButton from "./menu-components/SignOutButton";
-import logo from "../../assets/images/ukexpress-logo.svg";
+import whiteLogo from "../../assets/images/ukexpress-white-logo.svg";
+import blackLogo from "../../assets/images/ukexpress-black-logo.svg";
 
 export default function MobileMenu() {
   const { user, isAuthenticated, fullName } = useAppSelector(
     (state) => state.auth,
   );
+  const { isDarkMode } = useAppSelector((state) => state.darkMode);
   const dispatch = useAppDispatch();
 
   return (
@@ -21,11 +23,11 @@ export default function MobileMenu() {
         <div>
           <div className="flex items-start justify-between">
             <img
-              className="w-24"
+              className="h-14"
               loading="lazy"
               role="presentation"
               decoding="async"
-              src={logo}
+              src={isDarkMode ? whiteLogo : blackLogo}
               alt="Logo"
             />
             <CloseButton />
