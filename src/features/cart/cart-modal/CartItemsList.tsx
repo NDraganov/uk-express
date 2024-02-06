@@ -19,7 +19,11 @@ export default function CartItemsList() {
         <ul
           className={`no-scrollbar max-h-[35rem] overflow-y-scroll p-1 ${
             isProcessed ? "hidden" : ""
-          } ${cartItems.length > 1 ? "last:border-b" : ""}`}
+          } ${
+            cartItems.length > 1
+              ? "border-gray-300 last:border-b dark:border-gray-500"
+              : ""
+          }`}
         >
           {cartItems.map((item) => {
             return (

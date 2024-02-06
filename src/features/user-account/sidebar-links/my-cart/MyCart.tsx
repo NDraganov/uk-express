@@ -33,7 +33,7 @@ export default function MyCart() {
               MY CART
             </h2>
             {cartItems.length > 0 && (
-              <ul className="mt-2">
+              <ul className="mt-2 h-96 overflow-y-scroll border-gray-300 last:border-b dark:border-gray-500">
                 {cartItems.map((item) => {
                   return (
                     <li

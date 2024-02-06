@@ -24,7 +24,7 @@ export default function CartDetails() {
         </div>
 
         {cartItems.length > 0 && (
-          <ul className="mb-2 mt-2">
+          <ul className="mb-2 mt-2 border-gray-300 last:border-b dark:border-gray-500">
             {cartItems.map((item) => {
               return (
                 <li className="flex items-center justify-between" key={item.id}>

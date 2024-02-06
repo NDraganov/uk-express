@@ -46,17 +46,19 @@ export default function CartItem(item: CartItem) {
         cartItems.length > 1 ? "border-b-0" : ""
       }`}
     >
-      <img
-        className="w-1/3 rounded-md hover:cursor-pointer dark:border dark:border-gray-500"
-        loading="lazy"
-        role="presentation"
-        decoding="async"
-        src={item.thumbnail}
-        alt={item.title}
-        onClick={handleGoToProductPage}
-      />
+      <div className="w-1/3">
+        <img
+          className="max-h-full w-fit rounded-md hover:cursor-pointer dark:border dark:border-gray-500"
+          loading="lazy"
+          role="presentation"
+          decoding="async"
+          src={item.thumbnail}
+          alt={item.title}
+          onClick={handleGoToProductPage}
+        />
+      </div>
       <div className="flex h-full w-full flex-col justify-between dark:text-slate-200">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           <h5 className="line-clamp-1 text-lg font-light">{item.title}</h5>
           <DeleteButton onDelete={(e: FormEvent) => handleDeleteItem(e)} />
         </div>
