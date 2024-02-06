@@ -22,7 +22,7 @@ export default function CartItem(item: CartItem) {
 
   function handleGoToProductPage() {
     dispatch(closeCart());
-    navigate(`/products/${item.id}`);
+    navigate(`/products/${item.title}`);
   }
 
   function handleAddToCart(item: CartItem, e: FormEvent) {
