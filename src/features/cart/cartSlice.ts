@@ -42,10 +42,10 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    openCart(state) {
+    openCartModal(state) {
       state.isVisible = !state.isVisible;
     },
-    closeCart(state) {
+    closeCartModal(state) {
       state.isVisible = false;
     },
     increaseProductCount(state) {
@@ -171,8 +171,8 @@ const cartSlice = createSlice({
 });
 
 export const {
-  openCart,
-  closeCart,
+  openCartModal,
+  closeCartModal,
   increaseProductCount,
   decreaseProductCount,
   addToCart,

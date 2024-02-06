@@ -1,7 +1,7 @@
+import { type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { useAppDispatch } from "../../../store/hooks";
-import { addToCart } from "../../cart/cartSlice";
+import { addToCart, openCartModal } from "../../cart/cartSlice";
 import { closeSearchModal } from "../../header/search/searchSlice";
 import Button from "../../../ui/Button";
 import RatingStars from "../../../ui/RatingStars";
@@ -26,9 +26,10 @@ export default function ProductItem({
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  function handleAddToCart() {
+  function handleAddToCart(e: FormEvent) {
+    e.stopPropagation();
     dispatch(addToCart({ id, title, price, thumbnail, quantity }));
-    toast.success("Product added!");
+    dispatch(openCartModal());
   }
 
   return (

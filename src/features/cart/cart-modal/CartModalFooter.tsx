@@ -16,7 +16,7 @@ export default function CartModalFooter() {
     <>
       {cartItems.length > 0 && (
         <div className={`mt-4 flex w-full flex-col ${isProcessed && "hidden"}`}>
-          <p className="flex justify-between pb-2 text-lg dark:text-slate-100">
+          <p className="flex justify-between pb-2 text-lg font-light dark:text-slate-100">
             Subtotal due:{" "}
             <span className="dark:text-white">£{formattedSubtotalPrice}</span>
           </p>

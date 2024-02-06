@@ -1,7 +1,7 @@
 import { type FormEvent, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { closeCart, openCart } from "../cart/cartSlice";
+import { closeCartModal, openCartModal } from "../cart/cartSlice";
 import { closeUserBadge } from "../auth/authSlice";
 import blackLogo from "../../assets/images/ukexpress-black-logo.svg";
 import whiteLogo from "../../assets/images/ukexpress-white-logo.svg";
@@ -20,12 +20,12 @@ export default function Header() {
 
   function handleOpenCart(e: FormEvent) {
     e.stopPropagation();
-    dispatch(openCart());
+    dispatch(openCartModal());
   }
 
   useEffect(() => {
     document.body.addEventListener("click", () => {
-      dispatch(closeCart());
+      dispatch(closeCartModal());
     });
   }, [dispatch]);
 

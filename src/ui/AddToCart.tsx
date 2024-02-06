@@ -1,9 +1,10 @@
-import { toast } from "react-toastify";
+import { type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
   addToCart,
   decreaseProductCount,
   increaseProductCount,
+  openCartModal,
 } from "../features/cart/cartSlice";
 import Icon from "./Icon";
 import { GiShoppingCart } from "react-icons/gi";
@@ -27,9 +28,10 @@ export default function AddToCart({
   const { productCount } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
-  function handleAddToCart() {
+  function handleAddToCart(e: FormEvent) {
+    e.stopPropagation();
     dispatch(addToCart({ id, title, price, thumbnail, quantity }));
-    toast.success("Product added!");
+    dispatch(openCartModal());
   }
   return (
     <div className="flex h-full items-center justify-start gap-4">

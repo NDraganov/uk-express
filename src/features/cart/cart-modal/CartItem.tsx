@@ -6,7 +6,7 @@ import {
   addToCart,
   removeFromCart,
   type CartItem,
-  closeCart,
+  closeCartModal,
   deleteFromCart,
 } from "../cartSlice";
 import QuantityButtons from "../../../ui/QuantityButtons";
@@ -21,7 +21,7 @@ export default function CartItem(item: CartItem) {
   const formattedSumPrice = itemSumPrice.toFixed(2);
 
   function handleGoToProductPage() {
-    dispatch(closeCart());
+    dispatch(closeCartModal());
     navigate(`/products/${item.title}`);
   }
 

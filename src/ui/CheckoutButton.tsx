@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { closeCart } from "../features/cart/cartSlice";
+import { closeCartModal } from "../features/cart/cartSlice";
 
 interface CheckoutButtonProps {
   title: string;
@@ -13,7 +13,7 @@ export default function CheckoutButton({ title, type }: CheckoutButtonProps) {
   const navigate = useNavigate();
 
   function handleCheckout() {
-    dispatch(closeCart());
+    dispatch(closeCartModal());
     navigate("/checkout");
   }
 
