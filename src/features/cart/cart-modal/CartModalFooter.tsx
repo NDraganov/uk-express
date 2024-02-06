@@ -13,14 +13,14 @@ export default function CartModalFooter() {
   const formattedSubtotalPrice = subtotalPrice.toFixed(2);
 
   return (
-    <div className="mt-4 flex flex-col">
+    <div className="mt-4 flex w-full flex-col">
       <p className="dark:text-slate-100">
         Cart subtotal due:{" "}
         <strong className="dark:text-white">
           £{isProcessed ? "0" : formattedSubtotalPrice}
         </strong>
       </p>
-      <CheckoutButton title="Checkout" />
+      <CheckoutButton type="cart-modal" title="Checkout" />
     </div>
   );
 }
