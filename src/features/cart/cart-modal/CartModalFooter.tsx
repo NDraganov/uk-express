@@ -13,14 +13,16 @@ export default function CartModalFooter() {
   const formattedSubtotalPrice = subtotalPrice.toFixed(2);
 
   return (
-    <div className="mt-4 flex w-full flex-col">
-      <p className="dark:text-slate-100">
-        Cart subtotal due:{" "}
-        <strong className="dark:text-white">
-          £{isProcessed ? "0" : formattedSubtotalPrice}
-        </strong>
-      </p>
-      <CheckoutButton type="cart-modal" title="Checkout" />
-    </div>
+    <>
+      {cartItems.length > 0 && (
+        <div className={`mt-4 flex w-full flex-col ${isProcessed && "hidden"}`}>
+          <p className="flex justify-between pb-2 text-lg dark:text-slate-100">
+            Subtotal due:{" "}
+            <span className="dark:text-white">£{formattedSubtotalPrice}</span>
+          </p>
+          <CheckoutButton type="cart-modal" title="Proceed to checkout" />
+        </div>
+      )}
+    </>
   );
 }
