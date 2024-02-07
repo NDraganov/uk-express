@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../../store/hooks";
-import CheckoutButton from "../../../ui/CheckoutButton";
+import CartModalButton from "../../../ui/CartModalButton";
 
 export default function CartModalFooter() {
   const { items: cartItems, isProcessed } = useAppSelector(
@@ -20,10 +20,10 @@ export default function CartModalFooter() {
             Subtotal due:{" "}
             <span className="dark:text-white">£{formattedSubtotalPrice}</span>
           </p>
-          <CheckoutButton type="cart-modal" title="Proceed to checkout" />
+          <CartModalButton title="Proceed to checkout" />
         </div>
       ) : (
-        <CheckoutButton type="cart-modal" title="Start shopping" />
+        <CartModalButton title="Start shopping" />
       )}
     </>
   );

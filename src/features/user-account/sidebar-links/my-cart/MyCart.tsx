@@ -1,7 +1,6 @@
 import { useAppSelector } from "../../../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import CartItem from "../../../cart/cart-modal/CartItem";
-import CheckoutButton from "../../../../ui/CheckoutButton";
 import Button from "../../../../ui/Button";
 
 export default function MyCart() {
@@ -49,7 +48,10 @@ export default function MyCart() {
           </div>
 
           <div className="mt-8 flex w-full items-center justify-end">
-            <CheckoutButton title="Proceed to Checkout" />
+            <Button
+              title="Proceed to Checkout"
+              onClick={() => navigate("/checkout")}
+            />
           </div>
         </div>
       )}
