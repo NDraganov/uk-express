@@ -14,7 +14,7 @@ export default function CartModalFooter() {
 
   return (
     <>
-      {cartItems.length > 0 && (
+      {cartItems.length > 0 ? (
         <div className={`mt-4 flex w-full flex-col ${isProcessed && "hidden"}`}>
           <p className="flex justify-between pb-2 text-lg font-light dark:text-slate-100">
             Subtotal due:{" "}
@@ -22,6 +22,8 @@ export default function CartModalFooter() {
           </p>
           <CheckoutButton type="cart-modal" title="Proceed to checkout" />
         </div>
+      ) : (
+        <CheckoutButton type="cart-modal" title="Start shopping" />
       )}
     </>
   );

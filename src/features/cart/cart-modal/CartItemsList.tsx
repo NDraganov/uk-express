@@ -10,11 +10,13 @@ export default function CartItemsList() {
   return (
     <div className="w-full">
       {cartItems.length === 0 || isProcessed ? (
-        <p className="pt-4 text-gray-400">
-          {isAuthenticated
-            ? `${user?.user_metadata.firstName}, your cart is empty!`
-            : "Looks like you haven’t added any items to the cart yet."}
-        </p>
+        <div className="flex flex-col items-center">
+          <p className="pt-4 font-light">
+            {isAuthenticated
+              ? `${user?.user_metadata.firstName}, your cart is empty!`
+              : "Looks like you haven’t added any items to the cart yet."}
+          </p>
+        </div>
       ) : (
         <ul
           className={`no-scrollbar max-h-[35rem] overflow-y-scroll p-1 ${
