@@ -1,4 +1,5 @@
 import { type FormEvent } from "react";
+import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -13,8 +14,8 @@ export default function SignInForm() {
     register,
     handleSubmit,
     setValue,
+    getValues,
     formState: { errors },
-    reset,
   } = useForm<SignInUser>();
   const { fullName, isLoading, isError, success } = useAppSelector(
     (state) => state.auth,
@@ -22,13 +23,17 @@ export default function SignInForm() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const email = getValues("email");
+  const password = getValues("password");
+
   const onSubmit = handleSubmit((data) => {
     dispatch(signInUser(data));
-    if (isError) console.log("Wrong credentials");
+    if (isError || "email" !== email || "password" !== password) {
+      toast.error("Wrong credentionals!");
+    }
     if (success) {
       setValue("email", "");
       setValue("password", "");
-      reset;
       navigate(`/users/${fullName}/account`);
     }
   });

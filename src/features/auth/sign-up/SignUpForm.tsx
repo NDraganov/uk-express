@@ -7,6 +7,7 @@ import { type Country, type SignUpUser } from "../authTypes";
 import FormButton from "../../../ui/FormButton";
 import NavigationLink from "../../header/categories-nav/NavigationLink";
 import data from "../../../data/CountryCodeData.json";
+import { toast } from "react-toastify";
 
 export default function SignUpForm() {
   const [countries, setCountries] = useState<Country[] | undefined>();
@@ -28,7 +29,9 @@ export default function SignUpForm() {
 
   const onSubmit = handleSubmit((data) => {
     dispatch(signUpUser(data));
-    if (isError) console.log("Something went wrong!");
+    if (isError) {
+      toast.error("Something went wrong! Try again!");
+    }
     if (success) {
       setValue("firstName", "");
       setValue("lastName", "");
