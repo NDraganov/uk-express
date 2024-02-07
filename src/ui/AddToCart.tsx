@@ -34,7 +34,7 @@ export default function AddToCart({
     dispatch(openCartModal());
   }
   return (
-    <div className="flex h-full items-center justify-start gap-4">
+    <div className="mt-5 flex items-center justify-start gap-4">
       <div className="flex items-center justify-center gap-4 rounded-md border border-black px-4 py-2 text-lg dark:border-white">
         <button
           onClick={() => dispatch(decreaseProductCount())}

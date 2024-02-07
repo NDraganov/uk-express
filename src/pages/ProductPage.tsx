@@ -60,15 +60,15 @@ export default function ProductPage() {
   }
 
   return (
-    <main className="mx-4 sm:mx-20">
+    <main className="mx-4 flex items-start justify-center sm:min-h-screen">
       <BackButton />
 
-      <div className="my-10 sm:flex sm:gap-10">
-        <section className="sm:w-2/4">
+      <div className="my-10 w-full sm:flex sm:gap-10">
+        <section className="sm:w-full">
           <ProductGallery title={title} />
         </section>
 
-        <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/4">
+        <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/3">
           <h1 className="text-3xl font-extralight dark:text-white">
             {product?.title}
           </h1>
@@ -103,22 +103,20 @@ export default function ProductPage() {
                         {formattedOriginalPrice}
                       </span>
                     </p>
-                    <p className="rounded-md bg-red-500 p-1 px-2 text-base font-semibold text-white">
+                    <p className="rounded-md bg-red-500 p-1 px-2 text-base font-medium text-white">
                       <span>{discount}%</span> OFF
                     </p>
                   </div>
                 )
               : ""}
 
-            <p>
-              <span className="text-xl font-medium dark:text-gray-300">
-                {product?.price
-                  ? (product.price <= 500 || product.price >= 1000) && (
-                      <span>Now</span>
-                    )
-                  : ""}
-                <span className="text-3xl font-semibold"> £{price}</span>
-              </span>
+            <p className="text-xl dark:text-gray-300">
+              {product?.price
+                ? (product.price <= 500 || product.price >= 1000) && (
+                    <span>Now</span>
+                  )
+                : ""}
+              <span className="text-2xl"> £{price}</span>
             </p>
           </div>
 
@@ -152,7 +150,10 @@ export default function ProductPage() {
           </div>
 
           {/* Description */}
-          <p className="pt-5 text-lg text-gray-500 dark:text-gray-100">
+          <h2 className="w-full border-b border-black pt-5 text-xl font-light dark:border-gray-500">
+            Product details
+          </h2>
+          <p className="pt-5 text-lg font-light dark:text-gray-100">
             {product?.description}
           </p>
           <AddToCart
