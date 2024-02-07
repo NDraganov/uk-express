@@ -21,7 +21,8 @@ export default function RatingStars({ rating }: RatingStarsProps) {
   } else if (rating === "4") {
     return (
       <div className="flex">
-        <Icon value={{ className: "fill-yellow-500" }}>
+        <Icon value={{ className: "fill-yellow-500 last:fill-black" }}>
+          <FaStar />
           <FaStar />
           <FaStar />
           <FaStar />

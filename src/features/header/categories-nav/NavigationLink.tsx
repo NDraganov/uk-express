@@ -19,7 +19,7 @@ export default function NavigationLink({
         <NavLink to={to}>
           {({ isActive }) => (
             <button
-              className={`w-max rounded-md border px-4 py-1 text-sm  hover:bg-zinc-100 dark:hover:bg-slate-700 ${
+              className={`w-40 rounded-md border px-4 py-1 text-sm  hover:bg-zinc-100 dark:hover:bg-slate-700 ${
                 isActive && title !== "All products"
                   ? "border-black text-black dark:border-cyan-500 dark:text-cyan-500"
                   : "border-gray-500 text-gray-500 dark:text-slate-300"
