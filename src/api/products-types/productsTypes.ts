@@ -24,7 +24,6 @@ export interface Review {
     id: number;
     username: string;
   };
-  likes: number;
 }
 export interface Reviews {
   comments: Review[];

@@ -17,7 +17,7 @@ import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
 
 const ProductReviews = lazy(
-  () => import("../features/products/product/ProductReviews"),
+  () => import("../features/products/product/product-reviews/ProductReviews"),
 );
 
 export default function ProductPage() {
@@ -60,10 +60,10 @@ export default function ProductPage() {
   }
 
   return (
-    <main className="mx-4 flex items-start justify-center sm:min-h-screen">
+    <main className="mx-4  sm:min-h-screen">
       <BackButton />
 
-      <div className="my-10 w-full sm:flex sm:gap-10">
+      <div className="my-10 w-full items-start justify-center sm:flex sm:gap-10">
         <section className="sm:w-full">
           <ProductGallery title={title} />
         </section>

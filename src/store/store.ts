@@ -6,6 +6,7 @@ import authReducer from "../features/auth/authSlice";
 import searchReducer from "../features/header/search/searchSlice";
 import productsReducer from "../features/products/productsSlice";
 import cartReducer from "../features/cart/cartSlice";
+import productReviewsReducer from "../features/products/product/product-reviews/productReviewsSlice";
 import paginationReducer from "../features/pagination/paginationSlice";
 import { productsApi } from "../api/productsApiSlice";
 
@@ -18,6 +19,7 @@ export const store = configureStore({
     search: searchReducer,
     products: productsReducer,
     cart: cartReducer,
+    productReviews: productReviewsReducer,
     pagination: paginationReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
