@@ -20,3 +20,22 @@ Build on front-end development with Vite. The products are fetched and cached wi
 - React Hook Form - Validation of the forms.
 - Tailwind CSS - Styling the components.
 - React Toastify - Push notifications.
+
+## Features
+
+### Header
+
+- Brand logo
+- Main navigation - navigate to the main pages.
+- Search icon - opens the search modal.
+- Dark mode button - toggles the light and dark modes and renders relative icons.
+- Sign-in button - navigates to the sign-in page.
+- Cart icon - opens the cart modal.
+
+### Footer
+
+- Newsletter - email input for sign-up for news.
+- Footer navigation
+  - Shop menu - navigates to all products.
+  - Learn menu - links to about and contact pages.
+  - Follow menu - links to social media.
