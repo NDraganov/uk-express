@@ -39,3 +39,13 @@ Build on front-end development with Vite. The products are fetched and cached wi
   - Shop menu - navigates to all products.
   - Learn menu - links to about and contact pages.
   - Follow menu - links to social media.
+- Back to top button
+- Policies links
+
+### Home page
+
+- Video background - overlay with slogan and a button to all products.
+- Carousel with Images
+- Sales - Sales description with a button to products on sale.
+- Top categories
+- New collection - new product items.
