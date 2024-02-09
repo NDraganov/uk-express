@@ -141,3 +141,15 @@ Build on front-end development with Vite. The products are fetched and cached wi
   - Shipping information - email, name, country and address.
   - Payment details - card details.
   - Pay button
+  - Payment processing modal - animated icon and conditional text for the stages.
+
+### Order confirmation page
+
+- Confirmation order details on the left
+  - Greeting the user
+  - Order confirmation message
+  - Order number
+  - Join creators club card
+  - Delivery details
+- Order summary on the right - number of items, subtotal, shipping and the total payed price.
+  - Need help links
