@@ -81,3 +81,16 @@ Build on front-end development with Vite. The products are fetched and cached wi
   - Text(comment)
   - Likes - I create a small section with like and dislike buttons.
   - Reviews pagination.
+
+### About page
+
+- Our story - Short company story and an image of a team work.
+- Our mission - Short info about the company mission and purpose.
+
+### Contact page
+
+- Contact details on the left
+  - Phone number, email and address.
+- Contact form on the right
+  - Map image - background of the contact form.
+  - Contact form - inputs for name, email, phone and a message.
