@@ -62,3 +62,22 @@ Build on front-end development with Vite. The products are fetched and cached wi
   - Rating of the product
   - Price of the product
   - Buttons - one for reviewing the selected product page and one for adding to the cart.
+- Pagination - for all products page.
+
+### Single product page
+
+- Product gallery on the left - created from scratch.
+- Product details on the right
+  - Product title
+  - Product brand
+  - Rating and link for the reviews
+  - Product price - some of the products are on sale(every product under 500 and over 1000). The data from the API contains the discount percentage and the price on sale for every product. I calculate the original price.
+  - In stock availability
+  - Tag - I created it by using the product category.
+  - Product description
+  - Add to cart section - buttons to select a quantity and a button to add it to the cart.
+- Product reviews - render the comment from the dummy JSON API.
+  - User - I added a dummy time the review was made.
+  - Text(comment)
+  - Likes - I create a small section with like and dislike buttons.
+  - Reviews pagination.
