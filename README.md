@@ -44,8 +44,21 @@ Build on front-end development with Vite. The products are fetched and cached wi
 
 ### Home page
 
-- Video background - overlay with slogan and a button to all products.
+- Newsletter modal - it renders after a delay of a few seconds.
+- Video background - overlay with slogan and a button for all products.
 - Carousel with Images
-- Sales - Sales description with a button to products on sale.
+- Sales - Sales description with a button for products on sale.
 - Top categories
 - New collection - new product items.
+
+### Products page
+
+- Categories navigation - renders tabs for all 20 categories of products.
+- Outlet - renders the relative pages for the selected category tab. The page contains
+  a product list of product items(card).
+- Product item(card)
+  - An image of the product
+  - Title of the product
+  - Rating of the product
+  - Price of the product
+  - Buttons - one for reviewing the selected product page and one for adding to the cart.
