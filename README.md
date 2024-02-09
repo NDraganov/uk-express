@@ -169,3 +169,9 @@ Build on front-end development with Vite. The products are fetched and cached wi
   - Delivery details
 - Order summary on the right - number of items, subtotal, shipping and the total payed price.
   - Need help links
+
+## Testing and QA
+
+For this project, testing and QA haven't been implemented and performed because of my lack of knowledge so far.
+The only test is me, testing the features for correct calculations and performance of what it intended to do.
+I run the project URL through the Page Speed Insights website.
