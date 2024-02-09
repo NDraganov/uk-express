@@ -109,3 +109,21 @@ Build on front-end development with Vite. The products are fetched and cached wi
   country code and phone number, password, confirm password.
 - Terms and conditions link
 - Sign-up(submit) button
+
+### User account page
+
+- Greeting with the user name
+- Sidebar navigation on the left
+- Outlet on the right - rendering the page for the selected sidebar link.
+  - Account information
+    - Form - inputs for the user name, email, phone and address.
+    - Edit/Cancel - button to allow the user to change the info or to cancel(to disable the inputs).
+    - Update(submit) button
+  - My cart
+    - Cart items list - render a list of the user shopping items(products) if available.
+      If items are not available, render a text for an empty cart.
+    - Checkout button - if items are available, render a button to proceed to the checkout page.
+  - Change password
+    - Form - inputs for the new password and the confirmed new password.
+    - Update(submit) button
+- Sign-out(button) link - navigates to the sign-in page.
