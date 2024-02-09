@@ -82,6 +82,22 @@ Build on front-end development with Vite. The products are fetched and cached wi
   - Likes - I create a small section with like and dislike buttons.
   - Reviews pagination.
 
+### Pagination
+
+- Created from scratch
+
+### Breadcrumbs
+
+- Created from scratch
+
+### Cart modal
+
+- My cart text and a close button
+- Conditional shipping details
+- Cart items list
+- Subtotal due price
+- Conditional button - if the cart is empty, render a Start shopping button. If items are available, render the Proceed to checkout button.
+
 ### About page
 
 - Our story - Short company story and an image of a team work.
