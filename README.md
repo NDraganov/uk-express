@@ -127,3 +127,17 @@ Build on front-end development with Vite. The products are fetched and cached wi
     - Form - inputs for the new password and the confirmed new password.
     - Update(submit) button
 - Sign-out(button) link - navigates to the sign-in page.
+
+### Checkout page
+
+- Checkout details on the left
+  - Shopping items list
+  - Shipping options
+    - Standard - cost 5, and it takes 4-7 days. If the price for the shopping is 100 or more, the user is eligible for free standard shipping.
+    - Express - cost 15, and it takes 2-4 days.
+  - Price details - subtotal, shipping and a total price to pay.
+- Payment options on the right
+  - Apple pay button
+  - Shipping information - email, name, country and address.
+  - Payment details - card details.
+  - Pay button
