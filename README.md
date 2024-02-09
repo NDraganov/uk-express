@@ -190,3 +190,22 @@ The collective size of the images on the file system was over 10 MB. I converted
 
 I used the React API lazy to load the pages when the user needed to. I left only the Home page as it was needed initially.
 The initial size of the index.js file was more than 570 KB, after the code splitting - 466 KB.
+
+## Errors and Bugs
+
+### TypeScript
+
+First time using TypeScript. It was a challenge for me, but in the end, I overcame all the Type Errors and achieved a good basic knowledge of how to use it.
+
+Initially, for some features like pagination, I used the library Flowbite. Sometimes, I get a Type Error, which I fix through the node_modules folder library files. That worked fine until the project was deployed. Immediately recognise the problem - node_modules folder is part of the git ignore file, therefore not committed to GitHub. I decided to keep the node_modules folder ignored.
+Solution: I start building the features from scratch.
+
+For the Redux Toolkit, I have to check the docs on their website for usage with TypeScript.
+For the fetched data, I have to add an undefined type. That causes problems sometimes when I use the data. I overcome that one as well.
+
+Example
+
+```js
+// Instead to use only the left side, I add && operator to assure the system that the data is available and not undefined
+<Component title={data?.products?.id.title && data.products.id.title} />
+```
