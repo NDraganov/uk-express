@@ -94,3 +94,18 @@ Build on front-end development with Vite. The products are fetched and cached wi
 - Contact form on the right
   - Map image - background of the contact form.
   - Contact form - inputs for name, email, phone and a message.
+
+### Sign-in page
+
+- Sign-in form on the left - inputs for email and password.
+  - Sign-in(submit) button
+  - Demo button - set the inputs with an existing account credentials.
+- Sign-up link on the right - a button for the sign-up page.
+
+### Sign-up page
+
+- Sign-in link on the left - a button for the sign-in page.
+- Sign-up form on the right - inputs for first and last names, email, address,
+  country code and phone number, password, confirm password.
+- Terms and conditions link
+- Sign-up(submit) button
