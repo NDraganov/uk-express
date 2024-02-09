@@ -175,3 +175,18 @@ Build on front-end development with Vite. The products are fetched and cached wi
 For this project, testing and QA haven't been implemented and performed because of my lack of knowledge so far.
 The only test is me, testing the features for correct calculations and performance of what it intended to do.
 I run the project URL through the Page Speed Insights website.
+
+## Optimization
+
+### Video
+
+The original size of the background video on the Home page was 77.1 MB in MPEG-4 file. I compressed it, which resulted in a 9.3 MB.
+
+### Images
+
+The collective size of the images on the file system was over 10 MB. I converted them into JPEG files and compressed them, which resulted in a 1.9 MB.
+
+### Code splitting
+
+I used the React API lazy to load the pages when the user needed to. I left only the Home page as it was needed initially.
+The initial size of the index.js file was more than 570 KB, after the code splitting - 466 KB.
