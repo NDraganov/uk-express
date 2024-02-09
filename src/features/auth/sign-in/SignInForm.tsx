@@ -14,7 +14,6 @@ export default function SignInForm() {
     register,
     handleSubmit,
     setValue,
-    getValues,
     formState: { errors },
   } = useForm<SignInUser>();
   const { fullName, isLoading, isError, success } = useAppSelector(
@@ -23,12 +22,9 @@ export default function SignInForm() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const email = getValues("email");
-  const password = getValues("password");
-
   const onSubmit = handleSubmit((data) => {
     dispatch(signInUser(data));
-    if (isError || "email" !== email || "password" !== password) {
+    if (isError) {
       toast.error("Wrong credentionals!");
     }
     if (success) {
