@@ -90,7 +90,7 @@ const cartSlice = createSlice({
       }
 
       // Set the product count back to 0 after the function perform
-      state.productCount = 0;
+      state.productCount = 1;
 
       const totalPrice = state.items.reduce(
         (value, item) => value + Number(item.price) * item.quantity,
