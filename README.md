@@ -210,6 +210,36 @@ Example
 <Component title={data?.products?.id.title && data.products.id.title} />
 ```
 
+### Video
+
+The video background on the Home page play on full screen on mobile devices. After researching on the internet, I found a post on Stackoverflow with the same issue. One of the suggestions says that Safari and Chrome require attributes "mute" and "playInline" to play as a background.
+
+```js
+<video
+  className="h-screen w-full object-cover"
+  src={homeVideo}
+  autoPlay
+  muted
+  playsInline
+  loop
+></video>
+```
+
+### Active navigation link
+
+First time using the React router. I didn't know how exactly to style the active link. After I checked the official docs, I found the way - pass an argument to a function inside the "className".
+
+```js
+<NavLink
+  to="/messages"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  }
+>
+  Messages
+</NavLink>
+```
+
 ### Cart modal
 
 I want to close the cart modal, when the user clicks on the close(x) button or outside the modal. I use the useEffect to add an event listener for the body to close the modal. Then, when the user clicks on any element inside the modal, it closes.
