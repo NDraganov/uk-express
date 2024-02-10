@@ -33,13 +33,14 @@ export default function AddToCart({
     dispatch(addToCart({ id, title, price, thumbnail, quantity }));
     dispatch(openCartModal());
   }
+
   return (
     <div className="mt-5 flex items-center justify-start gap-4">
       <div className="flex items-center justify-center gap-4 rounded-md border border-black px-4 py-2 text-lg dark:border-white">
         <button
           onClick={() => dispatch(decreaseProductCount())}
           title="Increase"
-          disabled={productCount === 0}
+          disabled={productCount <= 1}
         >
           <Icon
             value={{

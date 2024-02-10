@@ -35,7 +35,7 @@ const initialState: CartState = {
   expressDays: "2-4",
   isLoading: false,
   isProcessed: false,
-  productCount: 0,
+  productCount: 1,
 };
 
 const cartSlice = createSlice({
@@ -84,7 +84,7 @@ const cartSlice = createSlice({
         // Push the item into the cart with the set product count
         state.items.push({ ...action.payload, quantity: state.productCount });
       } else {
-        // If the item is not available in the cart and the prodict count is not set, push the item with quantity 1
+        // If the item is not available in the cart and the product count is not set, push the item with quantity 1
         state.items.push({ ...action.payload, quantity: 1 });
         state.isSuccess = true;
       }

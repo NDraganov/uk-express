@@ -234,3 +234,91 @@ function handleOpenCart(e: FormEvent) {
   dispatch(openCartModal());
 }
 ```
+
+### Add to cart - Product page
+
+#### Add to cart action
+
+Initially, I had a problem implementing add to add-to-cart button for the product page. When I used the action from the cart Slice, it resulted in Type Errors for the arguments.
+My solution was to pass props to the AddToCart component and add an undefined type. That caused a bit of a prop drilling, but it worked fine.
+
+Product page - create variables for each of the arguments.
+
+```js
+const { title } = useParams();
+const id = product?.id;
+const price = product?.price;
+const thumbnail = product?.thumbnail;
+```
+
+Cart slice action payload
+
+```js
+addToCart(
+  state,
+  action: PayloadAction<{
+    id: number | undefined;
+    title: string | undefined;
+    price: number | undefined;
+    thumbnail: string | undefined;
+    quantity: number | undefined;
+  }>,
+)
+```
+
+Add to cart components props
+
+```js
+interface AddToCartProps {
+  id: number | undefined;
+  title: string | undefined;
+  price: number | undefined;
+  thumbnail: string | undefined;
+  quantity: number | undefined;
+}
+```
+
+Function, executed on click
+
+```js
+function handleAddToCart(e: FormEvent) {
+  e.stopPropagation();
+  dispatch(addToCart({ id, title, price, thumbnail, quantity }));
+  dispatch(openCartModal());
+}
+```
+
+#### Quantity
+
+For the product page add-to-cart, I implement increase and decrease buttons for product count(quantity).
+
+- I had a problem with properly calculating the quantity. I want to implement functionality - if the item is available in the cart to add the product count to the item quantity(Example: 2 iPhones in the cart. On the product page the user sets product count to 3, it should result in 5 item quantity in the cart). If the item is not available in the cart, the item quantity should be equal to the product count.
+
+The first attempt was unsuccessful because I didn't set proper conditions and forgot to push the product count to the items array.
+
+- The second problem was the initial value for the product count set to 0. If the add-to-cart is clicked when the product count is 0, the cart item quantity increases with 1. I resolve the problem by setting the initial state to 1. At the same time is more appropriate.
+
+Add to cart action
+
+```js
+// If items available in the cart
+if (itemIndex >= 0) {
+  // If the item is available in the cart and the user set the product count
+  if (state.items[itemIndex].quantity > 0 && state.productCount > 0) {
+    // Increase the quantity with the product count
+    state.items[itemIndex].quantity =
+      state.items[itemIndex].quantity + state.productCount;
+  } else {
+    // Increase the item quantity with 1
+    state.items[itemIndex].quantity++;
+  }
+  // If the item is not available in the cart
+} else if (state.productCount > 0) {
+  // Push the item into the cart with the set product count
+  state.items.push({ ...action.payload, quantity: state.productCount });
+} else {
+  // If the item is not available in the cart and the product count is not set, push the item with quantity 1
+  state.items.push({ ...action.payload, quantity: 1 });
+  state.isSuccess = true;
+}
+```
