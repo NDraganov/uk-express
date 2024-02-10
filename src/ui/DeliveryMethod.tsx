@@ -3,7 +3,7 @@ import {
   addExpressShipping,
   addStandardShipping,
 } from "../features/cart/cartSlice";
-import { IconContext } from "react-icons";
+import Icon from "./Icon";
 import { FaCheckCircle } from "react-icons/fa";
 
 const standard = 5;
@@ -26,11 +26,11 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
   if (type === "standard") {
     return (
       <button
-        className={`border border-${
-          isStandardSelected ? "orange-500" : "slate-300"
-        } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-400 dark:border-${
-          isStandardSelected ? "cyan-500" : "gray-500"
-        } dark:hover:border-cyan-300`}
+        className={`flex h-28 w-1/2 flex-col items-start justify-between rounded-md border p-2 hover:border-orange-400 dark:hover:border-cyan-300 ${
+          isStandardSelected
+            ? "border-orange-500 dark:border-cyan-500"
+            : "border-slate-300 dark:border-gray-500"
+        }`}
         title="Standard delivery"
         onClick={() => dispatch(addStandardShipping(standard))}
         id="standard"
@@ -38,8 +38,8 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         <div className="flex w-full items-baseline justify-between text-left">
           <div>
             <p
-              className={`dark:text-${
-                isStandardSelected ? "cyan-500" : "white"
+              className={`${
+                isStandardSelected ? "dark:text-cyan-500" : "dark:text-white"
               }`}
             >
               Standard
@@ -49,16 +49,16 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             </p>
           </div>
           {isStandardSelected && (
-            <IconContext.Provider
-              value={{ className: "fill-orange-500 dark:fill-cyan-500" }}
-            >
+            <Icon value={{ className: "fill-orange-500 dark:fill-cyan-500" }}>
               <FaCheckCircle />
-            </IconContext.Provider>
+            </Icon>
           )}
         </div>
         <div>
           <span
-            className={`dark:text-${isStandardSelected ? "cyan-500" : "white"}`}
+            className={`${
+              isStandardSelected ? "dark:text-cyan-500" : "dark:text-white"
+            }`}
           >
             £{isFreeShipping ? "0" : standard}
           </span>
@@ -73,11 +73,11 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
   if (type === "express") {
     return (
       <button
-        className={`border border-${
-          isExpressSelected ? "orange-500" : "slate-300"
-        } flex h-28 w-1/2 flex-col items-start justify-between rounded-md p-2 hover:border-orange-500 dark:border-${
-          isExpressSelected ? "cyan-500" : "gray-500"
-        } dark:hover:border-cyan-300`}
+        className={`flex h-28 w-1/2 flex-col items-start justify-between rounded-md border p-2 hover:border-orange-500  dark:hover:border-cyan-300 ${
+          isExpressSelected
+            ? "border-orange-500 dark:border-cyan-500"
+            : "border-slate-300 dark:border-gray-500"
+        }`}
         title="Express delivery"
         onClick={() => dispatch(addExpressShipping(express))}
         id="express"
@@ -85,8 +85,8 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
         <div className="flex w-full items-baseline justify-between text-left">
           <div>
             <p
-              className={`dark:text-${
-                isExpressSelected ? "cyan-500" : "white"
+              className={`${
+                isExpressSelected ? "dark:text-cyan-500" : "dark:text-white"
               }`}
             >
               Express
@@ -96,15 +96,15 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
             </p>
           </div>
           {isExpressSelected && (
-            <IconContext.Provider
-              value={{ className: "fill-orange-500 dark:fill-cyan-500" }}
-            >
+            <Icon value={{ className: "fill-orange-500 dark:fill-cyan-500" }}>
               <FaCheckCircle />
-            </IconContext.Provider>
+            </Icon>
           )}
         </div>
         <span
-          className={`dark:text-${isExpressSelected ? "cyan-500" : "white"}`}
+          className={`${
+            isExpressSelected ? "dark:text-cyan-500" : "dark:text-white"
+          }`}
         >
           £{express}
         </span>
