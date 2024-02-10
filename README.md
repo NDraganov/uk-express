@@ -209,3 +209,28 @@ Example
 // Instead to use only the left side, I add && operator to assure the system that the data is available and not undefined
 <Component title={data?.products?.id.title && data.products.id.title} />
 ```
+
+### Cart modal
+
+I want to close the cart modal, when the user clicks on the close(x) button or outside the modal. I use the useEffect to add an event listener for the body to close the modal. Then, when the user clicks on any element inside the modal, it closes.
+
+Example
+
+```js
+useEffect(() => {
+  document.body.addEventListener("click", () => {
+    dispatch(closeCartModal());
+  });
+}, [dispatch]);
+```
+
+Then, I google how to prevent the modal from closing, when the user clicks on it. I found the event stopPropagation(). I added it to every clickable element.
+
+Example
+
+```js
+function handleOpenCart(e: FormEvent) {
+  e.stopPropagation();
+  dispatch(openCartModal());
+}
+```
