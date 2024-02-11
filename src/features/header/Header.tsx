@@ -55,7 +55,7 @@ export default function Header() {
 
         <div className="hidden sm:block">
           <div className="flex items-center gap-4">
-            <SearchIcon size="text-lg" />
+            <SearchIcon size="text-xl" />
             <DarkModeToggle size="text-lg" />
             {isAuthenticated === "authenticated" ? (
               <UserBadge />
