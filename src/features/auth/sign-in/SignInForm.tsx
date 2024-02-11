@@ -14,6 +14,7 @@ export default function SignInForm() {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<SignInUser>();
   const { fullName, isLoading, isError, success } = useAppSelector(
@@ -28,9 +29,8 @@ export default function SignInForm() {
       toast.error("Wrong credentionals!");
     }
     if (success) {
-      setValue("email", "");
-      setValue("password", "");
       navigate(`/users/${fullName}/account`);
+      reset;
     }
   });
 
