@@ -199,7 +199,7 @@ export default function App() {
 
           {/* User Route */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/users/:fullName" element={<UserAccountPage />}>
+            <Route path="/users" element={<UserAccountPage />}>
               <Route
                 path="/users/:fullName/account"
                 element={<AccountInformation />}

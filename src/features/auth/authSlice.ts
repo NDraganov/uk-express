@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import supabase from "../../services/superbase";
 import { type User } from "@supabase/supabase-js";
 import { type SignInUser, type SignUpUser, type UpdateUser } from "./authTypes";
@@ -29,10 +30,14 @@ export const signUpUser = createAsyncThunk(
 export const signInUser = createAsyncThunk(
   "auth/singIn",
   async ({ email, password }: SignInUser) => {
-    const { data } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
+
+    if (error) {
+      toast.error("Wrong credentionals!");
+    }
 
     return data;
   },
@@ -119,12 +124,12 @@ const authSlice = createSlice({
     builder.addCase(signInUser.fulfilled, (state, action) => {
       state.isLoading = false;
       state.user = action.payload.user;
+      state.success = true;
       state.isAuthenticated = action.payload.user?.role;
       state.fullName =
         action.payload.user?.user_metadata.firstName +
         " " +
         action.payload.user?.user_metadata.lastName;
-      state.success = true;
     });
     builder.addCase(signInUser.rejected, (state) => {
       state.isLoading = false;

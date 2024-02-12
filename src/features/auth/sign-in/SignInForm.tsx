@@ -1,5 +1,4 @@
-import { type FormEvent } from "react";
-import { toast } from "react-toastify";
+import { useEffect, type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +13,7 @@ export default function SignInForm() {
     register,
     handleSubmit,
     setValue,
-    reset,
+
     formState: { errors },
   } = useForm<SignInUser>();
   const { fullName, isLoading, isError, success } = useAppSelector(
@@ -25,14 +24,21 @@ export default function SignInForm() {
 
   const onSubmit = handleSubmit((data) => {
     dispatch(signInUser(data));
-    if (isError) {
-      toast.error("Wrong credentionals!");
-    }
+
     if (success) {
-      navigate(`/users/${fullName}/account`);
-      reset;
+      setValue("email", "");
+      setValue("password", "");
+    } else if (isError) {
+      setValue("email", "");
+      setValue("password", "");
     }
   });
+
+  useEffect(() => {
+    if (success) {
+      navigate(`/users/${fullName}/account`);
+    }
+  }, [navigate, fullName, success]);
 
   function handleDemoAccount(e: FormEvent) {
     e.preventDefault();
@@ -82,8 +88,10 @@ export default function SignInForm() {
       <NavigationLink to="/" title="Forgot your password?" />
       <FormButton type="submit" title="Sign In" disabled={isLoading} />
       <Button
+        type="submit"
         title="Demo account"
         onClick={(e: FormEvent) => handleDemoAccount(e)}
+        disabled={isLoading}
       />
     </form>
   );
