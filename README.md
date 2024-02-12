@@ -2,7 +2,7 @@
 
 UkExpress is a British e-commerce web app that was founded in London. UK, 2004. UkExpress deliver to Spain, France and Germany as well.
 
-Build on front-end development with Vite. The products are fetched and cached with Redux Toolkit Query from an API. Authentication is implemented via Supabase API.
+Build on front-end development with Vite. The products are fetched and cached with Redux Toolkit Query from dummyjson.com API. Authentication is implemented via Supabase API.
 
 #### Links to GitHub and Demo
 
@@ -16,8 +16,9 @@ Build on front-end development with Vite. The products are fetched and cached wi
 - Redux Toolkit - Global state managment.
 - React useState Hook - Local state managment.
 - Redux Toolkit Query - Fetching and caching the products.
-- Supabase - Authentication for users.
 - React Hook Form - Validation of the forms.
+- DummyJSON.com API - fetching the products data.
+- Supabase - Authentication for users.
 - Tailwind CSS - Styling the components.
 - React Toastify - Push notifications.
 
@@ -174,7 +175,7 @@ Build on front-end development with Vite. The products are fetched and cached wi
 
 For this project, testing and QA haven't been implemented and performed because of my lack of knowledge so far.
 The only test is me, testing the features for correct calculations and performance of what it intended to do.
-I run the project URL through the Page Speed Insights website.
+I ran the project URL through the Page Speed Insights website.
 
 ## Optimization
 
@@ -352,3 +353,8 @@ if (itemIndex >= 0) {
   state.isSuccess = true;
 }
 ```
+
+## Acknowledgments
+
+- [The Ultimate React Course 2024: React, Redux & More
+  ](https://www.udemy.com/course/the-ultimate-react-course/) by [Jonas Schmedtmann](https://www.udemy.com/user/jonasschmedtmann/).
