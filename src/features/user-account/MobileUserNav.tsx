@@ -1,17 +1,18 @@
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { signOutUser } from "../auth/authSlice";
 import MobileUserNavLink from "./MobileUserNavLink";
 
 export default function RegularNav() {
+  const { fullName } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
 
   return (
     <div className="sm:hidden">
       <nav>
         <ul className="flex items-center justify-around">
-          <MobileUserNavLink to="account" title="Account" />
-          <MobileUserNavLink to="cart" title="Cart" />
-          <MobileUserNavLink to="password" title="Password" />
+          <MobileUserNavLink to={`${fullName}/account`} title="Account" />
+          <MobileUserNavLink to={`${fullName}/cart`} title="Cart" />
+          <MobileUserNavLink to={`${fullName}/password`} title="Password" />
           <MobileUserNavLink
             to="/"
             title="Sign Out"
