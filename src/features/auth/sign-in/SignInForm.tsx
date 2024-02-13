@@ -13,6 +13,7 @@ export default function SignInForm() {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<SignInUser>();
   const { fullName, isLoading, isError, success } = useAppSelector(
@@ -26,11 +27,10 @@ export default function SignInForm() {
 
     if (success) {
       navigate(`/users/${fullName}/account`);
-      setValue("email", "");
-      setValue("password", "");
-    } else if (isError) {
-      setValue("email", "");
-      setValue("password", "");
+      reset();
+    }
+    if (isError) {
+      reset();
     }
   });
 

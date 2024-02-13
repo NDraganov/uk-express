@@ -15,13 +15,17 @@ export const signUpUser = createAsyncThunk(
     phone,
     address,
   }: SignUpUser) => {
-    const { data } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: { firstName, lastName, address, code, phone },
       },
     });
+
+    if (error) {
+      toast.error("Something went wrong! Try again!");
+    }
 
     return data;
   },
