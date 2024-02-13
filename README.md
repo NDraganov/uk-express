@@ -175,7 +175,15 @@ Build on front-end development with Vite. The products are fetched and cached wi
 
 For this project, testing and QA haven't been implemented and performed because of my lack of knowledge so far.
 The only test is me, testing the features for correct calculations and performance of what it intended to do.
-I ran the project URL through the Page Speed Insights website.
+I ran the project URL through the Page Speed Insights website. Only the mobile performance was below the fast scale. I assume the large(9,729 KiB) video file is the cause.
+
+Mobile testing results
+
+![Mobile-testing](./src//assets/images/readme-screenshots/test-mobile.png)
+
+Desktop testing results
+
+![Desktop-testing](./src//assets/images/readme-screenshots/test-desktop.png)
 
 ## Optimization
 
