@@ -1,4 +1,4 @@
-import { useEffect, type FormEvent } from "react";
+import { type FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,6 @@ export default function SignInForm() {
     register,
     handleSubmit,
     setValue,
-
     formState: { errors },
   } = useForm<SignInUser>();
   const { fullName, isLoading, isError, success } = useAppSelector(
@@ -26,6 +25,7 @@ export default function SignInForm() {
     dispatch(signInUser(data));
 
     if (success) {
+      navigate(`/users/${fullName}/account`);
       setValue("email", "");
       setValue("password", "");
     } else if (isError) {
@@ -34,15 +34,9 @@ export default function SignInForm() {
     }
   });
 
-  useEffect(() => {
-    if (success) {
-      navigate(`/users/${fullName}/account`);
-    }
-  }, [navigate, fullName, success]);
-
   function handleDemoAccount(e: FormEvent) {
     e.preventDefault();
-    setValue("email", "ned@email.com");
+    setValue("email", "email@example.com");
     setValue("password", "12345678");
   }
 
