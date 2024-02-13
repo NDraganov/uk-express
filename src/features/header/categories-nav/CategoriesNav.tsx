@@ -49,7 +49,7 @@ export default function CategoriesNav() {
 
   return (
     <>
-      <div className="mt-10 px-4 sm:px-0">
+      <div className="px-4 sm:mt-10 sm:px-0">
         <nav>
           <ul className="grid grid-cols-2 place-items-start gap-2 sm:mx-40 sm:grid-cols-7">
             <NavigationLink

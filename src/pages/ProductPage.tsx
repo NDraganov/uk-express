@@ -60,7 +60,7 @@ export default function ProductPage() {
   }
 
   return (
-    <main className="mx-4  sm:min-h-screen">
+    <main className="mx-4 -mt-10 sm:mt-0  sm:min-h-screen">
       <BackButton />
 
       <div className="my-10 w-full items-start justify-center sm:flex sm:gap-10">
@@ -150,7 +150,7 @@ export default function ProductPage() {
           </div>
 
           {/* Description */}
-          <h2 className="w-full border-b border-black pt-5 text-xl font-light dark:border-gray-500">
+          <h2 className="w-full border-b border-black pt-10 text-xl font-light dark:border-gray-500 sm:pt-16">
             Product details
           </h2>
           <p className="pt-5 text-lg font-light dark:text-gray-100">

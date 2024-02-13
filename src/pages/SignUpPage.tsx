@@ -6,7 +6,7 @@ export default function SignUpPage() {
   const navigate = useNavigate();
 
   return (
-    <main className="mb-10">
+    <main className="-mt-10 mb-10 sm:mt-0">
       <div className="items-center sm:flex sm:h-screen">
         <div className="flex h-4/6 flex-col items-center justify-center border-gray-300 px-10 dark:border-gray-500 sm:w-1/4 sm:border-r">
           <h2 className="my-10 text-5xl font-extralight dark:text-white">

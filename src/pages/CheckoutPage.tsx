@@ -8,7 +8,7 @@ export default function CheckoutPage() {
   const { isLoading } = useAppSelector((state) => state.cart);
 
   return (
-    <main className="mb-10 sm:mx-32">
+    <main className="-mt-10 mb-10 sm:mx-32 sm:mt-0">
       {isLoading && <ProcessPaymentLoader />}
 
       <div className="flex items-start gap-5 pl-4 sm:flex-col sm:pl-0">

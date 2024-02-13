@@ -6,7 +6,7 @@ export default function PageNotFound() {
   const navigate = useNavigate();
 
   return (
-    <main>
+    <main className="-mt-10 sm:mt-0">
       <BackButton />
       <div className="mx-4 flex h-screen flex-col items-center justify-center sm:mx-0">
         <p className="text-5xl font-bold text-red-500">404</p>
