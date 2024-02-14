@@ -41,7 +41,7 @@ export default function CartDetails() {
       </div>
 
       <div>
-        <p className="flex items-center justify-between font-medium dark:text-white">
+        <p className="flex items-center justify-between font-normal dark:text-white">
           Subtotal:{" "}
           <span className="text-sm dark:text-cyan-500">
             £<span className="text-base">{formattedTotalPriceItems}</span>
@@ -52,11 +52,11 @@ export default function CartDetails() {
           Shipping: <span>£{shipping}</span>
         </p>
         <hr className="my-4 w-full border dark:border-gray-500" />
-        <p className="flex items-center justify-between text-lg font-medium dark:text-white">
-          Total due:{" "}
-          <strong className="text-base font-medium dark:text-cyan-500">
-            £<span className="text-xl">{formattedTotalPriceWithShipping}</span>
-          </strong>
+        <p className="flex items-center justify-between text-lg font-normal dark:text-white">
+          Total:{" "}
+          <span className="dark:text-cyan-500">
+            £{formattedTotalPriceWithShipping}
+          </span>
         </p>
       </div>
     </aside>

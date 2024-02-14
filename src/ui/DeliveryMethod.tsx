@@ -62,7 +62,7 @@ export default function DeliveryMethod({ type }: ShippingMethodProps) {
           >
             £{isFreeShipping ? "0" : standard}
           </span>
-          <span className="text-sm font-light text-slate-500 dark:text-gray-400">
+          <span className="text-xs font-light text-slate-500 dark:text-gray-400 sm:text-sm">
             {isFreeShipping && " Eligible for free shipping"}
           </span>
         </div>
