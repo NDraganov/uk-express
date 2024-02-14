@@ -4,6 +4,7 @@ import LearnLinks from "./footer-components/LearnLinks";
 import FollowLinks from "./footer-components/FollowLinks";
 import PoliciesLinks from "./footer-components/PoliciesLinks";
 import FooterNewsLetter from "./footer-components/FooterNewsLetter";
+import Creator from "./footer-components/creator/Creator";
 
 export default function Footer() {
   return (
@@ -17,7 +18,11 @@ export default function Footer() {
           <ButtonToTop />
         </div>
       </div>
-      <PoliciesLinks />
+      <div className="flex items-end justify-between">
+        <PoliciesLinks />
+        <p>This site is for educational purpose only!</p>
+        <Creator />
+      </div>
     </footer>
   );
 }
