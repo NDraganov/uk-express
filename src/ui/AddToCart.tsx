@@ -67,7 +67,7 @@ export default function AddToCart({
         </button>
       </div>
       <button
-        className="flex items-center justify-center gap-2 rounded-md border bg-black px-16 py-2 text-lg text-white hover:border-black hover:bg-white hover:text-black dark:border-slate-900 dark:bg-white dark:text-black dark:hover:bg-slate-100"
+        className="flex items-center justify-center gap-2 rounded-md border bg-black px-14 py-2 text-lg text-white hover:border-black hover:bg-white hover:text-black dark:border-slate-900 dark:bg-white dark:text-black dark:hover:bg-slate-100 sm:px-16"
         title="Add to cart"
         onClick={handleAddToCart}
       >
