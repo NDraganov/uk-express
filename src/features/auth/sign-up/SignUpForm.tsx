@@ -38,10 +38,10 @@ export default function SignUpForm() {
 
   return (
     <form
-      className="flex w-full flex-col items-center justify-center sm:w-3/5"
+      className="flex w-full flex-col items-center justify-center gap-4 sm:w-3/5 sm:gap-1"
       onSubmit={onSubmit}
     >
-      <div className="flex w-full items-center justify-between gap-4">
+      <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="w-full">
           <label
             className="text-base font-light text-black dark:text-gray-400"
@@ -80,7 +80,7 @@ export default function SignUpForm() {
         </div>
       </div>
 
-      <div className="flex w-full items-center justify-between gap-4">
+      <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="w-full">
           <label
             className="text-base font-light text-black dark:text-gray-400"
@@ -174,7 +174,7 @@ export default function SignUpForm() {
         </div>
       </div>
 
-      <div className="flex w-full items-center justify-between gap-4">
+      <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="w-full">
           <label
             className="text-base font-light text-black dark:text-gray-400"
