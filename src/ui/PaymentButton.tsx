@@ -14,7 +14,7 @@ export default function PaymentButton({
 }: PaymentButtonProps) {
   return (
     <button
-      className="flex w-full items-center justify-center gap-4 rounded-md bg-black px-32 py-2 text-slate-300 dark:bg-white dark:text-black"
+      className="flex w-full items-center justify-center gap-4 rounded-md bg-black px-32 py-2 text-slate-100 dark:bg-white dark:text-black"
       title={title}
       onClick={onPayment}
     >
