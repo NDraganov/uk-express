@@ -44,7 +44,7 @@ export default function Refund() {
         <h3 className="py-2 font-semibold dark:text-white">
           Exchanges <span className="font-light italic">(if applicable)</span>
         </h3>
-        <p className="py-4 font-light">
+        <p className="pt-4 font-light">
           We only replace items if they are defective or damaged. If you need to
           exchange it for the same item, send us an email at{" "}
           <NavLink
@@ -54,10 +54,10 @@ export default function Refund() {
             uk-express@gmail.com
           </NavLink>{" "}
           and send your item to:{" "}
-          <address className="font-normal not-italic dark:text-slate-200">
-            Wembley Park 306, NE10 6AR, London, UK.
-          </address>
         </p>
+        <address className="pt-2 font-normal not-italic dark:text-slate-200">
+          Wembley Park 306, NE10 6AR, London, UK.
+        </address>
       </div>
 
       <div>

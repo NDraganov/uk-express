@@ -12,7 +12,7 @@ export default function OrderConfirmationPage() {
   const userName = user?.user_metadata.firstName.toUpperCase();
 
   return (
-    <main className="mx-4 sm:mx-28 sm:mt-10">
+    <main className="mx-4 min-h-screen sm:mx-28 sm:mt-10">
       <div className="flex flex-col items-baseline justify-between sm:flex-row">
         <div className="sm:w-2/3">
           <h1 className="text-lg font-light">

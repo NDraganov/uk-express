@@ -11,12 +11,12 @@ export default function TermsAndContions() {
           Welcome to UkExpress These terms and conditions outline the rules and
           regulations for the use of UkExpress’s Website.
         </p>
-        <p className="flex gap-2 py-2 font-light">
-          UkExpress is located at:{" "}
+        <div className="flex gap-2 py-2">
+          <p className="font-light">UkExpress is located at: </p>
           <address className="font-normal not-italic dark:text-slate-200">
             Wembley Park 306, NE10 6AR, London, UK
           </address>
-        </p>
+        </div>
       </div>
 
       <div>
