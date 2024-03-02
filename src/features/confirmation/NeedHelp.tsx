@@ -7,10 +7,16 @@ export default function NeedHelp() {
         NEED HELP?
       </p>
       <div className="mt-2 flex flex-col items-start justify-between gap-2">
-        <NavigationLink to="/policies" title="Delivery" />
-        <NavigationLink to="/policies" title="Return & Refund" />
-        <NavigationLink to="/policies" title="Order & Payment" />
-        <NavigationLink to="/policies" title="Promotions & Vouchers" />
+        <NavigationLink to="/policies/terms&conditions" title="Delivery" />
+        <NavigationLink to="/policies/refund" title="Return & Refund" />
+        <NavigationLink
+          to="/policies/terms&conditions"
+          title="Order & Payment"
+        />
+        <NavigationLink
+          to="/policies/terms&conditions"
+          title="Promotions & Vouchers"
+        />
       </div>
     </section>
   );
