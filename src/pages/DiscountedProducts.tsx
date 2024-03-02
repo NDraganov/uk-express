@@ -4,6 +4,7 @@ import { useGetAllProductsQuery } from "../api/productsApiSlice";
 import { getTotalPages } from "../features/pagination/paginationSlice";
 import Pagination from "../features/pagination/Pagination";
 import ProductsList from "../features/products/ProductsList";
+import AnimationPageWrapper from "../ui/AnimationPageWrapper";
 
 export default function DiscountedProducts() {
   const { currentPage, itemsPerPage, totalPages } = useAppSelector(
@@ -29,14 +30,16 @@ export default function DiscountedProducts() {
 
   return (
     <div className="min-h-screen">
-      <ProductsList
-        data={discountedProducts}
-        currentData={currentItems}
-        isLoading={isLoading}
-        firstIndex={indexOfFirstItem}
-        lastIndex={indexOfLastItem}
-      />
-      <Pagination totalPages={totalPages} />
+      <AnimationPageWrapper>
+        <ProductsList
+          data={discountedProducts}
+          currentData={currentItems}
+          isLoading={isLoading}
+          firstIndex={indexOfFirstItem}
+          lastIndex={indexOfLastItem}
+        />
+        <Pagination totalPages={totalPages} />
+      </AnimationPageWrapper>
     </div>
   );
 }

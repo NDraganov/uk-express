@@ -5,6 +5,7 @@ import OrderSummary from "../features/confirmation/OrderSummary";
 import Club from "../ui/Club";
 import Icon from "../ui/Icon";
 import { FaCheckCircle } from "react-icons/fa";
+import AnimationPageWrapper from "../ui/AnimationPageWrapper";
 
 export default function OrderConfirmationPage() {
   const user = useAppSelector((state) => state.auth.user);
@@ -13,34 +14,36 @@ export default function OrderConfirmationPage() {
 
   return (
     <main className="mx-4 min-h-screen sm:mx-28 sm:mt-10">
-      <div className="flex flex-col items-baseline justify-between sm:flex-row">
-        <div className="sm:w-2/3">
-          <h1 className="text-lg font-light">
-            Hi <span className="dark:text-cyan-500">{userName}</span>, thank you
-            for shopping with UkExpress!
-          </h1>
-          <div className="my-2 flex items-center justify-between rounded-md border-2 border-lime-500 px-2 py-1 sm:w-2/3">
-            <h2 className="font-normal dark:text-white sm:text-2xl">
-              YOUR ORDER WAS PLACED SUCCESSFULLY
-            </h2>
-            <Icon value={{ className: "fill-lime-500" }}>
-              <FaCheckCircle />
-            </Icon>
+      <AnimationPageWrapper>
+        <div className="flex flex-col items-baseline justify-between sm:flex-row">
+          <div className="sm:w-2/3">
+            <h1 className="text-lg font-light">
+              Hi <span className="dark:text-cyan-500">{userName}</span>, thank
+              you for shopping with UkExpress!
+            </h1>
+            <div className="my-2 flex items-center justify-between rounded-md border-2 border-lime-500 px-2 py-1 sm:w-2/3">
+              <h2 className="font-normal dark:text-white sm:text-2xl">
+                YOUR ORDER WAS PLACED SUCCESSFULLY
+              </h2>
+              <Icon value={{ className: "fill-lime-500" }}>
+                <FaCheckCircle />
+              </Icon>
+            </div>
+            <p className="text-sm font-light text-slate-600 dark:text-gray-400">
+              Order number: (NUMBER)
+            </p>
+            <p className="my-2 text-base font-light text-slate-600 dark:text-gray-400">
+              We will send confirmation email to shortly
+            </p>
+            <Club />
+            <DeliveryDetails />
           </div>
-          <p className="text-sm font-light text-slate-600 dark:text-gray-400">
-            Order number: (NUMBER)
-          </p>
-          <p className="my-2 text-base font-light text-slate-600 dark:text-gray-400">
-            We will send confirmation email to shortly
-          </p>
-          <Club />
-          <DeliveryDetails />
+          <div className="w-full sm:w-1/3">
+            <OrderSummary />
+            <NeedHelp />
+          </div>
         </div>
-        <div className="w-full sm:w-1/3">
-          <OrderSummary />
-          <NeedHelp />
-        </div>
-      </div>
+      </AnimationPageWrapper>
     </main>
   );
 }

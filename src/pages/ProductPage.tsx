@@ -15,6 +15,7 @@ import Spinner from "../ui/Spinner";
 import Icon from "../ui/Icon";
 import { BsBoxes } from "react-icons/bs";
 import { BsTags } from "react-icons/bs";
+import AnimationPageWrapper from "../ui/AnimationPageWrapper";
 
 const ProductReviews = lazy(
   () => import("../features/products/product/product-reviews/ProductReviews"),
@@ -60,117 +61,119 @@ export default function ProductPage() {
   }
 
   return (
-    <main className="mx-4 -mt-10 sm:mt-0  sm:min-h-screen">
-      <BackButton />
+    <main className="mx-4 -mt-10 sm:mt-0 sm:min-h-screen">
+      <AnimationPageWrapper>
+        <BackButton />
 
-      <div className="my-10 w-full items-start justify-center sm:flex sm:gap-10">
-        <section className="sm:w-full">
-          <ProductGallery title={title} />
-        </section>
+        <div className="my-10 w-full items-start justify-center sm:flex sm:gap-10">
+          <section className="sm:w-full">
+            <ProductGallery title={title} />
+          </section>
 
-        <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/3">
-          <h1 className="text-3xl font-extralight dark:text-white">
-            {product?.title}
-          </h1>
-          <h2>{product?.brand}</h2>
+          <section className="mt-4 flex flex-col items-baseline justify-start sm:mt-0 sm:w-2/3">
+            <h1 className="text-3xl font-extralight dark:text-white">
+              {product?.title}
+            </h1>
+            <h2>{product?.brand}</h2>
 
-          {/* Rewiews */}
-          <div className="mt-2 flex items-center gap-10">
-            <div className="flex items-center gap-2">
-              <RatingStars rating={product?.rating.toFixed(0).toString()} />
-              <p className="font-light text-gray-500 dark:text-gray-400">
-                <span>{rating}</span> / 5
-              </p>
+            {/* Rewiews */}
+            <div className="mt-2 flex items-center gap-10">
+              <div className="flex items-center gap-2">
+                <RatingStars rating={product?.rating.toFixed(0).toString()} />
+                <p className="font-light text-gray-500 dark:text-gray-400">
+                  <span>{rating}</span> / 5
+                </p>
+              </div>
+              <button
+                className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
+                onClick={() => dispatch(openReviews())}
+              >
+                <Link to="#productReviews" reloadDocument>
+                  Reviews ({comments?.comments.length})
+                </Link>
+              </button>
             </div>
-            <button
-              className="font-light underline hover:cursor-pointer hover:text-slate-500 dark:hover:text-gray-300"
-              onClick={() => dispatch(openReviews())}
-            >
-              <Link to="#productReviews" reloadDocument>
-                Reviews ({comments?.comments.length})
-              </Link>
-            </button>
-          </div>
 
-          {/* Prices */}
-          <div className="my-10 flex flex-col items-baseline gap-2">
-            {product?.price
-              ? (product.price <= 500 || product.price >= 1000) && (
-                  <div className="flex items-baseline gap-2">
-                    <p className="text-gray-500 dark:text-gray-300">
-                      Was £
-                      <span className="line-through">
-                        {formattedOriginalPrice}
-                      </span>
-                    </p>
-                    <p className="rounded-md bg-red-500 p-1 px-2 text-base font-medium text-white">
-                      <span>{discount}%</span> OFF
-                    </p>
-                  </div>
-                )
-              : ""}
-
-            <p className="text-xl dark:text-gray-300">
+            {/* Prices */}
+            <div className="my-10 flex flex-col items-baseline gap-2">
               {product?.price
                 ? (product.price <= 500 || product.price >= 1000) && (
-                    <span>Now</span>
+                    <div className="flex items-baseline gap-2">
+                      <p className="text-gray-500 dark:text-gray-300">
+                        Was £
+                        <span className="line-through">
+                          {formattedOriginalPrice}
+                        </span>
+                      </p>
+                      <p className="rounded-md bg-red-500 p-1 px-2 text-base font-medium text-white">
+                        <span>{discount}%</span> OFF
+                      </p>
+                    </div>
                   )
                 : ""}
-              <span className="text-2xl"> £{price}</span>
-            </p>
-          </div>
 
-          {/* Availability */}
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <Icon value={{ className: "text-xl dark:fill-cyan-500" }}>
-                <BsBoxes />
-              </Icon>
-              <p>
-                <span className="text-sky-700 dark:text-gray-300">
-                  {product?.stock === 0 ? "Out of stock" : "In Stock"}
-                </span>{" "}
-                <span className="text-sky-700 dark:text-gray-300">
-                  ({product?.stock} left)
-                </span>
+              <p className="text-xl dark:text-gray-300">
+                {product?.price
+                  ? (product.price <= 500 || product.price >= 1000) && (
+                      <span>Now</span>
+                    )
+                  : ""}
+                <span className="text-2xl"> £{price}</span>
               </p>
             </div>
-            <div className="flex items-center gap-2">
-              <Icon value={{ className: "text-xl dark:fill-cyan-500" }}>
-                <BsTags />
-              </Icon>
-              <p>
-                <NavLink to={`/category/${product?.category}`}>
-                  <span className="text-sky-700 hover:text-sky-900 dark:text-gray-300 dark:hover:text-cyan-300">
-                    {product?.category}
+
+            {/* Availability */}
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Icon value={{ className: "text-xl dark:fill-cyan-500" }}>
+                  <BsBoxes />
+                </Icon>
+                <p>
+                  <span className="text-sky-700 dark:text-gray-300">
+                    {product?.stock === 0 ? "Out of stock" : "In Stock"}
+                  </span>{" "}
+                  <span className="text-sky-700 dark:text-gray-300">
+                    ({product?.stock} left)
                   </span>
-                </NavLink>
-              </p>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon value={{ className: "text-xl dark:fill-cyan-500" }}>
+                  <BsTags />
+                </Icon>
+                <p>
+                  <NavLink to={`/category/${product?.category}`}>
+                    <span className="text-sky-700 hover:text-sky-900 dark:text-gray-300 dark:hover:text-cyan-300">
+                      {product?.category}
+                    </span>
+                  </NavLink>
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Description */}
-          <h2 className="w-full border-b border-black pt-10 text-xl font-light dark:border-gray-500 sm:pt-16">
-            Product details
-          </h2>
-          <p className="pt-5 text-lg font-light dark:text-gray-100">
-            {product?.description}
-          </p>
-          <AddToCart
-            id={id}
-            title={title}
-            price={price}
-            thumbnail={thumbnail}
-            quantity={Number(item?.quantity)}
-          />
-        </section>
-      </div>
+            {/* Description */}
+            <h2 className="w-full border-b border-black pt-10 text-xl font-light dark:border-gray-500 sm:pt-16">
+              Product details
+            </h2>
+            <p className="pt-5 text-lg font-light dark:text-gray-100">
+              {product?.description}
+            </p>
+            <AddToCart
+              id={id}
+              title={title}
+              price={price}
+              thumbnail={thumbnail}
+              quantity={Number(item?.quantity)}
+            />
+          </section>
+        </div>
 
-      {isReviews && (
-        <Suspense fallback={<Spinner />}>
-          <ProductReviews title={product?.title} />
-        </Suspense>
-      )}
+        {isReviews && (
+          <Suspense fallback={<Spinner />}>
+            <ProductReviews title={product?.title} />
+          </Suspense>
+        )}
+      </AnimationPageWrapper>
     </main>
   );
 }

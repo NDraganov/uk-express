@@ -5,17 +5,20 @@ import HomeVideo from "../features/home/HomeVideo";
 import NewCollection from "../features/home/NewCollection";
 import TopCategories from "../features/home/TopCategories";
 import NewsModal from "../features/news-subscription/NewsModal";
+import AnimationPageWrapper from "../ui/AnimationPageWrapper";
 
 export default function HomePage() {
   return (
     <main className="mt-[4.5rem] dark:bg-slate-900">
-      <NewsModal />
-      <Banner />
-      <HomeVideo />
-      <Carousel />
-      <BigSale />
-      <TopCategories />
-      <NewCollection />
+      <AnimationPageWrapper>
+        <NewsModal />
+        <Banner />
+        <HomeVideo />
+        <Carousel />
+        <BigSale />
+        <TopCategories />
+        <NewCollection />
+      </AnimationPageWrapper>
     </main>
   );
 }
