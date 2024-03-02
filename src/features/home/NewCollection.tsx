@@ -22,7 +22,7 @@ export default function NewCollection() {
         New Collection
       </h2>
       <div className="no-scrollbar grid grid-flow-col gap-5 overflow-scroll pb-10">
-        <NavLink to={`/products/${smartphones?.products[1].id}`}>
+        <NavLink to={`/products/${smartphones?.products[1].title}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">
               <div>
@@ -52,7 +52,7 @@ export default function NewCollection() {
             </div>
           </div>
         </NavLink>
-        <NavLink to={`/products/${furniture?.products[1].id}`}>
+        <NavLink to={`/products/${furniture?.products[1].title}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">
               <div>
@@ -82,7 +82,7 @@ export default function NewCollection() {
             </div>
           </div>
         </NavLink>
-        <NavLink to={`/products/${laptops?.products[1].id}`}>
+        <NavLink to={`/products/${laptops?.products[1].title}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">
               <div>
@@ -112,7 +112,7 @@ export default function NewCollection() {
             </div>
           </div>
         </NavLink>
-        <NavLink to={`/products/${sunglasses?.products[1].id}`}>
+        <NavLink to={`/products/${sunglasses?.products[1].title}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">
               <div>
@@ -142,7 +142,7 @@ export default function NewCollection() {
             </div>
           </div>
         </NavLink>
-        <NavLink to={`/products/${mensShirts?.products[1].id}`}>
+        <NavLink to={`/products/${mensShirts?.products[1].title}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">
               <div>
@@ -172,7 +172,7 @@ export default function NewCollection() {
             </div>
           </div>
         </NavLink>
-        <NavLink to={`/products/${womensBags?.products[1].id}`}>
+        <NavLink to={`/products/${womensBags?.products[1].title}`}>
           <div className="flex h-full w-96 flex-col justify-between rounded-md p-2 shadow-lg dark:bg-slate-800 hover:dark:shadow-slate-700">
             <div className="flex justify-between">
               <div>
