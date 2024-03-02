@@ -19,7 +19,7 @@ export default function CartItemsList() {
         </div>
       ) : (
         <ul
-          className={`no-scrollbar max-h-[35rem] overflow-y-scroll p-1 ${
+          className={`no-scrollbar max-h-[33rem] overflow-y-scroll p-1 ${
             isProcessed ? "hidden" : ""
           } ${
             cartItems.length > 1
