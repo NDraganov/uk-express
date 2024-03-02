@@ -7,7 +7,7 @@ export default function MainNav() {
         <MainNavLink title="Home" to="/" />
         <MainNavLink title="Products" to="/products" />
         <MainNavLink title="About" to="/about" />
-        <MainNavLink title="FAQ" to="/faq" />
+        {/* <MainNavLink title="FAQ" to="/faq" /> */}
         <MainNavLink title="Contact" to="/contact" />
       </ul>
     </nav>

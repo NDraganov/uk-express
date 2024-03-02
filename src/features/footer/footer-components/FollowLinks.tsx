@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Icon from "../../../ui/Icon";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
@@ -10,26 +11,32 @@ export default function FollowLinks() {
       </p>
 
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 hover:cursor-pointer hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100">
-          <Icon value={{ clasName: "fill-slate-300" }}>
-            <BsTwitterX />
-          </Icon>
-          <p>Twiteer</p>
-        </div>
+        <Link to="https://twitter.com" target="_blank" rel="noopener">
+          <div className="flex items-center gap-2 hover:cursor-pointer hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100">
+            <Icon value={{ clasName: "fill-slate-300" }}>
+              <BsTwitterX />
+            </Icon>
+            <p>Twiteer</p>
+          </div>
+        </Link>
 
-        <div className="flex items-center gap-2 hover:cursor-pointer hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100">
-          <Icon value={{ clasName: "fill-slate-300" }}>
-            <FaFacebookF />
-          </Icon>
-          <p>Facebook</p>
-        </div>
+        <Link to="https://en-gb.facebook.com" target="_blank" rel="noopener">
+          <div className="flex items-center gap-2 hover:cursor-pointer hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100">
+            <Icon value={{ clasName: "fill-slate-300" }}>
+              <FaFacebookF />
+            </Icon>
+            <p>Facebook</p>
+          </div>
+        </Link>
 
-        <div className="flex items-center gap-2 hover:cursor-pointer hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100">
-          <Icon value={{ clasName: "fill-slate-300" }}>
-            <BsInstagram />
-          </Icon>
-          <p>Instagram</p>
-        </div>
+        <Link to="https://www.instagram.com" target="_blank" rel="noopener">
+          <div className="flex items-center gap-2 hover:cursor-pointer hover:text-slate-200 dark:text-slate-300 dark:hover:text-slate-100">
+            <Icon value={{ clasName: "fill-slate-300" }}>
+              <BsInstagram />
+            </Icon>
+            <p>Instagram</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
