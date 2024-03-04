@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, animate, useMotionValue } from "framer-motion";
 import useMeasure from "react-use-measure";
 import furniture from "../../assets/images/furniture.jpeg";
@@ -26,31 +26,55 @@ const images = [
   },
 ];
 
+const FAST_DURATION = 25;
+const SLOW_DURATION = 70;
+
 export default function Slider() {
+  const [duration, setDuration] = useState(FAST_DURATION);
+  const [mustFinish, setMustFinish] = useState(false);
+  const [rerender, setRerender] = useState(false);
   const [ref, { width }] = useMeasure();
 
   const xTranslation = useMotionValue(0);
 
   useEffect(() => {
-    const finalPosition = -1600;
+    let controls;
+    const finalPosition = -1600 - 64;
 
-    const controls = animate(xTranslation, [0, finalPosition], {
-      ease: "linear",
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 0,
-    });
+    if (mustFinish) {
+      controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+        ease: "linear",
+        duration: duration * (1 - xTranslation.get() / finalPosition),
+        onComplete: () => {
+          setMustFinish(false);
+          setRerender(!rerender);
+        },
+      });
+    } else {
+      controls = animate(xTranslation, [0, finalPosition], {
+        ease: "linear",
+        duration: duration,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 0,
+      });
+    }
 
-    return controls.stop;
-  }, [xTranslation, width]);
+    return controls?.stop;
+  }, [xTranslation, width, duration, rerender, mustFinish]);
 
   return (
     <div className="overflow-hidden rounded-xl">
       <motion.div
-        className="flex gap-4 py-10"
+        className="flex gap-4 pt-36"
         ref={ref}
         style={{ x: xTranslation }}
+        onHoverStart={() => {
+          setDuration(SLOW_DURATION), setMustFinish(true);
+        }}
+        onHoverEnd={() => {
+          setDuration(FAST_DURATION), setMustFinish(true);
+        }}
       >
         {[...images, ...images].map((image, idx) => (
           <SliderCard key={idx} image={image.src} />
