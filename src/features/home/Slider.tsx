@@ -10,19 +10,29 @@ import SliderCard from "./SliderCard";
 
 const images = [
   {
+    title: "furniture",
     src: furniture,
+    to: "/products/category/furniture",
   },
   {
+    title: "men shoes",
     src: menClothing,
+    to: "/products/category/mens-shoes",
   },
   {
+    title: "women dresses",
     src: womenClothing,
+    to: "/products/category/womens-dresses",
   },
   {
+    title: "men watches",
     src: watches,
+    to: "/products/category/mens-watches",
   },
   {
+    title: "women jewellery",
     src: jewellery,
+    to: "/products/category/womens-jewellery",
   },
 ];
 
@@ -77,7 +87,12 @@ export default function Slider() {
         }}
       >
         {[...images, ...images].map((image, idx) => (
-          <SliderCard key={idx} image={image.src} />
+          <SliderCard
+            key={idx}
+            title={image.title}
+            image={image.src}
+            to={image.to}
+          />
         ))}
       </motion.div>
     </div>
