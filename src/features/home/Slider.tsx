@@ -76,7 +76,7 @@ export default function Slider() {
   return (
     <div className="overflow-hidden rounded-xl">
       <motion.div
-        className="flex gap-4 pt-36"
+        className="flex gap-4 py-28 sm:pb-0 sm:pt-36"
         ref={ref}
         style={{ x: xTranslation }}
         onHoverStart={() => {
