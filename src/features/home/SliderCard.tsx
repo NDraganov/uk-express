@@ -10,7 +10,7 @@ export default function SliderCard({ image }: SliderCardProps) {
   const [showOverlay, setShowOverlay] = useState(false);
   return (
     <motion.div
-      className="relative flex h-96 min-w-[40rem] items-center justify-center overflow-hidden rounded-xl"
+      className="relative flex h-56 min-w-[20rem] items-center justify-center overflow-hidden rounded-xl"
       onHoverStart={() => setShowOverlay(true)}
       onHoverEnd={() => setShowOverlay(false)}
     >
@@ -36,7 +36,7 @@ export default function SliderCard({ image }: SliderCardProps) {
           </motion.div>
         )}
       </AnimatePresence>
-      <img src={image} className="h-full w-full" alt={image} />
+      <img src={image} className="h-full" alt={image} />
     </motion.div>
   );
 }
